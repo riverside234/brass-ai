@@ -1,0 +1,78 @@
+{
+  "format": "bc-dataset/1.0.0",
+  "compatibility": {
+    "learning_contract": "four-seat-learning/1.0.0",
+    "players": 4,
+    "rules": "steam-brass-patch-1.1.0",
+    "wire_sha256": "fabe2ef3e1de73aa9f3ddd05b67c08f9ef564a25ab4ff42963a03ab6fe3b6e3d",
+    "observation": "public-state/0.2.0",
+    "choices": "phase-choice/0.2.0",
+    "objective": "win-share/1.0.0",
+    "placement": "competition-rank/1.0.0",
+    "seat_order": "stable-0-1-2-3",
+    "vp_scale": 100.0,
+    "features_sha256": "991308b11eea442f4b071c46cd6361ad288c9877fbd4eedc4b241819f7769094",
+    "producer_profile_sha256": "ffae2fa230bcc42c3877d7817a584b608b60961c0b719316884d6c694a1384d7",
+    "encoder_sha256": "6937346f9b1092589ebede368aba40ebcdc0c9373ea21a438d6b75a01b64ef9f",
+    "architecture_sha256": "8a040433e73117af480bdb4f6f1001a95de129123d3e25a9de06d675f8cb4a2d",
+    "loss": "win-ce+0.25-rank-huber+0.1-vp-huber/1.0.0",
+    "reference_lock_sha256": "9cf98163e7ed9cbeef0cd9ce9178c4eeea933063d361f5a5e42d2fdddcdd5158",
+    "heads": [
+      "policy_logits",
+      "win_share_4",
+      "placement_4",
+      "vp_4"
+    ]
+  },
+  "implementation": "394d169843694ef4172bf913a932dfbcb9ad001b8cfadea4bc75d55ffebb341e",
+  "label_kind": "qualified-v3-choice/1.0.0",
+  "context": "neutral-predecision/1.0.0",
+  "teachers": [
+    "bank-af17b1aadbe7f9b21fa7/balanced-v3",
+    "bank-af17b1aadbe7f9b21fa7/cotton-v3",
+    "bank-af17b1aadbe7f9b21fa7/goods-beer-v3",
+    "bank-af17b1aadbe7f9b21fa7/rail-tempo-v3",
+    "bank-af17b1aadbe7f9b21fa7/supplier-v3"
+  ],
+  "entries": [
+    {
+      "path": "artifacts/recovery/exit-f10e569e4d/demos-train/game-000000.jsonl.gz",
+      "sha256": "da9c694d9e19c94b3bc9916ed09e1a004bd1d9649aacef8ad149f589f104239c",
+      "game_id": "2c1987e4bccf4f2ba0275c3fd3d266bf",
+      "setup_group": "a22022b87cd4066e294d63f6f93ec8c7aa4907cbd9b8ded45811edd820f9379b",
+      "split": "train",
+      "semantic_sha256": "2178225be348968f910e2daaeb5210b366c3eb6d1a4c14e0876dcfd568ff2c5e",
+      "teachers": {
+        "bank-af17b1aadbe7f9b21fa7/rail-tempo-v3": 83,
+        "bank-af17b1aadbe7f9b21fa7/goods-beer-v3": 85,
+        "bank-af17b1aadbe7f9b21fa7/balanced-v3": 94,
+        "bank-af17b1aadbe7f9b21fa7/cotton-v3": 92
+      },
+      "label_kind": "qualified-v3-choice/1.0.0",
+      "context": "neutral-predecision/1.0.0",
+      "transitions_verified": true
+    },
+    {
+      "path": "artifacts/recovery/exit-f10e569e4d/demos-validation/game-000000.jsonl.gz",
+      "sha256": "4905f06f388d7e547017f25f29aed7a419dccd840717eafca463a3a26983b40c",
+      "game_id": "681eb2675926484d96525189e9930c85",
+      "setup_group": "42b713c1671f49407966c373ebf006fdad04e824cfe3422653ba3696bbfe45a2",
+      "split": "validation",
+      "semantic_sha256": "36a6f95f79153deb3f54cc100a700d584ad2276c9d9d079640af1ffbf6ce3dc1",
+      "teachers": {
+        "bank-af17b1aadbe7f9b21fa7/cotton-v3": 90,
+        "bank-af17b1aadbe7f9b21fa7/balanced-v3": 84,
+        "bank-af17b1aadbe7f9b21fa7/goods-beer-v3": 86,
+        "bank-af17b1aadbe7f9b21fa7/rail-tempo-v3": 87
+      },
+      "label_kind": "qualified-v3-choice/1.0.0",
+      "context": "neutral-predecision/1.0.0",
+      "transitions_verified": true
+    }
+  ],
+  "excluded": [],
+  "partitions": {
+    "train": 1,
+    "validation": 1
+  }
+}

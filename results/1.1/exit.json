@@ -1,0 +1,81 @@
+{
+  "format": "recovery-exit/1.0.0",
+  "implementation": "394d169843694ef4172bf913a932dfbcb9ad001b8cfadea4bc75d55ffebb341e",
+  "device": "cuda",
+  "demonstration_games": 2,
+  "bc_epochs": 1,
+  "training_games": 4,
+  "resumed_iteration": 2,
+  "optimizer_steps": [
+    20,
+    14
+  ],
+  "evaluation_games": 4,
+  "central_inference": {
+    "batches": 1244,
+    "positions": 1260,
+    "model_cache_hits": 1242,
+    "valid_candidate_cells": 33931,
+    "padded_candidate_cells": 34379,
+    "max_batch_positions": 2,
+    "max_padded_candidate_cells": 389,
+    "expired_requests": 0,
+    "cancelled_requests": 0,
+    "timings": {
+      "inference.batch": {
+        "seconds": 1.153068371815607,
+        "calls": 1222,
+        "mean_seconds": 0.0009435911389653085,
+        "p50_seconds": 0.0007077760528773069,
+        "p95_seconds": 0.0014887599973008037,
+        "percentile_sample_count": 1024
+      },
+      "inference.forward": {
+        "seconds": 0.5878758782055229,
+        "calls": 1244,
+        "mean_seconds": 0.0004725690339272692,
+        "p50_seconds": 0.0003613131120800972,
+        "p95_seconds": 0.0007442500209435821,
+        "percentile_sample_count": 1024
+      },
+      "inference.pack_transfer": {
+        "seconds": 0.1800742873456329,
+        "calls": 1244,
+        "mean_seconds": 0.00014475425027783996,
+        "p50_seconds": 0.00011782499495893717,
+        "p95_seconds": 0.00023561809211969376,
+        "percentile_sample_count": 1024
+      },
+      "inference.queue_wait": {
+        "seconds": 4.439083542558365,
+        "calls": 1260,
+        "mean_seconds": 0.0035230821766336225,
+        "p50_seconds": 0.0023547490127384663,
+        "p95_seconds": 0.012685424066148698,
+        "percentile_sample_count": 1024
+      },
+      "inference.results": {
+        "seconds": 0.1089623630978167,
+        "calls": 1244,
+        "mean_seconds": 8.759032403361471e-05,
+        "p50_seconds": 6.80399825796485e-05,
+        "p95_seconds": 0.00012617604807019234,
+        "percentile_sample_count": 1024
+      }
+    },
+    "device": "cuda",
+    "central_batching": true,
+    "memory": {
+      "host_resident_bytes": null,
+      "cuda_allocated_bytes": 29997056,
+      "cuda_reserved_bytes": 71303168,
+      "cuda_peak_allocated_bytes": 50608640,
+      "cuda_peak_reserved_bytes": 71303168
+    },
+    "timing_note": "Host elapsed time; CUDA forward kernel duration is in optional profiler traces",
+    "error": null
+  },
+  "source_bank_unchanged": true,
+  "promotion": false,
+  "directory": "/data/not_backed_up/yxu209/ai-training/artifacts/recovery/exit-f10e569e4d"
+}

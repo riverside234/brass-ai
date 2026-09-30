@@ -1,0 +1,232 @@
+{
+  "format": "bc-training-report/1.0.0",
+  "signature": {
+    "format": "bc-training/1.0.0",
+    "manifest_sha256": "64006bffa4f59d1b5bd9975197db780a01946d22fc99efd4380aab3037f1ad60",
+    "initial_sha256": "41182c65aa3645fc694cd7fc245dd4ab527bea804421a8af4eca0afd7c8903ed",
+    "update": {
+      "effective_batch_size": 64,
+      "microbatch_size": 8,
+      "max_candidate_cells": 8192,
+      "epochs": 2,
+      "clip": 0.2,
+      "target_kl": 0.01,
+      "entropy_weight": 0.005,
+      "value_weight": 0.5,
+      "grad_clip": 5.0,
+      "normalize_advantages": true,
+      "precision": "fp32",
+      "bucket": true
+    },
+    "lr": 0.0001,
+    "epochs": 1,
+    "patience": 1,
+    "min_epochs": 1,
+    "implementation": "394d169843694ef4172bf913a932dfbcb9ad001b8cfadea4bc75d55ffebb341e"
+  },
+  "epochs": 1,
+  "history": [
+    {
+      "epoch": 1,
+      "train": {
+        "policy_loss": 2.276184599278337,
+        "natural_policy_loss": 1.7020989541953566,
+        "value_loss": 1.4394396765757416,
+        "loss": 2.9959044375662076,
+        "win_loss": 1.3659388655323093,
+        "rank_loss": 0.06952750750180692,
+        "vp_loss": 0.5611873131013859,
+        "meaningful_top1": 0.1165644171779141,
+        "meaningful_decisions": 163,
+        "decisions": 354,
+        "optimizer_steps": 6,
+        "gradient_clip_steps": 0,
+        "timings": {
+          "supervised.forward_backward": {
+            "seconds": 7.329102854127996,
+            "calls": 6,
+            "mean_seconds": 1.221517142354666,
+            "p50_seconds": 0.022973545012064278,
+            "p95_seconds": 0.024332854081876576,
+            "percentile_sample_count": 6
+          },
+          "supervised.prepare": {
+            "seconds": 9.883602615445852e-05,
+            "calls": 1,
+            "mean_seconds": 9.883602615445852e-05,
+            "p50_seconds": 9.883602615445852e-05,
+            "p95_seconds": 9.883602615445852e-05,
+            "percentile_sample_count": 1
+          }
+        },
+        "memory": {
+          "host_resident_bytes": null,
+          "cuda_allocated_bytes": 25183232,
+          "cuda_reserved_bytes": 50331648,
+          "cuda_peak_allocated_bytes": 38169088,
+          "cuda_peak_reserved_bytes": 50331648
+        }
+      },
+      "validation": {
+        "policy_loss": 1.6637427250315202,
+        "natural_policy_loss": 1.6637427250315202,
+        "value_loss": 1.4450045099175972,
+        "loss": 2.3862449799903187,
+        "win_loss": 1.3748725649259277,
+        "rank_loss": 0.06981249432742424,
+        "vp_loss": 0.5267878815488788,
+        "meaningful_top1": 0.13924050632911392,
+        "meaningful_decisions": 158,
+        "decisions": 347,
+        "optimizer_steps": 0,
+        "gradient_clip_steps": 0,
+        "timings": {
+          "supervised.forward_backward": {
+            "seconds": 0.027610274963080883,
+            "calls": 6,
+            "mean_seconds": 0.004601712493846814,
+            "p50_seconds": 0.004907630966044962,
+            "p95_seconds": 0.004998235031962395,
+            "percentile_sample_count": 6
+          },
+          "supervised.prepare": {
+            "seconds": 1.0055024176836014e-05,
+            "calls": 1,
+            "mean_seconds": 1.0055024176836014e-05,
+            "p50_seconds": 1.0055024176836014e-05,
+            "p95_seconds": 1.0055024176836014e-05,
+            "percentile_sample_count": 1
+          }
+        },
+        "memory": {
+          "host_resident_bytes": null,
+          "cuda_allocated_bytes": 25025536,
+          "cuda_reserved_bytes": 50331648,
+          "cuda_peak_allocated_bytes": 38169088,
+          "cuda_peak_reserved_bytes": 50331648
+        }
+      },
+      "balanced_validation": {
+        "policy_loss": 2.2670453426130224,
+        "natural_policy_loss": 1.6637427250315202,
+        "value_loss": 1.4450045099175972,
+        "loss": 2.989547597571821,
+        "win_loss": 1.3748725649259277,
+        "rank_loss": 0.06981249432742424,
+        "vp_loss": 0.5267878815488788,
+        "meaningful_top1": 0.13924050632911392,
+        "meaningful_decisions": 158,
+        "decisions": 347,
+        "optimizer_steps": 0,
+        "gradient_clip_steps": 0,
+        "timings": {
+          "supervised.forward_backward": {
+            "seconds": 0.02691208489704877,
+            "calls": 6,
+            "mean_seconds": 0.004485347482841462,
+            "p50_seconds": 0.004859429900534451,
+            "p95_seconds": 0.004885489004664123,
+            "percentile_sample_count": 6
+          },
+          "supervised.prepare": {
+            "seconds": 2.371496520936489e-05,
+            "calls": 1,
+            "mean_seconds": 2.371496520936489e-05,
+            "p50_seconds": 2.371496520936489e-05,
+            "p95_seconds": 2.371496520936489e-05,
+            "percentile_sample_count": 1
+          }
+        },
+        "memory": {
+          "host_resident_bytes": null,
+          "cuda_allocated_bytes": 25025536,
+          "cuda_reserved_bytes": 50331648,
+          "cuda_peak_allocated_bytes": 38169088,
+          "cuda_peak_reserved_bytes": 50331648
+        }
+      }
+    }
+  ],
+  "candidate": "/data/not_backed_up/yxu209/ai-training/artifacts/recovery/exit-f10e569e4d/bc/best.pt",
+  "candidate_sha256": "792dc87523c892ce41bf36d892146ebbd1dfaa6022d1425b073117c7fe1961ed",
+  "environment": {
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "pid": 3057991,
+    "cpu_count": 64,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "torch": "2.8.0+cu128",
+    "cuda": "12.8",
+    "device": "cuda",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "tensor_threads": 2,
+    "omp_threads": null,
+    "mkl_threads": null
+  },
+  "promoted": false,
+  "note": "Select with fresh gameplay evaluation; imitation loss alone is not strength"
+}
