@@ -1,0 +1,209 @@
+{
+  "iteration": 0,
+  "composition": {
+    "selfplay": 224,
+    "historical": 80,
+    "legacy": 16
+  },
+  "actor": {
+    "epochs": [
+      {
+        "epoch": 0,
+        "actor": 2.4302162634921842,
+        "value": 1.4031567927449942,
+        "entropy": 1.4324121861718595,
+        "approx_kl": 1.9455940270958837e-15,
+        "gradient_norm": 0.5830534100532532
+      },
+      {
+        "epoch": 1,
+        "actor": 2.426385051032412,
+        "value": 1.4023975362069905,
+        "entropy": 1.4321295553818345,
+        "approx_kl": 3.6061913373250886e-05,
+        "gradient_norm": 0.5756520628929138
+      },
+      {
+        "epoch": 2,
+        "actor": 2.422064910584595,
+        "value": 1.4012938034720719,
+        "entropy": 1.4318179292604327,
+        "approx_kl": 0.00013443496105070815,
+        "gradient_norm": 0.5669869780540466
+      }
+    ],
+    "learner_decisions": 77095,
+    "learner_trajectories": 992,
+    "optimizer_steps": 3,
+    "minibatch_size": 512,
+    "microbatches_per_epoch": 226,
+    "max_batch_positions": 414,
+    "max_padded_candidate_cells": 131064
+},
+  "search": {
+    "updated": false,
+    "reason": "Search schedule not due"
+  },
+  "matches": {
+    "games": 320,
+    "players": 4,
+    "policies": {
+      "step5-neural/1f5d4ce8adaa30d2334b0c2ade06d03d6e37a6f155c99ce57ffc0bbb65f10f21": {
+        "seat_games": 992,
+        "win_share": 0.24848790322580647,
+        "placement": 2.319556451612903,
+        "vp": 5.702620967741935,
+        "seat_counts": [
+          248,
+          248,
+          248,
+          248
+        ]
+      },
+      "step5-neural/587dc65ddfa95767b076faffbb3fe208b0469d4a729c5a83fb7a9ad16dc57b05": {
+        "seat_games": 96,
+        "win_share": 0.22135416666666666,
+        "placement": 2.3333333333333335,
+        "vp": 3.0729166666666665,
+        "seat_counts": [
+          24,
+          24,
+          24,
+          24
+        ]
+      },
+      "step5-neural/5a8629b53102474b29695e80c4ab9b2d9c2a1e39d84d28ae5cb29a9928ae958b": {
+        "seat_games": 64,
+        "win_share": 0.25651041666666663,
+        "placement": 2.171875,
+        "vp": 4.21875,
+        "seat_counts": [
+          16,
+          16,
+          16,
+          16
+        ]
+      },
+      "step5-neural/870ca13db01f4813923edc7ec15c104fcf6a7f79df3066c7cf84800f5d75bf0d": {
+        "seat_games": 64,
+        "win_share": 0.24348958333333331,
+        "placement": 2.203125,
+        "vp": 3.5,
+        "seat_counts": [
+          16,
+          16,
+          16,
+          16
+        ]
+      },
+      "step5-neural/4c47c248e69912e7039109d41687e3852aa69a1655e4216c62e2108f2f9b929d": {
+        "seat_games": 16,
+        "win_share": 0.265625,
+        "placement": 1.9375,
+        "vp": 3.5,
+        "seat_counts": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "bank-af17b1aadbe7f9b21fa7/rail-tempo-v3": {
+        "seat_games": 16,
+        "win_share": 0.5625,
+        "placement": 1.5625,
+        "vp": 110.1875,
+        "seat_counts": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "bank-af17b1aadbe7f9b21fa7/balanced-v3": {
+        "seat_games": 16,
+        "win_share": 0.4375,
+        "placement": 1.8125,
+        "vp": 107.125,
+        "seat_counts": [
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      "bank-af17b1aadbe7f9b21fa7/cotton-v3": {
+        "seat_games": 16,
+        "win_share": 0.0,
+        "placement": 2.625,
+        "vp": 99.625,
+        "seat_counts": [
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    },
+    "purpose": "diagnostic; no calibrated difficulty or strength claim"
+  },
+  "diversity": {
+    "builds": {
+      "CottonMill": 510,
+      "Manufacturer": 616,
+      "Pottery": 165,
+      "Brewery": 402,
+      "IronWorks": 296,
+      "CoalMine": 870
+    },
+    "legal_build_opportunities": {
+      "CottonMill": 7206,
+      "Manufacturer": 7385,
+      "Pottery": 4471,
+      "Brewery": 8572,
+      "IronWorks": 6775,
+      "CoalMine": 12662
+    },
+    "builds_matching_assigned_focus": {
+      "CottonMill": 64,
+      "Manufacturer": 54,
+      "Pottery": 23,
+      "Brewery": 49,
+      "IronWorks": 39,
+      "CoalMine": 67
+    },
+    "seat_trajectory_contexts": {
+      "Manufacturer": 82,
+      "CottonMill": 83,
+      "neutral": 496,
+      "IronWorks": 83,
+      "Pottery": 82,
+      "CoalMine": 83,
+      "Brewery": 83
+    },
+    "pottery_warning": false,
+    "interpretation": "Opportunity and chosen-build counts, not a mandate to force an industry. Pottery Flex identity is held out, never Pottery actions."
+  },
+  "elapsed_seconds": 18390.129705597996,
+  "timings": {
+    "collection_seconds": 14576.95562105102,
+    "ppo_seconds": 3812.85457135702,
+    "search_and_distill_seconds": 8.621951565146446e-06
+  },
+  "throughput": {
+    "regular_games_per_second": 0.021952457585716897,
+    "learner_inference": {
+      "batches": 3677,
+      "positions": 77095,
+      "max_batch_positions": 32,
+      "max_padded_candidate_cells": 13280,
+      "predict_seconds": 3001.1860805535107
+    }
+  },
+  "cuda_memory": {
+    "allocated_bytes": 55009280,
+    "reserved_bytes": 1803550720,
+    "peak_allocated_bytes": 1374057984
+  },
+  "strength": "unmeasured"
+}

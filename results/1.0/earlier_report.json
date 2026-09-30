@@ -1,0 +1,184 @@
+{
+  "iteration": 3,
+  "composition": {
+    "selfplay": 14,
+    "historical": 5,
+    "legacy": 1
+  },
+  "actor": {
+    "epochs": [
+      {
+        "epoch": 0,
+        "actor": 2.379995183677238,
+        "value": 1.4020106641110033,
+        "entropy": 1.4237845008028671,
+        "approx_kl": 2.2612131125780425e-15,
+        "gradient_norm": 1.2752511501312256
+      },
+      {
+        "epoch": 1,
+        "actor": 2.369033935930929,
+        "value": 1.401191988028586,
+        "entropy": 1.4237550589023158,
+        "approx_kl": 4.875463883325353e-05,
+        "gradient_norm": 1.2952921390533447
+      },
+      {
+        "epoch": 2,
+        "actor": 2.3534896335522717,
+        "value": 1.3995167897082865,
+        "entropy": 1.423620832618326,
+        "approx_kl": 0.00018704864761219506,
+        "gradient_norm": 1.3106720447540283
+      }
+    ],
+    "learner_decisions": 4902,
+    "learner_trajectories": 62
+  },
+  "search": {
+    "updated": false,
+    "reason": "Search schedule not due"
+  },
+  "matches": {
+    "games": 2iteration-00030,
+    "players": 4,
+    "policies": {
+      "step5-neural/de8e4bb8c682fa9888395276cbf915f5f5cff40c876419e9e83cd6201e522ce2": {
+        "seat_games": 62,
+        "win_share": 0.24193548387096775,
+        "placement": 2.3225806451612905,
+        "vp": 5.17741935483871,
+        "seat_counts": [
+          15,
+          16,
+          16,
+          15
+        ]
+      },
+      "step5-neural/5a8629b53102474b29695e80c4ab9b2d9c2a1e39d84d28ae5cb29a9928ae958b": {
+        "seat_games": 4,
+        "win_share": 0.25,
+        "placement": 2.5,
+        "vp": 4.25,
+        "seat_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "step5-neural/587dc65ddfa95767b076faffbb3fe208b0469d4a729c5a83fb7a9ad16dc57b05": {
+        "seat_games": 4,
+        "win_share": 0.25,
+        "placement": 2.25,
+        "vp": 4.25,
+        "seat_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "step5-neural/870ca13db01f4813923edc7ec15c104fcf6a7f79df3066c7cf84800f5d75bf0d": {
+        "seat_games": 5,
+        "win_share": 0.2,
+        "placement": 3.0,
+        "vp": 2.4,
+        "seat_counts": [
+          1,
+          2,
+          1,
+          1
+        ]
+      },
+      "step5-neural/1c747073552b2d55ce36ddd8090dfe4283e83604927ebff66e78983def001bab": {
+        "seat_games": 2,
+        "win_share": 0.5,
+        "placement": 2.0,
+        "vp": 22.0,
+        "seat_counts": [
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      "bank-af17b1aadbe7f9b21fa7/rail-tempo-v3": {
+        "seat_games": 1,
+        "win_share": 1.0,
+        "placement": 1.0,
+        "vp": 99.0,
+        "seat_counts": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "bank-af17b1aadbe7f9b21fa7/cotton-v3": {
+        "seat_games": 1,
+        "win_share": 0.0,
+        "placement": 3.0,
+        "vp": 84.0,
+        "seat_counts": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "bank-af17b1aadbe7f9b21fa7/balanced-v3": {
+        "seat_games": 1,
+        "win_share": 0.0,
+        "placement": 2.0,
+        "vp": 98.0,
+        "seat_counts": [
+          0,
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "purpose": "diagnostic; no calibrated difficulty or strength claim"
+  },
+  "diversity": {
+    "builds": {
+      "CottonMill": 25,
+      "Manufacturer": 33,
+      "Pottery": 14,
+      "Brewery": 21,
+      "IronWorks": 26,
+      "CoalMine": 61
+    },
+    "legal_build_opportunities": {
+      "CottonMill": 422,
+      "Manufacturer": 424,
+      "Pottery": 280,
+      "Brewery": 542,
+      "IronWorks": 345,
+      "CoalMine": 816
+    },
+    "builds_matching_assigned_focus": {
+      "CottonMill": 4,
+      "Manufacturer": 5,
+      "Pottery": 0,
+      "Brewery": 7,
+      "IronWorks": 2,
+      "CoalMine": 5
+    },
+    "seat_trajectory_contexts": {
+      "neutral": 31,
+      "Manufacturer": 5,
+      "Brewery": 6,
+      "IronWorks": 5,
+      "CoalMine": 5,
+      "CottonMill": 5,
+      "Pottery": 5
+    },
+    "pottery_warning": false,
+    "interpretation": "Opportunity and chosen-build counts, not a mandate to force an industry. Pottery Flex identity is held out, never Pottery actions."
+  },
+  "elapsed_seconds": 1407.375744195946,
+  "strength": "unmeasured"
+iteration-0003}
