@@ -1,0 +1,659 @@
+{
+  "format": "step5-recovery-league/2.2.0",
+  "signature": {
+    "config": {
+      "format": "step5-training/2.2.0",
+      "players": 4,
+      "model_size": "medium",
+      "host": "artifacts/r1-host/guarded",
+      "games_per_iteration": 320,
+      "threads": 4,
+      "learning_rate": 1e-05,
+      "weight_decay": 0.0001,
+      "exploration": 0.05,
+      "seed": 18510000,
+      "execution": {
+        "processes": 48,
+        "hosts_per_process": 1,
+        "heavy_processes": 24,
+        "batch_size": 64,
+        "max_candidate_cells": 131072,
+        "flush_ms": 1.0,
+        "worker_threads": 1,
+        "max_decisions": 2000,
+        "max_models": 16,
+        "shard_games": 8,
+        "shard_bytes": 268435456,
+        "feature_cache": true,
+        "policy_cache": 32,
+        "search_workers_per_turn": 4,
+        "cpu_budget": 64,
+        "cpu_reserve": 4
+      },
+      "update": {
+        "effective_batch_size": 2048,
+        "microbatch_size": 512,
+        "max_candidate_cells": 131072,
+        "epochs": 2,
+        "clip": 0.2,
+        "target_kl": 0.01,
+        "entropy_weight": 0.005,
+        "value_weight": 0.5,
+        "grad_clip": 5.0,
+        "normalize_advantages": true,
+        "precision": "fp32",
+        "bucket": true,
+        "actor_nonforced": true,
+        "critic_batch_size": 2048,
+        "kl_probe_rows": 2048
+      },
+      "curriculum": [
+        {
+          "until": 2000,
+          "selfplay": 40,
+          "historical": 20,
+          "legacy": 40
+        },
+        {
+          "until": 5000,
+          "selfplay": 55,
+          "historical": 25,
+          "legacy": 20
+        },
+        {
+          "until": 10000,
+          "selfplay": 65,
+          "historical": 25,
+          "legacy": 10
+        },
+        {
+          "until": null,
+          "selfplay": 70,
+          "historical": 25,
+          "legacy": 5
+        }
+      ],
+      "search_ready_games": 640,
+      "search_every_games": 320,
+      "search_games": 4,
+      "distill_steps": 8,
+      "distillation": {
+        "min_samples": 16,
+        "min_games": 2,
+        "min_samples_per_phase": 2,
+        "batch_size": 16,
+        "max_reuse": 2
+      },
+      "distill_weight": 0.25,
+      "search": {
+        "backend": "masked_ismcts",
+        "seconds": 12.0,
+        "simulations": 100000,
+        "max_choices": 512,
+        "exploration": 1.4,
+        "root_top_k": 16,
+        "interior_top_k": 8,
+        "pending_paths": 2,
+        "batch_size": 2,
+        "flush_ms": 0.5,
+        "prior_mix": 0.1,
+        "turn_interval": 4,
+        "max_searches_per_seat": 4,
+        "contract": "masked-ismcts/1.1.0",
+        "evaluator_kind": "neural",
+        "q_transform": "none",
+        "leaf_policy": "new_root_information_frontier",
+        "candidate_policy": "supported_progressive",
+        "fpu_reduction": 0.02,
+        "minimum_plan_visits": 2,
+        "reopen_support": 4,
+        "tail_admission": 0.05,
+        "virtual_loss": 0.02
+      },
+      "rehearsal_manifest": "training/datasets/v4-batch6.json",
+      "rehearsal_weight": 0.1,
+      "rehearsal_until": 10000,
+      "profile_steps": 0,
+      "retention": {
+        "enabled": true,
+        "resume_checkpoints": 2,
+        "replay_rounds": 2,
+        "quarantine_hours": 0,
+        "evaluation_samples": 1,
+        "profile_traces": 2
+      },
+      "population": {
+        "recent": 8,
+        "anchors": 4
+      },
+      "evaluation_schedule": {
+        "enabled": true,
+        "monitor_every_games": 6400,
+        "broader_every_games": 25600,
+        "monitor_setups": 1,
+        "broader_setups": 1,
+        "seed": 910000
+      },
+      "legacy_budget": {
+        "role": "lab",
+        "seconds": 1.0,
+        "search_workers": 4,
+        "global_workers": 60,
+        "work_multiplier": 1
+      },
+      "audit_workers": 8,
+      "overlap_pools": true,
+      "search_wall_fraction": 0.5,
+      "architecture": "brass-four-seat-mlp-resnet/1.0.0",
+      "parameter_limit": 2000000,
+      "initialization": "random",
+      "imitation": {
+        "manifest": null,
+        "epochs": 10,
+        "patience": 2,
+        "min_epochs": 3,
+        "learning_rate": 0.0001
+      },
+      "legacy_opponents": {
+        "search_free_until_games": 10000
+      }
+    },
+    "compatibility": {
+      "learning_contract": "four-seat-learning/1.0.0",
+      "players": 4,
+      "rules": "steam-brass-patch-1.1.0",
+      "wire_sha256": "fabe2ef3e1de73aa9f3ddd05b67c08f9ef564a25ab4ff42963a03ab6fe3b6e3d",
+      "observation": "public-state/0.2.0",
+      "choices": "phase-choice/0.2.0",
+      "objective": "win-share/1.0.0",
+      "placement": "competition-rank/1.0.0",
+      "seat_order": "stable-0-1-2-3",
+      "vp_scale": 100.0,
+      "features_sha256": "991308b11eea442f4b071c46cd6361ad288c9877fbd4eedc4b241819f7769094",
+      "producer_profile_sha256": "ffae2fa230bcc42c3877d7817a584b608b60961c0b719316884d6c694a1384d7",
+      "encoder_sha256": "6937346f9b1092589ebede368aba40ebcdc0c9373ea21a438d6b75a01b64ef9f",
+      "architecture_sha256": "298f254039fb4d9ffda39428fea60aec80c840f6a7c832bf993984f4b59cd129",
+      "loss": "win-ce+0.25-rank-huber+0.1-vp-huber/1.0.0",
+      "reference_lock_sha256": "9cf98163e7ed9cbeef0cd9ce9178c4eeea933063d361f5a5e42d2fdddcdd5158",
+      "heads": [
+        "policy_logits",
+        "win_share_4",
+        "placement_4",
+        "vp_4"
+      ]
+    },
+    "implementation": "f85a8c99fff8b4cff806bcf059e6fd4538d8d2be3b9c748c4d167bdf84897c08",
+    "legacy_pool": {
+      "bank-3dc65253a610191d66a5/balanced-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "balanced-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "rail-tempo-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/cotton-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "cotton-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "goods-beer-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/supplier-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "supplier-v3-masked-economy"
+      }
+    },
+    "teachers": {
+      "bank-3dc65253a610191d66a5/balanced-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy",
+        "policy_id": "masked-v3-forest/c991cc3fc8a98863bc81a40daeadbe4553abfe36182b2d382ac63c1a70be7da1",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/cotton-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/cotton-v3-masked-economy",
+        "policy_id": "masked-v3-forest/adf2f1c6dcd7602179c6bf883f47c21ad12e4c25755fb61ec41ab91d4c19c93b",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy",
+        "policy_id": "masked-v3-forest/ae7f8bda4a82151f6d9811f020225c9e0bf8cfb5d201e88f7a7172ee5ea93ce7",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy",
+        "policy_id": "masked-v3-forest/1f7e87e93f88de04de05cdf29702cf010893c8cc7af671c064e7a74749fe77d5",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/supplier-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/supplier-v3-masked-economy",
+        "policy_id": "masked-v3-forest/f02c4fb5292fdd154e099df1c43b44fac4c4e81816ae68cb2e1d34c03b39762d",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      }
+    },
+    "imitation_source": {
+      "bc_run": "artifacts/step5/v4-batch6",
+      "path": "artifacts/step5/v4-batch6/epoch-0003.pt",
+      "sha256": "547b12dfdb5b4c0f2a26a5d89f619375f4b227812b4ea4db8b3ff9ffa7e5345f",
+      "model_id": "273d58703e7bef5ec1c0e9179bea568628d8458befba616beb6a2fba69d557fe",
+      "manifest": "training/datasets/v4-batch6.json",
+      "manifest_sha256": "308cf3af27c6397e9ca50bb579efac841fcc5e6f62339d295a5748a92d7afb11",
+      "bc_signature": "1bf86b679c93c7723dae07dc01adaf66ecb753fae42b98454637be8164133024"
+    }
+  },
+  "iteration": 2,
+  "games_done": 640,
+  "previous_games": 0,
+  "next_seed": 18510812,
+  "history": [
+    {
+      "path": "artifacts/step5/selfplay-v2/initial.pt",
+      "sha256": "7f7aa6889cc5b7fb7ffedc79964d0c53cca9a4c719da0a0764b68e2945b833c6",
+      "model_id": "273d58703e7bef5ec1c0e9179bea568628d8458befba616beb6a2fba69d557fe",
+      "generation": 0
+    },
+    {
+      "path": "artifacts/step5/selfplay-v2/generation-0001.pt",
+      "sha256": "d0c02c884539be00a2b69e0b140460ffe021e1bd6bcb818541390fabe590aee3",
+      "model_id": "a1e5ef77245d74f505968d198bd611f3cd95a66444c2233785f50f7c44b0f883",
+      "generation": 1
+    },
+    {
+      "path": "artifacts/step5/selfplay-v2/generation-0002.pt",
+      "sha256": "2fa63bc9cb467f5d0acd7bae14317a1153364523a7e48ed4e6a74e89fd910a3c",
+      "model_id": "88a4591e6850701e5df5e40c357b1f1669422539b62ce86eb16b2406ccb3f86a",
+      "generation": 2
+    }
+  ],
+  "origin": {
+    "initialization": "fresh-heuristic-imitation",
+    "seed": 18510000,
+    "parameters": 1840109,
+    "bc_run": "artifacts/step5/v4-batch6",
+    "path": "artifacts/step5/v4-batch6/epoch-0003.pt",
+    "sha256": "547b12dfdb5b4c0f2a26a5d89f619375f4b227812b4ea4db8b3ff9ffa7e5345f",
+    "model_id": "273d58703e7bef5ec1c0e9179bea568628d8458befba616beb6a2fba69d557fe",
+    "manifest": "training/datasets/v4-batch6.json",
+    "manifest_sha256": "308cf3af27c6397e9ca50bb579efac841fcc5e6f62339d295a5748a92d7afb11",
+    "bc_signature": "1bf86b679c93c7723dae07dc01adaf66ecb753fae42b98454637be8164133024"
+  },
+  "next_search_games": 960,
+  "context_counter": 1408,
+  "evaluations": [],
+  "search_seconds": 240.67841625679284,
+  "ordinary_seconds": 799.4693279471248,
+  "imitation": {
+    "enabled": true,
+    "source": {
+      "bc_run": "artifacts/step5/v4-batch6",
+      "path": "artifacts/step5/v4-batch6/epoch-0003.pt",
+      "sha256": "547b12dfdb5b4c0f2a26a5d89f619375f4b227812b4ea4db8b3ff9ffa7e5345f",
+      "model_id": "273d58703e7bef5ec1c0e9179bea568628d8458befba616beb6a2fba69d557fe",
+      "manifest": "training/datasets/v4-batch6.json",
+      "manifest_sha256": "308cf3af27c6397e9ca50bb579efac841fcc5e6f62339d295a5748a92d7afb11",
+      "bc_signature": "1bf86b679c93c7723dae07dc01adaf66ecb753fae42b98454637be8164133024"
+    },
+    "optimizer_reset_before_ppo": true,
+    "note": "Completed standalone fresh imitation; no second BC pass"
+  },
+  "evaluation_anchor": {
+    "path": "artifacts/step5/selfplay-v2/initial.pt",
+    "sha256": "7f7aa6889cc5b7fb7ffedc79964d0c53cca9a4c719da0a0764b68e2945b833c6",
+    "model_id": "273d58703e7bef5ec1c0e9179bea568628d8458befba616beb6a2fba69d557fe",
+    "generation": 0
+  },
+  "population": [
+    {
+      "path": "artifacts/step5/selfplay-v2/population/weights-273d58703e7bef5ec1c0e9179bea568628d8458befba616beb6a2fba69d557fe.pt",
+      "sha256": "6b1abdac48a09b1d2b4020df3f9792d8eb7a4321f38ddb8ad7cdd16d0480df4a",
+      "model_id": "273d58703e7bef5ec1c0e9179bea568628d8458befba616beb6a2fba69d557fe",
+      "generation": 0,
+      "weights_only": true
+    },
+    {
+      "path": "artifacts/step5/selfplay-v2/population/weights-a1e5ef77245d74f505968d198bd611f3cd95a66444c2233785f50f7c44b0f883.pt",
+      "sha256": "1c721a21b4dc3f8a41102312997f5ddf3eca961bc883a431ad449c7220b6d4d2",
+      "model_id": "a1e5ef77245d74f505968d198bd611f3cd95a66444c2233785f50f7c44b0f883",
+      "generation": 1,
+      "weights_only": true
+    },
+    {
+      "path": "artifacts/step5/selfplay-v2/population/weights-88a4591e6850701e5df5e40c357b1f1669422539b62ce86eb16b2406ccb3f86a.pt",
+      "sha256": "8a9566ed32da7dd7bbae4f9d0ce51f6c3b98a3dfb232dcee48e5509170ca6976",
+      "model_id": "88a4591e6850701e5df5e40c357b1f1669422539b62ce86eb16b2406ccb3f86a",
+      "generation": 2,
+      "weights_only": true
+    }
+  ],
+  "resume": [
+    {
+      "path": "artifacts/step5/selfplay-v2/generation-0001.pt",
+      "sha256": "d0c02c884539be00a2b69e0b140460ffe021e1bd6bcb818541390fabe590aee3",
+      "model_id": "a1e5ef77245d74f505968d198bd611f3cd95a66444c2233785f50f7c44b0f883",
+      "generation": 1
+    },
+    {
+      "path": "artifacts/step5/selfplay-v2/generation-0002.pt",
+      "sha256": "2fa63bc9cb467f5d0acd7bae14317a1153364523a7e48ed4e6a74e89fd910a3c",
+      "model_id": "88a4591e6850701e5df5e40c357b1f1669422539b62ce86eb16b2406ccb3f86a",
+      "generation": 2
+    }
+  ],
+  "recent_training": [
+    {
+      "iteration": 0,
+      "games_done": 320,
+      "learning_rate": 1e-05,
+      "actor": {
+        "format": "nonforced-actor-ppo/2.1.0",
+        "epochs": [
+          {
+            "epoch": 0,
+            "actor": -0.010847869329154491,
+            "entropy": 1.9552319049835205,
+            "clip_fraction": 0.045166015625,
+            "value": 1.235949993133545,
+            "win_loss": 1.2173678874969482,
+            "rank_loss": 0.048579372465610504,
+            "vp_loss": 0.06437268108129501,
+            "post_update_kl": 0.01113102876215018,
+            "probe_kl": 0.01095454953610897,
+            "gradient_norm": 6.412646293640137,
+            "actor_positions": 12288,
+            "critic_positions": 12288,
+            "positions": 12288
+          }
+        ],
+        "optimizer_steps": 6,
+        "learner_decisions": 62262,
+        "meaningful_decisions": 27398,
+        "forced_decisions": 34864,
+        "learner_trajectories": 704,
+        "effective_batch_size": 2048,
+        "microbatch_size": 512,
+        "critic_batch_size": 2048,
+        "advantage": {
+          "mean": -0.006827462464570999,
+          "std": 0.3879607319831848,
+          "scope": "nonforced actor decisions"
+        },
+        "kl_probe_rows": 2048,
+        "kl_probe_sampling": "proportional-era-phase/1.0.0",
+        "learning_rates": [
+          1e-05
+        ],
+        "kl_early_stop": true,
+        "gradient_clip_steps": 6,
+        "rehearsal_active": true,
+        "rehearsal_rows": 2816690,
+        "rehearsal_steps": 6,
+        "rehearsal_weight": 0.1,
+        "phases": {
+          "action": 21741,
+          "bonus": 153,
+          "continuation": 3518,
+          "debt": 286,
+          "payment": 1700
+        }
+      },
+      "search": {
+        "updated": false,
+        "reason": "Persistent search schedule not due",
+        "budget": {
+          "wall_fraction": 0.5,
+          "available_seconds": 401.4269119091332,
+          "estimated_collection_seconds": 772.8298463903513,
+          "admitted": false
+        }
+      }
+    },
+    {
+      "iteration": 1,
+      "games_done": 640,
+      "learning_rate": 1e-05,
+      "actor": {
+        "format": "nonforced-actor-ppo/2.1.0",
+        "epochs": [
+          {
+            "epoch": 0,
+            "actor": 0.005474163219332695,
+            "entropy": 1.9499515295028687,
+            "clip_fraction": 0.05810546875,
+            "value": 1.0776361227035522,
+            "win_loss": 1.0606414079666138,
+            "rank_loss": 0.04574829339981079,
+            "vp_loss": 0.05557531863451004,
+            "post_update_kl": 0.010464896822483711,
+            "probe_kl": 0.01035243645310402,
+            "gradient_norm": 4.254854202270508,
+            "actor_positions": 16384,
+            "critic_positions": 16384,
+            "positions": 16384
+          }
+        ],
+        "optimizer_steps": 8,
+        "learner_decisions": 62037,
+        "meaningful_decisions": 27127,
+        "forced_decisions": 34910,
+        "learner_trajectories": 704,
+        "effective_batch_size": 2048,
+        "microbatch_size": 512,
+        "critic_batch_size": 2048,
+        "advantage": {
+          "mean": -0.015051850117743015,
+          "std": 0.35741865634918213,
+          "scope": "nonforced actor decisions"
+        },
+        "kl_probe_rows": 2048,
+        "kl_probe_sampling": "proportional-era-phase/1.0.0",
+        "learning_rates": [
+          1e-05
+        ],
+        "kl_early_stop": true,
+        "gradient_clip_steps": 4,
+        "rehearsal_active": true,
+        "rehearsal_rows": 2816690,
+        "rehearsal_steps": 8,
+        "rehearsal_weight": 0.0968,
+        "phases": {
+          "action": 21748,
+          "bonus": 143,
+          "continuation": 3346,
+          "debt": 259,
+          "payment": 1631
+        }
+      },
+      "search": {
+        "updated": true,
+        "optimizer_steps": 6,
+        "sample_presentations": 74,
+        "max_observed_reuse": 2,
+        "learning_rates": [
+          1e-05
+        ],
+        "teacher_rows": 37,
+        "teacher_setups": 4,
+        "samples_by_phase": {
+          "canal_early": 8,
+          "canal_late": 9,
+          "rail_early": 7,
+          "rail_late": 13
+        },
+        "quality": {
+          "min_samples": 16,
+          "min_games": 2,
+          "min_samples_per_phase": 2,
+          "batch_size": 16,
+          "max_reuse": 2
+        },
+        "requested_steps": 8,
+        "value_loss_training": false,
+        "teaching": {
+          "contract": "four-phase-teacher-turns/1.0.0",
+          "phases": {
+            "canal_early": {
+              "scheduled_turns": 16,
+              "reached_turns": 16,
+              "searched_turns": 16,
+              "actual_searches": 16,
+              "qualified_samples": 8,
+              "successful_turns": 8,
+              "failed_turns": 8,
+              "unreached_turns": 0,
+              "forced_choices": 41,
+              "failures": 8,
+              "timeouts": 4,
+              "fallbacks": 1,
+              "insufficient_coverage": 3,
+              "cancelled": 0,
+              "continuation_choices": 17,
+              "budget_exhausted_choices": 7,
+              "completed_rollouts": 158,
+              "interrupted_rollouts": 101,
+              "elapsed_seconds": 190.32131062238477,
+              "turn_elapsed_seconds": 194.49112384929322,
+              "deadline_overrun_seconds": 0.18110155500471592
+            },
+            "canal_late": {
+              "scheduled_turns": 16,
+              "reached_turns": 16,
+              "searched_turns": 16,
+              "actual_searches": 16,
+              "qualified_samples": 9,
+              "successful_turns": 9,
+              "failed_turns": 7,
+              "unreached_turns": 0,
+              "forced_choices": 49,
+              "failures": 7,
+              "timeouts": 2,
+              "fallbacks": 1,
+              "insufficient_coverage": 4,
+              "cancelled": 0,
+              "continuation_choices": 19,
+              "budget_exhausted_choices": 11,
+              "completed_rollouts": 96,
+              "interrupted_rollouts": 107,
+              "elapsed_seconds": 190.56286192242987,
+              "turn_elapsed_seconds": 194.49104929715395,
+              "deadline_overrun_seconds": 0.026392522966489196
+            },
+            "rail_early": {
+              "scheduled_turns": 16,
+              "reached_turns": 16,
+              "searched_turns": 16,
+              "actual_searches": 16,
+              "qualified_samples": 7,
+              "successful_turns": 7,
+              "failed_turns": 9,
+              "unreached_turns": 0,
+              "forced_choices": 53,
+              "failures": 9,
+              "timeouts": 2,
+              "fallbacks": 2,
+              "insufficient_coverage": 5,
+              "cancelled": 0,
+              "continuation_choices": 19,
+              "budget_exhausted_choices": 9,
+              "completed_rollouts": 168,
+              "interrupted_rollouts": 110,
+              "elapsed_seconds": 190.370080902474,
+              "turn_elapsed_seconds": 195.0816489434801,
+              "deadline_overrun_seconds": 0.04750352702103555
+            },
+            "rail_late": {
+              "scheduled_turns": 16,
+              "reached_turns": 16,
+              "searched_turns": 16,
+              "actual_searches": 16,
+              "qualified_samples": 13,
+              "successful_turns": 13,
+              "failed_turns": 3,
+              "unreached_turns": 0,
+              "forced_choices": 53,
+              "failures": 3,
+              "timeouts": 1,
+              "fallbacks": 1,
+              "insufficient_coverage": 1,
+              "cancelled": 0,
+              "continuation_choices": 31,
+              "budget_exhausted_choices": 26,
+              "completed_rollouts": 288,
+              "interrupted_rollouts": 107,
+              "elapsed_seconds": 190.62615121901035,
+              "turn_elapsed_seconds": 196.1218830787111,
+              "deadline_overrun_seconds": 7.926393300294876e-05
+            }
+          },
+          "note": "Search calls and qualified decision labels are distinct from reserved turns; elapsed search includes retirement, turn elapsed includes host/subchoice work."
+        },
+        "budget": {
+          "wall_fraction": 0.5,
+          "available_seconds": 799.4693279471248,
+          "estimated_collection_seconds": 772.819674840974,
+          "admitted": true
+        }
+      }
+    }
+  ]
+}
