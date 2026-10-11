@@ -1,0 +1,46 @@
+{
+  "format": "joint-il-head-to-head/1.0.0",
+  "candidate": {
+    "bc_run": "artifacts/step5/v4-batch7-joint",
+    "path": "artifacts/step5/v4-batch7-joint/epoch-0006.pt",
+    "sha256": "29e7577bc374321f54d99b663800c4ccf762659ef0c02cf08a2eb8c1817317cf",
+    "model_id": "ea1d9e4da5820a9bfa60647570d498ecf705dacceeb58221c87a77bbcbb26a53",
+    "manifest": "artifacts/il-replay/v4-batch7-joint/manifest.json",
+    "manifest_sha256": "7da7720287d7de4ccaae486c70f8f2f4696ae7b409d3b821580d30a8674e954e",
+    "bc_signature": "08ab674205d8603ebf1827009809a1a3479e00b85a716b521d36e4c64cb101c4"
+  },
+  "reference": {
+    "bc_run": "artifacts/step5/v4-batch6",
+    "path": "artifacts/step5/v4-batch6/epoch-0003.pt",
+    "sha256": "547b12dfdb5b4c0f2a26a5d89f619375f4b227812b4ea4db8b3ff9ffa7e5345f",
+    "model_id": "273d58703e7bef5ec1c0e9179bea568628d8458befba616beb6a2fba69d557fe",
+    "manifest": "training/datasets/v4-batch6.json",
+    "manifest_sha256": "308cf3af27c6397e9ca50bb579efac841fcc5e6f62339d295a5748a92d7afb11",
+    "bc_signature": "1bf86b679c93c7723dae07dc01adaf66ecb753fae42b98454637be8164133024"
+  },
+  "reference_seats": 3,
+  "search": false,
+  "symmetric_win_share": 0.25,
+  "results": {
+    "games": 160,
+    "setups": 40,
+    "win_share": 0.3,
+    "win_share_setup_bootstrap_95": [
+      0.225,
+      0.375
+    ],
+    "mean_rank": 2.39375,
+    "mean_vp": 74.0625,
+    "mean_margin": 1.1333333333333335,
+    "mean_margin_to_best": -15.86875,
+    "seat_counts": {
+      "0": 40,
+      "1": 40,
+      "2": 40,
+      "3": 40
+    }
+  },
+  "lower_95_above_symmetric": false,
+  "gameplay_promoted": false,
+  "report": "/data/not_backed_up/yxu209/ai-training/artifacts/il-replay/v4-batch7-joint/evaluations/joint-vs-batch6/report.json"
+}
