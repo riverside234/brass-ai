@@ -1,0 +1,65 @@
+{
+  "format": "joint-il-rehearsal/1.0.0",
+  "evaluations": [
+    {
+      "run": "artifacts/step5/v4-batch7",
+      "report": "artifacts/il-replay/v4-batch7-joint/evaluations/00-v4-batch7/report.json",
+      "results": {
+        "mixed-v3": {
+          "games": 160,
+          "win_share": 0.05,
+          "win_share_setup_bootstrap_95": [
+            0.01875,
+            0.08125
+          ],
+          "mean_rank": 3.50625,
+          "mean_vp": 77.59375
+        }
+      }
+    },
+    {
+      "run": "artifacts/step5/v4-batch6",
+      "report": "artifacts/il-replay/v4-batch7-joint/evaluations/01-v4-batch6/report.json",
+      "results": {
+        "mixed-v3": {
+          "games": 160,
+          "win_share": 0.075,
+          "win_share_setup_bootstrap_95": [
+            0.0375,
+            0.11875
+          ],
+          "mean_rank": 3.4625,
+          "mean_vp": 81.6
+        }
+      }
+    },
+    {
+      "run": "artifacts/step5/v4-batch7-joint",
+      "report": "artifacts/il-replay/v4-batch7-joint/evaluations/02-v4-batch7-joint/report.json",
+      "results": {
+        "recent-neural": {
+          "games": 160,
+          "win_share": 0.325,
+          "win_share_setup_bootstrap_95": [
+            0.2625,
+            0.3875
+          ],
+          "mean_rank": 2.34375,
+          "mean_vp": 75.325
+        },
+        "mixed-v3": {
+          "games": 160,
+          "win_share": 0.05,
+          "win_share_setup_bootstrap_95": [
+            0.01875,
+            0.0875
+          ],
+          "mean_rank": 3.56875,
+          "mean_vp": 78.95625
+        }
+      }
+    }
+  ],
+  "gameplay_promoted": false,
+  "note": "Win share/placement first, VP diagnostic. No automatic replacement or RL launch."
+}
