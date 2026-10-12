@@ -1,0 +1,404 @@
+{
+  "format": "step5-evaluation-report/1.0.0",
+  "spec": {
+    "format": "step5-evaluation/2.0.0",
+    "purpose": "evaluation",
+    "entries": [
+      {
+        "path": "artifacts/step5/v4-selfplay-joint/generation-0060.pt",
+        "sha256": "fa1f90736ed0eb3dd92ca0c7bef3ebd9ced396f93a0a693a5f6b0034a9d1f963",
+        "model_id": "1ddc910fcb304ad9f17f6b10773d8587812735fc74123517be52bec393ed3973"
+      },
+      {
+        "path": "artifacts/step5/v4-selfplay-joint/initial.pt",
+        "sha256": "20a28d3da60eb454c793ca78c762b46658bdc4f385ad5ecb0ae10fbd4f4a3f21",
+        "model_id": "ea1d9e4da5820a9bfa60647570d498ecf705dacceeb58221c87a77bbcbb26a53"
+      }
+    ],
+    "config": {
+      "format": "step5-evaluation-config/1.3.0",
+      "players": 4,
+      "host": "artifacts/r1-host/guarded",
+      "setups": 1,
+      "seed": 913000,
+      "partition": "validation",
+      "workers": 48,
+      "batch_size": 64,
+      "max_candidate_cells": 131072,
+      "threads": 4,
+      "parallel_hosts": true,
+      "legacy_workers": 24,
+      "search_workers": 24,
+      "include_legacy": false,
+      "use_search": false,
+      "focus": "neutral",
+      "search": {
+        "backend": "masked_ismcts",
+        "seconds": 12.0,
+        "simulations": 100000,
+        "max_choices": 512,
+        "exploration": 1.4,
+        "root_top_k": 16,
+        "interior_top_k": 8,
+        "pending_paths": 2,
+        "batch_size": 2,
+        "flush_ms": 0.5,
+        "prior_mix": 0.1,
+        "turn_interval": 4,
+        "max_searches_per_seat": 4,
+        "contract": "masked-ismcts/1.2.0",
+        "evaluator_kind": "neural",
+        "q_transform": "none",
+        "leaf_policy": "new_root_information_frontier",
+        "candidate_policy": "supported_progressive",
+        "fpu_reduction": 0.02,
+        "minimum_plan_visits": 2,
+        "reopen_support": 4,
+        "tail_admission": 0.05,
+        "virtual_loss": 0.02,
+        "reward": {
+          "version": "brass-combined-return/1.0.0",
+          "win": 1.0,
+          "placement": 0.1,
+          "vp": 0.001,
+          "insolvency": {
+            "event_cost": 0.005,
+            "max_cost": 0.025
+          }
+        },
+        "utility_scale": 1.2
+      },
+      "panel": "development",
+      "execution": {
+        "processes": 48,
+        "hosts_per_process": 1,
+        "heavy_processes": 24,
+        "batch_size": 64,
+        "max_candidate_cells": 131072,
+        "flush_ms": 1.0,
+        "worker_threads": 1,
+        "max_decisions": 2000,
+        "max_models": 72,
+        "shard_games": 8,
+        "shard_bytes": 268435456,
+        "feature_cache": true,
+        "policy_cache": 32,
+        "search_workers_per_turn": 4,
+        "cpu_budget": 64,
+        "cpu_reserve": 4
+      },
+      "lineups": [
+        "recent-neural"
+      ],
+      "retention": {
+        "enabled": true,
+        "resume_checkpoints": 2,
+        "replay_rounds": 2,
+        "quarantine_hours": 0,
+        "evaluation_samples": 1,
+        "profile_traces": 2,
+        "history_reports": 128
+      },
+      "legacy_budget": {
+        "role": "lab",
+        "seconds": 1.0,
+        "search_workers": 4,
+        "global_workers": 60,
+        "work_multiplier": 1
+      }
+    },
+    "seeds": [
+      913010
+    ],
+    "lineups": [
+      "recent-neural"
+    ],
+    "implementation": "826b6beb04241a73a5d1ec0d712176ff9df4370a26cf01bb05ee92f7a05b4f16",
+    "legacy_pool": {
+      "format": "legacy-opponent-pool/1.0.0",
+      "backend": "masked_ismcts",
+      "generation": "v4",
+      "training": {
+        "bank-3dc65253a610191d66a5/balanced-v3-masked-economy": {
+          "admission": "user-directed-masked-v4/1.0.0",
+          "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+          "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+          "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+          "profile": "balanced-v3-masked-economy"
+        },
+        "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy": {
+          "admission": "user-directed-masked-v4/1.0.0",
+          "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+          "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+          "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+          "profile": "rail-tempo-v3-masked-economy"
+        },
+        "bank-3dc65253a610191d66a5/cotton-v3-masked-economy": {
+          "admission": "user-directed-masked-v4/1.0.0",
+          "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+          "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+          "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+          "profile": "cotton-v3-masked-economy"
+        },
+        "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy": {
+          "admission": "user-directed-masked-v4/1.0.0",
+          "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+          "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+          "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+          "profile": "goods-beer-v3-masked-economy"
+        },
+        "bank-3dc65253a610191d66a5/supplier-v3-masked-economy": {
+          "admission": "user-directed-masked-v4/1.0.0",
+          "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+          "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+          "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+          "profile": "supplier-v3-masked-economy"
+        }
+      },
+      "evaluation": {
+        "bank-3dc65253a610191d66a5/pottery-flex-v3-masked-economy": {
+          "admission": "user-directed-masked-v4/1.0.0",
+          "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+          "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+          "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+          "profile": "pottery-flex-v3-masked-economy"
+        }
+      }
+    },
+    "teachers": {},
+    "held": {}
+  },
+  "results": {
+    "recent-neural": {
+      "games": 4,
+      "setups": 1,
+      "win_share": 0.5,
+      "win_share_setup_bootstrap_95": null,
+      "mean_rank": 2.5,
+      "mean_vp": 62.5,
+      "mean_margin": 11.333333333333334,
+      "mean_margin_to_best": -18.75,
+      "seat_counts": {
+        "0": 1,
+        "1": 1,
+        "2": 1,
+        "3": 1
+      },
+      "outcomes": [
+        {
+          "seed": 913010,
+          "seat": 0,
+          "win": 0.0,
+          "rank": 4,
+          "vp": 0,
+          "margin": -32,
+          "margin_to_best": -61
+        },
+        {
+          "seed": 913010,
+          "seat": 1,
+          "win": 1.0,
+          "rank": 1,
+          "vp": 89,
+          "margin": 53.333333333333336,
+          "margin_to_best": 3
+        },
+        {
+          "seed": 913010,
+          "seat": 2,
+          "win": 1.0,
+          "rank": 1,
+          "vp": 105,
+          "margin": 47,
+          "margin_to_best": 17
+        },
+        {
+          "seed": 913010,
+          "seat": 3,
+          "win": 0.0,
+          "rank": 4,
+          "vp": 56,
+          "margin": -23,
+          "margin_to_best": -34
+        }
+      ],
+      "diversity": {
+        "builds": {
+          "CottonMill": 2,
+          "Manufacturer": 1,
+          "Pottery": 3,
+          "Brewery": 17,
+          "IronWorks": 8,
+          "CoalMine": 24
+        },
+        "legal_build_opportunities": {
+          "CottonMill": 43,
+          "Manufacturer": 30,
+          "Pottery": 40,
+          "Brewery": 34,
+          "IronWorks": 18,
+          "CoalMine": 87
+        },
+        "builds_matching_assigned_focus": {
+          "CottonMill": 0,
+          "Manufacturer": 0,
+          "Pottery": 0,
+          "Brewery": 0,
+          "IronWorks": 0,
+          "CoalMine": 0
+        },
+        "seat_trajectory_contexts": {
+          "neutral": 4
+        },
+        "pottery_warning": false,
+        "interpretation": "Opportunity and chosen-build counts, not a mandate to force an industry. Pottery Flex identity is held out, never Pottery actions."
+      },
+      "economy": {
+        "actions": {
+          "network": 33,
+          "finish": 124,
+          "build": 55,
+          "iron": 38,
+          "develop": 6,
+          "loan": 16,
+          "coal": 36,
+          "pass": 17,
+          "liquidate": 6,
+          "scout": 1,
+          "beer": 8,
+          "sell": 3
+        },
+        "phases": {
+          "action": 124,
+          "continuation": 131,
+          "payment": 82,
+          "debt": 6
+        },
+        "forced_decisions": 198,
+        "builds": {
+          "Brewery": 17,
+          "CoalMine": 24,
+          "Manufacturer": 1,
+          "IronWorks": 8,
+          "Pottery": 3,
+          "CottonMill": 2
+        },
+        "observed_flips": {
+          "IronWorks": 8,
+          "CoalMine": 17,
+          "Brewery": 6,
+          "Pottery": 2,
+          "CottonMill": 1
+        },
+        "last_seen_unflipped": {
+          "Brewery": 11,
+          "CoalMine": 7,
+          "Manufacturer": 1,
+          "CottonMill": 1,
+          "Pottery": 1
+        },
+        "minimum_observed_cash": 0,
+        "mean_observed_cash": 28.23615160349854,
+        "mean_observed_income": 2.8104956268221573,
+        "debt_decisions": 6,
+        "feasible_sale_decisions": 4,
+        "selected_sales": 3,
+        "merchant_beer_by_bonus": {
+          "Money": 2
+        },
+        "interpretation": "Counts use public predecision views. Last-seen unflipped tiles are diagnostics, not exact end-of-era wasted/scored tiles; scoring may follow the last view."
+      }
+    }
+  },
+  "execution": {
+    "recent-neural": {
+      "mode": "spawned-private-hosts-central-inference",
+      "workers": 48,
+      "games": 4,
+      "seconds": 21.151683307951316,
+      "cached_games": 0
+    }
+  },
+  "promotion_eligible": false,
+  "failed_games": 0,
+  "candidate_sha256": "fa1f90736ed0eb3dd92ca0c7bef3ebd9ced396f93a0a693a5f6b0034a9d1f963",
+  "raw_record_sha256": {
+    "games-7251cc15f44196d6-part-0000.jsonl.gz": "6c763a1742f1cdab2ca2a4aff505609fa2665fb481bd075e80bc5250532f5782",
+    "games-50afb8110112aed3-part-0000.jsonl.gz": "7506cfda1801aa9c75e9884981eb491aaf5698738a03498e97c11a15462e610e",
+    "games-ba278cb6443f2e3d-part-0000.jsonl.gz": "03fb196576368029ecc989dbcdc71a1d4660e39edcba1edf7f6c5f43c2150d78",
+    "games-49e3377a7dae3745-part-0000.jsonl.gz": "f7f3b8a7794daeae89df04dd02734fa83a10b8ebd50b2460e1e83b0a174f3126"
+  },
+  "inference": {
+    "batches": 594,
+    "positions": 621,
+    "model_cache_hits": 592,
+    "valid_candidate_cells": 52178,
+    "padded_candidate_cells": 54076,
+    "max_batch_positions": 2,
+    "max_padded_candidate_cells": 786,
+    "expired_requests": 0,
+    "cancelled_requests": 0,
+    "timings": {
+      "inference.batch": {
+        "seconds": 1.2016538887983188,
+        "calls": 573,
+        "mean_seconds": 0.002097127205581708,
+        "p50_seconds": 0.001991457014810294,
+        "p95_seconds": 0.0032532240147702396,
+        "max_seconds": 0.009686762990895659,
+        "first_seconds": 0.009686762990895659,
+        "steady_mean_seconds": 0.002083858611551439,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 573
+      },
+      "inference.forward": {
+        "seconds": 0.9752363816369325,
+        "calls": 594,
+        "mean_seconds": 0.001641812090297866,
+        "p50_seconds": 0.0016092209843918681,
+        "p95_seconds": 0.002328425005543977,
+        "max_seconds": 0.004927941015921533,
+        "first_seconds": 0.0021758800139650702,
+        "steady_mean_seconds": 0.0016409114698532335,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 594
+      },
+      "inference.queue_wait": {
+        "seconds": 1.1246750648133457,
+        "calls": 621,
+        "mean_seconds": 0.0018110709578314744,
+        "p50_seconds": 0.0016718240221962333,
+        "p95_seconds": 0.002551804995164275,
+        "max_seconds": 0.012092493008822203,
+        "first_seconds": 0.002943566010799259,
+        "steady_mean_seconds": 0.001809244352907333,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 621
+      }
+    },
+    "device": "cuda",
+    "central_batching": true,
+    "memory": {
+      "host_resident_bytes": null,
+      "cuda_allocated_bytes": 547467264,
+      "cuda_reserved_bytes": 3437232128,
+      "cuda_peak_allocated_bytes": 1931234816,
+      "cuda_peak_reserved_bytes": 3437232128
+    },
+    "cpu_admission": {
+      "capacity": 60,
+      "active": 0,
+      "peak": 4,
+      "queued": 0
+    },
+    "timing_note": "Host elapsed time; CUDA forward kernel duration is in optional profiler traces",
+    "error": null
+  },
+  "elapsed_seconds": 21.56388493103441,
+  "games": 4,
+  "setups_per_lineup": 1,
+  "lineup_count": 1,
+  "limitation": "Development panels cannot promote. BC references do not satisfy trained-population gates. Cached replay time is not live throughput.",
+  "raw_records_pruned": true,
+  "retention_manifest": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0003/.retention/cleanup-1791777215-c9b4341d.json"
+}
