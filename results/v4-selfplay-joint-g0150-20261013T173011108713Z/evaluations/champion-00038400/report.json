@@ -1,0 +1,601 @@
+{
+  "format": "four-player-champion/1.0.0",
+  "spec_id": "648665c2195aefa98b47e3a64f2b6a7b8dcce1c73580df475c756835d6dccb32",
+  "result": {
+    "accepted": false,
+    "games": 48,
+    "setups": 8,
+    "candidate_win_share": 0.3333333333333333,
+    "setup_bootstrap_95": [
+      0.20833333333333331,
+      0.4375
+    ],
+    "threshold": 0.55,
+    "candidate_vp": 56.947916666666664,
+    "incumbent_vp": 67.40625,
+    "candidate_rank": 2.8125,
+    "incumbent_rank": 2.1770833333333335,
+    "scope": "Two independent seats per model, neutral policy play, no search; repeated training-selection screen, not formal promotion"
+  },
+  "outcomes": [
+    {
+      "seed": 1948404,
+      "candidate_seats": [
+        0,
+        1
+      ],
+      "win": 1.0,
+      "candidate_vp": 57,
+      "incumbent_vp": 35,
+      "candidate_rank": 1.5,
+      "incumbent_rank": 3.5
+    },
+    {
+      "seed": 1948404,
+      "candidate_seats": [
+        0,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 62,
+      "incumbent_vp": 88,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948404,
+      "candidate_seats": [
+        0,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 21.5,
+      "incumbent_vp": 77.5,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948404,
+      "candidate_seats": [
+        1,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 57,
+      "incumbent_vp": 62,
+      "candidate_rank": 3,
+      "incumbent_rank": 2
+    },
+    {
+      "seed": 1948404,
+      "candidate_seats": [
+        1,
+        3
+      ],
+      "win": 1.0,
+      "candidate_vp": 31.5,
+      "incumbent_vp": 40.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948404,
+      "candidate_seats": [
+        2,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 28,
+      "incumbent_vp": 26.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948410,
+      "candidate_seats": [
+        0,
+        1
+      ],
+      "win": 0.0,
+      "candidate_vp": 66,
+      "incumbent_vp": 95,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948410,
+      "candidate_seats": [
+        0,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 65.5,
+      "incumbent_vp": 97,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948410,
+      "candidate_seats": [
+        0,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 80,
+      "incumbent_vp": 88,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948410,
+      "candidate_seats": [
+        1,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 74.5,
+      "incumbent_vp": 92,
+      "candidate_rank": 3,
+      "incumbent_rank": 2
+    },
+    {
+      "seed": 1948410,
+      "candidate_seats": [
+        1,
+        3
+      ],
+      "win": 1.0,
+      "candidate_vp": 22.5,
+      "incumbent_vp": 14,
+      "candidate_rank": 2,
+      "incumbent_rank": 3
+    },
+    {
+      "seed": 1948410,
+      "candidate_seats": [
+        2,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 83,
+      "incumbent_vp": 90,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948414,
+      "candidate_seats": [
+        0,
+        1
+      ],
+      "win": 1.0,
+      "candidate_vp": 92,
+      "incumbent_vp": 100,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948414,
+      "candidate_seats": [
+        0,
+        2
+      ],
+      "win": 1.0,
+      "candidate_vp": 65.5,
+      "incumbent_vp": 53,
+      "candidate_rank": 2,
+      "incumbent_rank": 3
+    },
+    {
+      "seed": 1948414,
+      "candidate_seats": [
+        0,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 41.5,
+      "incumbent_vp": 88.5,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948414,
+      "candidate_seats": [
+        1,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 33,
+      "incumbent_vp": 76.5,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948414,
+      "candidate_seats": [
+        1,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 72.5,
+      "incumbent_vp": 101.5,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948414,
+      "candidate_seats": [
+        2,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 36,
+      "incumbent_vp": 29.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948415,
+      "candidate_seats": [
+        0,
+        1
+      ],
+      "win": 0.0,
+      "candidate_vp": 63,
+      "incumbent_vp": 84,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948415,
+      "candidate_seats": [
+        0,
+        2
+      ],
+      "win": 1.0,
+      "candidate_vp": 36,
+      "incumbent_vp": 35,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948415,
+      "candidate_seats": [
+        0,
+        3
+      ],
+      "win": 1.0,
+      "candidate_vp": 52,
+      "incumbent_vp": 61,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948415,
+      "candidate_seats": [
+        1,
+        2
+      ],
+      "win": 1.0,
+      "candidate_vp": 62.5,
+      "incumbent_vp": 30.5,
+      "candidate_rank": 2,
+      "incumbent_rank": 3
+    },
+    {
+      "seed": 1948415,
+      "candidate_seats": [
+        1,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 76,
+      "incumbent_vp": 88,
+      "candidate_rank": 3,
+      "incumbent_rank": 2
+    },
+    {
+      "seed": 1948415,
+      "candidate_seats": [
+        2,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 69,
+      "incumbent_vp": 100,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948416,
+      "candidate_seats": [
+        0,
+        1
+      ],
+      "win": 0.0,
+      "candidate_vp": 73.5,
+      "incumbent_vp": 98.5,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948416,
+      "candidate_seats": [
+        0,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 64,
+      "incumbent_vp": 111,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948416,
+      "candidate_seats": [
+        0,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 63,
+      "incumbent_vp": 79,
+      "candidate_rank": 3,
+      "incumbent_rank": 2
+    },
+    {
+      "seed": 1948416,
+      "candidate_seats": [
+        1,
+        2
+      ],
+      "win": 1.0,
+      "candidate_vp": 83.5,
+      "incumbent_vp": 85.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948416,
+      "candidate_seats": [
+        1,
+        3
+      ],
+      "win": 1.0,
+      "candidate_vp": 64.5,
+      "incumbent_vp": 2,
+      "candidate_rank": 1.5,
+      "incumbent_rank": 3.5
+    },
+    {
+      "seed": 1948416,
+      "candidate_seats": [
+        2,
+        3
+      ],
+      "win": 1.0,
+      "candidate_vp": 81.5,
+      "incumbent_vp": 72.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948430,
+      "candidate_seats": [
+        0,
+        1
+      ],
+      "win": 1.0,
+      "candidate_vp": 48,
+      "incumbent_vp": 60,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948430,
+      "candidate_seats": [
+        0,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 70,
+      "incumbent_vp": 74.5,
+      "candidate_rank": 3,
+      "incumbent_rank": 2
+    },
+    {
+      "seed": 1948430,
+      "candidate_seats": [
+        0,
+        3
+      ],
+      "win": 1.0,
+      "candidate_vp": 91.5,
+      "incumbent_vp": 52.5,
+      "candidate_rank": 1.5,
+      "incumbent_rank": 3.5
+    },
+    {
+      "seed": 1948430,
+      "candidate_seats": [
+        1,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 39.5,
+      "incumbent_vp": 82.5,
+      "candidate_rank": 3,
+      "incumbent_rank": 2
+    },
+    {
+      "seed": 1948430,
+      "candidate_seats": [
+        1,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 98.5,
+      "incumbent_vp": 95.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948430,
+      "candidate_seats": [
+        2,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 60,
+      "incumbent_vp": 61.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948435,
+      "candidate_seats": [
+        0,
+        1
+      ],
+      "win": 0.0,
+      "candidate_vp": 53.5,
+      "incumbent_vp": 78.5,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948435,
+      "candidate_seats": [
+        0,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 25.5,
+      "incumbent_vp": 70.5,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948435,
+      "candidate_seats": [
+        0,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 0,
+      "incumbent_vp": 37,
+      "candidate_rank": 3,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948435,
+      "candidate_seats": [
+        1,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 81.5,
+      "incumbent_vp": 76,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948435,
+      "candidate_seats": [
+        1,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 15.5,
+      "incumbent_vp": 20,
+      "candidate_rank": 3,
+      "incumbent_rank": 2
+    },
+    {
+      "seed": 1948435,
+      "candidate_seats": [
+        2,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 73,
+      "incumbent_vp": 83,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948447,
+      "candidate_seats": [
+        0,
+        1
+      ],
+      "win": 1.0,
+      "candidate_vp": 38.5,
+      "incumbent_vp": 58.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948447,
+      "candidate_seats": [
+        0,
+        2
+      ],
+      "win": 0.0,
+      "candidate_vp": 26.5,
+      "incumbent_vp": 46,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948447,
+      "candidate_seats": [
+        0,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 17.5,
+      "incumbent_vp": 57,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948447,
+      "candidate_seats": [
+        1,
+        2
+      ],
+      "win": 1.0,
+      "candidate_vp": 77,
+      "incumbent_vp": 64.5,
+      "candidate_rank": 2.5,
+      "incumbent_rank": 2.5
+    },
+    {
+      "seed": 1948447,
+      "candidate_seats": [
+        1,
+        3
+      ],
+      "win": 0.0,
+      "candidate_vp": 48.5,
+      "incumbent_vp": 62,
+      "candidate_rank": 3.5,
+      "incumbent_rank": 1.5
+    },
+    {
+      "seed": 1948447,
+      "candidate_seats": [
+        2,
+        3
+      ],
+      "win": 1.0,
+      "candidate_vp": 91.5,
+      "incumbent_vp": 54.5,
+      "candidate_rank": 2,
+      "incumbent_rank": 3
+    }
+  ],
+  "games_done": 38400,
+  "failed_games": 0,
+  "seconds": 54.72646379400976
+}

@@ -1,0 +1,13 @@
+{
+  "format": "four-player-champion/1.0.0",
+  "checkpoint": {
+    "path": "artifacts/step5/v4-selfplay-joint/population/weights-ea1d9e4da5820a9bfa60647570d498ecf705dacceeb58221c87a77bbcbb26a53.pt",
+    "sha256": "2bd4bccfdb09f049a8a1b0da826f2ea8cb00e00969b869d300ecd7d995f107e6",
+    "model_id": "ea1d9e4da5820a9bfa60647570d498ecf705dacceeb58221c87a77bbcbb26a53",
+    "generation": 0,
+    "weights_only": true
+  },
+  "selected_games": 0,
+  "gate": null,
+  "scope": "Best accepted policy in this run; not a global-strength or game-release qualification"
+}
