@@ -1,0 +1,205 @@
+{
+  "format": "champion-rollout-validation/1.0.0",
+  "implementation": "201a2b00d5e5c1c8485cfa26fd2d3e062375d510a4bbae74257dba99e54b6e9d",
+  "unique_focused_tests": 96,
+  "regression": {
+    "tests": 95,
+    "passed": true,
+    "seconds": 66.223,
+    "modules": [
+      "test_champion_rollout",
+      "test_joint7_restart160",
+      "test_champion",
+      "test_champion_stages",
+      "test_combined_reward",
+      "test_resume_evaluations",
+      "test_time_resume",
+      "test_teacher_phase_revision",
+      "test_audit_retention",
+      "test_source_reviews"
+    ],
+    "log": "artifacts/recovery/champion-restart160/regression.log"
+  },
+  "final_focused": {
+    "tests": 15,
+    "passed": true,
+    "seconds": 11.866,
+    "includes_one_new_manual_cap_test": true,
+    "log": "artifacts/recovery/champion-restart160/final-focused.log"
+  },
+  "native_smoke": {
+    "native_games": 11,
+    "ordinary_games": 4,
+    "rollout_stage_games": 6,
+    "gate_games": 1,
+    "seconds": 208.26599999999962,
+    "iterations": 2,
+    "best_generation": 0,
+    "learner_generation": 2,
+    "reward": {
+      "version": "brass-combined-return/1.0.0",
+      "win": 1.0,
+      "placement": 0.1,
+      "vp": 0.001,
+      "insolvency": {
+        "event_cost": 0.005,
+        "max_cost": 0.075
+      }
+    },
+    "learner_trajectories": [
+      2,
+      2
+    ],
+    "ppo_steps": [
+      2,
+      2
+    ],
+    "gate_outcomes": [
+      {
+        "seed": 1944008,
+        "candidate_seats": [
+          0,
+          1
+        ],
+        "win": 0.0,
+        "candidate_vp": 0.5,
+        "incumbent_vp": 2,
+        "candidate_rank": 3,
+        "incumbent_rank": 1.5
+      }
+    ],
+    "rollout_receipts": [
+      {
+        "stage": "one_champion",
+        "champion_opponents": 1,
+        "transition_index": null,
+        "generations": [
+          2,
+          1,
+          0
+        ],
+        "model_ids": [
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "9afc92f4fd7c04a91d701815080d6ff44699cd32deb7d90d51cd0b395e6947a9",
+          "f20126d3faa50d4886511d708b1799046a0573d9660fac846695a3085103f546"
+        ],
+        "duplicate_older": false,
+        "bootstrap_legacy_slots": 0
+      },
+      {
+        "stage": "one_champion",
+        "champion_opponents": 1,
+        "transition_index": null,
+        "generations": [
+          2,
+          1,
+          0
+        ],
+        "model_ids": [
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "9afc92f4fd7c04a91d701815080d6ff44699cd32deb7d90d51cd0b395e6947a9",
+          "f20126d3faa50d4886511d708b1799046a0573d9660fac846695a3085103f546"
+        ],
+        "duplicate_older": false,
+        "bootstrap_legacy_slots": 0
+      },
+      {
+        "stage": "balanced_transition",
+        "champion_opponents": 2,
+        "transition_index": 0,
+        "generations": [
+          2,
+          2,
+          0
+        ],
+        "model_ids": [
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "f20126d3faa50d4886511d708b1799046a0573d9660fac846695a3085103f546"
+        ],
+        "duplicate_older": false,
+        "bootstrap_legacy_slots": 0
+      },
+      {
+        "stage": "balanced_transition",
+        "champion_opponents": 1,
+        "transition_index": 1,
+        "generations": [
+          2,
+          1,
+          0
+        ],
+        "model_ids": [
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "9afc92f4fd7c04a91d701815080d6ff44699cd32deb7d90d51cd0b395e6947a9",
+          "f20126d3faa50d4886511d708b1799046a0573d9660fac846695a3085103f546"
+        ],
+        "duplicate_older": false,
+        "bootstrap_legacy_slots": 0
+      },
+      {
+        "stage": "two_champions",
+        "champion_opponents": 2,
+        "transition_index": null,
+        "generations": [
+          2,
+          2,
+          0
+        ],
+        "model_ids": [
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "f20126d3faa50d4886511d708b1799046a0573d9660fac846695a3085103f546"
+        ],
+        "duplicate_older": false,
+        "bootstrap_legacy_slots": 0
+      },
+      {
+        "stage": "two_champions",
+        "champion_opponents": 2,
+        "transition_index": null,
+        "generations": [
+          2,
+          2,
+          0
+        ],
+        "model_ids": [
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "32e2450f166ea4d912444667b8db59b480a9ab945cc43499ccbad90465cd297b",
+          "f20126d3faa50d4886511d708b1799046a0573d9660fac846695a3085103f546"
+        ],
+        "duplicate_older": false,
+        "bootstrap_legacy_slots": 0
+      }
+    ],
+    "resume_passed": true,
+    "untested_candidate_not_promoted": true,
+    "incomplete_gate_rejected": true,
+    "scope": "CPU execution smoke only; no strength claim or full 48-game promotion gate"
+  },
+  "native_smoke_source": "7248aa38c69b1827e7116cf9d2703e62ca6a1dffccc5d16f2a1c1aa79c93f247",
+  "smoke_source_note": "Final code additionally corrects only migration-receipt classification; final-source time/reward resume tests passed.",
+  "changed_presets": [
+    "configs/step5/joint7-control.json",
+    "configs/step5/joint7-g150-control.json",
+    "configs/step5/joint7-g150-distill4.json",
+    "configs/step5/joint7-g150-gate72.json",
+    "configs/step5/joint7-lr-half.json",
+    "configs/step5/joint7-review.json",
+    "configs/step5/lab-16x2.json",
+    "configs/step5/lab-24x4.json",
+    "configs/step5/lab-reference.json",
+    "configs/step5/lab-small.json",
+    "configs/step5/lab.json",
+    "configs/step5/recovery-smoke.json",
+    "configs/step5/smoke.json"
+  ],
+  "unrelated_preset_fields_preserved": true,
+  "previous_source_approvals_preserved": 1449,
+  "added_source_approvals": 108,
+  "diff_check_passed": true,
+  "restart_plan": "results/reviews/joint7-g0179/restart160-plan.json",
+  "lab_restore_applied": false,
+  "long_training_started": false,
+  "strength": "Unmeasured; implementation and execution validation only"
+}
