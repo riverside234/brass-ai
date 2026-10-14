@@ -1,0 +1,390 @@
+{
+  "format": "selfplay-report-export/1.0.0",
+  "created_utc": "2026-10-14T20:00:21.076915+00:00",
+  "run": "artifacts/step5/v4-selfplay-joint",
+  "committed_generation": 179,
+  "games_done": 57280,
+  "implementation": "9b7dcf9e1ea59602bca328a2c094a12944995265d248d9856760293cef4d4099",
+  "latest_iterations": [
+    177,
+    178
+  ],
+  "run_lock_present": false,
+  "files": [
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/state.json",
+      "path": "state.json",
+      "bytes": 252545,
+      "sha256": "c119134eac5fe69dab355870e5e1e27d12d03f3d20dddfd4d99ac631b120f73a",
+      "reason": "Committed configuration, lineage and progress"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/retention-history.json",
+      "path": "retention-history.json",
+      "bytes": 3775163,
+      "sha256": "b752d1fb722d012eca92866bd9dc3df41611576bc9c3bd453b4077f390d59ca0",
+      "reason": "Retained iteration trends"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/best.json",
+      "path": "best.json",
+      "bytes": 2049,
+      "sha256": "96e471aca4e44f657908963ecc0848f5dc5547fbfe202226a6731c8f97c38ac0",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/state-before-source-02fdd0a4a19244cf-0060.json",
+      "path": "state-before-source-02fdd0a4a19244cf-0060.json",
+      "bytes": 104454,
+      "sha256": "ecaf0d39e1af40c99170b7078871c985330b5c2d9c13ca92466128546795e1b2",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/state-before-source-42cad8716fcf635b-0178.json",
+      "path": "state-before-source-42cad8716fcf635b-0178.json",
+      "bytes": 236288,
+      "sha256": "a5efd6135f48514e95aef0f0e2e977d07a84c868412d1b8479f1c1e5bfdd5a53",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/state-before-source-bcd676c01c5f82df-0170.json",
+      "path": "state-before-source-bcd676c01c5f82df-0170.json",
+      "bytes": 219354,
+      "sha256": "24fd94b4dd47e5663ca2558c6894ece7abdf5733f763537e679f357bbe9416fb",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/state-before-source-c69ec655374946af-0150.json",
+      "path": "state-before-source-c69ec655374946af-0150.json",
+      "bytes": 174272,
+      "sha256": "77906ba0f448347dfa5fb00f69a5edf995fef73413e1bda9e93d395c368c292f",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/iteration-0177/report.json",
+      "path": "iteration-0177/report.json",
+      "bytes": 4505561,
+      "sha256": "ab1f2a64ec153dafcbfd341593254c9bf7ca3f8bda1c836349f8a811ffa4d73b",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/iteration-0178/report.json",
+      "path": "iteration-0178/report.json",
+      "bytes": 4502021,
+      "sha256": "4295f3544987fdd5a0e075d8e80696e19e60895dcba0d607f1c81f28a7fa31a6",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/broader-0001/report.json",
+      "path": "evaluations/broader-0001/report.json",
+      "bytes": 61500,
+      "sha256": "f017612a3596634e0ad6fb4363064d995610fbb81d21d8918fff10e874f9e6cd",
+      "reason": "Evaluation report or specification",
+      "recorded_sha256": "f017612a3596634e0ad6fb4363064d995610fbb81d21d8918fff10e874f9e6cd",
+      "matches_recorded_sha256": true
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/broader-0001/spec.json",
+      "path": "evaluations/broader-0001/spec.json",
+      "bytes": 10380,
+      "sha256": "cd2093b5f7648e2414d9804a90eb09d9a6d5589e007f13fe0e54c59aa5abdf72",
+      "reason": "Evaluation report or specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/broader-0002/report.json",
+      "path": "evaluations/broader-0002/report.json",
+      "bytes": 61163,
+      "sha256": "a58c10726b6ad05284bc75b7093a5fd78ce0d54c081c43c87024bf4b34acec29",
+      "reason": "Evaluation report or specification",
+      "recorded_sha256": "a58c10726b6ad05284bc75b7093a5fd78ce0d54c081c43c87024bf4b34acec29",
+      "matches_recorded_sha256": true
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/broader-0002/spec.json",
+      "path": "evaluations/broader-0002/spec.json",
+      "bytes": 10172,
+      "sha256": "35223598bcf3ff738b936955af669646dcf1ef01c90b52fa3f6b177fb762b267",
+      "reason": "Evaluation report or specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00044800/report.json",
+      "path": "evaluations/champion-00044800/report.json",
+      "bytes": 11315,
+      "sha256": "5707b719f14a6acc89127ceef3a8d8cc5f8b8cbc8037df2adaab3221d0bf698f",
+      "reason": "Evaluation report or specification",
+      "recorded_sha256": "5707b719f14a6acc89127ceef3a8d8cc5f8b8cbc8037df2adaab3221d0bf698f",
+      "matches_recorded_sha256": true
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00044800/spec.json",
+      "path": "evaluations/champion-00044800/spec.json",
+      "bytes": 1461,
+      "sha256": "f62d491f02da1d41b7093261de86308f27f9620caccec37d44dc5e17ce112c20",
+      "reason": "Evaluation report or specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00051200/confirmation-report.json",
+      "path": "evaluations/champion-00051200/confirmation-report.json",
+      "bytes": 84996,
+      "sha256": "088545b4c37ea935a3887780ed0b2823ebb3163bed94556a90712ad4ad8f1365",
+      "reason": "Evaluation report or specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00051200/report.json",
+      "path": "evaluations/champion-00051200/report.json",
+      "bytes": 99626,
+      "sha256": "4a7b1352f7b24b26e1383b0ba2b81560fd70f98003bc49dadf891696ff914e56",
+      "reason": "Evaluation report or specification",
+      "recorded_sha256": "4a7b1352f7b24b26e1383b0ba2b81560fd70f98003bc49dadf891696ff914e56",
+      "matches_recorded_sha256": true
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00051200/screen-report.json",
+      "path": "evaluations/champion-00051200/screen-report.json",
+      "bytes": 10851,
+      "sha256": "809e814f48c46ba4857f083a2ac0a993fbcd150fd394d813d2514bebc016dd2d",
+      "reason": "Evaluation report or specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00051200/spec.json",
+      "path": "evaluations/champion-00051200/spec.json",
+      "bytes": 2524,
+      "sha256": "8bd3e01534a091b6cb6ed011728e37197065948204efab27c0ff842b5ec030e1",
+      "reason": "Evaluation report or specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0007/report.json",
+      "path": "evaluations/monitor-0007/report.json",
+      "bytes": 35772,
+      "sha256": "cf39109228a86640b3190188b91abeb30c497b216d0c9fff636de8b66f96a238",
+      "reason": "Evaluation report or specification",
+      "recorded_sha256": "cf39109228a86640b3190188b91abeb30c497b216d0c9fff636de8b66f96a238",
+      "matches_recorded_sha256": true
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0007/spec.json",
+      "path": "evaluations/monitor-0007/spec.json",
+      "bytes": 6562,
+      "sha256": "86f8558d49054744aa4349fb63345752bff5c57f5160056ac7cc2ad4e630e8e0",
+      "reason": "Evaluation report or specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0008/report.json",
+      "path": "evaluations/monitor-0008/report.json",
+      "bytes": 35876,
+      "sha256": "fc4c0920ee4693489aa926f638d3cf2b8bd6cd2336427a93c78d8418ddc31cef",
+      "reason": "Evaluation report or specification",
+      "recorded_sha256": "fc4c0920ee4693489aa926f638d3cf2b8bd6cd2336427a93c78d8418ddc31cef",
+      "matches_recorded_sha256": true
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0008/spec.json",
+      "path": "evaluations/monitor-0008/spec.json",
+      "bytes": 6579,
+      "sha256": "3c3d5e28404d585afd393cbc890ba07ec1e95fb9aa673047c633f1de149ffcf3",
+      "reason": "Evaluation report or specification"
+    },
+    {
+      "source": "artifacts/step5/v4-batch7-joint/state.json",
+      "path": "lineage/artifacts/step5/v4-batch7-joint/state.json",
+      "bytes": 856875,
+      "sha256": "02c50db31102c9bcc52786ddcfe4187fcc2b3aebb5885139d60ce390ad31d770",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch7-joint/report.json",
+      "path": "lineage/artifacts/step5/v4-batch7-joint/report.json",
+      "bytes": 857667,
+      "sha256": "648820980ad4177c7555821d97ed02e750be447927cefb3ba54a16aa51a811c9",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch7/state.json",
+      "path": "lineage/artifacts/step5/v4-batch7/state.json",
+      "bytes": 564667,
+      "sha256": "272a812b8af6ded6215958f8ffe6643c0b6fea03439dffae01d92106ef9c5b59",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch7/report.json",
+      "path": "lineage/artifacts/step5/v4-batch7/report.json",
+      "bytes": 565454,
+      "sha256": "5456eba3b0b55a5224b4cc284fb9c81dda8171728ced513c4c3902510e7d0725",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch6/state.json",
+      "path": "lineage/artifacts/step5/v4-batch6/state.json",
+      "bytes": 707957,
+      "sha256": "f926883f14ad01b768587141838198c1a8cabe9041a8cbe6bb61232621c24652",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch6/report.json",
+      "path": "lineage/artifacts/step5/v4-batch6/report.json",
+      "bytes": 708743,
+      "sha256": "5193ee07b30698e04e718cf7b7bed3a0d32ba82731d60af5bf4d7988ce263393",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch5/state.json",
+      "path": "lineage/artifacts/step5/v4-batch5/state.json",
+      "bytes": 705302,
+      "sha256": "e8e44f06b9d77894dcd4d629ff4d49b2845f6e22ada666bbad2394e91cacb5c0",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch5/report.json",
+      "path": "lineage/artifacts/step5/v4-batch5/report.json",
+      "bytes": 706089,
+      "sha256": "31f31b3cf7bfdc818ea6c12392fa8699ab3c4437126d6e9fa4d040724ccfb508",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch4-final/state.json",
+      "path": "lineage/artifacts/step5/v4-batch4-final/state.json",
+      "bytes": 555749,
+      "sha256": "893d8ee995222cf2aecbe973b621cf79974aa8a52080e8d95940c9bbbbd50afd",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-batch4-final/report.json",
+      "path": "lineage/artifacts/step5/v4-batch4-final/report.json",
+      "bytes": 556542,
+      "sha256": "ff475c42def047fa0816dbe96d913755a3897e1d79e2fcadae378e0660ee1e98",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-bc-round2/state.json",
+      "path": "lineage/artifacts/step5/v4-bc-round2/state.json",
+      "bytes": 416328,
+      "sha256": "5ff42b679d75d1783aafb13b3f6fd148663ea65dfb024ba1f00d31c6f7e41837",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-bc-round2/report.json",
+      "path": "lineage/artifacts/step5/v4-bc-round2/report.json",
+      "bytes": 417118,
+      "sha256": "77ae36b065b7429ae5af59985596bc12c350224c7370088b8ce1441ffcbc21ee",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-bc-check/state.json",
+      "path": "lineage/artifacts/step5/v4-bc-check/state.json",
+      "bytes": 551443,
+      "sha256": "4537bdfc509faa0cfd0634213e66fbe8d604870b2d885c45ce89fcea3bb2a206",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/v4-bc-check/report.json",
+      "path": "lineage/artifacts/step5/v4-bc-check/report.json",
+      "bytes": 552294,
+      "sha256": "abed9d96350fc44f807321fe5b1f90ad737aa630183d1667b3c7afd5d07575bf",
+      "reason": "Imitation lineage report"
+    }
+  ],
+  "missing": [
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00006400/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00006400/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00012800/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00012800/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00019200/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00019200/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00025600/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00025600/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00032000/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00032000/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00038400/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/champion-00038400/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0001/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0001/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0002/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0002/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0003/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0003/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0004/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0004/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0005/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0005/spec.json",
+      "reason": "Evaluation specification"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0006/report.json",
+      "reason": "Evaluation referenced by state"
+    },
+    {
+      "source": "artifacts/step5/v4-selfplay-joint/evaluations/monitor-0006/spec.json",
+      "reason": "Evaluation specification"
+    }
+  ],
+  "warnings": [],
+  "generated": [
+    "recorded-config.json",
+    "export-manifest.json"
+  ],
+  "scope": "Analysis reports only; not a resumable checkpoint backup. Missing/pruned evidence is not reconstructed."
+}
