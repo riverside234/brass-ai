@@ -1,0 +1,75 @@
+{
+  "format": "selfplay-report-export/1.0.0",
+  "created_utc": "2026-10-18T21:58:54.595040+00:00",
+  "run": "artifacts/step5/joint7-v11-2-grouped-lr-critic",
+  "committed_generation": 1,
+  "games_done": 320,
+  "implementation": "de2aac3edd606da9c23fad732c6bc4d8dc6118ad2d801af8b9ae6ffb9326f314",
+  "latest_iterations": [
+    0
+  ],
+  "run_lock_present": false,
+  "files": [
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state.json",
+      "path": "state.json",
+      "bytes": 133676,
+      "sha256": "8fdfdd2e43449170ab9688bc0296dd107ad143c8c90a52dcaf9c31e76c31471e",
+      "reason": "Committed configuration, lineage and progress"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/iteration-0000/report.json",
+      "path": "iteration-0000/report.json",
+      "bytes": 4107653,
+      "sha256": "ca6deeeea1e5a089bba4bd62f3c621bd93804d58c7337b308fc77be9f322b048",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/initial-report.json",
+      "path": "il-kl/initial-report.json",
+      "bytes": 1309,
+      "sha256": "21345ea13afd59b7f3c041518b4bfff2901438b05136eb94fa9ddb596115e428",
+      "reason": "Fixed IL-KL probe manifest or initial measurement"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/manifest.json",
+      "path": "il-kl/manifest.json",
+      "bytes": 6643450,
+      "sha256": "b10eb317cab99617e2df983c21862d83d5adacfaf2f822ea5cb3b71f8b836f2c",
+      "reason": "Fixed IL-KL probe manifest or initial measurement"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-2-batch7-il/upgrade.json",
+      "path": "lineage/artifacts/step5/features4-v11-2-batch7-il/upgrade.json",
+      "bytes": 3629,
+      "sha256": "21d50ddf1a3562fc62679bd4c0028998615d50e55390b75e043baf4934b8d800",
+      "reason": "Completed IL critic upgrade receipt"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-1-batch7-il/state.json",
+      "path": "lineage/artifacts/step5/features4-v11-1-batch7-il/state.json",
+      "bytes": 1428300,
+      "sha256": "8ccb500585baa0dfe80d3767ab19b863683d594868b60ce71967b8d2ba25efbd",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-1-batch7-il/report.json",
+      "path": "lineage/artifacts/step5/features4-v11-1-batch7-il/report.json",
+      "bytes": 1429860,
+      "sha256": "934546ada6832f9854a4e67f4cf1eb91f6a12b402b01a2f537c553e096e06a7a",
+      "reason": "Imitation lineage report"
+    }
+  ],
+  "missing": [
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/retention-history.json",
+      "reason": "Retained iteration trends"
+    }
+  ],
+  "warnings": [],
+  "generated": [
+    "recorded-config.json",
+    "export-manifest.json"
+  ],
+  "scope": "Analysis reports only; not a resumable checkpoint backup. Missing/pruned evidence is not reconstructed."
+}
