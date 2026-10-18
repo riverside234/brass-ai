@@ -1,0 +1,348 @@
+{
+  "format": "bc-training-report/1.0.0",
+  "signature": {
+    "format": "bc-training/2.2.0",
+    "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+    "manifest_path": "artifacts/feature-engineering/mlp-v11-20261016/smoke/data/manifest.json",
+    "initialization": "random",
+    "seed": 812771,
+    "retention": null,
+    "architecture": {
+      "state_dim": 3128,
+      "action_dim": 327,
+      "hidden": 512,
+      "action_hidden": 160,
+      "players": 4,
+      "architecture": "brass-four-seat-mlp-resnet/11.1.0",
+      "residual_blocks": 8,
+      "head_hidden": 192,
+      "outcome_hidden": 128,
+      "parameter_limit": 6500000,
+      "group_layout": "9dcb18c8bfc04ca9b020b43ddcfa20a27785d3baf08d19679c8751747a18d53d",
+      "projection_widths": [
+        32,
+        64,
+        48,
+        320,
+        352,
+        48
+      ],
+      "entity_layout": "a4e1ca6a7588f8839275ff527918a3080f324db6d300215e7328410fb430a4e9",
+      "entity_hidden": 64
+    },
+    "update": {
+      "effective_batch_size": 512,
+      "microbatch_size": 16,
+      "max_candidate_cells": 8192,
+      "epochs": 1,
+      "clip": 0.2,
+      "target_kl": 0.01,
+      "entropy_weight": 0.005,
+      "value_weight": 0.5,
+      "grad_clip": 1.0,
+      "normalize_advantages": true,
+      "precision": "fp32",
+      "bucket": true,
+      "actor_nonforced": true,
+      "critic_batch_size": 64,
+      "kl_probe_rows": 32
+    },
+    "lr": 6e-05,
+    "epochs": 1,
+    "learning_rate_warmup": {
+      "steps": 500,
+      "start_factor": 0.1
+    },
+    "patience": 1,
+    "min_epochs": 1,
+    "implementation": "647d019877a38a6023926803956bf794186d23a81fd6b6a35124684ca86046e4"
+  },
+  "epochs": 1,
+  "history": [
+    {
+      "epoch": 1,
+      "train": {
+        "policy_loss": 5.758559703826904,
+        "natural_policy_loss": 5.758559703826904,
+        "value_loss": 1.453223466873169,
+        "loss": 6.485171437263489,
+        "value_loss_training": true,
+        "win_loss": 1.382580280303955,
+        "rank_loss": 0.07080470770597458,
+        "vp_loss": 0.5294221639633179,
+        "meaningful_top1": 0.0,
+        "meaningful_decisions": 4,
+        "decisions": 8,
+        "optimizer_steps": 1,
+        "gradient_clip_steps": 1,
+        "learning_rate_schedule": {
+          "contract": "linear-update-warmup/1.0.0",
+          "kind": "imitation",
+          "base_lr": 6e-05,
+          "steps": 500,
+          "start_factor": 0.1,
+          "completed_steps": 1,
+          "effective_lr": 6e-06,
+          "next_lr": 6.108216432865733e-06
+        },
+        "root_action_top1": 0.0,
+        "root_family_top1": 0.0,
+        "by_teacher_era_phase_action": {
+          "bank-af17b1aadbe7f9b21fa7/goods-beer-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.874200820922852,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/balanced-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.529369354248047,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/cotton-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.8044562339782715,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/rail-tempo-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.826212406158447,
+            "top1": 0.0,
+            "family_top1": 0.0
+          }
+        },
+        "timings": {
+          "supervised.diagnostics": {
+            "seconds": 0.00011900000390596688,
+            "calls": 1,
+            "mean_seconds": 0.00011900000390596688,
+            "p50_seconds": 0.00011900000390596688,
+            "p95_seconds": 0.00011900000390596688,
+            "max_seconds": 0.00011900000390596688,
+            "first_seconds": 0.00011900000390596688,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          },
+          "supervised.forward_backward": {
+            "seconds": 0.09035169999697246,
+            "calls": 1,
+            "mean_seconds": 0.09035169999697246,
+            "p50_seconds": 0.09035169999697246,
+            "p95_seconds": 0.09035169999697246,
+            "max_seconds": 0.09035169999697246,
+            "first_seconds": 0.09035169999697246,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          },
+          "supervised.prepare": {
+            "seconds": 0.0002542000147514045,
+            "calls": 1,
+            "mean_seconds": 0.0002542000147514045,
+            "p50_seconds": 0.0002542000147514045,
+            "p95_seconds": 0.0002542000147514045,
+            "max_seconds": 0.0002542000147514045,
+            "first_seconds": 0.0002542000147514045,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          }
+        },
+        "memory": {
+          "host_resident_bytes": null
+        }
+      },
+      "validation": {
+        "policy_loss": 5.8791399002075195,
+        "natural_policy_loss": 5.8791399002075195,
+        "value_loss": 1.438873291015625,
+        "loss": 6.598576545715332,
+        "value_loss_training": true,
+        "win_loss": 1.3900384902954102,
+        "rank_loss": 0.07041916996240616,
+        "vp_loss": 0.3122994303703308,
+        "meaningful_top1": 0.0,
+        "meaningful_decisions": 4,
+        "decisions": 8,
+        "optimizer_steps": 0,
+        "gradient_clip_steps": 0,
+        "learning_rate_schedule": null,
+        "root_action_top1": 0.0,
+        "root_family_top1": 0.0,
+        "by_teacher_era_phase_action": {
+          "bank-af17b1aadbe7f9b21fa7/cotton-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.88922119140625,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/balanced-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.97608757019043,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/goods-beer-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.713665962219238,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/rail-tempo-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.937585353851318,
+            "top1": 0.0,
+            "family_top1": 0.0
+          }
+        },
+        "timings": {
+          "supervised.diagnostics": {
+            "seconds": 0.0012814999790862203,
+            "calls": 1,
+            "mean_seconds": 0.0012814999790862203,
+            "p50_seconds": 0.0012814999790862203,
+            "p95_seconds": 0.0012814999790862203,
+            "max_seconds": 0.0012814999790862203,
+            "first_seconds": 0.0012814999790862203,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          },
+          "supervised.forward_backward": {
+            "seconds": 0.033520600001793355,
+            "calls": 1,
+            "mean_seconds": 0.033520600001793355,
+            "p50_seconds": 0.033520600001793355,
+            "p95_seconds": 0.033520600001793355,
+            "max_seconds": 0.033520600001793355,
+            "first_seconds": 0.033520600001793355,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          },
+          "supervised.prepare": {
+            "seconds": 8.05000017862767e-05,
+            "calls": 1,
+            "mean_seconds": 8.05000017862767e-05,
+            "p50_seconds": 8.05000017862767e-05,
+            "p95_seconds": 8.05000017862767e-05,
+            "max_seconds": 8.05000017862767e-05,
+            "first_seconds": 8.05000017862767e-05,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          }
+        },
+        "memory": {
+          "host_resident_bytes": null
+        }
+      },
+      "balanced_validation": {
+        "policy_loss": 5.8791399002075195,
+        "natural_policy_loss": 5.8791399002075195,
+        "value_loss": 1.438873291015625,
+        "loss": 6.598576545715332,
+        "value_loss_training": true,
+        "win_loss": 1.3900384902954102,
+        "rank_loss": 0.07041916996240616,
+        "vp_loss": 0.3122994303703308,
+        "meaningful_top1": 0.0,
+        "meaningful_decisions": 4,
+        "decisions": 8,
+        "optimizer_steps": 0,
+        "gradient_clip_steps": 0,
+        "learning_rate_schedule": null,
+        "root_action_top1": 0.0,
+        "root_family_top1": 0.0,
+        "by_teacher_era_phase_action": {
+          "bank-af17b1aadbe7f9b21fa7/cotton-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.88922119140625,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/balanced-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.97608757019043,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/goods-beer-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.713665962219238,
+            "top1": 0.0,
+            "family_top1": 0.0
+          },
+          "bank-af17b1aadbe7f9b21fa7/rail-tempo-v3|CanalEra|action|loan": {
+            "decisions": 1,
+            "natural_policy_loss": 5.937585353851318,
+            "top1": 0.0,
+            "family_top1": 0.0
+          }
+        },
+        "timings": {
+          "supervised.diagnostics": {
+            "seconds": 0.0012814999790862203,
+            "calls": 1,
+            "mean_seconds": 0.0012814999790862203,
+            "p50_seconds": 0.0012814999790862203,
+            "p95_seconds": 0.0012814999790862203,
+            "max_seconds": 0.0012814999790862203,
+            "first_seconds": 0.0012814999790862203,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          },
+          "supervised.forward_backward": {
+            "seconds": 0.033520600001793355,
+            "calls": 1,
+            "mean_seconds": 0.033520600001793355,
+            "p50_seconds": 0.033520600001793355,
+            "p95_seconds": 0.033520600001793355,
+            "max_seconds": 0.033520600001793355,
+            "first_seconds": 0.033520600001793355,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          },
+          "supervised.prepare": {
+            "seconds": 8.05000017862767e-05,
+            "calls": 1,
+            "mean_seconds": 8.05000017862767e-05,
+            "p50_seconds": 8.05000017862767e-05,
+            "p95_seconds": 8.05000017862767e-05,
+            "max_seconds": 8.05000017862767e-05,
+            "first_seconds": 8.05000017862767e-05,
+            "steady_mean_seconds": 0.0,
+            "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+            "percentile_sample_count": 1
+          }
+        },
+        "memory": {
+          "host_resident_bytes": null
+        }
+      }
+    }
+  ],
+  "candidate": "artifacts/feature-engineering/v11-1-20261016/smoke/imitation/best.pt",
+  "candidate_sha256": "120c0646cfa0164539ac76a4356dad04cdb197469fbbf314034aef5d986da23f",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pid": 12728,
+    "cpu_count": 14,
+    "cpu_affinity": null,
+    "torch": "2.8.0+cpu",
+    "cuda": null,
+    "device": "cpu",
+    "gpu": null,
+    "tensor_threads": 2,
+    "omp_threads": null,
+    "mkl_threads": null
+  },
+  "preparation": {},
+  "promoted": false,
+  "note": "Select with fresh gameplay evaluation; imitation loss alone is not strength"
+}

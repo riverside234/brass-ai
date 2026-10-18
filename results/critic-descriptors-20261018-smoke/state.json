@@ -1,0 +1,3367 @@
+{
+  "format": "step5-recovery-league/2.2.0",
+  "signature": {
+    "config": {
+      "format": "step5-training/2.2.0",
+      "players": 4,
+      "model_size": "medium",
+      "host": "artifacts/r1-host/guarded",
+      "games_per_iteration": 1,
+      "threads": 2,
+      "learning_rate": 6e-06,
+      "weight_decay": 0.0001,
+      "exploration": 0.08,
+      "seed": 18570000,
+      "execution": {
+        "processes": 1,
+        "hosts_per_process": 2,
+        "heavy_processes": 1,
+        "batch_size": 64,
+        "max_candidate_cells": 131072,
+        "flush_ms": 1.0,
+        "worker_threads": 1,
+        "max_decisions": 2000,
+        "max_models": 72,
+        "shard_games": 8,
+        "shard_bytes": 268435456,
+        "feature_cache": true,
+        "policy_cache": 32,
+        "search_workers_per_turn": 4,
+        "teacher_search_workers_per_turn": 8,
+        "cpu_budget": 64,
+        "cpu_reserve": 4,
+        "shared_slot_bytes": 2097152,
+        "inference_routing": "demand",
+        "replica_backlog": 32
+      },
+      "update": {
+        "effective_batch_size": 512,
+        "microbatch_size": 16,
+        "max_candidate_cells": 8192,
+        "epochs": 1,
+        "clip": 0.2,
+        "target_kl": 0.01,
+        "entropy_weight": 0.005,
+        "value_weight": 0.5,
+        "grad_clip": 1.0,
+        "normalize_advantages": true,
+        "precision": "fp32",
+        "bucket": true,
+        "actor_nonforced": true,
+        "critic_batch_size": 64,
+        "kl_probe_rows": 2048
+      },
+      "curriculum": [
+        {
+          "until": null,
+          "selfplay": 50,
+          "historical": 45,
+          "legacy": 5
+        }
+      ],
+      "search_ready_games": 640,
+      "search_every_games": 160,
+      "search_games": 5,
+      "distill_steps": 8,
+      "teacher_value": {
+        "contract": "teacher-outcome-value/1.0.0",
+        "enabled": true,
+        "loss_weight": 0.1,
+        "teacher_fraction": 0.25,
+        "samples_per_game": 24,
+        "max_samples": 128,
+        "max_reuse": 2,
+        "diagnostics": false,
+        "probe_positions": 128
+      },
+      "distillation": {
+        "min_samples": 16,
+        "min_games": 2,
+        "min_samples_per_phase": 2,
+        "batch_size": 16,
+        "max_reuse": 2
+      },
+      "distill_weight": 0.25,
+      "search": {
+        "backend": "masked_ismcts",
+        "seconds": 12.0,
+        "simulations": 100000,
+        "max_choices": 512,
+        "exploration": 1.4,
+        "root_top_k": 16,
+        "interior_top_k": 8,
+        "pending_paths": 2,
+        "batch_size": 2,
+        "flush_ms": 0.5,
+        "prior_mix": 0.1,
+        "turn_interval": 4,
+        "max_searches_per_seat": 4,
+        "contract": "masked-ismcts/1.2.0",
+        "evaluator_kind": "neural",
+        "q_transform": "none",
+        "leaf_policy": "new_root_information_frontier",
+        "candidate_policy": "supported_progressive",
+        "fpu_reduction": 0.02,
+        "minimum_plan_visits": 2,
+        "reopen_support": 4,
+        "tail_admission": 0.05,
+        "virtual_loss": 0.02,
+        "reward": {
+          "version": "brass-combined-return/1.0.0",
+          "win": 1.0,
+          "placement": 0.1,
+          "vp": 0.001,
+          "insolvency": {
+            "event_cost": 0.005,
+            "max_cost": 0.075
+          }
+        },
+        "utility_scale": 1.2
+      },
+      "rehearsal_manifest": "artifacts/feature-engineering/mlp-v11-20261016/smoke/data/manifest.json",
+      "rehearsal_weight": 0.1,
+      "rehearsal_until": 10000,
+      "profile_steps": 0,
+      "retention": {
+        "enabled": false,
+        "resume_checkpoints": 2,
+        "replay_rounds": 2,
+        "quarantine_hours": 0,
+        "evaluation_samples": 1,
+        "profile_traces": 2,
+        "history_reports": 128
+      },
+      "population": {
+        "recent": 2,
+        "anchors": 22
+      },
+      "evaluation_schedule": {
+        "enabled": false,
+        "monitor_every_games": 6400,
+        "broader_every_games": 25600,
+        "monitor_setups": 16,
+        "broader_setups": 16,
+        "seed": 910000
+      },
+      "legacy_budget": {
+        "role": "lab",
+        "seconds": 1.0,
+        "search_workers": 4,
+        "global_workers": 60,
+        "work_multiplier": 1
+      },
+      "audit_workers": 1,
+      "overlap_pools": true,
+      "search_wall_fraction": null,
+      "architecture": "brass-four-seat-mlp-resnet/11.2.0",
+      "parameter_limit": 6500000,
+      "initialization": "random",
+      "imitation": {
+        "manifest": null,
+        "epochs": 10,
+        "patience": 2,
+        "min_epochs": 3,
+        "learning_rate": 6e-05
+      },
+      "legacy_opponents": {
+        "search_free_until_games": 0
+      },
+      "search_collections_per_iteration": 2,
+      "insolvency": {
+        "event_cost": 0.005,
+        "max_cost": 0.075
+      },
+      "reward": {
+        "win": 1.0,
+        "placement": 0.1,
+        "vp": 0.001
+      },
+      "champion": {
+        "enabled": false,
+        "every_games": 6400,
+        "setups": 8,
+        "min_win_share": 0.55,
+        "seed": 1910000,
+        "protocol": "two-stage-champion/1.0.0",
+        "confirmation_setups": 64,
+        "screen_min_win_share": 0.56,
+        "min_ci_lower": 0.49
+      },
+      "teacher_work_budget": {
+        "contract": "teacher-turn-time/1.1.0",
+        "mode": "time",
+        "seconds_per_phase": {
+          "canal_early": 9.0,
+          "canal_late": 12.0,
+          "rail_early": 12.0,
+          "rail_late": 12.0
+        }
+      },
+      "legacy_opponent_work_budget": {
+        "contract": "legacy-opponent-turn-time/1.0.0",
+        "mode": "time",
+        "seconds_per_turn": 1.0
+      },
+      "selfplay_recipe": "latest-model-selfplay/3.0.0",
+      "imitation_checkpoint": {
+        "bc_run": "artifacts/critic-descriptors-20261018/il-upgrade-final",
+        "path": "artifacts/critic-descriptors-20261018/il-upgrade-final/candidate.pt",
+        "sha256": "25f3437fc59d32ba1bc0a21eab72e4e70659ec2bb311c52ca8b9690bef1fa241",
+        "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+        "manifest": "artifacts/feature-engineering/mlp-v11-20261016/smoke/data/manifest.json",
+        "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+        "bc_signature": "7e46e270f008f12e8c80853cc3d9c25f73a7ff3c5dfb3bdc64c247a3b7926a4e"
+      },
+      "learning_rate_warmup": {
+        "contract": "linear-update-warmup/1.0.0",
+        "imitation_steps": 500,
+        "selfplay_steps": 100,
+        "start_factor": 0.1
+      },
+      "teacher_enabled": false,
+      "ppo_lr_controller": {
+        "contract": "ppo-categorical-kl-lr/1.2.0",
+        "mode": "apply",
+        "target_kl": 0.01,
+        "raise_factor": 1.25,
+        "cut_divisor": 1.5,
+        "low_ratio": 0.45,
+        "high_ratio": 1.5,
+        "window_iterations": 3,
+        "cooldown_iterations": 3,
+        "min_multiplier": 0.5,
+        "max_multiplier": 3.0,
+        "anchor_kl_budget": 0.15,
+        "anchor_group_kl_budget": 0.3,
+        "anchor_group_min_positions": 64,
+        "vp_max_drop": 0.1,
+        "zero_vp_max_fraction": 0.05
+      },
+      "il_kl_limit": {
+        "contract": "auto-il-kl-limit/1.0.0",
+        "probe_positions": 2048,
+        "probe_seed": 710193,
+        "probability_floor": 1e-06,
+        "initial_limit": 0.15,
+        "minimum_limit": 0.05,
+        "maximum_limit": 1.0,
+        "group_factor": 2.0,
+        "growth_factor": 1.25,
+        "recovery_factor": 0.8,
+        "alarm_factor": 2.0,
+        "update_interval": 10,
+        "baseline_iterations": 10,
+        "rolling_iterations": 5,
+        "group_min_positions": 64,
+        "vp_ratio": 0.85,
+        "sells_ratio": 0.7,
+        "pass_factor": 2.0,
+        "pass_allowance": 0.5,
+        "zero_vp_floor": 0.05,
+        "zero_vp_factor": 2.0,
+        "insolvency_allowance": 0.1
+      },
+      "rehearsal_floor": {
+        "contract": "rehearsal-floor/1.0.0",
+        "initial": 0.03,
+        "hold_iterations": 60,
+        "decrement": 0.01,
+        "interval_iterations": 30
+      },
+      "rehearsal_sampling": {
+        "contract": "rotating-train-window/1.0.0",
+        "rows_per_iteration": 64,
+        "shard_draws": 2,
+        "max_cache_bytes": 67108864,
+        "delete_after_update": true
+      },
+      "table_plan": {
+        "quotas": {
+          "selfplay": 50,
+          "historical": 45,
+          "legacy": 5
+        },
+        "learner_seats": {
+          "selfplay": 4,
+          "historical": 2,
+          "legacy": 2
+        },
+        "pair_rotation": "six-pairs"
+      },
+      "opponent_pool": {
+        "contract": "quality-score-pool/1.0.0",
+        "max_members": 24,
+        "pinned": [
+          "generation-0"
+        ],
+        "pinned_seat_share": 0.2,
+        "eta": 0.01,
+        "uniform_floor": 0.2,
+        "admit_every_iterations": 5,
+        "admit_health_iterations": 5,
+        "admit_min_kl": 0.02,
+        "evict_min_age_iterations": 20,
+        "protect_newest": 2
+      },
+      "rating": {
+        "contract": "plackett-luce-rating/1.0.0",
+        "enabled": true,
+        "every_iterations": 10,
+        "setups": 32,
+        "seat_rotations": 4,
+        "references": [
+          "generation-0",
+          "v4"
+        ],
+        "nearest_opponents": 8,
+        "theta_prior_sd": 2.0,
+        "seat_prior_sd": 0.5,
+        "bootstrap": 200,
+        "elo_scale": 173.7,
+        "seed": 910517,
+        "panel_setups": 8,
+        "v4_profile": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy"
+      },
+      "v4_search_enabled": false,
+      "advantage": {
+        "contract": "gae-advantage/2.0.0",
+        "lambda": 1.0,
+        "shadow_lambdas": [
+          0.98,
+          0.95,
+          0.9
+        ],
+        "chain": "nonforced",
+        "gate": {
+          "contract": "staged-gae-gate/1.0.0",
+          "mode": "auto",
+          "minimum_value_iterations": 10,
+          "heldout_ev_min": 0.5,
+          "ev_streak": 5,
+          "fallback_value_iterations": 30,
+          "healthy_iterations": 20,
+          "rating_slots": 3,
+          "rating_min_slope": 0.0
+        },
+        "table_gate": {
+          "contract": "table-gae-ev-gate/1.0.0",
+          "mode": "auto",
+          "ev_tolerance": 0.05,
+          "consecutive_iterations": 10
+        }
+      },
+      "value_phase": {
+        "contract": "ppg-value-phase/2.0.0",
+        "enabled": true,
+        "buffer_iterations": 2,
+        "max_epochs": 1,
+        "batch_size": 128,
+        "clone_rows": 64,
+        "clone_batch_size": 16,
+        "beta_clone": 1.0,
+        "beta_clone_max": 8.0,
+        "kl_cap": 0.002,
+        "learning_rate": 6e-06,
+        "holdout_fraction": 0.05
+      },
+      "seat_descriptors": {
+        "contract": "seat-descriptors/1.0.0",
+        "roles": [
+          "learner",
+          "snapshot",
+          "il",
+          "rule_bot",
+          "unknown"
+        ],
+        "lag_scale": 256,
+        "fingerprint": {
+          "phase": "action",
+          "families": [
+            "build",
+            "network",
+            "develop",
+            "sell",
+            "loan",
+            "scout",
+            "pass",
+            "other"
+          ],
+          "build_industries": true
+        },
+        "embedding": 32,
+        "dropout_games": 0.25
+      },
+      "critic_data": {
+        "contract": "critic-rows/1.0.0",
+        "learner_rows": true,
+        "snapshot_rows": true,
+        "snapshot_weight": 1.0,
+        "excluded_roles": [
+          "il",
+          "rule_bot"
+        ],
+        "holdout_fraction": 0.05,
+        "rollout": {
+          "mode": "auto",
+          "descriptor_ev_min_gain": 0.0,
+          "snapshot_ev_tolerance": 0.02,
+          "reduced_snapshot_weight": 0.5
+        }
+      }
+    },
+    "compatibility": {
+      "learning_contract": "four-seat-learning/4.0.0",
+      "players": 4,
+      "rules": "steam-brass-patch-1.1.0",
+      "wire_sha256": "fabe2ef3e1de73aa9f3ddd05b67c08f9ef564a25ab4ff42963a03ab6fe3b6e3d",
+      "observation": "public-state/0.2.0",
+      "choices": "phase-choice/0.2.0",
+      "objective": "win-share/1.0.0",
+      "placement": "competition-rank/1.0.0",
+      "seat_order": "stable-0-1-2-3",
+      "vp_scale": 100.0,
+      "features_sha256": "59facdd72a386b6046abbb875daf3e1051b92e580ff55d0ab37250dd0c1dfb6a",
+      "feature_version": "permitted-features/4.0.0",
+      "derived_source_sha256": "47afe02b5e98549081f5ab119a2dca2c90448c74fba8020fc7e04cb6bc16f260",
+      "producer_profile_sha256": "ffae2fa230bcc42c3877d7817a584b608b60961c0b719316884d6c694a1384d7",
+      "encoder_sha256": "7d21b3052bf65c2d272a59859eebc6b3be1117b77e906a677402784b5ab90f06",
+      "architecture_sha256": "05368f9337d8a7a37459508f67d0bfd1c9092c4bc4a1e0d5c01748df1502f0d9",
+      "loss": "win-ce+0.25-rank-huber+0.1-vp-huber/1.0.0",
+      "reference_lock_sha256": "9cf98163e7ed9cbeef0cd9ce9178c4eeea933063d361f5a5e42d2fdddcdd5158",
+      "heads": [
+        "policy_logits",
+        "win_share_4",
+        "placement_4",
+        "vp_4"
+      ]
+    },
+    "implementation": "52d18f8d10f5e729fffa3768b3c93cc5e9deb3570fc870e7ba180e60937efcb4",
+    "legacy_pool": {
+      "bank-3dc65253a610191d66a5/balanced-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "balanced-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "rail-tempo-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/cotton-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "cotton-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "goods-beer-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/supplier-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "supplier-v3-masked-economy"
+      }
+    },
+    "teachers": {
+      "bank-3dc65253a610191d66a5/balanced-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy",
+        "policy_id": "masked-v3-forest/c991cc3fc8a98863bc81a40daeadbe4553abfe36182b2d382ac63c1a70be7da1",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/cotton-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/cotton-v3-masked-economy",
+        "policy_id": "masked-v3-forest/adf2f1c6dcd7602179c6bf883f47c21ad12e4c25755fb61ec41ab91d4c19c93b",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy",
+        "policy_id": "masked-v3-forest/ae7f8bda4a82151f6d9811f020225c9e0bf8cfb5d201e88f7a7172ee5ea93ce7",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy",
+        "policy_id": "masked-v3-forest/1f7e87e93f88de04de05cdf29702cf010893c8cc7af671c064e7a74749fe77d5",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/supplier-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/supplier-v3-masked-economy",
+        "policy_id": "masked-v3-forest/f02c4fb5292fdd154e099df1c43b44fac4c4e81816ae68cb2e1d34c03b39762d",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      }
+    },
+    "imitation_source": {
+      "bc_run": "artifacts/critic-descriptors-20261018/il-upgrade-final",
+      "path": "artifacts/critic-descriptors-20261018/il-upgrade-final/candidate.pt",
+      "sha256": "25f3437fc59d32ba1bc0a21eab72e4e70659ec2bb311c52ca8b9690bef1fa241",
+      "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+      "manifest": "artifacts/feature-engineering/mlp-v11-20261016/smoke/data/manifest.json",
+      "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+      "bc_signature": "7e46e270f008f12e8c80853cc3d9c25f73a7ff3c5dfb3bdc64c247a3b7926a4e"
+    }
+  },
+  "iteration": 2,
+  "games_done": 2,
+  "previous_games": 0,
+  "next_seed": 18570002,
+  "history": [
+    {
+      "path": "artifacts/critic-descriptors-20261018/native-final/run/initial.pt",
+      "sha256": "1cf25b8df5f6958df2a21cd4fcf66fdd11a5d53981eb1cd5a0055a03a896b4e1",
+      "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+      "generation": 0
+    },
+    {
+      "path": "artifacts/critic-descriptors-20261018/native-final/run/generation-0001.pt",
+      "sha256": "9588b739bcbd5dfa34494d2045148074c434ce0136cb10dc2201bd45802284d4",
+      "model_id": "d5d81184648f300cf302bcd4dc2bb0a21cd90f71ee5c905b1ee67db0af6967dc",
+      "generation": 1
+    },
+    {
+      "path": "artifacts/critic-descriptors-20261018/native-final/run/generation-0002.pt",
+      "sha256": "b032573d9394552d9de6c533c2f2d1504e4fe549e2e40b97169cbd3ba7b5f32d",
+      "model_id": "aa728c298033b843e88eda36bda457fd79a780edb00914eda7a0becd1e6df79d",
+      "generation": 2
+    }
+  ],
+  "origin": {
+    "initialization": "fresh-heuristic-imitation",
+    "seed": 18570000,
+    "parameters": 5910916,
+    "bc_run": "artifacts/critic-descriptors-20261018/il-upgrade-final",
+    "path": "artifacts/critic-descriptors-20261018/il-upgrade-final/candidate.pt",
+    "sha256": "25f3437fc59d32ba1bc0a21eab72e4e70659ec2bb311c52ca8b9690bef1fa241",
+    "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+    "manifest": "artifacts/feature-engineering/mlp-v11-20261016/smoke/data/manifest.json",
+    "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+    "bc_signature": "7e46e270f008f12e8c80853cc3d9c25f73a7ff3c5dfb3bdc64c247a3b7926a4e"
+  },
+  "next_search_games": 640,
+  "context_counter": 8,
+  "evaluations": [],
+  "search_seconds": 0.0,
+  "ordinary_seconds": 59.54700000002049,
+  "imitation": {
+    "enabled": true,
+    "source": {
+      "bc_run": "artifacts/critic-descriptors-20261018/il-upgrade-final",
+      "path": "artifacts/critic-descriptors-20261018/il-upgrade-final/candidate.pt",
+      "sha256": "25f3437fc59d32ba1bc0a21eab72e4e70659ec2bb311c52ca8b9690bef1fa241",
+      "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+      "manifest": "artifacts/feature-engineering/mlp-v11-20261016/smoke/data/manifest.json",
+      "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+      "bc_signature": "7e46e270f008f12e8c80853cc3d9c25f73a7ff3c5dfb3bdc64c247a3b7926a4e"
+    },
+    "optimizer_reset_before_ppo": true,
+    "note": "Completed standalone fresh imitation; no second BC pass"
+  },
+  "il_kl_limit": {
+    "contract": "auto-il-kl-limit/1.0.0",
+    "config": {
+      "contract": "auto-il-kl-limit/1.0.0",
+      "probe_positions": 2048,
+      "probe_seed": 710193,
+      "probability_floor": 1e-06,
+      "initial_limit": 0.15,
+      "minimum_limit": 0.05,
+      "maximum_limit": 1.0,
+      "group_factor": 2.0,
+      "growth_factor": 1.25,
+      "recovery_factor": 0.8,
+      "alarm_factor": 2.0,
+      "update_interval": 10,
+      "baseline_iterations": 10,
+      "rolling_iterations": 5,
+      "group_min_positions": 64,
+      "vp_ratio": 0.85,
+      "sells_ratio": 0.7,
+      "pass_factor": 2.0,
+      "pass_allowance": 0.5,
+      "zero_vp_floor": 0.05,
+      "zero_vp_factor": 2.0,
+      "insolvency_allowance": 0.1
+    },
+    "limit": 0.15,
+    "kl_last_healthy": 0.0,
+    "last_healthy_generation": 0,
+    "last_update": 0,
+    "last_generation": 2,
+    "baseline": null,
+    "baseline_rows": [],
+    "rolling": [
+      {
+        "tables": 1,
+        "all_learner_tables": 1,
+        "seat_games": 4,
+        "vp_sum": 7.0,
+        "sells": 1,
+        "passes_with_alternative": 9,
+        "zero_vp_seats": 3,
+        "insolvent_seats": 4,
+        "insolvency_events": 24
+      },
+      {
+        "tables": 1,
+        "all_learner_tables": 1,
+        "seat_games": 4,
+        "vp_sum": 8.0,
+        "sells": 0,
+        "passes_with_alternative": 22,
+        "zero_vp_seats": 1,
+        "insolvent_seats": 4,
+        "insolvency_events": 24
+      }
+    ],
+    "healthy_window": [],
+    "blocked": false,
+    "probe": {
+      "path": "artifacts/critic-descriptors-20261018/native-final/run/il-kl/manifest.json",
+      "sha256": "19ca1626fe72976fc170ef00ef99ce6320e1ba9cc9d604569a6ead1f9493d0fc",
+      "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342"
+    }
+  },
+  "quality_pool": {
+    "contract": "quality-score-pool/1.0.0",
+    "config": {
+      "contract": "quality-score-pool/1.0.0",
+      "max_members": 24,
+      "pinned": [
+        "generation-0"
+      ],
+      "pinned_seat_share": 0.2,
+      "eta": 0.01,
+      "uniform_floor": 0.2,
+      "admit_every_iterations": 5,
+      "admit_health_iterations": 5,
+      "admit_min_kl": 0.02,
+      "evict_min_age_iterations": 20,
+      "protect_newest": 2
+    },
+    "generation": 2,
+    "members": [
+      {
+        "path": "artifacts/critic-descriptors-20261018/native-final/run/population/weights-8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a.pt",
+        "sha256": "1be820a7e4fefad1d3be3767ed876f8070e6ef6fcec03b7401b02eec24c885f8",
+        "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+        "generation": 0,
+        "admitted_iteration": 0,
+        "q": null,
+        "probe": {
+          "path": "artifacts/critic-descriptors-20261018/native-final/run/il-kl/probe.npz",
+          "sha256": "013558c1eb9523db621c1f1bca1dc4aa9b490cd0c57b1b81c9f7b1b355805fc3",
+          "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342"
+        },
+        "admission_health": {
+          "ok": true,
+          "scope": "Pinned completed IL reference"
+        },
+        "recent_rates": [
+          {
+            "outcomes": 0.0,
+            "comparisons": 0
+          },
+          {
+            "outcomes": 0.0,
+            "comparisons": 0
+          }
+        ],
+        "fingerprint": {
+          "contract": "policy-style-fingerprint/1.0.0",
+          "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342",
+          "values": [
+            0.08691520243883133,
+            0.3081358075141907,
+            0.29080039262771606,
+            0.012023570016026497,
+            0.05743420496582985,
+            0.1866479068994522,
+            0.05804292857646942,
+            0.0,
+            0.031605906784534454,
+            0.3115089535713196,
+            0.3362521231174469,
+            0.009597077034413815,
+            0.061014045029878616,
+            0.18891365826129913,
+            0.06110825762152672,
+            0.0,
+            0.24781720340251923,
+            0.09986359626054764,
+            0.03969632834196091,
+            0.07064422965049744,
+            0.018495237454771996,
+            0.523483395576477,
+            0.07281482964754105,
+            0.2945132851600647,
+            0.0450034961104393,
+            0.48111027479171753,
+            0.052002985030412674,
+            0.05455513671040535
+          ],
+          "action_positions": [
+            60,
+            64
+          ],
+          "build_mass": [
+            5.21491194749251,
+            2.0227780821733177
+          ],
+          "source": "raw_policy_temperature_1",
+          "industry_order": [
+            "CottonMill",
+            "Manufacturer",
+            "Pottery",
+            "Brewery",
+            "IronWorks",
+            "CoalMine"
+          ],
+          "normalization": "Family groups sum to 1 per observed era; industry groups conditional on build; empty groups are zero"
+        },
+        "weights_only": true
+      }
+    ],
+    "health_window": [
+      false,
+      false
+    ],
+    "planning": {
+      "N": 0,
+      "members": []
+    },
+    "events": []
+  },
+  "evaluation_anchor": {
+    "path": "artifacts/critic-descriptors-20261018/native-final/run/initial.pt",
+    "sha256": "1cf25b8df5f6958df2a21cd4fcf66fdd11a5d53981eb1cd5a0055a03a896b4e1",
+    "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+    "generation": 0
+  },
+  "population": [
+    {
+      "path": "artifacts/critic-descriptors-20261018/native-final/run/population/weights-8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a.pt",
+      "sha256": "1be820a7e4fefad1d3be3767ed876f8070e6ef6fcec03b7401b02eec24c885f8",
+      "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+      "generation": 0,
+      "weights_only": true
+    }
+  ],
+  "resume": [
+    {
+      "path": "artifacts/critic-descriptors-20261018/native-final/run/generation-0001.pt",
+      "sha256": "9588b739bcbd5dfa34494d2045148074c434ce0136cb10dc2201bd45802284d4",
+      "model_id": "d5d81184648f300cf302bcd4dc2bb0a21cd90f71ee5c905b1ee67db0af6967dc",
+      "generation": 1
+    },
+    {
+      "path": "artifacts/critic-descriptors-20261018/native-final/run/generation-0002.pt",
+      "sha256": "b032573d9394552d9de6c533c2f2d1504e4fe549e2e40b97169cbd3ba7b5f32d",
+      "model_id": "aa728c298033b843e88eda36bda457fd79a780edb00914eda7a0becd1e6df79d",
+      "generation": 2
+    }
+  ],
+  "ratings": {
+    "contract": "plackett-luce-rating/1.0.0",
+    "config": {
+      "contract": "plackett-luce-rating/1.0.0",
+      "enabled": true,
+      "every_iterations": 10,
+      "setups": 32,
+      "seat_rotations": 4,
+      "references": [
+        "generation-0",
+        "v4"
+      ],
+      "nearest_opponents": 8,
+      "theta_prior_sd": 2.0,
+      "seat_prior_sd": 0.5,
+      "bootstrap": 200,
+      "elo_scale": 173.7,
+      "seed": 910517,
+      "panel_setups": 8,
+      "v4_profile": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy"
+    },
+    "seeds": [
+      910521,
+      910532,
+      910536,
+      910548,
+      910549,
+      910552,
+      910555,
+      910573,
+      910574,
+      910580,
+      910583,
+      910595,
+      910628,
+      910631,
+      910640,
+      910647,
+      910649,
+      910665,
+      910666,
+      910685,
+      910692,
+      910714,
+      910715,
+      910723,
+      910724,
+      910754,
+      910768,
+      910773,
+      910783,
+      910792,
+      910848,
+      910852
+    ],
+    "slots": [],
+    "agents": {
+      "generation-0": {
+        "kind": "model",
+        "checkpoint": {
+          "path": "artifacts/critic-descriptors-20261018/native-final/run/population/weights-8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a.pt",
+          "sha256": "1be820a7e4fefad1d3be3767ed876f8070e6ef6fcec03b7401b02eec24c885f8",
+          "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+          "generation": 0,
+          "weights_only": true
+        }
+      },
+      "v4": {
+        "kind": "v4",
+        "policy": {
+          "kind": "lab-legacy",
+          "parent": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy",
+          "policy_id": "masked-v4-work-fast/550a84831ad85c3f38a18f239706c094ad5d0276266764e3ea1fef968a8fb777",
+          "budget": {
+            "role": "lab",
+            "seconds": 1.0,
+            "search_workers": 4,
+            "global_workers": 60,
+            "work_multiplier": 1
+          },
+          "purpose": "training",
+          "search_free": true,
+          "work_budget": {
+            "contract": "legacy-opponent-turn-time/1.0.0",
+            "mode": "time",
+            "seconds_per_turn": 1.0
+          }
+        }
+      }
+    },
+    "latest_report": null,
+    "scope": "Independent held-out evidence; never a sampling score"
+  },
+  "recent_training": [
+    {
+      "iteration": 0,
+      "games_done": 1,
+      "quality_pool": {
+        "contract": "quality-score-pool/1.0.0",
+        "planning": {
+          "N": 0,
+          "members": []
+        },
+        "members": [
+          {
+            "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+            "generation": 0,
+            "q_before": null,
+            "p": null,
+            "seats_played": 0,
+            "comparisons": 0,
+            "outrank_rate": null,
+            "moving_outrank_rate": null,
+            "q_after": null
+          }
+        ],
+        "scope": "Conditional scored-pool p frozen at planning; two learner comparisons per opponent seat; IL outcomes are diagnostic only, never scored",
+        "admission": {
+          "generation": 1,
+          "candidate": "d5d81184648f300cf302bcd4dc2bb0a21cd90f71ee5c905b1ee67db0af6967dc",
+          "admitted": false,
+          "evicted": null,
+          "reason": "not_due"
+        },
+        "next_distribution": {
+          "N": 0,
+          "members": []
+        },
+        "size": 1,
+        "max_members": 24,
+        "eta": 0.01,
+        "uniform_floor": 0.2,
+        "pinned_seat_share": 0.2
+      },
+      "il_kl_limit": {
+        "contract": "auto-il-kl-limit/1.0.0",
+        "generation": 1,
+        "measurement": {
+          "positions": 144,
+          "requested_positions": 2048,
+          "kl_mean": 9.6994052384734e-08,
+          "groups": {
+            "canal_action": {
+              "positions": 60,
+              "kl_mean": 1.3310047663139313e-07
+            },
+            "canal_other": {
+              "positions": 5,
+              "kl_mean": 3.320098252503608e-08
+            },
+            "rail_action": {
+              "positions": 64,
+              "kl_mean": 8.469897295197668e-08
+            },
+            "rail_other": {
+              "positions": 15,
+              "kl_mean": 2.6291717597761415e-08
+            }
+          },
+          "unassigned_positions": 0,
+          "behavior": {
+            "ok": true,
+            "sales": {
+              "positions": 0,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            },
+            "passing": {
+              "positions": 124,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            }
+          },
+          "elapsed_seconds": 0.16267300001345575,
+          "probability_floor": 1e-06,
+          "scope": "Fixed IL validation positions; raw temperature-1 policies, no exploration; symmetric floor/renormalization for KL, raw behavior checks"
+        },
+        "health": {
+          "ok": false,
+          "reasons": [
+            "baseline_unavailable",
+            "rolling_health_unavailable",
+            "probe_evidence_unavailable"
+          ],
+          "metrics": null,
+          "checks": {},
+          "behavior": {
+            "ok": true,
+            "sales": {
+              "positions": 0,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            },
+            "passing": {
+              "positions": 124,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            }
+          },
+          "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+        },
+        "limit_before": 0.15,
+        "limit_after": 0.15,
+        "group_limit_before": 0.3,
+        "group_limit_after": 0.3,
+        "decision": "hold",
+        "reason": "warmup",
+        "baseline": null,
+        "baseline_iterations": 0,
+        "last_update": 0,
+        "last_healthy_generation": 0,
+        "kl_last_healthy": 0.0,
+        "healthy_window_length": 0,
+        "blocked": false,
+        "recovery_limit": 0.12,
+        "alarm": false,
+        "lr_gate": {
+          "ok": false,
+          "reasons": [
+            "baseline_unavailable",
+            "rolling_health_unavailable",
+            "probe_evidence_unavailable"
+          ],
+          "anchor_distance": 9.6994052384734e-08,
+          "anchor_budget": 0.15,
+          "anchor_group_budget": 0.3,
+          "anchor_group_min_positions": 64,
+          "anchor_groups": {
+            "canal_action": {
+              "positions": 60,
+              "anchor_distance": 1.3310047663139313e-07,
+              "status": "insufficient_samples"
+            },
+            "canal_other": {
+              "positions": 5,
+              "anchor_distance": 3.320098252503608e-08,
+              "status": "insufficient_samples"
+            },
+            "rail_action": {
+              "positions": 64,
+              "anchor_distance": 8.469897295197668e-08,
+              "status": "ok"
+            },
+            "rail_other": {
+              "positions": 15,
+              "anchor_distance": 2.6291717597761415e-08,
+              "status": "insufficient_samples"
+            }
+          },
+          "anchor_unassigned_positions": 0,
+          "anchor_group_max": null,
+          "health": {
+            "ok": false,
+            "reasons": [
+              "baseline_unavailable",
+              "rolling_health_unavailable",
+              "probe_evidence_unavailable"
+            ],
+            "metrics": null,
+            "checks": {},
+            "behavior": {
+              "ok": true,
+              "sales": {
+                "positions": 0,
+                "failures": 0,
+                "examples": [],
+                "ok": true
+              },
+              "passing": {
+                "positions": 124,
+                "failures": 0,
+                "examples": [],
+                "ok": true
+              }
+            },
+            "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+          },
+          "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+        },
+        "probe": {
+          "path": "artifacts/critic-descriptors-20261018/native-final/run/il-kl/manifest.json",
+          "sha256": "19ca1626fe72976fc170ef00ef99ce6320e1ba9cc9d604569a6ead1f9493d0fc",
+          "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342"
+        }
+      },
+      "rehearsal_schedule": {
+        "weight": 0.1,
+        "floor": 0.03,
+        "decayed_weight": 0.1,
+        "committed_games": 0,
+        "committed_iterations": 0,
+        "enabled": true,
+        "scope": "Weight for the next collection/update; floor drops after 60, 90 and 120 committed iterations"
+      },
+      "value_phase": {
+        "contract": "ppg-value-phase/2.0.0",
+        "enabled": true,
+        "optimizer_steps": 0,
+        "attempted_steps": 0,
+        "epochs": 0,
+        "attempted_epochs": 0,
+        "early_stop_reason": "insufficient_critic_split",
+        "kl_guard_tripped": false,
+        "beta_clone": 1.0,
+        "learning_rate": 6e-06,
+        "train_rows": 312,
+        "heldout_rows": 0,
+        "current_train_rows": 312,
+        "previous_train_rows": 0,
+        "distinct_value_rows_used": 0,
+        "value_presentations": 0,
+        "clone_presentations": 0,
+        "distinct_current_rows_used": 0,
+        "distinct_previous_rows_used": 0,
+        "current_presentations": 0,
+        "previous_presentations": 0,
+        "scope": "Critic: current plus configured previous iteration; validation/cloning/probes: current only; separate Adam/base LR, no PPO counters",
+        "heldout_after": {
+          "rows": 0,
+          "games": 0,
+          "loss": null,
+          "explained_variance": null,
+          "utility_mse": null
+        },
+        "descriptor_gain": {
+          "learner_ev_gain": null
+        },
+        "role_usage": {
+          "learner": {
+            "distinct_used": 0,
+            "presentations": 0
+          },
+          "snapshot": {
+            "distinct_used": 0,
+            "presentations": 0
+          }
+        },
+        "seconds": 0.00029710005037486553,
+        "buffer": {
+          "storage": "disk-backed one-candidate critic rows",
+          "buffer_iterations": 2,
+          "current_generation": 1,
+          "previous_generation": null,
+          "current_rows": 312,
+          "previous_rows": 0,
+          "current_forced_rows": 170,
+          "previous_forced_rows": 0,
+          "current_cache_bytes": 4525384,
+          "previous_cache_bytes": 0,
+          "peak_cache_bytes": 4525384,
+          "write_seconds": 0.08466520003275946,
+          "rebuilt_from_replay": false,
+          "startup_cleanup": {
+            "deleted_files": [],
+            "deleted_bytes": 0,
+            "seconds": 0.00031849998049438
+          },
+          "committed_cleanup": null
+        },
+        "split": {
+          "contract": "ppg-critic-holdout/1.0.0",
+          "fraction": 0.05,
+          "train_rows": 312,
+          "heldout_rows": 0,
+          "train_games": 1,
+          "heldout_games": 0,
+          "heldout_games_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "scope": "Hash of complete game id; every seat and value head excluded from critic fitting; actor still uses these games",
+          "eligible_train_rows": 312
+        },
+        "beta_clone_next": 1.0,
+        "beta_decision": "hold",
+        "kl_trip_window": [
+          false
+        ],
+        "critic_rollout": {
+          "snapshot_rows_used": false,
+          "snapshot_rows_next": false,
+          "weight_used": 1.0,
+          "weight_next": 1.0,
+          "decision": "hold",
+          "reason": "health_or_descriptor_evidence_not_ready",
+          "learner_heldout_ev": null,
+          "phase1_learner_ev": null,
+          "fingerprint_mean_absolute_drift": null,
+          "snapshot_effect_ev_delta": null,
+          "scope": "Sequential heldout diagnostic; iteration distributions differ, not a causal snapshot benefit estimate"
+        }
+      },
+      "health_counts": {
+        "tables": 1,
+        "all_learner_tables": 1,
+        "seat_games": 4,
+        "vp_sum": 7.0,
+        "sells": 1,
+        "passes_with_alternative": 9,
+        "zero_vp_seats": 3,
+        "insolvent_seats": 4,
+        "insolvency_events": 24
+      },
+      "health_by_composition": {
+        "selfplay": {
+          "tables": 1,
+          "all_learner_tables": 1,
+          "seat_games": 4,
+          "vp_sum": 7.0,
+          "sells": 1,
+          "passes_with_alternative": 9,
+          "zero_vp_seats": 3,
+          "insolvent_seats": 4,
+          "insolvency_events": 24
+        }
+      },
+      "sampling": {
+        "tables": 1,
+        "learner_trajectories": 4,
+        "learner_decisions": 312,
+        "actor_eligible_decisions": 142,
+        "forced_decisions": 170,
+        "by_composition": {
+          "selfplay": {
+            "tables": 1,
+            "learner_trajectories": 4,
+            "learner_decisions": 312,
+            "actor_eligible_decisions": 142,
+            "forced_decisions": 170,
+            "table_fraction": 1.0,
+            "trajectory_fraction": 1.0,
+            "actor_eligible_fraction": 1.0
+          },
+          "historical": {
+            "tables": 0,
+            "learner_trajectories": 0,
+            "learner_decisions": 0,
+            "actor_eligible_decisions": 0,
+            "forced_decisions": 0,
+            "table_fraction": 0.0,
+            "trajectory_fraction": 0.0,
+            "actor_eligible_fraction": 0.0
+          },
+          "legacy": {
+            "tables": 0,
+            "learner_trajectories": 0,
+            "learner_decisions": 0,
+            "actor_eligible_decisions": 0,
+            "forced_decisions": 0,
+            "table_fraction": 0.0,
+            "trajectory_fraction": 0.0,
+            "actor_eligible_fraction": 0.0
+          }
+        },
+        "behavior": {
+          "policy_id": "step5-neural/edf43f3e60dcc4b15f892d196cee4389c34063f2114eba58fbda3d22592bb24e",
+          "exploration": 0.08,
+          "temperature": 1.0,
+          "focus": "mixed"
+        },
+        "scope": "Actual completed tables and learner seats; forced decisions are critic-only. Table fractions do not define PPO sample fractions."
+      },
+      "curriculum": {
+        "start_games": 0,
+        "completed_ordinary_games": 1,
+        "stages": [
+          {
+            "start_games": 0,
+            "until_games": null,
+            "quotas": {
+              "selfplay": 50,
+              "historical": 45,
+              "legacy": 5
+            },
+            "ordinary_games_this_iteration": 1
+          }
+        ],
+        "next_stage": 0,
+        "scope": "Ordinary game tables only; teacher/evaluation games and optimizer steps do not advance this clock"
+      },
+      "learning_rate": 6e-06,
+      "learning_rate_schedule": {
+        "contract": "linear-update-warmup/1.0.0",
+        "kind": "selfplay",
+        "base_lr": 6e-06,
+        "steps": 100,
+        "start_factor": 0.1,
+        "completed_steps": 1,
+        "effective_lr": 6.000000000000001e-07,
+        "next_lr": 6.545454545454546e-07
+      },
+      "actor": {
+        "format": "nonforced-actor-ppo/2.1.0",
+        "epochs": [
+          {
+            "epoch": 0,
+            "actor": -1.6790040469061296e-09,
+            "entropy": 3.097874641418457,
+            "clip_fraction": 0.0,
+            "value": 1.4180952310562134,
+            "win_loss": 1.4036822319030762,
+            "rank_loss": 0.05310162901878357,
+            "vp_loss": 0.011375648900866508,
+            "post_update_kl": 3.5018620366545423e-08,
+            "probe_kl": 3.5018498673592366e-08,
+            "probe_categorical_kl": 3.21006443210907e-08,
+            "gradient_norm": 2.305556297302246,
+            "actor_positions": 142,
+            "critic_positions": 64,
+            "positions": 142,
+            "utility_prediction": {
+              "mse": 0.22024354338645935,
+              "mae": 0.4152773916721344
+            }
+          }
+        ],
+        "optimizer_steps": 1,
+        "gae": {
+          "contract": "gae-advantage/2.0.0",
+          "lambda": 1.0,
+          "gamma": 1.0,
+          "chain": "nonforced",
+          "lambda_by_table": {
+            "selfplay": 1.0,
+            "historical": 1.0,
+            "legacy": 1.0
+          },
+          "by_table": {
+            "selfplay": {
+              "rows": 142,
+              "actual_std": 0.4758877652031889,
+              "mc_std": 0.4758877652031889
+            },
+            "historical": {
+              "rows": 0,
+              "actual_std": null,
+              "mc_std": null
+            },
+            "legacy": {
+              "rows": 0,
+              "actual_std": null,
+              "mc_std": null
+            }
+          },
+          "trajectories": 4,
+          "td_error_std": 0.07753740086305065,
+          "shadows": {
+            "1.0": {
+              "rows": 142,
+              "std": 0.4758877652031889,
+              "correlation_with_mc": 1.0,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 75,
+                  "mean": -0.021360838810602824
+                },
+                "era:RailEra": {
+                  "rows": 67,
+                  "mean": 0.031610410160093166
+                },
+                "period:canal_early": {
+                  "rows": 32,
+                  "mean": 0.0003639291971921921
+                },
+                "period:canal_late": {
+                  "rows": 43,
+                  "mean": -0.037528108025706094
+                },
+                "period:rail_early": {
+                  "rows": 53,
+                  "mean": 0.0036017096267556246
+                },
+                "period:rail_late": {
+                  "rows": 14,
+                  "mean": 0.13764334789344243
+                },
+                "phase:CanalEra/action": {
+                  "rows": 60,
+                  "mean": -0.025788969298203786
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 11,
+                  "mean": 0.005689035762440075
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 3,
+                  "mean": -0.3060641090075175
+                },
+                "phase:CanalEra/payment": {
+                  "rows": 1,
+                  "mean": 0.800888180732727
+                },
+                "phase:RailEra/action": {
+                  "rows": 60,
+                  "mean": 0.011321761955817541
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 4,
+                  "mean": 0.27454329654574394
+                },
+                "phase:RailEra/debt": {
+                  "rows": 3,
+                  "mean": 0.11347285906473796
+                }
+              }
+            },
+            "0.98": {
+              "rows": 142,
+              "std": 0.34773293561122287,
+              "correlation_with_mc": 0.9787691434225863,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 75,
+                  "mean": -0.026651473012237893
+                },
+                "era:RailEra": {
+                  "rows": 67,
+                  "mean": 0.02351452832387819
+                },
+                "period:canal_early": {
+                  "rows": 32,
+                  "mean": -0.01574256696202797
+                },
+                "period:canal_late": {
+                  "rows": 43,
+                  "mean": -0.0347697286775104
+                },
+                "period:rail_early": {
+                  "rows": 53,
+                  "mean": -0.004419021768377297
+                },
+                "period:rail_late": {
+                  "rows": 14,
+                  "mean": 0.12926296795884543
+                },
+                "phase:CanalEra/action": {
+                  "rows": 60,
+                  "mean": -0.029200387911774362
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 11,
+                  "mean": -0.01776186577946516
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 3,
+                  "mean": -0.20111703090747102
+                },
+                "phase:CanalEra/payment": {
+                  "rows": 1,
+                  "mean": 0.5518944150851504
+                },
+                "phase:RailEra/action": {
+                  "rows": 60,
+                  "mean": 0.0018618946006779898
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 4,
+                  "mean": 0.2594376236425662
+                },
+                "phase:RailEra/debt": {
+                  "rows": 3,
+                  "mean": 0.1420030756962983
+                }
+              }
+            },
+            "0.95": {
+              "rows": 142,
+              "std": 0.2490165425864581,
+              "correlation_with_mc": 0.8879148662580459,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 75,
+                  "mean": -0.02574939231618619
+                },
+                "era:RailEra": {
+                  "rows": 67,
+                  "mean": 0.014980457467348175
+                },
+                "period:canal_early": {
+                  "rows": 32,
+                  "mean": -0.021303065801040848
+                },
+                "period:canal_late": {
+                  "rows": 43,
+                  "mean": -0.029058286466992017
+                },
+                "period:rail_early": {
+                  "rows": 53,
+                  "mean": -0.01209005581984499
+                },
+                "period:rail_late": {
+                  "rows": 14,
+                  "mean": 0.11746168634029372
+                },
+                "phase:CanalEra/action": {
+                  "rows": 60,
+                  "mean": -0.02701492482069805
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 11,
+                  "mean": -0.026717162344013657
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 3,
+                  "mean": -0.10847624694398156
+                },
+                "phase:CanalEra/payment": {
+                  "rows": 1,
+                  "mean": 0.30900859214401366
+                },
+                "phase:RailEra/action": {
+                  "rows": 60,
+                  "mean": -0.00755924276435113
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 4,
+                  "mean": 0.23522533147204946
+                },
+                "phase:RailEra/debt": {
+                  "rows": 3,
+                  "mean": 0.17211463009506608
+                }
+              }
+            },
+            "0.9": {
+              "rows": 142,
+              "std": 0.1797522809710282,
+              "correlation_with_mc": 0.7121889076610213,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 75,
+                  "mean": -0.019016363621332473
+                },
+                "era:RailEra": {
+                  "rows": 67,
+                  "mean": 0.006903014005828759
+                },
+                "period:canal_early": {
+                  "rows": 32,
+                  "mean": -0.01745127867996942
+                },
+                "period:canal_late": {
+                  "rows": 43,
+                  "mean": -0.020181077996300322
+                },
+                "period:rail_early": {
+                  "rows": 53,
+                  "mean": -0.01761767511683077
+                },
+                "period:rail_late": {
+                  "rows": 14,
+                  "mean": 0.09973133711303982
+                },
+                "phase:CanalEra/action": {
+                  "rows": 60,
+                  "mean": -0.019583257330117947
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 11,
+                  "mean": -0.021352743376077538
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 3,
+                  "mean": -0.04161211778817827
+                },
+                "phase:CanalEra/payment": {
+                  "rows": 1,
+                  "mean": 0.1084846987085292
+                },
+                "phase:RailEra/action": {
+                  "rows": 60,
+                  "mean": -0.015215623095451406
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 4,
+                  "mean": 0.19461167263743703
+                },
+                "phase:RailEra/debt": {
+                  "rows": 3,
+                  "mean": 0.1989975445226209
+                }
+              }
+            }
+          },
+          "scope": "Raw pre-normalization nonforced learner decisions; critic targets remain Monte Carlo",
+          "gate": {
+            "contract": "staged-gae-gate/1.0.0",
+            "mode": "auto",
+            "lambda_used": 1.0,
+            "table_gate": {
+              "historical": {
+                "learner_heldout_ev": null,
+                "selfplay_learner_ev": null,
+                "streak": 0,
+                "enabled": false,
+                "origin": null,
+                "iterations_since_extension": 0,
+                "thirty_iteration_review_due": false,
+                "review": "Inspect common PL rating slope/uncertainty and by-table advantage std; no automatic rollback",
+                "decision": "hold",
+                "lambda_used": 1.0,
+                "lambda_next": 1.0
+              },
+              "legacy": {
+                "learner_heldout_ev": null,
+                "selfplay_learner_ev": null,
+                "streak": 0,
+                "enabled": false,
+                "origin": null,
+                "iterations_since_extension": 0,
+                "thirty_iteration_review_due": false,
+                "review": "Inspect common PL rating slope/uncertainty and by-table advantage std; no automatic rollback",
+                "decision": "hold",
+                "lambda_used": 1.0,
+                "lambda_next": 1.0
+              }
+            },
+            "lambda_next": 1.0,
+            "decision": "hold",
+            "reason": "improving_critic",
+            "generation": 1,
+            "value_iterations": 0,
+            "heldout_ev": null,
+            "ev_streak": 0,
+            "healthy": false,
+            "healthy_streak": 0,
+            "stage_origin": 0,
+            "rating": {
+              "ok": false,
+              "reason": "rating_unavailable",
+              "slope": null,
+              "points": []
+            },
+            "scope": "Committed iterations only; no forks, extra ratings, or automatic rollback",
+            "anchor_gate": {
+              "ok": false,
+              "reasons": [
+                "baseline_unavailable",
+                "rolling_health_unavailable",
+                "probe_evidence_unavailable"
+              ],
+              "anchor_distance": 9.6994052384734e-08,
+              "anchor_budget": 0.15,
+              "anchor_group_budget": 0.3,
+              "anchor_group_min_positions": 64,
+              "anchor_groups": {
+                "canal_action": {
+                  "positions": 60,
+                  "anchor_distance": 1.3310047663139313e-07,
+                  "status": "insufficient_samples"
+                },
+                "canal_other": {
+                  "positions": 5,
+                  "anchor_distance": 3.320098252503608e-08,
+                  "status": "insufficient_samples"
+                },
+                "rail_action": {
+                  "positions": 64,
+                  "anchor_distance": 8.469897295197668e-08,
+                  "status": "ok"
+                },
+                "rail_other": {
+                  "positions": 15,
+                  "anchor_distance": 2.6291717597761415e-08,
+                  "status": "insufficient_samples"
+                }
+              },
+              "anchor_unassigned_positions": 0,
+              "anchor_group_max": null,
+              "health": {
+                "ok": false,
+                "reasons": [
+                  "baseline_unavailable",
+                  "rolling_health_unavailable",
+                  "probe_evidence_unavailable"
+                ],
+                "metrics": null,
+                "checks": {},
+                "behavior": {
+                  "ok": true,
+                  "sales": {
+                    "positions": 0,
+                    "failures": 0,
+                    "examples": [],
+                    "ok": true
+                  },
+                  "passing": {
+                    "positions": 124,
+                    "failures": 0,
+                    "examples": [],
+                    "ok": true
+                  }
+                },
+                "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+              },
+              "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+            }
+          }
+        },
+        "critic_split": {
+          "contract": "ppg-critic-holdout/1.0.0",
+          "fraction": 0.05,
+          "train_rows": 312,
+          "heldout_rows": 0,
+          "train_games": 1,
+          "heldout_games": 0,
+          "heldout_games_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "scope": "Hash of complete game id; every seat and value head excluded from critic fitting; actor still uses these games",
+          "eligible_train_rows": 312
+        },
+        "optimizer_steps_planned": 1,
+        "optimizer_steps_fraction": 1.0,
+        "controller_warmup_done": false,
+        "sample_usage": {
+          "learner_decisions": 312,
+          "actor_eligible_decisions": 142,
+          "actor_distinct_used": 142,
+          "actor_unused_eligible": 0,
+          "actor_presentations": 142,
+          "critic_distinct_used": 64,
+          "critic_presentations": 64,
+          "by_composition": {
+            "selfplay": {
+              "learner_decisions": 312,
+              "actor_eligible_decisions": 142,
+              "actor_distinct_used": 142,
+              "actor_unused_eligible": 0,
+              "actor_presentations": 142,
+              "critic_distinct_used": 64,
+              "critic_presentations": 64,
+              "actor_presentation_fraction": 1.0
+            }
+          },
+          "scope": "Actual PPO optimizer samples, excluding utility calibration, rehearsal and teacher distillation; presentations include epoch reuse"
+        },
+        "critic_rows": {
+          "available": 312,
+          "train": 312,
+          "available_by_role": {
+            "learner": 312
+          },
+          "train_by_role": {
+            "learner": 312
+          },
+          "presentations_by_role": {
+            "learner": 64
+          },
+          "learner_distinct_used": 64,
+          "snapshot_distinct_used": 0,
+          "snapshot_weight": 1.0
+        },
+        "insolvency": {
+          "enabled": true,
+          "event_cost": 0.005,
+          "max_cost": 0.075,
+          "events": 24,
+          "shortfall": 194,
+          "by_era": {
+            "CanalEra": 3,
+            "RailEra": 21
+          },
+          "learner_trajectories": 4,
+          "affected_trajectories": 4,
+          "total_cost": 0.12,
+          "mean_cost_per_trajectory": 0.03,
+          "decisions_with_future_cost": 295,
+          "objective": "Combined terminal utility minus future capped insolvency costs"
+        },
+        "reward": {
+          "spec": {
+            "version": "brass-combined-return/1.0.0",
+            "win": 1.0,
+            "placement": 0.1,
+            "vp": 0.001,
+            "insolvency": {
+              "event_cost": 0.005,
+              "max_cost": 0.075
+            }
+          },
+          "undiscounted": true,
+          "components": {
+            "win": 0.25,
+            "placement": 0.5,
+            "vp": 1.75,
+            "cost": 0.03,
+            "utility": 0.27175000000000005
+          },
+          "weighted": {
+            "win": 0.25,
+            "placement": 0.05,
+            "vp": 0.00175
+          },
+          "trajectories": 4,
+          "distribution": {
+            "weighted": {
+              "win": {
+                "count": 4,
+                "mean": 0.25,
+                "std": 0.4330127018922193,
+                "min": 0.0,
+                "p05": 0.0,
+                "median": 0.0,
+                "p95": 0.8499999999999996,
+                "max": 1.0
+              },
+              "placement": {
+                "count": 4,
+                "mean": 0.05,
+                "std": 0.02886751345948129,
+                "min": 0.03333333333333333,
+                "p05": 0.03333333333333333,
+                "median": 0.03333333333333333,
+                "p95": 0.08999999999999998,
+                "max": 0.1
+              },
+              "vp": {
+                "count": 4,
+                "mean": 0.00175,
+                "std": 0.0030310889132455355,
+                "min": 0.0,
+                "p05": 0.0,
+                "median": 0.0,
+                "p95": 0.005949999999999998,
+                "max": 0.007
+              },
+              "cost": {
+                "count": 4,
+                "mean": -0.030000000000000002,
+                "std": 0.015411035007422441,
+                "min": -0.045,
+                "p05": -0.04425,
+                "median": -0.035,
+                "p95": -0.00875000000000001,
+                "max": -0.005
+              }
+            },
+            "utility": {
+              "count": 4,
+              "mean": 0.27175000000000005,
+              "std": 0.4793754834851973,
+              "min": -0.011666666666666665,
+              "p05": -0.010916666666666667,
+              "median": -0.0016666666666666687,
+              "p95": 0.9371999999999997,
+              "max": 1.102
+            },
+            "covariance": {
+              "win": {
+                "win": 0.1875,
+                "placement": 0.0125,
+                "vp": 0.0013125,
+                "cost": 0.00625
+              },
+              "placement": {
+                "win": 0.0125,
+                "placement": 0.0008333333333333335,
+                "vp": 8.750000000000001e-05,
+                "cost": 0.0004166666666666667
+              },
+              "vp": {
+                "win": 0.0013125,
+                "placement": 8.750000000000001e-05,
+                "vp": 9.187500000000001e-06,
+                "cost": 4.375e-05
+              },
+              "cost": {
+                "win": 0.00625,
+                "placement": 0.0004166666666666667,
+                "vp": 4.375e-05,
+                "cost": 0.00023749999999999997
+              }
+            },
+            "capped_trajectories": 0,
+            "scope": "One complete-game observation per learner seat; population moments, not independent decisions"
+          }
+        },
+        "utility_calibration": {
+          "required": true,
+          "receipt": {
+            "version": "four-seat-utility-extension/1.0.0",
+            "reward_id": "dc00147030a636e5b7d057bc81d62d4248d82a1354cf43adb17719b1885f60b7",
+            "ready": true,
+            "decisions": 312,
+            "games": 1,
+            "steps": 3,
+            "before": {
+              "mse": 0.22706486934270614,
+              "mae": 0.4267852428631905
+            },
+            "after": {
+              "mse": 0.22080271442731222,
+              "mae": 0.41780834396680194
+            },
+            "scope": "Fresh ordinary trajectories, in-sample calibration; not a strength guarantee"
+          }
+        },
+        "learner_decisions": 312,
+        "meaningful_decisions": 142,
+        "forced_decisions": 170,
+        "learner_trajectories": 4,
+        "effective_batch_size": 512,
+        "microbatch_size": 16,
+        "critic_batch_size": 64,
+        "advantage": {
+          "mean": 0.0036326374392956495,
+          "std": 0.4758877754211426,
+          "scope": "nonforced actor decisions"
+        },
+        "advantage_distribution": {
+          "count": 142,
+          "mean": 0.003632637816415706,
+          "std": 0.4758877652031889,
+          "min": -0.3399773836135864,
+          "p05": -0.32279687374830246,
+          "median": -0.26239727437496185,
+          "p95": 0.8220984965562821,
+          "max": 0.8258987665176392
+        },
+        "return_distribution": {
+          "count": 142,
+          "mean": 0.29052112627820387,
+          "std": 0.48198712775107383,
+          "min": -0.011666666716337204,
+          "p05": -0.011666666716337204,
+          "median": 0.008333333767950535,
+          "p95": 1.1019999980926514,
+          "max": 1.1069999933242798
+        },
+        "baseline_explained_variance": 0.025149121237764804,
+        "baseline_scope": "Before PPO, after any head calibration; nonforced learner decisions, in-sample",
+        "legal_actions": {
+          "count": 142,
+          "mean": 57.16901408450704,
+          "std": 77.2940217638882,
+          "min": 2.0,
+          "p05": 2.0,
+          "median": 22.5,
+          "p95": 169.89999999999998,
+          "max": 396.0
+        },
+        "categorical_probe": {
+          "positions": 142,
+          "categorical_kl": 3.21006443210907e-08,
+          "entropy": 3.097873781768369,
+          "entropy_over_log_legal": 0.9996871545281208,
+          "scope": "Exact categorical KL(old behavior || new behavior) on the proportional era/phase nonforced probe; PPO per-step early stopping and optional LR feedback"
+        },
+        "gradient_norms": {
+          "count": 1,
+          "mean": 2.305556297302246,
+          "std": 0.0,
+          "min": 2.305556297302246,
+          "p05": 2.305556297302246,
+          "median": 2.305556297302246,
+          "p95": 2.305556297302246,
+          "max": 2.305556297302246
+        },
+        "kl_estimator": "probe_categorical_kl: exact KL(old behavior || current behavior), per-step guard; post_update_kl/probe_kl: sampled chosen-action ((ratio-1)-log(ratio)); full means all nonforced rows, retained as secondary epoch guard",
+        "kl_guard": {
+          "contract": "ppo-categorical-kl-guard/1.0.0",
+          "target_kl": 0.01,
+          "probe_positions": 142,
+          "probe_checks": 1,
+          "full_dataset_checks": 1,
+          "max_categorical_kl": 3.21006443210907e-08,
+          "stop_reason": null,
+          "stop_step": null
+        },
+        "kl_probe_rows": 142,
+        "kl_probe_sampling": "proportional-era-phase/1.0.0",
+        "learning_rates": [
+          6.000000000000001e-07
+        ],
+        "learning_rate_schedule": {
+          "contract": "linear-update-warmup/1.0.0",
+          "kind": "selfplay",
+          "base_lr": 6e-06,
+          "steps": 100,
+          "start_factor": 0.1,
+          "completed_steps": 1,
+          "effective_lr": 6.000000000000001e-07,
+          "next_lr": 6.545454545454546e-07
+        },
+        "kl_early_stop": false,
+        "gradient_clip_steps": 1,
+        "rehearsal_active": true,
+        "rehearsal_rows": 64,
+        "rehearsal_steps": 1,
+        "rehearsal_weight": 0.1,
+        "phases": {
+          "action": 120,
+          "continuation": 15,
+          "debt": 6,
+          "payment": 1
+        },
+        "rehearsal_sampling": {
+          "contract": "rotating-train-window/1.0.0",
+          "iteration": 0,
+          "source_rows": 345,
+          "source_games": 1,
+          "source_shards": 1,
+          "selected_shards": 1,
+          "selected_rows": 64,
+          "distinct_rows_selected": 55,
+          "used_presentations": 35,
+          "distinct_rows_used": 16,
+          "selection_sha256": "8d4463c2017ac027a00d969068aca831f8c90a467ff84dafed13ec75b358292d",
+          "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+          "max_cache_bytes": 67108864,
+          "peak_cache_bytes": 4931923,
+          "cache_deleted": true,
+          "scope": "Train only; count-weighted shard draws, uniform rows with replacement; renewed each committed iteration",
+          "preparation_seconds": 4.135012600047048,
+          "nonforced_rows_selected": 26
+        },
+        "lr_controller": {
+          "contract": "ppo-categorical-kl-lr/1.2.0",
+          "mode": "apply",
+          "kl": 3.21006443210907e-08,
+          "median_kl": null,
+          "window_size": 0,
+          "early_stop": false,
+          "steps_done": 1,
+          "steps_planned": 1,
+          "steps_fraction": 1.0,
+          "warmup_done": false,
+          "multiplier_before": 1.0,
+          "multiplier_after": 1.0,
+          "decision": "hold",
+          "reason": "warmup",
+          "at_min": false,
+          "at_max": false,
+          "cooldown": 0,
+          "window": [],
+          "window_reset": false,
+          "health": {
+            "ok": false,
+            "reasons": [
+              "baseline_unavailable",
+              "rolling_health_unavailable",
+              "probe_evidence_unavailable"
+            ],
+            "anchor_distance": 9.6994052384734e-08,
+            "anchor_budget": 0.15,
+            "anchor_group_budget": 0.3,
+            "anchor_group_min_positions": 64,
+            "anchor_groups": {
+              "canal_action": {
+                "positions": 60,
+                "anchor_distance": 1.3310047663139313e-07,
+                "status": "insufficient_samples"
+              },
+              "canal_other": {
+                "positions": 5,
+                "anchor_distance": 3.320098252503608e-08,
+                "status": "insufficient_samples"
+              },
+              "rail_action": {
+                "positions": 64,
+                "anchor_distance": 8.469897295197668e-08,
+                "status": "ok"
+              },
+              "rail_other": {
+                "positions": 15,
+                "anchor_distance": 2.6291717597761415e-08,
+                "status": "insufficient_samples"
+              }
+            },
+            "anchor_unassigned_positions": 0,
+            "anchor_group_max": null,
+            "health": {
+              "ok": false,
+              "reasons": [
+                "baseline_unavailable",
+                "rolling_health_unavailable",
+                "probe_evidence_unavailable"
+              ],
+              "metrics": null,
+              "checks": {},
+              "behavior": {
+                "ok": true,
+                "sales": {
+                  "positions": 0,
+                  "failures": 0,
+                  "examples": [],
+                  "ok": true
+                },
+                "passing": {
+                  "positions": 124,
+                  "failures": 0,
+                  "examples": [],
+                  "ok": true
+                }
+              },
+              "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+            },
+            "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+          },
+          "anchor_distance": 9.6994052384734e-08,
+          "anchor_identity": {
+            "path": "artifacts/critic-descriptors-20261018/native-final/run/initial.pt",
+            "sha256": "1cf25b8df5f6958df2a21cd4fcf66fdd11a5d53981eb1cd5a0055a03a896b4e1",
+            "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+            "generation": 0
+          },
+          "scope": "Exact post-PPO/pre-teaching KL; decision affects subsequent PPO steps only",
+          "early_stop_reason": null,
+          "effective_lr": 6.000000000000001e-07,
+          "next_ppo_lr": 6.545454545454546e-07,
+          "applied_multiplier": 1.0
+        },
+        "final_categorical_probe": {
+          "positions": 142,
+          "categorical_kl": 3.21006443210907e-08,
+          "entropy": 3.097873781768369,
+          "entropy_over_log_legal": 0.9996871545281208,
+          "scope": "Final checkpoint weights after PPO, value phase and any teaching; reference is collection behavior"
+        }
+      },
+      "search": {
+        "enabled": false,
+        "updated": false,
+        "reason": "Teacher search and distillation disabled by configuration",
+        "collection_count": 0,
+        "optimizer_steps": 0,
+        "teacher_rows": 0,
+        "teacher_value": {
+          "enabled": false,
+          "reason": "No teacher collection while teacher_enabled=false"
+        }
+      }
+    },
+    {
+      "iteration": 1,
+      "games_done": 2,
+      "quality_pool": {
+        "contract": "quality-score-pool/1.0.0",
+        "planning": {
+          "N": 0,
+          "members": []
+        },
+        "members": [
+          {
+            "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+            "generation": 0,
+            "q_before": null,
+            "p": null,
+            "seats_played": 0,
+            "comparisons": 0,
+            "outrank_rate": null,
+            "moving_outrank_rate": null,
+            "q_after": null
+          }
+        ],
+        "scope": "Conditional scored-pool p frozen at planning; two learner comparisons per opponent seat; IL outcomes are diagnostic only, never scored",
+        "admission": {
+          "generation": 2,
+          "candidate": "aa728c298033b843e88eda36bda457fd79a780edb00914eda7a0becd1e6df79d",
+          "admitted": false,
+          "evicted": null,
+          "reason": "not_due"
+        },
+        "next_distribution": {
+          "N": 0,
+          "members": []
+        },
+        "size": 1,
+        "max_members": 24,
+        "eta": 0.01,
+        "uniform_floor": 0.2,
+        "pinned_seat_share": 0.2
+      },
+      "il_kl_limit": {
+        "contract": "auto-il-kl-limit/1.0.0",
+        "generation": 2,
+        "measurement": {
+          "positions": 144,
+          "requested_positions": 2048,
+          "kl_mean": 5.371584799825668e-07,
+          "groups": {
+            "canal_action": {
+              "positions": 60,
+              "kl_mean": 6.01108991211224e-07
+            },
+            "canal_other": {
+              "positions": 5,
+              "kl_mean": 1.2887378540130828e-07
+            },
+            "rail_action": {
+              "positions": 64,
+              "kl_mean": 5.970709675102571e-07
+            },
+            "rail_other": {
+              "positions": 15,
+              "kl_mean": 1.6182471981021202e-07
+            }
+          },
+          "unassigned_positions": 0,
+          "behavior": {
+            "ok": true,
+            "sales": {
+              "positions": 0,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            },
+            "passing": {
+              "positions": 124,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            }
+          },
+          "elapsed_seconds": 0.19883670000126585,
+          "probability_floor": 1e-06,
+          "scope": "Fixed IL validation positions; raw temperature-1 policies, no exploration; symmetric floor/renormalization for KL, raw behavior checks"
+        },
+        "health": {
+          "ok": false,
+          "reasons": [
+            "baseline_unavailable",
+            "rolling_health_unavailable",
+            "probe_evidence_unavailable"
+          ],
+          "metrics": null,
+          "checks": {},
+          "behavior": {
+            "ok": true,
+            "sales": {
+              "positions": 0,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            },
+            "passing": {
+              "positions": 124,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            }
+          },
+          "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+        },
+        "limit_before": 0.15,
+        "limit_after": 0.15,
+        "group_limit_before": 0.3,
+        "group_limit_after": 0.3,
+        "decision": "hold",
+        "reason": "warmup",
+        "baseline": null,
+        "baseline_iterations": 0,
+        "last_update": 0,
+        "last_healthy_generation": 0,
+        "kl_last_healthy": 0.0,
+        "healthy_window_length": 0,
+        "blocked": false,
+        "recovery_limit": 0.12,
+        "alarm": false,
+        "lr_gate": {
+          "ok": false,
+          "reasons": [
+            "baseline_unavailable",
+            "rolling_health_unavailable",
+            "probe_evidence_unavailable"
+          ],
+          "anchor_distance": 5.371584799825668e-07,
+          "anchor_budget": 0.15,
+          "anchor_group_budget": 0.3,
+          "anchor_group_min_positions": 64,
+          "anchor_groups": {
+            "canal_action": {
+              "positions": 60,
+              "anchor_distance": 6.01108991211224e-07,
+              "status": "insufficient_samples"
+            },
+            "canal_other": {
+              "positions": 5,
+              "anchor_distance": 1.2887378540130828e-07,
+              "status": "insufficient_samples"
+            },
+            "rail_action": {
+              "positions": 64,
+              "anchor_distance": 5.970709675102571e-07,
+              "status": "ok"
+            },
+            "rail_other": {
+              "positions": 15,
+              "anchor_distance": 1.6182471981021202e-07,
+              "status": "insufficient_samples"
+            }
+          },
+          "anchor_unassigned_positions": 0,
+          "anchor_group_max": null,
+          "health": {
+            "ok": false,
+            "reasons": [
+              "baseline_unavailable",
+              "rolling_health_unavailable",
+              "probe_evidence_unavailable"
+            ],
+            "metrics": null,
+            "checks": {},
+            "behavior": {
+              "ok": true,
+              "sales": {
+                "positions": 0,
+                "failures": 0,
+                "examples": [],
+                "ok": true
+              },
+              "passing": {
+                "positions": 124,
+                "failures": 0,
+                "examples": [],
+                "ok": true
+              }
+            },
+            "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+          },
+          "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+        },
+        "probe": {
+          "path": "artifacts/critic-descriptors-20261018/native-final/run/il-kl/manifest.json",
+          "sha256": "19ca1626fe72976fc170ef00ef99ce6320e1ba9cc9d604569a6ead1f9493d0fc",
+          "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342"
+        }
+      },
+      "rehearsal_schedule": {
+        "weight": 0.09999000000000001,
+        "floor": 0.03,
+        "decayed_weight": 0.09999000000000001,
+        "committed_games": 1,
+        "committed_iterations": 1,
+        "enabled": true,
+        "scope": "Weight for the next collection/update; floor drops after 60, 90 and 120 committed iterations"
+      },
+      "value_phase": {
+        "contract": "ppg-value-phase/2.0.0",
+        "enabled": true,
+        "optimizer_steps": 0,
+        "attempted_steps": 0,
+        "epochs": 0,
+        "attempted_epochs": 0,
+        "early_stop_reason": "insufficient_critic_split",
+        "kl_guard_tripped": false,
+        "beta_clone": 1.0,
+        "learning_rate": 6e-06,
+        "train_rows": 608,
+        "heldout_rows": 0,
+        "current_train_rows": 296,
+        "previous_train_rows": 312,
+        "distinct_value_rows_used": 0,
+        "value_presentations": 0,
+        "clone_presentations": 0,
+        "distinct_current_rows_used": 0,
+        "distinct_previous_rows_used": 0,
+        "current_presentations": 0,
+        "previous_presentations": 0,
+        "scope": "Critic: current plus configured previous iteration; validation/cloning/probes: current only; separate Adam/base LR, no PPO counters",
+        "heldout_after": {
+          "rows": 0,
+          "games": 0,
+          "loss": null,
+          "explained_variance": null,
+          "utility_mse": null
+        },
+        "descriptor_gain": {
+          "learner_ev_gain": null
+        },
+        "role_usage": {
+          "learner": {
+            "distinct_used": 0,
+            "presentations": 0
+          },
+          "snapshot": {
+            "distinct_used": 0,
+            "presentations": 0
+          }
+        },
+        "seconds": 0.00030519999563694,
+        "buffer": {
+          "storage": "disk-backed one-candidate critic rows",
+          "buffer_iterations": 2,
+          "current_generation": 2,
+          "previous_generation": 1,
+          "current_rows": 296,
+          "previous_rows": 312,
+          "current_forced_rows": 166,
+          "previous_forced_rows": 170,
+          "current_cache_bytes": 4293336,
+          "previous_cache_bytes": 4525384,
+          "peak_cache_bytes": 8818720,
+          "write_seconds": 0.0760335000231862,
+          "rebuilt_from_replay": true,
+          "startup_cleanup": {
+            "deleted_files": [],
+            "deleted_bytes": 0,
+            "seconds": 0.0015430999919772148
+          },
+          "committed_cleanup": null
+        },
+        "split": {
+          "contract": "ppg-critic-holdout/1.0.0",
+          "fraction": 0.05,
+          "train_rows": 296,
+          "heldout_rows": 0,
+          "train_games": 1,
+          "heldout_games": 0,
+          "heldout_games_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "scope": "Hash of complete game id; every seat and value head excluded from critic fitting; actor still uses these games",
+          "eligible_train_rows": 296
+        },
+        "beta_clone_next": 1.0,
+        "beta_decision": "hold",
+        "kl_trip_window": [
+          false,
+          false
+        ],
+        "critic_rollout": {
+          "snapshot_rows_used": false,
+          "snapshot_rows_next": false,
+          "weight_used": 1.0,
+          "weight_next": 1.0,
+          "decision": "hold",
+          "reason": "health_or_descriptor_evidence_not_ready",
+          "learner_heldout_ev": null,
+          "phase1_learner_ev": null,
+          "fingerprint_mean_absolute_drift": 3.160732532186168e-05,
+          "snapshot_effect_ev_delta": null,
+          "scope": "Sequential heldout diagnostic; iteration distributions differ, not a causal snapshot benefit estimate"
+        }
+      },
+      "health_counts": {
+        "tables": 1,
+        "all_learner_tables": 1,
+        "seat_games": 4,
+        "vp_sum": 8.0,
+        "sells": 0,
+        "passes_with_alternative": 22,
+        "zero_vp_seats": 1,
+        "insolvent_seats": 4,
+        "insolvency_events": 24
+      },
+      "health_by_composition": {
+        "selfplay": {
+          "tables": 1,
+          "all_learner_tables": 1,
+          "seat_games": 4,
+          "vp_sum": 8.0,
+          "sells": 0,
+          "passes_with_alternative": 22,
+          "zero_vp_seats": 1,
+          "insolvent_seats": 4,
+          "insolvency_events": 24
+        }
+      },
+      "sampling": {
+        "tables": 1,
+        "learner_trajectories": 4,
+        "learner_decisions": 296,
+        "actor_eligible_decisions": 130,
+        "forced_decisions": 166,
+        "by_composition": {
+          "selfplay": {
+            "tables": 1,
+            "learner_trajectories": 4,
+            "learner_decisions": 296,
+            "actor_eligible_decisions": 130,
+            "forced_decisions": 166,
+            "table_fraction": 1.0,
+            "trajectory_fraction": 1.0,
+            "actor_eligible_fraction": 1.0
+          },
+          "historical": {
+            "tables": 0,
+            "learner_trajectories": 0,
+            "learner_decisions": 0,
+            "actor_eligible_decisions": 0,
+            "forced_decisions": 0,
+            "table_fraction": 0.0,
+            "trajectory_fraction": 0.0,
+            "actor_eligible_fraction": 0.0
+          },
+          "legacy": {
+            "tables": 0,
+            "learner_trajectories": 0,
+            "learner_decisions": 0,
+            "actor_eligible_decisions": 0,
+            "forced_decisions": 0,
+            "table_fraction": 0.0,
+            "trajectory_fraction": 0.0,
+            "actor_eligible_fraction": 0.0
+          }
+        },
+        "behavior": {
+          "policy_id": "step5-neural/fdac96dddd0beaf73702b377a7ff863db3c9689a436676da02e2f6729b47f504",
+          "exploration": 0.08,
+          "temperature": 1.0,
+          "focus": "mixed"
+        },
+        "scope": "Actual completed tables and learner seats; forced decisions are critic-only. Table fractions do not define PPO sample fractions."
+      },
+      "curriculum": {
+        "start_games": 1,
+        "completed_ordinary_games": 2,
+        "stages": [
+          {
+            "start_games": 0,
+            "until_games": null,
+            "quotas": {
+              "selfplay": 50,
+              "historical": 45,
+              "legacy": 5
+            },
+            "ordinary_games_this_iteration": 1
+          }
+        ],
+        "next_stage": 0,
+        "scope": "Ordinary game tables only; teacher/evaluation games and optimizer steps do not advance this clock"
+      },
+      "learning_rate": 6e-06,
+      "learning_rate_schedule": {
+        "contract": "linear-update-warmup/1.0.0",
+        "kind": "selfplay",
+        "base_lr": 6e-06,
+        "steps": 100,
+        "start_factor": 0.1,
+        "completed_steps": 2,
+        "effective_lr": 6.545454545454546e-07,
+        "next_lr": 7.090909090909092e-07
+      },
+      "actor": {
+        "format": "nonforced-actor-ppo/2.1.0",
+        "epochs": [
+          {
+            "epoch": 0,
+            "actor": 3.1177815884575466e-08,
+            "entropy": 3.1693174839019775,
+            "clip_fraction": 0.0,
+            "value": 1.4109021425247192,
+            "win_loss": 1.3908947706222534,
+            "rank_loss": 0.07063621282577515,
+            "vp_loss": 0.0234833974391222,
+            "post_update_kl": 4.7187810336114265e-08,
+            "probe_kl": 4.718786630501899e-08,
+            "probe_categorical_kl": 4.415496382884717e-08,
+            "gradient_norm": 1.7367753982543945,
+            "actor_positions": 130,
+            "critic_positions": 64,
+            "positions": 130,
+            "utility_prediction": {
+              "mse": 0.21028244495391846,
+              "mae": 0.40109893679618835
+            }
+          }
+        ],
+        "optimizer_steps": 1,
+        "gae": {
+          "contract": "gae-advantage/2.0.0",
+          "lambda": 1.0,
+          "gamma": 1.0,
+          "chain": "nonforced",
+          "lambda_by_table": {
+            "selfplay": 1.0,
+            "historical": 1.0,
+            "legacy": 1.0
+          },
+          "by_table": {
+            "selfplay": {
+              "rows": 130,
+              "actual_std": 0.460950850286533,
+              "mc_std": 0.460950850286533
+            },
+            "historical": {
+              "rows": 0,
+              "actual_std": null,
+              "mc_std": null
+            },
+            "legacy": {
+              "rows": 0,
+              "actual_std": null,
+              "mc_std": null
+            }
+          },
+          "trajectories": 4,
+          "td_error_std": 0.08099128365431772,
+          "shadows": {
+            "1.0": {
+              "rows": 130,
+              "std": 0.460950850286533,
+              "correlation_with_mc": 1.0,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 70,
+                  "mean": -0.018049167735236033
+                },
+                "era:RailEra": {
+                  "rows": 60,
+                  "mean": -0.00042360002795855203
+                },
+                "period:canal_early": {
+                  "rows": 32,
+                  "mean": -0.0007971245795488358
+                },
+                "period:canal_late": {
+                  "rows": 38,
+                  "mean": -0.03257720407686735
+                },
+                "period:rail_early": {
+                  "rows": 49,
+                  "mean": -0.007031542001938333
+                },
+                "period:rail_late": {
+                  "rows": 11,
+                  "mean": 0.0290117778561332
+                },
+                "phase:CanalEra/action": {
+                  "rows": 60,
+                  "mean": -0.024976090341806412
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 8,
+                  "mean": -0.024648213759064674
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 2,
+                  "mean": 0.21615469455718994
+                },
+                "phase:RailEra/action": {
+                  "rows": 59,
+                  "mean": 0.0032379157462362517
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 1,
+                  "mean": -0.21645303070545197
+                }
+              }
+            },
+            "0.98": {
+              "rows": 130,
+              "std": 0.34649557597878033,
+              "correlation_with_mc": 0.9824144644348153,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 70,
+                  "mean": -0.018109337766849788
+                },
+                "era:RailEra": {
+                  "rows": 60,
+                  "mean": -0.0007673363324039506
+                },
+                "period:canal_early": {
+                  "rows": 32,
+                  "mean": -0.009214053723742233
+                },
+                "period:canal_late": {
+                  "rows": 38,
+                  "mean": -0.025600103276835064
+                },
+                "period:rail_early": {
+                  "rows": 49,
+                  "mean": -0.00722427260024613
+                },
+                "period:rail_late": {
+                  "rows": 11,
+                  "mean": 0.0279953797698021
+                },
+                "phase:CanalEra/action": {
+                  "rows": 60,
+                  "mean": -0.02187819780039969
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 8,
+                  "mean": -0.03051055687565929
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 2,
+                  "mean": 0.14456133967488566
+                },
+                "phase:RailEra/action": {
+                  "rows": 59,
+                  "mean": 0.0023970887225665378
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 1,
+                  "mean": -0.18746841457566302
+                }
+              }
+            },
+            "0.95": {
+              "rows": 130,
+              "std": 0.2531539484710006,
+              "correlation_with_mc": 0.9039452743422314,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 70,
+                  "mean": -0.016385767586973934
+                },
+                "era:RailEra": {
+                  "rows": 60,
+                  "mean": -0.0011466351517340546
+                },
+                "period:canal_early": {
+                  "rows": 32,
+                  "mean": -0.013532761173859108
+                },
+                "period:canal_late": {
+                  "rows": 38,
+                  "mean": -0.01878829930328116
+                },
+                "period:rail_early": {
+                  "rows": 49,
+                  "mean": -0.00735473404195856
+                },
+                "period:rail_late": {
+                  "rows": 11,
+                  "mean": 0.0265076235410842
+                },
+                "phase:CanalEra/action": {
+                  "rows": 60,
+                  "mean": -0.01777547563582528
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 8,
+                  "mean": -0.02874337698076624
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 2,
+                  "mean": 0.07473591145373559
+                },
+                "phase:RailEra/action": {
+                  "rows": 59,
+                  "mean": 0.0013796423908586696
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 1,
+                  "mean": -0.1501970101647044
+                }
+              }
+            },
+            "0.9": {
+              "rows": 130,
+              "std": 0.1844862642365077,
+              "correlation_with_mc": 0.7388317300158633,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 70,
+                  "mean": -0.012706251418202984
+                },
+                "era:RailEra": {
+                  "rows": 60,
+                  "mean": -0.0015034171860464445
+                },
+                "period:canal_early": {
+                  "rows": 32,
+                  "mean": -0.012800267253036086
+                },
+                "period:canal_late": {
+                  "rows": 38,
+                  "mean": -0.01262708018886985
+                },
+                "period:rail_early": {
+                  "rows": 49,
+                  "mean": -0.007257020932198543
+                },
+                "period:rail_late": {
+                  "rows": 11,
+                  "mean": 0.024126272228631115
+                },
+                "phase:CanalEra/action": {
+                  "rows": 60,
+                  "mean": -0.012881577619388117
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 8,
+                  "mean": -0.018997067660947914
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 2,
+                  "mean": 0.01771679958833067
+                },
+                "phase:RailEra/action": {
+                  "rows": 59,
+                  "mean": 0.00019986616474374083
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 1,
+                  "mean": -0.10199713488266766
+                }
+              }
+            }
+          },
+          "scope": "Raw pre-normalization nonforced learner decisions; critic targets remain Monte Carlo",
+          "gate": {
+            "contract": "staged-gae-gate/1.0.0",
+            "mode": "auto",
+            "lambda_used": 1.0,
+            "table_gate": {
+              "historical": {
+                "learner_heldout_ev": null,
+                "selfplay_learner_ev": null,
+                "streak": 0,
+                "enabled": false,
+                "origin": null,
+                "iterations_since_extension": 0,
+                "thirty_iteration_review_due": false,
+                "review": "Inspect common PL rating slope/uncertainty and by-table advantage std; no automatic rollback",
+                "decision": "hold",
+                "lambda_used": 1.0,
+                "lambda_next": 1.0
+              },
+              "legacy": {
+                "learner_heldout_ev": null,
+                "selfplay_learner_ev": null,
+                "streak": 0,
+                "enabled": false,
+                "origin": null,
+                "iterations_since_extension": 0,
+                "thirty_iteration_review_due": false,
+                "review": "Inspect common PL rating slope/uncertainty and by-table advantage std; no automatic rollback",
+                "decision": "hold",
+                "lambda_used": 1.0,
+                "lambda_next": 1.0
+              }
+            },
+            "lambda_next": 1.0,
+            "decision": "hold",
+            "reason": "improving_critic",
+            "generation": 2,
+            "value_iterations": 0,
+            "heldout_ev": null,
+            "ev_streak": 0,
+            "healthy": false,
+            "healthy_streak": 0,
+            "stage_origin": 0,
+            "rating": {
+              "ok": false,
+              "reason": "rating_unavailable",
+              "slope": null,
+              "points": []
+            },
+            "scope": "Committed iterations only; no forks, extra ratings, or automatic rollback",
+            "anchor_gate": {
+              "ok": false,
+              "reasons": [
+                "baseline_unavailable",
+                "rolling_health_unavailable",
+                "probe_evidence_unavailable"
+              ],
+              "anchor_distance": 5.371584799825668e-07,
+              "anchor_budget": 0.15,
+              "anchor_group_budget": 0.3,
+              "anchor_group_min_positions": 64,
+              "anchor_groups": {
+                "canal_action": {
+                  "positions": 60,
+                  "anchor_distance": 6.01108991211224e-07,
+                  "status": "insufficient_samples"
+                },
+                "canal_other": {
+                  "positions": 5,
+                  "anchor_distance": 1.2887378540130828e-07,
+                  "status": "insufficient_samples"
+                },
+                "rail_action": {
+                  "positions": 64,
+                  "anchor_distance": 5.970709675102571e-07,
+                  "status": "ok"
+                },
+                "rail_other": {
+                  "positions": 15,
+                  "anchor_distance": 1.6182471981021202e-07,
+                  "status": "insufficient_samples"
+                }
+              },
+              "anchor_unassigned_positions": 0,
+              "anchor_group_max": null,
+              "health": {
+                "ok": false,
+                "reasons": [
+                  "baseline_unavailable",
+                  "rolling_health_unavailable",
+                  "probe_evidence_unavailable"
+                ],
+                "metrics": null,
+                "checks": {},
+                "behavior": {
+                  "ok": true,
+                  "sales": {
+                    "positions": 0,
+                    "failures": 0,
+                    "examples": [],
+                    "ok": true
+                  },
+                  "passing": {
+                    "positions": 124,
+                    "failures": 0,
+                    "examples": [],
+                    "ok": true
+                  }
+                },
+                "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+              },
+              "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+            }
+          }
+        },
+        "critic_split": {
+          "contract": "ppg-critic-holdout/1.0.0",
+          "fraction": 0.05,
+          "train_rows": 296,
+          "heldout_rows": 0,
+          "train_games": 1,
+          "heldout_games": 0,
+          "heldout_games_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "scope": "Hash of complete game id; every seat and value head excluded from critic fitting; actor still uses these games",
+          "eligible_train_rows": 296
+        },
+        "optimizer_steps_planned": 1,
+        "optimizer_steps_fraction": 1.0,
+        "controller_warmup_done": false,
+        "sample_usage": {
+          "learner_decisions": 296,
+          "actor_eligible_decisions": 130,
+          "actor_distinct_used": 130,
+          "actor_unused_eligible": 0,
+          "actor_presentations": 130,
+          "critic_distinct_used": 64,
+          "critic_presentations": 64,
+          "by_composition": {
+            "selfplay": {
+              "learner_decisions": 296,
+              "actor_eligible_decisions": 130,
+              "actor_distinct_used": 130,
+              "actor_unused_eligible": 0,
+              "actor_presentations": 130,
+              "critic_distinct_used": 64,
+              "critic_presentations": 64,
+              "actor_presentation_fraction": 1.0
+            }
+          },
+          "scope": "Actual PPO optimizer samples, excluding utility calibration, rehearsal and teacher distillation; presentations include epoch reuse"
+        },
+        "critic_rows": {
+          "available": 296,
+          "train": 296,
+          "available_by_role": {
+            "learner": 296
+          },
+          "train_by_role": {
+            "learner": 296
+          },
+          "presentations_by_role": {
+            "learner": 64
+          },
+          "learner_distinct_used": 64,
+          "snapshot_distinct_used": 0,
+          "snapshot_weight": 1.0
+        },
+        "insolvency": {
+          "enabled": true,
+          "event_cost": 0.005,
+          "max_cost": 0.075,
+          "events": 24,
+          "shortfall": 140,
+          "by_era": {
+            "CanalEra": 7,
+            "RailEra": 17
+          },
+          "learner_trajectories": 4,
+          "affected_trajectories": 4,
+          "total_cost": 0.12000000000000001,
+          "mean_cost_per_trajectory": 0.030000000000000002,
+          "decisions_with_future_cost": 279,
+          "objective": "Combined terminal utility minus future capped insolvency costs"
+        },
+        "reward": {
+          "spec": {
+            "version": "brass-combined-return/1.0.0",
+            "win": 1.0,
+            "placement": 0.1,
+            "vp": 0.001,
+            "insolvency": {
+              "event_cost": 0.005,
+              "max_cost": 0.075
+            }
+          },
+          "undiscounted": true,
+          "components": {
+            "win": 0.25,
+            "placement": 0.5,
+            "vp": 2.0,
+            "cost": 0.030000000000000002,
+            "utility": 0.272
+          },
+          "weighted": {
+            "win": 0.25,
+            "placement": 0.05,
+            "vp": 0.002
+          },
+          "trajectories": 4,
+          "distribution": {
+            "weighted": {
+              "win": {
+                "count": 4,
+                "mean": 0.25,
+                "std": 0.4330127018922193,
+                "min": 0.0,
+                "p05": 0.0,
+                "median": 0.0,
+                "p95": 0.8499999999999996,
+                "max": 1.0
+              },
+              "placement": {
+                "count": 4,
+                "mean": 0.05,
+                "std": 0.037267799624996496,
+                "min": 0.0,
+                "p05": 0.005000000000000001,
+                "median": 0.05,
+                "p95": 0.09499999999999999,
+                "max": 0.1
+              },
+              "vp": {
+                "count": 4,
+                "mean": 0.002,
+                "std": 0.001414213562373095,
+                "min": 0.0,
+                "p05": 0.00030000000000000003,
+                "median": 0.002,
+                "p95": 0.0036999999999999993,
+                "max": 0.004
+              },
+              "cost": {
+                "count": 4,
+                "mean": -0.030000000000000002,
+                "std": 0.007905694150420948,
+                "min": -0.04,
+                "p05": -0.03925,
+                "median": -0.030000000000000002,
+                "p95": -0.02075,
+                "max": -0.02
+              }
+            },
+            "utility": {
+              "count": 4,
+              "mean": 0.272,
+              "std": 0.4612212652898342,
+              "min": -0.04,
+              "p05": -0.03245,
+              "median": 0.0295,
+              "p95": 0.9159499999999998,
+              "max": 1.0690000000000002
+            },
+            "covariance": {
+              "win": {
+                "win": 0.1875,
+                "placement": 0.0125,
+                "vp": 0.0005,
+                "cost": -0.0012500000000000005
+              },
+              "placement": {
+                "win": 0.0125,
+                "placement": 0.0013888888888888892,
+                "vp": 5e-05,
+                "cost": 8.333333333333329e-05
+              },
+              "vp": {
+                "win": 0.0005,
+                "placement": 5e-05,
+                "vp": 2e-06,
+                "cost": 2.499999999999999e-06
+              },
+              "cost": {
+                "win": -0.0012500000000000005,
+                "placement": 8.333333333333329e-05,
+                "vp": 2.499999999999999e-06,
+                "cost": 6.25e-05
+              }
+            },
+            "capped_trajectories": 0,
+            "scope": "One complete-game observation per learner seat; population moments, not independent decisions"
+          }
+        },
+        "utility_calibration": {
+          "required": true,
+          "receipt": {
+            "version": "four-seat-utility-extension/1.0.0",
+            "reward_id": "dc00147030a636e5b7d057bc81d62d4248d82a1354cf43adb17719b1885f60b7",
+            "ready": true,
+            "decisions": 296,
+            "games": 1,
+            "steps": 3,
+            "before": {
+              "mse": 0.21666172791171717,
+              "mae": 0.4159919530958743
+            },
+            "after": {
+              "mse": 0.20985982345568166,
+              "mae": 0.3997750749459138
+            },
+            "scope": "Fresh ordinary trajectories, in-sample calibration; not a strength guarantee"
+          }
+        },
+        "learner_decisions": 296,
+        "meaningful_decisions": 130,
+        "forced_decisions": 166,
+        "learner_trajectories": 4,
+        "effective_batch_size": 512,
+        "microbatch_size": 16,
+        "critic_batch_size": 64,
+        "advantage": {
+          "mean": -0.009914284572005272,
+          "std": 0.4609508514404297,
+          "scope": "nonforced actor decisions"
+        },
+        "advantage_distribution": {
+          "count": 130,
+          "mean": -0.009914290331877195,
+          "std": 0.460950850286533,
+          "min": -0.3566424548625946,
+          "p05": -0.34496947973966596,
+          "median": -0.259615033864975,
+          "p95": 0.789559406042099,
+          "max": 0.8034429550170898
+        },
+        "return_distribution": {
+          "count": 130,
+          "mean": 0.28403846052690196,
+          "std": 0.46477038466012693,
+          "min": -0.03999999910593033,
+          "p05": -0.03999999910593033,
+          "median": 0.039499999955296516,
+          "p95": 1.0867499887943268,
+          "max": 1.1039999723434448
+        },
+        "baseline_explained_variance": 0.016368674268107397,
+        "baseline_scope": "Before PPO, after any head calibration; nonforced learner decisions, in-sample",
+        "legal_actions": {
+          "count": 130,
+          "mean": 59.53846153846154,
+          "std": 74.74944340890323,
+          "min": 2.0,
+          "p05": 2.0,
+          "median": 24.0,
+          "p95": 221.39999999999992,
+          "max": 343.0
+        },
+        "categorical_probe": {
+          "positions": 130,
+          "categorical_kl": 4.415496382884717e-08,
+          "entropy": 3.169317553593562,
+          "entropy_over_log_legal": 0.9996784274394696,
+          "scope": "Exact categorical KL(old behavior || new behavior) on the proportional era/phase nonforced probe; PPO per-step early stopping and optional LR feedback"
+        },
+        "gradient_norms": {
+          "count": 1,
+          "mean": 1.7367753982543945,
+          "std": 0.0,
+          "min": 1.7367753982543945,
+          "p05": 1.7367753982543945,
+          "median": 1.7367753982543945,
+          "p95": 1.7367753982543945,
+          "max": 1.7367753982543945
+        },
+        "kl_estimator": "probe_categorical_kl: exact KL(old behavior || current behavior), per-step guard; post_update_kl/probe_kl: sampled chosen-action ((ratio-1)-log(ratio)); full means all nonforced rows, retained as secondary epoch guard",
+        "kl_guard": {
+          "contract": "ppo-categorical-kl-guard/1.0.0",
+          "target_kl": 0.01,
+          "probe_positions": 130,
+          "probe_checks": 1,
+          "full_dataset_checks": 1,
+          "max_categorical_kl": 4.415496382884717e-08,
+          "stop_reason": null,
+          "stop_step": null
+        },
+        "kl_probe_rows": 130,
+        "kl_probe_sampling": "proportional-era-phase/1.0.0",
+        "learning_rates": [
+          6.545454545454546e-07
+        ],
+        "learning_rate_schedule": {
+          "contract": "linear-update-warmup/1.0.0",
+          "kind": "selfplay",
+          "base_lr": 6e-06,
+          "steps": 100,
+          "start_factor": 0.1,
+          "completed_steps": 2,
+          "effective_lr": 6.545454545454546e-07,
+          "next_lr": 7.090909090909092e-07
+        },
+        "kl_early_stop": false,
+        "gradient_clip_steps": 1,
+        "rehearsal_active": true,
+        "rehearsal_rows": 64,
+        "rehearsal_steps": 1,
+        "rehearsal_weight": 0.09999000000000001,
+        "phases": {
+          "action": 119,
+          "continuation": 9,
+          "debt": 2,
+          "payment": 0
+        },
+        "rehearsal_sampling": {
+          "contract": "rotating-train-window/1.0.0",
+          "iteration": 1,
+          "source_rows": 345,
+          "source_games": 1,
+          "source_shards": 1,
+          "selected_shards": 1,
+          "selected_rows": 64,
+          "distinct_rows_selected": 57,
+          "used_presentations": 26,
+          "distinct_rows_used": 16,
+          "selection_sha256": "e5f3d6578c0d9b081a5808dd8eff12b1ff2fa039ae250593bb287317f3533952",
+          "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+          "max_cache_bytes": 67108864,
+          "peak_cache_bytes": 4940586,
+          "cache_deleted": true,
+          "scope": "Train only; count-weighted shard draws, uniform rows with replacement; renewed each committed iteration",
+          "preparation_seconds": 3.8456119000329636,
+          "nonforced_rows_selected": 26
+        },
+        "lr_controller": {
+          "contract": "ppo-categorical-kl-lr/1.2.0",
+          "mode": "apply",
+          "kl": 4.415496382884717e-08,
+          "median_kl": null,
+          "window_size": 0,
+          "early_stop": false,
+          "steps_done": 1,
+          "steps_planned": 1,
+          "steps_fraction": 1.0,
+          "warmup_done": false,
+          "multiplier_before": 1.0,
+          "multiplier_after": 1.0,
+          "decision": "hold",
+          "reason": "warmup",
+          "at_min": false,
+          "at_max": false,
+          "cooldown": 0,
+          "window": [],
+          "window_reset": false,
+          "health": {
+            "ok": false,
+            "reasons": [
+              "baseline_unavailable",
+              "rolling_health_unavailable",
+              "probe_evidence_unavailable"
+            ],
+            "anchor_distance": 5.371584799825668e-07,
+            "anchor_budget": 0.15,
+            "anchor_group_budget": 0.3,
+            "anchor_group_min_positions": 64,
+            "anchor_groups": {
+              "canal_action": {
+                "positions": 60,
+                "anchor_distance": 6.01108991211224e-07,
+                "status": "insufficient_samples"
+              },
+              "canal_other": {
+                "positions": 5,
+                "anchor_distance": 1.2887378540130828e-07,
+                "status": "insufficient_samples"
+              },
+              "rail_action": {
+                "positions": 64,
+                "anchor_distance": 5.970709675102571e-07,
+                "status": "ok"
+              },
+              "rail_other": {
+                "positions": 15,
+                "anchor_distance": 1.6182471981021202e-07,
+                "status": "insufficient_samples"
+              }
+            },
+            "anchor_unassigned_positions": 0,
+            "anchor_group_max": null,
+            "health": {
+              "ok": false,
+              "reasons": [
+                "baseline_unavailable",
+                "rolling_health_unavailable",
+                "probe_evidence_unavailable"
+              ],
+              "metrics": null,
+              "checks": {},
+              "behavior": {
+                "ok": true,
+                "sales": {
+                  "positions": 0,
+                  "failures": 0,
+                  "examples": [],
+                  "ok": true
+                },
+                "passing": {
+                  "positions": 124,
+                  "failures": 0,
+                  "examples": [],
+                  "ok": true
+                }
+              },
+              "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+            },
+            "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+          },
+          "anchor_distance": 5.371584799825668e-07,
+          "anchor_identity": {
+            "path": "artifacts/critic-descriptors-20261018/native-final/run/initial.pt",
+            "sha256": "1cf25b8df5f6958df2a21cd4fcf66fdd11a5d53981eb1cd5a0055a03a896b4e1",
+            "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+            "generation": 0
+          },
+          "scope": "Exact post-PPO/pre-teaching KL; decision affects subsequent PPO steps only",
+          "early_stop_reason": null,
+          "effective_lr": 6.545454545454546e-07,
+          "next_ppo_lr": 7.090909090909092e-07,
+          "applied_multiplier": 1.0
+        },
+        "final_categorical_probe": {
+          "positions": 130,
+          "categorical_kl": 4.415496382884717e-08,
+          "entropy": 3.169317553593562,
+          "entropy_over_log_legal": 0.9996784274394696,
+          "scope": "Final checkpoint weights after PPO, value phase and any teaching; reference is collection behavior"
+        }
+      },
+      "search": {
+        "enabled": false,
+        "updated": false,
+        "reason": "Teacher search and distillation disabled by configuration",
+        "collection_count": 0,
+        "optimizer_steps": 0,
+        "teacher_rows": 0,
+        "teacher_value": {
+          "enabled": false,
+          "reason": "No teacher collection while teacher_enabled=false"
+        }
+      }
+    }
+  ]
+}

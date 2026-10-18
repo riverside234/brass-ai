@@ -1,0 +1,94 @@
+{
+  "contract": "completed-il-critic-upgrade/1.0.0",
+  "parent": {
+    "bc_run": "artifacts/feature-engineering/v11-1-20261016/smoke/imitation",
+    "path": "artifacts/feature-engineering/v11-1-20261016/smoke/imitation/epoch-0001.pt",
+    "sha256": "120c0646cfa0164539ac76a4356dad04cdb197469fbbf314034aef5d986da23f",
+    "model_id": "8240369e9b4f265f3271a15e05511dd87fd203b642c031e13145843955993bb1",
+    "manifest": "artifacts/feature-engineering/mlp-v11-20261016/smoke/data/manifest.json",
+    "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+    "bc_signature": "2d9334349f16d984cf163f97e5889af6371c871cca5bf5d764b2c7c720737ff8"
+  },
+  "compatibility": {
+    "learning_contract": "four-seat-learning/4.0.0",
+    "players": 4,
+    "rules": "steam-brass-patch-1.1.0",
+    "wire_sha256": "fabe2ef3e1de73aa9f3ddd05b67c08f9ef564a25ab4ff42963a03ab6fe3b6e3d",
+    "observation": "public-state/0.2.0",
+    "choices": "phase-choice/0.2.0",
+    "objective": "win-share/1.0.0",
+    "placement": "competition-rank/1.0.0",
+    "seat_order": "stable-0-1-2-3",
+    "vp_scale": 100.0,
+    "features_sha256": "59facdd72a386b6046abbb875daf3e1051b92e580ff55d0ab37250dd0c1dfb6a",
+    "feature_version": "permitted-features/4.0.0",
+    "derived_source_sha256": "47afe02b5e98549081f5ab119a2dca2c90448c74fba8020fc7e04cb6bc16f260",
+    "producer_profile_sha256": "ffae2fa230bcc42c3877d7817a584b608b60961c0b719316884d6c694a1384d7",
+    "encoder_sha256": "7d21b3052bf65c2d272a59859eebc6b3be1117b77e906a677402784b5ab90f06",
+    "architecture_sha256": "05368f9337d8a7a37459508f67d0bfd1c9092c4bc4a1e0d5c01748df1502f0d9",
+    "loss": "win-ce+0.25-rank-huber+0.1-vp-huber/1.0.0",
+    "reference_lock_sha256": "9cf98163e7ed9cbeef0cd9ce9178c4eeea933063d361f5a5e42d2fdddcdd5158",
+    "heads": [
+      "policy_logits",
+      "win_share_4",
+      "placement_4",
+      "vp_4"
+    ]
+  },
+  "implementation": "52d18f8d10f5e729fffa3768b3c93cc5e9deb3570fc870e7ba180e60937efcb4",
+  "architecture": {
+    "state_dim": 3128,
+    "action_dim": 327,
+    "hidden": 512,
+    "action_hidden": 160,
+    "players": 4,
+    "architecture": "brass-four-seat-mlp-resnet/11.2.0",
+    "residual_blocks": 8,
+    "head_hidden": 192,
+    "outcome_hidden": 128,
+    "parameter_limit": 6500000,
+    "group_layout": "9dcb18c8bfc04ca9b020b43ddcfa20a27785d3baf08d19679c8751747a18d53d",
+    "projection_widths": [
+      32,
+      64,
+      48,
+      320,
+      352,
+      48
+    ],
+    "entity_layout": "a4e1ca6a7588f8839275ff527918a3080f324db6d300215e7328410fb430a4e9",
+    "entity_hidden": 64
+  },
+  "from_architecture": {
+    "state_dim": 3128,
+    "action_dim": 327,
+    "hidden": 512,
+    "action_hidden": 160,
+    "players": 4,
+    "architecture": "brass-four-seat-mlp-resnet/11.1.0",
+    "residual_blocks": 8,
+    "head_hidden": 192,
+    "outcome_hidden": 128,
+    "parameter_limit": 6500000,
+    "group_layout": "9dcb18c8bfc04ca9b020b43ddcfa20a27785d3baf08d19679c8751747a18d53d",
+    "projection_widths": [
+      32,
+      64,
+      48,
+      320,
+      352,
+      48
+    ],
+    "entity_layout": "a4e1ca6a7588f8839275ff527918a3080f324db6d300215e7328410fb430a4e9",
+    "entity_hidden": 64
+  },
+  "parameters": 5910916,
+  "extra_parameters": 6272,
+  "optimizer": "Fresh self-play Adam; no IL optimizer conversion",
+  "initialization": "Copied policy/trunk/old critic tensors; descriptor head columns exactly zero; encoder seeded 112032",
+  "candidate": {
+    "path": "artifacts/critic-descriptors-20261018/il-upgrade-final/candidate.pt",
+    "sha256": "25f3437fc59d32ba1bc0a21eab72e4e70659ec2bb311c52ca8b9690bef1fa241",
+    "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a"
+  }
+}

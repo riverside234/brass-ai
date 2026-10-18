@@ -1,0 +1,2333 @@
+{
+  "format": "step5-recovery-report/2.2.0",
+  "iteration": 0,
+  "composition": {
+    "selfplay": 1
+  },
+  "quality_pool": {
+    "contract": "quality-score-pool/1.0.0",
+    "planning": {
+      "N": 0,
+      "members": []
+    },
+    "members": [
+      {
+        "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+        "generation": 0,
+        "q_before": null,
+        "p": null,
+        "seats_played": 0,
+        "comparisons": 0,
+        "outrank_rate": null,
+        "moving_outrank_rate": null,
+        "q_after": null
+      }
+    ],
+    "scope": "Conditional scored-pool p frozen at planning; two learner comparisons per opponent seat; IL outcomes are diagnostic only, never scored",
+    "admission": {
+      "generation": 1,
+      "candidate": "d5d81184648f300cf302bcd4dc2bb0a21cd90f71ee5c905b1ee67db0af6967dc",
+      "admitted": false,
+      "evicted": null,
+      "reason": "not_due"
+    },
+    "next_distribution": {
+      "N": 0,
+      "members": []
+    },
+    "size": 1,
+    "max_members": 24,
+    "eta": 0.01,
+    "uniform_floor": 0.2,
+    "pinned_seat_share": 0.2
+  },
+  "il_kl_limit": {
+    "contract": "auto-il-kl-limit/1.0.0",
+    "generation": 1,
+    "measurement": {
+      "positions": 144,
+      "requested_positions": 2048,
+      "kl_mean": 9.6994052384734e-08,
+      "groups": {
+        "canal_action": {
+          "positions": 60,
+          "kl_mean": 1.3310047663139313e-07
+        },
+        "canal_other": {
+          "positions": 5,
+          "kl_mean": 3.320098252503608e-08
+        },
+        "rail_action": {
+          "positions": 64,
+          "kl_mean": 8.469897295197668e-08
+        },
+        "rail_other": {
+          "positions": 15,
+          "kl_mean": 2.6291717597761415e-08
+        }
+      },
+      "unassigned_positions": 0,
+      "behavior": {
+        "ok": true,
+        "sales": {
+          "positions": 0,
+          "failures": 0,
+          "examples": [],
+          "ok": true
+        },
+        "passing": {
+          "positions": 124,
+          "failures": 0,
+          "examples": [],
+          "ok": true
+        }
+      },
+      "elapsed_seconds": 0.16267300001345575,
+      "probability_floor": 1e-06,
+      "scope": "Fixed IL validation positions; raw temperature-1 policies, no exploration; symmetric floor/renormalization for KL, raw behavior checks"
+    },
+    "health": {
+      "ok": false,
+      "reasons": [
+        "baseline_unavailable",
+        "rolling_health_unavailable",
+        "probe_evidence_unavailable"
+      ],
+      "metrics": null,
+      "checks": {},
+      "behavior": {
+        "ok": true,
+        "sales": {
+          "positions": 0,
+          "failures": 0,
+          "examples": [],
+          "ok": true
+        },
+        "passing": {
+          "positions": 124,
+          "failures": 0,
+          "examples": [],
+          "ok": true
+        }
+      },
+      "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+    },
+    "limit_before": 0.15,
+    "limit_after": 0.15,
+    "group_limit_before": 0.3,
+    "group_limit_after": 0.3,
+    "decision": "hold",
+    "reason": "warmup",
+    "baseline": null,
+    "baseline_iterations": 0,
+    "last_update": 0,
+    "last_healthy_generation": 0,
+    "kl_last_healthy": 0.0,
+    "healthy_window_length": 0,
+    "blocked": false,
+    "recovery_limit": 0.12,
+    "alarm": false,
+    "lr_gate": {
+      "ok": false,
+      "reasons": [
+        "baseline_unavailable",
+        "rolling_health_unavailable",
+        "probe_evidence_unavailable"
+      ],
+      "anchor_distance": 9.6994052384734e-08,
+      "anchor_budget": 0.15,
+      "anchor_group_budget": 0.3,
+      "anchor_group_min_positions": 64,
+      "anchor_groups": {
+        "canal_action": {
+          "positions": 60,
+          "anchor_distance": 1.3310047663139313e-07,
+          "status": "insufficient_samples"
+        },
+        "canal_other": {
+          "positions": 5,
+          "anchor_distance": 3.320098252503608e-08,
+          "status": "insufficient_samples"
+        },
+        "rail_action": {
+          "positions": 64,
+          "anchor_distance": 8.469897295197668e-08,
+          "status": "ok"
+        },
+        "rail_other": {
+          "positions": 15,
+          "anchor_distance": 2.6291717597761415e-08,
+          "status": "insufficient_samples"
+        }
+      },
+      "anchor_unassigned_positions": 0,
+      "anchor_group_max": null,
+      "health": {
+        "ok": false,
+        "reasons": [
+          "baseline_unavailable",
+          "rolling_health_unavailable",
+          "probe_evidence_unavailable"
+        ],
+        "metrics": null,
+        "checks": {},
+        "behavior": {
+          "ok": true,
+          "sales": {
+            "positions": 0,
+            "failures": 0,
+            "examples": [],
+            "ok": true
+          },
+          "passing": {
+            "positions": 124,
+            "failures": 0,
+            "examples": [],
+            "ok": true
+          }
+        },
+        "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+      },
+      "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+    },
+    "probe": {
+      "path": "artifacts/critic-descriptors-20261018/native-final/run/il-kl/manifest.json",
+      "sha256": "19ca1626fe72976fc170ef00ef99ce6320e1ba9cc9d604569a6ead1f9493d0fc",
+      "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342"
+    }
+  },
+  "rehearsal_schedule": {
+    "weight": 0.1,
+    "floor": 0.03,
+    "decayed_weight": 0.1,
+    "committed_games": 0,
+    "committed_iterations": 0,
+    "enabled": true,
+    "scope": "Weight for the next collection/update; floor drops after 60, 90 and 120 committed iterations"
+  },
+  "sampling": {
+    "tables": 1,
+    "learner_trajectories": 4,
+    "learner_decisions": 312,
+    "actor_eligible_decisions": 142,
+    "forced_decisions": 170,
+    "by_composition": {
+      "selfplay": {
+        "tables": 1,
+        "learner_trajectories": 4,
+        "learner_decisions": 312,
+        "actor_eligible_decisions": 142,
+        "forced_decisions": 170,
+        "table_fraction": 1.0,
+        "trajectory_fraction": 1.0,
+        "actor_eligible_fraction": 1.0
+      },
+      "historical": {
+        "tables": 0,
+        "learner_trajectories": 0,
+        "learner_decisions": 0,
+        "actor_eligible_decisions": 0,
+        "forced_decisions": 0,
+        "table_fraction": 0.0,
+        "trajectory_fraction": 0.0,
+        "actor_eligible_fraction": 0.0
+      },
+      "legacy": {
+        "tables": 0,
+        "learner_trajectories": 0,
+        "learner_decisions": 0,
+        "actor_eligible_decisions": 0,
+        "forced_decisions": 0,
+        "table_fraction": 0.0,
+        "trajectory_fraction": 0.0,
+        "actor_eligible_fraction": 0.0
+      }
+    },
+    "behavior": {
+      "policy_id": "step5-neural/edf43f3e60dcc4b15f892d196cee4389c34063f2114eba58fbda3d22592bb24e",
+      "exploration": 0.08,
+      "temperature": 1.0,
+      "focus": "mixed"
+    },
+    "scope": "Actual completed tables and learner seats; forced decisions are critic-only. Table fractions do not define PPO sample fractions."
+  },
+  "curriculum": {
+    "start_games": 0,
+    "completed_ordinary_games": 1,
+    "stages": [
+      {
+        "start_games": 0,
+        "until_games": null,
+        "quotas": {
+          "selfplay": 50,
+          "historical": 45,
+          "legacy": 5
+        },
+        "ordinary_games_this_iteration": 1
+      }
+    ],
+    "next_stage": 0,
+    "scope": "Ordinary game tables only; teacher/evaluation games and optimizer steps do not advance this clock"
+  },
+  "reward_migration": {
+    "version": "four-seat-utility-extension/1.0.0",
+    "from_config": {
+      "state_dim": 3128,
+      "action_dim": 327,
+      "hidden": 512,
+      "action_hidden": 160,
+      "players": 4,
+      "architecture": "brass-four-seat-mlp-resnet/11.2.0",
+      "residual_blocks": 8,
+      "head_hidden": 192,
+      "outcome_hidden": 128,
+      "parameter_limit": 6500000,
+      "group_layout": "9dcb18c8bfc04ca9b020b43ddcfa20a27785d3baf08d19679c8751747a18d53d",
+      "projection_widths": [
+        32,
+        64,
+        48,
+        320,
+        352,
+        48
+      ],
+      "entity_layout": "a4e1ca6a7588f8839275ff527918a3080f324db6d300215e7328410fb430a4e9",
+      "entity_hidden": 64
+    },
+    "to_config": {
+      "state_dim": 3128,
+      "action_dim": 327,
+      "hidden": 512,
+      "action_hidden": 160,
+      "players": 4,
+      "architecture": "brass-four-seat-mlp-resnet/11.2.0",
+      "residual_blocks": 8,
+      "head_hidden": 192,
+      "outcome_hidden": 128,
+      "parameter_limit": 6500000,
+      "group_layout": "9dcb18c8bfc04ca9b020b43ddcfa20a27785d3baf08d19679c8751747a18d53d",
+      "projection_widths": [
+        32,
+        64,
+        48,
+        320,
+        352,
+        48
+      ],
+      "entity_layout": "a4e1ca6a7588f8839275ff527918a3080f324db6d300215e7328410fb430a4e9",
+      "entity_hidden": 64,
+      "utility": {
+        "version": "brass-combined-return/1.0.0",
+        "win": 1.0,
+        "placement": 0.1,
+        "vp": 0.001,
+        "insolvency": {
+          "event_cost": 0.005,
+          "max_cost": 0.075
+        }
+      }
+    },
+    "preserved": "All compatible weights, Adam moments/steps and RNG; new head moments start empty"
+  },
+  "optimizer_resume": {
+    "before": [
+      {
+        "lr": 6.000000000000001e-07,
+        "weight_decay": 0.0001
+      }
+    ],
+    "after": [
+      {
+        "lr": 6.000000000000001e-07,
+        "weight_decay": 0.0001
+      }
+    ],
+    "preserved": "Adam moments, steps, other group options and RNG"
+  },
+  "legacy_boost": {
+    "enabled": false
+  },
+  "actor": {
+    "format": "nonforced-actor-ppo/2.1.0",
+    "epochs": [
+      {
+        "epoch": 0,
+        "actor": -1.6790040469061296e-09,
+        "entropy": 3.097874641418457,
+        "clip_fraction": 0.0,
+        "value": 1.4180952310562134,
+        "win_loss": 1.4036822319030762,
+        "rank_loss": 0.05310162901878357,
+        "vp_loss": 0.011375648900866508,
+        "post_update_kl": 3.5018620366545423e-08,
+        "probe_kl": 3.5018498673592366e-08,
+        "probe_categorical_kl": 3.21006443210907e-08,
+        "gradient_norm": 2.305556297302246,
+        "actor_positions": 142,
+        "critic_positions": 64,
+        "positions": 142,
+        "utility_prediction": {
+          "mse": 0.22024354338645935,
+          "mae": 0.4152773916721344
+        }
+      }
+    ],
+    "optimizer_steps": 1,
+    "gae": {
+      "contract": "gae-advantage/2.0.0",
+      "lambda": 1.0,
+      "gamma": 1.0,
+      "chain": "nonforced",
+      "lambda_by_table": {
+        "selfplay": 1.0,
+        "historical": 1.0,
+        "legacy": 1.0
+      },
+      "by_table": {
+        "selfplay": {
+          "rows": 142,
+          "actual_std": 0.4758877652031889,
+          "mc_std": 0.4758877652031889
+        },
+        "historical": {
+          "rows": 0,
+          "actual_std": null,
+          "mc_std": null
+        },
+        "legacy": {
+          "rows": 0,
+          "actual_std": null,
+          "mc_std": null
+        }
+      },
+      "trajectories": 4,
+      "td_error_std": 0.07753740086305065,
+      "shadows": {
+        "1.0": {
+          "rows": 142,
+          "std": 0.4758877652031889,
+          "correlation_with_mc": 1.0,
+          "same_sign_fraction": 1.0,
+          "means": {
+            "era:CanalEra": {
+              "rows": 75,
+              "mean": -0.021360838810602824
+            },
+            "era:RailEra": {
+              "rows": 67,
+              "mean": 0.031610410160093166
+            },
+            "period:canal_early": {
+              "rows": 32,
+              "mean": 0.0003639291971921921
+            },
+            "period:canal_late": {
+              "rows": 43,
+              "mean": -0.037528108025706094
+            },
+            "period:rail_early": {
+              "rows": 53,
+              "mean": 0.0036017096267556246
+            },
+            "period:rail_late": {
+              "rows": 14,
+              "mean": 0.13764334789344243
+            },
+            "phase:CanalEra/action": {
+              "rows": 60,
+              "mean": -0.025788969298203786
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 11,
+              "mean": 0.005689035762440075
+            },
+            "phase:CanalEra/debt": {
+              "rows": 3,
+              "mean": -0.3060641090075175
+            },
+            "phase:CanalEra/payment": {
+              "rows": 1,
+              "mean": 0.800888180732727
+            },
+            "phase:RailEra/action": {
+              "rows": 60,
+              "mean": 0.011321761955817541
+            },
+            "phase:RailEra/continuation": {
+              "rows": 4,
+              "mean": 0.27454329654574394
+            },
+            "phase:RailEra/debt": {
+              "rows": 3,
+              "mean": 0.11347285906473796
+            }
+          }
+        },
+        "0.98": {
+          "rows": 142,
+          "std": 0.34773293561122287,
+          "correlation_with_mc": 0.9787691434225863,
+          "same_sign_fraction": 1.0,
+          "means": {
+            "era:CanalEra": {
+              "rows": 75,
+              "mean": -0.026651473012237893
+            },
+            "era:RailEra": {
+              "rows": 67,
+              "mean": 0.02351452832387819
+            },
+            "period:canal_early": {
+              "rows": 32,
+              "mean": -0.01574256696202797
+            },
+            "period:canal_late": {
+              "rows": 43,
+              "mean": -0.0347697286775104
+            },
+            "period:rail_early": {
+              "rows": 53,
+              "mean": -0.004419021768377297
+            },
+            "period:rail_late": {
+              "rows": 14,
+              "mean": 0.12926296795884543
+            },
+            "phase:CanalEra/action": {
+              "rows": 60,
+              "mean": -0.029200387911774362
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 11,
+              "mean": -0.01776186577946516
+            },
+            "phase:CanalEra/debt": {
+              "rows": 3,
+              "mean": -0.20111703090747102
+            },
+            "phase:CanalEra/payment": {
+              "rows": 1,
+              "mean": 0.5518944150851504
+            },
+            "phase:RailEra/action": {
+              "rows": 60,
+              "mean": 0.0018618946006779898
+            },
+            "phase:RailEra/continuation": {
+              "rows": 4,
+              "mean": 0.2594376236425662
+            },
+            "phase:RailEra/debt": {
+              "rows": 3,
+              "mean": 0.1420030756962983
+            }
+          }
+        },
+        "0.95": {
+          "rows": 142,
+          "std": 0.2490165425864581,
+          "correlation_with_mc": 0.8879148662580459,
+          "same_sign_fraction": 1.0,
+          "means": {
+            "era:CanalEra": {
+              "rows": 75,
+              "mean": -0.02574939231618619
+            },
+            "era:RailEra": {
+              "rows": 67,
+              "mean": 0.014980457467348175
+            },
+            "period:canal_early": {
+              "rows": 32,
+              "mean": -0.021303065801040848
+            },
+            "period:canal_late": {
+              "rows": 43,
+              "mean": -0.029058286466992017
+            },
+            "period:rail_early": {
+              "rows": 53,
+              "mean": -0.01209005581984499
+            },
+            "period:rail_late": {
+              "rows": 14,
+              "mean": 0.11746168634029372
+            },
+            "phase:CanalEra/action": {
+              "rows": 60,
+              "mean": -0.02701492482069805
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 11,
+              "mean": -0.026717162344013657
+            },
+            "phase:CanalEra/debt": {
+              "rows": 3,
+              "mean": -0.10847624694398156
+            },
+            "phase:CanalEra/payment": {
+              "rows": 1,
+              "mean": 0.30900859214401366
+            },
+            "phase:RailEra/action": {
+              "rows": 60,
+              "mean": -0.00755924276435113
+            },
+            "phase:RailEra/continuation": {
+              "rows": 4,
+              "mean": 0.23522533147204946
+            },
+            "phase:RailEra/debt": {
+              "rows": 3,
+              "mean": 0.17211463009506608
+            }
+          }
+        },
+        "0.9": {
+          "rows": 142,
+          "std": 0.1797522809710282,
+          "correlation_with_mc": 0.7121889076610213,
+          "same_sign_fraction": 1.0,
+          "means": {
+            "era:CanalEra": {
+              "rows": 75,
+              "mean": -0.019016363621332473
+            },
+            "era:RailEra": {
+              "rows": 67,
+              "mean": 0.006903014005828759
+            },
+            "period:canal_early": {
+              "rows": 32,
+              "mean": -0.01745127867996942
+            },
+            "period:canal_late": {
+              "rows": 43,
+              "mean": -0.020181077996300322
+            },
+            "period:rail_early": {
+              "rows": 53,
+              "mean": -0.01761767511683077
+            },
+            "period:rail_late": {
+              "rows": 14,
+              "mean": 0.09973133711303982
+            },
+            "phase:CanalEra/action": {
+              "rows": 60,
+              "mean": -0.019583257330117947
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 11,
+              "mean": -0.021352743376077538
+            },
+            "phase:CanalEra/debt": {
+              "rows": 3,
+              "mean": -0.04161211778817827
+            },
+            "phase:CanalEra/payment": {
+              "rows": 1,
+              "mean": 0.1084846987085292
+            },
+            "phase:RailEra/action": {
+              "rows": 60,
+              "mean": -0.015215623095451406
+            },
+            "phase:RailEra/continuation": {
+              "rows": 4,
+              "mean": 0.19461167263743703
+            },
+            "phase:RailEra/debt": {
+              "rows": 3,
+              "mean": 0.1989975445226209
+            }
+          }
+        }
+      },
+      "scope": "Raw pre-normalization nonforced learner decisions; critic targets remain Monte Carlo",
+      "gate": {
+        "contract": "staged-gae-gate/1.0.0",
+        "mode": "auto",
+        "lambda_used": 1.0,
+        "table_gate": {
+          "historical": {
+            "learner_heldout_ev": null,
+            "selfplay_learner_ev": null,
+            "streak": 0,
+            "enabled": false,
+            "origin": null,
+            "iterations_since_extension": 0,
+            "thirty_iteration_review_due": false,
+            "review": "Inspect common PL rating slope/uncertainty and by-table advantage std; no automatic rollback",
+            "decision": "hold",
+            "lambda_used": 1.0,
+            "lambda_next": 1.0
+          },
+          "legacy": {
+            "learner_heldout_ev": null,
+            "selfplay_learner_ev": null,
+            "streak": 0,
+            "enabled": false,
+            "origin": null,
+            "iterations_since_extension": 0,
+            "thirty_iteration_review_due": false,
+            "review": "Inspect common PL rating slope/uncertainty and by-table advantage std; no automatic rollback",
+            "decision": "hold",
+            "lambda_used": 1.0,
+            "lambda_next": 1.0
+          }
+        },
+        "lambda_next": 1.0,
+        "decision": "hold",
+        "reason": "improving_critic",
+        "generation": 1,
+        "value_iterations": 0,
+        "heldout_ev": null,
+        "ev_streak": 0,
+        "healthy": false,
+        "healthy_streak": 0,
+        "stage_origin": 0,
+        "rating": {
+          "ok": false,
+          "reason": "rating_unavailable",
+          "slope": null,
+          "points": []
+        },
+        "scope": "Committed iterations only; no forks, extra ratings, or automatic rollback",
+        "anchor_gate": {
+          "ok": false,
+          "reasons": [
+            "baseline_unavailable",
+            "rolling_health_unavailable",
+            "probe_evidence_unavailable"
+          ],
+          "anchor_distance": 9.6994052384734e-08,
+          "anchor_budget": 0.15,
+          "anchor_group_budget": 0.3,
+          "anchor_group_min_positions": 64,
+          "anchor_groups": {
+            "canal_action": {
+              "positions": 60,
+              "anchor_distance": 1.3310047663139313e-07,
+              "status": "insufficient_samples"
+            },
+            "canal_other": {
+              "positions": 5,
+              "anchor_distance": 3.320098252503608e-08,
+              "status": "insufficient_samples"
+            },
+            "rail_action": {
+              "positions": 64,
+              "anchor_distance": 8.469897295197668e-08,
+              "status": "ok"
+            },
+            "rail_other": {
+              "positions": 15,
+              "anchor_distance": 2.6291717597761415e-08,
+              "status": "insufficient_samples"
+            }
+          },
+          "anchor_unassigned_positions": 0,
+          "anchor_group_max": null,
+          "health": {
+            "ok": false,
+            "reasons": [
+              "baseline_unavailable",
+              "rolling_health_unavailable",
+              "probe_evidence_unavailable"
+            ],
+            "metrics": null,
+            "checks": {},
+            "behavior": {
+              "ok": true,
+              "sales": {
+                "positions": 0,
+                "failures": 0,
+                "examples": [],
+                "ok": true
+              },
+              "passing": {
+                "positions": 124,
+                "failures": 0,
+                "examples": [],
+                "ok": true
+              }
+            },
+            "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+          },
+          "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+        }
+      }
+    },
+    "critic_split": {
+      "contract": "ppg-critic-holdout/1.0.0",
+      "fraction": 0.05,
+      "train_rows": 312,
+      "heldout_rows": 0,
+      "train_games": 1,
+      "heldout_games": 0,
+      "heldout_games_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "scope": "Hash of complete game id; every seat and value head excluded from critic fitting; actor still uses these games",
+      "eligible_train_rows": 312
+    },
+    "optimizer_steps_planned": 1,
+    "optimizer_steps_fraction": 1.0,
+    "controller_warmup_done": false,
+    "sample_usage": {
+      "learner_decisions": 312,
+      "actor_eligible_decisions": 142,
+      "actor_distinct_used": 142,
+      "actor_unused_eligible": 0,
+      "actor_presentations": 142,
+      "critic_distinct_used": 64,
+      "critic_presentations": 64,
+      "by_composition": {
+        "selfplay": {
+          "learner_decisions": 312,
+          "actor_eligible_decisions": 142,
+          "actor_distinct_used": 142,
+          "actor_unused_eligible": 0,
+          "actor_presentations": 142,
+          "critic_distinct_used": 64,
+          "critic_presentations": 64,
+          "actor_presentation_fraction": 1.0
+        }
+      },
+      "scope": "Actual PPO optimizer samples, excluding utility calibration, rehearsal and teacher distillation; presentations include epoch reuse"
+    },
+    "critic_rows": {
+      "available": 312,
+      "train": 312,
+      "available_by_role": {
+        "learner": 312
+      },
+      "train_by_role": {
+        "learner": 312
+      },
+      "presentations_by_role": {
+        "learner": 64
+      },
+      "learner_distinct_used": 64,
+      "snapshot_distinct_used": 0,
+      "snapshot_weight": 1.0
+    },
+    "insolvency": {
+      "enabled": true,
+      "event_cost": 0.005,
+      "max_cost": 0.075,
+      "events": 24,
+      "shortfall": 194,
+      "by_era": {
+        "CanalEra": 3,
+        "RailEra": 21
+      },
+      "learner_trajectories": 4,
+      "affected_trajectories": 4,
+      "total_cost": 0.12,
+      "mean_cost_per_trajectory": 0.03,
+      "decisions_with_future_cost": 295,
+      "objective": "Combined terminal utility minus future capped insolvency costs"
+    },
+    "reward": {
+      "spec": {
+        "version": "brass-combined-return/1.0.0",
+        "win": 1.0,
+        "placement": 0.1,
+        "vp": 0.001,
+        "insolvency": {
+          "event_cost": 0.005,
+          "max_cost": 0.075
+        }
+      },
+      "undiscounted": true,
+      "components": {
+        "win": 0.25,
+        "placement": 0.5,
+        "vp": 1.75,
+        "cost": 0.03,
+        "utility": 0.27175000000000005
+      },
+      "weighted": {
+        "win": 0.25,
+        "placement": 0.05,
+        "vp": 0.00175
+      },
+      "trajectories": 4,
+      "distribution": {
+        "weighted": {
+          "win": {
+            "count": 4,
+            "mean": 0.25,
+            "std": 0.4330127018922193,
+            "min": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.8499999999999996,
+            "max": 1.0
+          },
+          "placement": {
+            "count": 4,
+            "mean": 0.05,
+            "std": 0.02886751345948129,
+            "min": 0.03333333333333333,
+            "p05": 0.03333333333333333,
+            "median": 0.03333333333333333,
+            "p95": 0.08999999999999998,
+            "max": 0.1
+          },
+          "vp": {
+            "count": 4,
+            "mean": 0.00175,
+            "std": 0.0030310889132455355,
+            "min": 0.0,
+            "p05": 0.0,
+            "median": 0.0,
+            "p95": 0.005949999999999998,
+            "max": 0.007
+          },
+          "cost": {
+            "count": 4,
+            "mean": -0.030000000000000002,
+            "std": 0.015411035007422441,
+            "min": -0.045,
+            "p05": -0.04425,
+            "median": -0.035,
+            "p95": -0.00875000000000001,
+            "max": -0.005
+          }
+        },
+        "utility": {
+          "count": 4,
+          "mean": 0.27175000000000005,
+          "std": 0.4793754834851973,
+          "min": -0.011666666666666665,
+          "p05": -0.010916666666666667,
+          "median": -0.0016666666666666687,
+          "p95": 0.9371999999999997,
+          "max": 1.102
+        },
+        "covariance": {
+          "win": {
+            "win": 0.1875,
+            "placement": 0.0125,
+            "vp": 0.0013125,
+            "cost": 0.00625
+          },
+          "placement": {
+            "win": 0.0125,
+            "placement": 0.0008333333333333335,
+            "vp": 8.750000000000001e-05,
+            "cost": 0.0004166666666666667
+          },
+          "vp": {
+            "win": 0.0013125,
+            "placement": 8.750000000000001e-05,
+            "vp": 9.187500000000001e-06,
+            "cost": 4.375e-05
+          },
+          "cost": {
+            "win": 0.00625,
+            "placement": 0.0004166666666666667,
+            "vp": 4.375e-05,
+            "cost": 0.00023749999999999997
+          }
+        },
+        "capped_trajectories": 0,
+        "scope": "One complete-game observation per learner seat; population moments, not independent decisions"
+      }
+    },
+    "utility_calibration": {
+      "required": true,
+      "receipt": {
+        "version": "four-seat-utility-extension/1.0.0",
+        "reward_id": "dc00147030a636e5b7d057bc81d62d4248d82a1354cf43adb17719b1885f60b7",
+        "ready": true,
+        "decisions": 312,
+        "games": 1,
+        "steps": 3,
+        "before": {
+          "mse": 0.22706486934270614,
+          "mae": 0.4267852428631905
+        },
+        "after": {
+          "mse": 0.22080271442731222,
+          "mae": 0.41780834396680194
+        },
+        "scope": "Fresh ordinary trajectories, in-sample calibration; not a strength guarantee"
+      }
+    },
+    "learner_decisions": 312,
+    "meaningful_decisions": 142,
+    "forced_decisions": 170,
+    "learner_trajectories": 4,
+    "effective_batch_size": 512,
+    "microbatch_size": 16,
+    "critic_batch_size": 64,
+    "advantage": {
+      "mean": 0.0036326374392956495,
+      "std": 0.4758877754211426,
+      "scope": "nonforced actor decisions"
+    },
+    "advantage_distribution": {
+      "count": 142,
+      "mean": 0.003632637816415706,
+      "std": 0.4758877652031889,
+      "min": -0.3399773836135864,
+      "p05": -0.32279687374830246,
+      "median": -0.26239727437496185,
+      "p95": 0.8220984965562821,
+      "max": 0.8258987665176392
+    },
+    "return_distribution": {
+      "count": 142,
+      "mean": 0.29052112627820387,
+      "std": 0.48198712775107383,
+      "min": -0.011666666716337204,
+      "p05": -0.011666666716337204,
+      "median": 0.008333333767950535,
+      "p95": 1.1019999980926514,
+      "max": 1.1069999933242798
+    },
+    "baseline_explained_variance": 0.025149121237764804,
+    "baseline_scope": "Before PPO, after any head calibration; nonforced learner decisions, in-sample",
+    "legal_actions": {
+      "count": 142,
+      "mean": 57.16901408450704,
+      "std": 77.2940217638882,
+      "min": 2.0,
+      "p05": 2.0,
+      "median": 22.5,
+      "p95": 169.89999999999998,
+      "max": 396.0
+    },
+    "categorical_probe": {
+      "positions": 142,
+      "categorical_kl": 3.21006443210907e-08,
+      "entropy": 3.097873781768369,
+      "entropy_over_log_legal": 0.9996871545281208,
+      "scope": "Exact categorical KL(old behavior || new behavior) on the proportional era/phase nonforced probe; PPO per-step early stopping and optional LR feedback"
+    },
+    "gradient_norms": {
+      "count": 1,
+      "mean": 2.305556297302246,
+      "std": 0.0,
+      "min": 2.305556297302246,
+      "p05": 2.305556297302246,
+      "median": 2.305556297302246,
+      "p95": 2.305556297302246,
+      "max": 2.305556297302246
+    },
+    "kl_estimator": "probe_categorical_kl: exact KL(old behavior || current behavior), per-step guard; post_update_kl/probe_kl: sampled chosen-action ((ratio-1)-log(ratio)); full means all nonforced rows, retained as secondary epoch guard",
+    "kl_guard": {
+      "contract": "ppo-categorical-kl-guard/1.0.0",
+      "target_kl": 0.01,
+      "probe_positions": 142,
+      "probe_checks": 1,
+      "full_dataset_checks": 1,
+      "max_categorical_kl": 3.21006443210907e-08,
+      "stop_reason": null,
+      "stop_step": null
+    },
+    "kl_probe_rows": 142,
+    "kl_probe_sampling": "proportional-era-phase/1.0.0",
+    "learning_rates": [
+      6.000000000000001e-07
+    ],
+    "learning_rate_schedule": {
+      "contract": "linear-update-warmup/1.0.0",
+      "kind": "selfplay",
+      "base_lr": 6e-06,
+      "steps": 100,
+      "start_factor": 0.1,
+      "completed_steps": 1,
+      "effective_lr": 6.000000000000001e-07,
+      "next_lr": 6.545454545454546e-07
+    },
+    "kl_early_stop": false,
+    "gradient_clip_steps": 1,
+    "rehearsal_active": true,
+    "rehearsal_rows": 64,
+    "rehearsal_steps": 1,
+    "rehearsal_weight": 0.1,
+    "phases": {
+      "action": 120,
+      "continuation": 15,
+      "debt": 6,
+      "payment": 1
+    },
+    "timings": {
+      "ppo.forward_backward": {
+        "seconds": 0.5171152000548318,
+        "calls": 1,
+        "mean_seconds": 0.5171152000548318,
+        "p50_seconds": 0.5171152000548318,
+        "p95_seconds": 0.5171152000548318,
+        "max_seconds": 0.5171152000548318,
+        "first_seconds": 0.5171152000548318,
+        "steady_mean_seconds": 0.0,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 1
+      },
+      "ppo.kl_probe": {
+        "seconds": 0.11884359997930005,
+        "calls": 1,
+        "mean_seconds": 0.11884359997930005,
+        "p50_seconds": 0.11884359997930005,
+        "p95_seconds": 0.11884359997930005,
+        "max_seconds": 0.11884359997930005,
+        "first_seconds": 0.11884359997930005,
+        "steady_mean_seconds": 0.0,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 1
+      },
+      "ppo.optimizer": {
+        "seconds": 0.034918999997898936,
+        "calls": 1,
+        "mean_seconds": 0.034918999997898936,
+        "p50_seconds": 0.034918999997898936,
+        "p95_seconds": 0.034918999997898936,
+        "max_seconds": 0.034918999997898936,
+        "first_seconds": 0.034918999997898936,
+        "steady_mean_seconds": 0.0,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 1
+      },
+      "ppo.policy_measure": {
+        "seconds": 0.3927216000156477,
+        "calls": 2,
+        "mean_seconds": 0.19636080000782385,
+        "p50_seconds": 0.13069920003181323,
+        "p95_seconds": 0.2620223999838345,
+        "max_seconds": 0.2620223999838345,
+        "first_seconds": 0.2620223999838345,
+        "steady_mean_seconds": 0.13069920003181323,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 2
+      },
+      "ppo.prepare": {
+        "seconds": 0.023447000014130026,
+        "calls": 1,
+        "mean_seconds": 0.023447000014130026,
+        "p50_seconds": 0.023447000014130026,
+        "p95_seconds": 0.023447000014130026,
+        "max_seconds": 0.023447000014130026,
+        "first_seconds": 0.023447000014130026,
+        "steady_mean_seconds": 0.0,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 1
+      }
+    },
+    "memory": {
+      "host_resident_bytes": null
+    },
+    "rehearsal_sampling": {
+      "contract": "rotating-train-window/1.0.0",
+      "iteration": 0,
+      "source_rows": 345,
+      "source_games": 1,
+      "source_shards": 1,
+      "selected_shards": 1,
+      "selected_rows": 64,
+      "distinct_rows_selected": 55,
+      "used_presentations": 35,
+      "distinct_rows_used": 16,
+      "selection_sha256": "8d4463c2017ac027a00d969068aca831f8c90a467ff84dafed13ec75b358292d",
+      "manifest_sha256": "0cb3b69d7995f9471ec075c22726fcd4d9268299823d6a5b072593385c7aa48f",
+      "max_cache_bytes": 67108864,
+      "peak_cache_bytes": 4931923,
+      "cache_deleted": true,
+      "scope": "Train only; count-weighted shard draws, uniform rows with replacement; renewed each committed iteration",
+      "preparation_seconds": 4.135012600047048,
+      "nonforced_rows_selected": 26
+    },
+    "lr_controller": {
+      "contract": "ppo-categorical-kl-lr/1.2.0",
+      "mode": "apply",
+      "kl": 3.21006443210907e-08,
+      "median_kl": null,
+      "window_size": 0,
+      "early_stop": false,
+      "steps_done": 1,
+      "steps_planned": 1,
+      "steps_fraction": 1.0,
+      "warmup_done": false,
+      "multiplier_before": 1.0,
+      "multiplier_after": 1.0,
+      "decision": "hold",
+      "reason": "warmup",
+      "at_min": false,
+      "at_max": false,
+      "cooldown": 0,
+      "window": [],
+      "window_reset": false,
+      "health": {
+        "ok": false,
+        "reasons": [
+          "baseline_unavailable",
+          "rolling_health_unavailable",
+          "probe_evidence_unavailable"
+        ],
+        "anchor_distance": 9.6994052384734e-08,
+        "anchor_budget": 0.15,
+        "anchor_group_budget": 0.3,
+        "anchor_group_min_positions": 64,
+        "anchor_groups": {
+          "canal_action": {
+            "positions": 60,
+            "anchor_distance": 1.3310047663139313e-07,
+            "status": "insufficient_samples"
+          },
+          "canal_other": {
+            "positions": 5,
+            "anchor_distance": 3.320098252503608e-08,
+            "status": "insufficient_samples"
+          },
+          "rail_action": {
+            "positions": 64,
+            "anchor_distance": 8.469897295197668e-08,
+            "status": "ok"
+          },
+          "rail_other": {
+            "positions": 15,
+            "anchor_distance": 2.6291717597761415e-08,
+            "status": "insufficient_samples"
+          }
+        },
+        "anchor_unassigned_positions": 0,
+        "anchor_group_max": null,
+        "health": {
+          "ok": false,
+          "reasons": [
+            "baseline_unavailable",
+            "rolling_health_unavailable",
+            "probe_evidence_unavailable"
+          ],
+          "metrics": null,
+          "checks": {},
+          "behavior": {
+            "ok": true,
+            "sales": {
+              "positions": 0,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            },
+            "passing": {
+              "positions": 124,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            }
+          },
+          "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+        },
+        "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+      },
+      "anchor_distance": 9.6994052384734e-08,
+      "anchor_identity": {
+        "path": "artifacts/critic-descriptors-20261018/native-final/run/initial.pt",
+        "sha256": "1cf25b8df5f6958df2a21cd4fcf66fdd11a5d53981eb1cd5a0055a03a896b4e1",
+        "model_id": "8e78b9186bb278f20c13fab76249e9a7ebe03d84e3061f77ca6c884c2200b58a",
+        "generation": 0
+      },
+      "scope": "Exact post-PPO/pre-teaching KL; decision affects subsequent PPO steps only",
+      "early_stop_reason": null,
+      "effective_lr": 6.000000000000001e-07,
+      "next_ppo_lr": 6.545454545454546e-07,
+      "applied_multiplier": 1.0
+    },
+    "final_categorical_probe": {
+      "positions": 142,
+      "categorical_kl": 3.21006443210907e-08,
+      "entropy": 3.097873781768369,
+      "entropy_over_log_legal": 0.9996871545281208,
+      "scope": "Final checkpoint weights after PPO, value phase and any teaching; reference is collection behavior"
+    }
+  },
+  "value_phase": {
+    "contract": "ppg-value-phase/2.0.0",
+    "enabled": true,
+    "optimizer_steps": 0,
+    "attempted_steps": 0,
+    "epochs": 0,
+    "attempted_epochs": 0,
+    "early_stop_reason": "insufficient_critic_split",
+    "kl_guard_tripped": false,
+    "beta_clone": 1.0,
+    "learning_rate": 6e-06,
+    "train_rows": 312,
+    "heldout_rows": 0,
+    "current_train_rows": 312,
+    "previous_train_rows": 0,
+    "distinct_value_rows_used": 0,
+    "value_presentations": 0,
+    "clone_presentations": 0,
+    "distinct_current_rows_used": 0,
+    "distinct_previous_rows_used": 0,
+    "current_presentations": 0,
+    "previous_presentations": 0,
+    "scope": "Critic: current plus configured previous iteration; validation/cloning/probes: current only; separate Adam/base LR, no PPO counters",
+    "heldout_after": {
+      "rows": 0,
+      "games": 0,
+      "loss": null,
+      "explained_variance": null,
+      "utility_mse": null
+    },
+    "descriptor_gain": {
+      "learner_ev_gain": null
+    },
+    "role_usage": {
+      "learner": {
+        "distinct_used": 0,
+        "presentations": 0
+      },
+      "snapshot": {
+        "distinct_used": 0,
+        "presentations": 0
+      }
+    },
+    "seconds": 0.00029710005037486553,
+    "buffer": {
+      "storage": "disk-backed one-candidate critic rows",
+      "buffer_iterations": 2,
+      "current_generation": 1,
+      "previous_generation": null,
+      "current_rows": 312,
+      "previous_rows": 0,
+      "current_forced_rows": 170,
+      "previous_forced_rows": 0,
+      "current_cache_bytes": 4525384,
+      "previous_cache_bytes": 0,
+      "peak_cache_bytes": 4525384,
+      "write_seconds": 0.08466520003275946,
+      "rebuilt_from_replay": false,
+      "startup_cleanup": {
+        "deleted_files": [],
+        "deleted_bytes": 0,
+        "seconds": 0.00031849998049438
+      },
+      "committed_cleanup": {
+        "deleted_files": [],
+        "deleted_bytes": 0,
+        "seconds": 0.001505899999756366
+      }
+    },
+    "split": {
+      "contract": "ppg-critic-holdout/1.0.0",
+      "fraction": 0.05,
+      "train_rows": 312,
+      "heldout_rows": 0,
+      "train_games": 1,
+      "heldout_games": 0,
+      "heldout_games_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "scope": "Hash of complete game id; every seat and value head excluded from critic fitting; actor still uses these games",
+      "eligible_train_rows": 312
+    },
+    "beta_clone_next": 1.0,
+    "beta_decision": "hold",
+    "kl_trip_window": [
+      false
+    ],
+    "critic_rollout": {
+      "snapshot_rows_used": false,
+      "snapshot_rows_next": false,
+      "weight_used": 1.0,
+      "weight_next": 1.0,
+      "decision": "hold",
+      "reason": "health_or_descriptor_evidence_not_ready",
+      "learner_heldout_ev": null,
+      "phase1_learner_ev": null,
+      "fingerprint_mean_absolute_drift": null,
+      "snapshot_effect_ev_delta": null,
+      "scope": "Sequential heldout diagnostic; iteration distributions differ, not a causal snapshot benefit estimate"
+    }
+  },
+  "search": {
+    "enabled": false,
+    "updated": false,
+    "reason": "Teacher search and distillation disabled by configuration",
+    "collection_count": 0,
+    "optimizer_steps": 0,
+    "teacher_rows": 0,
+    "teacher_value": {
+      "enabled": false,
+      "reason": "No teacher collection while teacher_enabled=false"
+    }
+  },
+  "matches": {
+    "games": 1,
+    "players": 4,
+    "policies": {
+      "step5-neural/edf43f3e60dcc4b15f892d196cee4389c34063f2114eba58fbda3d22592bb24e": {
+        "seat_games": 4,
+        "win_share": 0.25,
+        "placement": 1.75,
+        "vp": 1.75,
+        "seat_counts": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "purpose": "diagnostic; no calibrated difficulty or strength claim"
+  },
+  "economy": {
+    "actions": {
+      "scout": 13,
+      "finish": 124,
+      "build": 16,
+      "network": 15,
+      "develop": 33,
+      "iron": 39,
+      "loan": 15,
+      "pass": 44,
+      "coal": 2,
+      "liquidate": 9,
+      "sell": 1,
+      "beer": 1
+    },
+    "phases": {
+      "action": 124,
+      "continuation": 137,
+      "payment": 42,
+      "debt": 9
+    },
+    "forced_decisions": 170,
+    "actions_by_era": {
+      "CanalEra|scout": 6,
+      "CanalEra|finish": 60,
+      "CanalEra|build": 13,
+      "CanalEra|network": 14,
+      "CanalEra|develop": 23,
+      "CanalEra|iron": 27,
+      "CanalEra|loan": 11,
+      "CanalEra|pass": 1,
+      "CanalEra|coal": 1,
+      "CanalEra|liquidate": 4,
+      "CanalEra|sell": 1,
+      "CanalEra|beer": 1,
+      "RailEra|develop": 10,
+      "RailEra|iron": 12,
+      "RailEra|finish": 64,
+      "RailEra|pass": 43,
+      "RailEra|network": 1,
+      "RailEra|coal": 1,
+      "RailEra|scout": 7,
+      "RailEra|liquidate": 5,
+      "RailEra|loan": 4,
+      "RailEra|build": 3
+    },
+    "build_levels": {
+      "CanalEra|CoalMine|1": 2,
+      "CanalEra|CottonMill|1": 4,
+      "CanalEra|CoalMine|2": 2,
+      "CanalEra|Manufacturer|2": 2,
+      "CanalEra|IronWorks|1": 1,
+      "CanalEra|Brewery|1": 1,
+      "CanalEra|Pottery|1": 1,
+      "RailEra|Pottery|1": 1,
+      "RailEra|CoalMine|2": 1,
+      "RailEra|Manufacturer|2": 1
+    },
+    "passes_with_nonpass_alternative": 9,
+    "sale_actions_started": 1,
+    "sale_continuations": 0,
+    "builds": {
+      "CoalMine": 5,
+      "CottonMill": 4,
+      "Manufacturer": 3,
+      "IronWorks": 1,
+      "Brewery": 1,
+      "Pottery": 2
+    },
+    "observed_flips": {
+      "IronWorks": 1,
+      "CottonMill": 1
+    },
+    "last_seen_unflipped": {
+      "CoalMine": 5,
+      "CottonMill": 3,
+      "Manufacturer": 3,
+      "Brewery": 1,
+      "Pottery": 2
+    },
+    "minimum_observed_cash": 0,
+    "mean_observed_cash": 12.935897435897436,
+    "mean_observed_income": -5.756410256410256,
+    "debt_decisions": 9,
+    "feasible_sale_decisions": 5,
+    "selected_sales": 1,
+    "merchant_beer_by_bonus": {
+      "Income": 1
+    },
+    "interpretation": "Counts use public predecision views; build level is the next public mat tile. A legal alternative to Pass need not be good. Sale starts and continuation tile choices are separate. Last-seen unflipped tiles are not exact end-of-era waste; scoring may follow the last view."
+  },
+  "diversity": {
+    "builds": {
+      "CottonMill": 4,
+      "Manufacturer": 3,
+      "Pottery": 2,
+      "Brewery": 1,
+      "IronWorks": 1,
+      "CoalMine": 5
+    },
+    "legal_build_opportunities": {
+      "CottonMill": 35,
+      "Manufacturer": 36,
+      "Pottery": 19,
+      "Brewery": 46,
+      "IronWorks": 24,
+      "CoalMine": 50
+    },
+    "builds_matching_assigned_focus": {
+      "CottonMill": 2,
+      "Manufacturer": 1,
+      "Pottery": 0,
+      "Brewery": 0,
+      "IronWorks": 0,
+      "CoalMine": 0
+    },
+    "seat_trajectory_contexts": {
+      "CottonMill": 1,
+      "neutral": 2,
+      "Manufacturer": 1
+    },
+    "pottery_warning": false,
+    "interpretation": "Opportunity and chosen-build counts, not a mandate to force an industry. Pottery Flex identity is held out, never Pottery actions."
+  },
+  "health_counts": {
+    "tables": 1,
+    "all_learner_tables": 1,
+    "seat_games": 4,
+    "vp_sum": 7.0,
+    "sells": 1,
+    "passes_with_alternative": 9,
+    "zero_vp_seats": 3,
+    "insolvent_seats": 4,
+    "insolvency_events": 24
+  },
+  "learner_by_seat": {
+    "0": {
+      "seat_games": 1,
+      "win_share_sum": 0.0,
+      "placement_sum": 2.0,
+      "vp_sum": 0.0,
+      "vp_square_sum": 0.0
+    },
+    "1": {
+      "seat_games": 1,
+      "win_share_sum": 0.0,
+      "placement_sum": 2.0,
+      "vp_sum": 0.0,
+      "vp_square_sum": 0.0
+    },
+    "2": {
+      "seat_games": 1,
+      "win_share_sum": 0.0,
+      "placement_sum": 2.0,
+      "vp_sum": 0.0,
+      "vp_square_sum": 0.0
+    },
+    "3": {
+      "seat_games": 1,
+      "win_share_sum": 1.0,
+      "placement_sum": 1.0,
+      "vp_sum": 7.0,
+      "vp_square_sum": 49.0
+    }
+  },
+  "by_composition": {
+    "selfplay": {
+      "matches": {
+        "games": 1,
+        "players": 4,
+        "policies": {
+          "step5-neural/edf43f3e60dcc4b15f892d196cee4389c34063f2114eba58fbda3d22592bb24e": {
+            "seat_games": 4,
+            "win_share": 0.25,
+            "placement": 1.75,
+            "vp": 1.75,
+            "seat_counts": [
+              1,
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "purpose": "diagnostic; no calibrated difficulty or strength claim"
+      },
+      "economy": {
+        "actions": {
+          "scout": 13,
+          "finish": 124,
+          "build": 16,
+          "network": 15,
+          "develop": 33,
+          "iron": 39,
+          "loan": 15,
+          "pass": 44,
+          "coal": 2,
+          "liquidate": 9,
+          "sell": 1,
+          "beer": 1
+        },
+        "phases": {
+          "action": 124,
+          "continuation": 137,
+          "payment": 42,
+          "debt": 9
+        },
+        "forced_decisions": 170,
+        "actions_by_era": {
+          "CanalEra|scout": 6,
+          "CanalEra|finish": 60,
+          "CanalEra|build": 13,
+          "CanalEra|network": 14,
+          "CanalEra|develop": 23,
+          "CanalEra|iron": 27,
+          "CanalEra|loan": 11,
+          "CanalEra|pass": 1,
+          "CanalEra|coal": 1,
+          "CanalEra|liquidate": 4,
+          "CanalEra|sell": 1,
+          "CanalEra|beer": 1,
+          "RailEra|develop": 10,
+          "RailEra|iron": 12,
+          "RailEra|finish": 64,
+          "RailEra|pass": 43,
+          "RailEra|network": 1,
+          "RailEra|coal": 1,
+          "RailEra|scout": 7,
+          "RailEra|liquidate": 5,
+          "RailEra|loan": 4,
+          "RailEra|build": 3
+        },
+        "build_levels": {
+          "CanalEra|CoalMine|1": 2,
+          "CanalEra|CottonMill|1": 4,
+          "CanalEra|CoalMine|2": 2,
+          "CanalEra|Manufacturer|2": 2,
+          "CanalEra|IronWorks|1": 1,
+          "CanalEra|Brewery|1": 1,
+          "CanalEra|Pottery|1": 1,
+          "RailEra|Pottery|1": 1,
+          "RailEra|CoalMine|2": 1,
+          "RailEra|Manufacturer|2": 1
+        },
+        "passes_with_nonpass_alternative": 9,
+        "sale_actions_started": 1,
+        "sale_continuations": 0,
+        "builds": {
+          "CoalMine": 5,
+          "CottonMill": 4,
+          "Manufacturer": 3,
+          "IronWorks": 1,
+          "Brewery": 1,
+          "Pottery": 2
+        },
+        "observed_flips": {
+          "IronWorks": 1,
+          "CottonMill": 1
+        },
+        "last_seen_unflipped": {
+          "CoalMine": 5,
+          "CottonMill": 3,
+          "Manufacturer": 3,
+          "Brewery": 1,
+          "Pottery": 2
+        },
+        "minimum_observed_cash": 0,
+        "mean_observed_cash": 12.935897435897436,
+        "mean_observed_income": -5.756410256410256,
+        "debt_decisions": 9,
+        "feasible_sale_decisions": 5,
+        "selected_sales": 1,
+        "merchant_beer_by_bonus": {
+          "Income": 1
+        },
+        "interpretation": "Counts use public predecision views; build level is the next public mat tile. A legal alternative to Pass need not be good. Sale starts and continuation tile choices are separate. Last-seen unflipped tiles are not exact end-of-era waste; scoring may follow the last view."
+      },
+      "diversity": {
+        "builds": {
+          "CottonMill": 4,
+          "Manufacturer": 3,
+          "Pottery": 2,
+          "Brewery": 1,
+          "IronWorks": 1,
+          "CoalMine": 5
+        },
+        "legal_build_opportunities": {
+          "CottonMill": 35,
+          "Manufacturer": 36,
+          "Pottery": 19,
+          "Brewery": 46,
+          "IronWorks": 24,
+          "CoalMine": 50
+        },
+        "builds_matching_assigned_focus": {
+          "CottonMill": 2,
+          "Manufacturer": 1,
+          "Pottery": 0,
+          "Brewery": 0,
+          "IronWorks": 0,
+          "CoalMine": 0
+        },
+        "seat_trajectory_contexts": {
+          "CottonMill": 1,
+          "neutral": 2,
+          "Manufacturer": 1
+        },
+        "pottery_warning": false,
+        "interpretation": "Opportunity and chosen-build counts, not a mandate to force an industry. Pottery Flex identity is held out, never Pottery actions."
+      },
+      "health_counts": {
+        "tables": 1,
+        "all_learner_tables": 1,
+        "seat_games": 4,
+        "vp_sum": 7.0,
+        "sells": 1,
+        "passes_with_alternative": 9,
+        "zero_vp_seats": 3,
+        "insolvent_seats": 4,
+        "insolvency_events": 24
+      },
+      "learner_by_seat": {
+        "0": {
+          "seat_games": 1,
+          "win_share_sum": 0.0,
+          "placement_sum": 2.0,
+          "vp_sum": 0.0,
+          "vp_square_sum": 0.0
+        },
+        "1": {
+          "seat_games": 1,
+          "win_share_sum": 0.0,
+          "placement_sum": 2.0,
+          "vp_sum": 0.0,
+          "vp_square_sum": 0.0
+        },
+        "2": {
+          "seat_games": 1,
+          "win_share_sum": 0.0,
+          "placement_sum": 2.0,
+          "vp_sum": 0.0,
+          "vp_square_sum": 0.0
+        },
+        "3": {
+          "seat_games": 1,
+          "win_share_sum": 1.0,
+          "placement_sum": 1.0,
+          "vp_sum": 7.0,
+          "vp_square_sum": 49.0
+        }
+      }
+    }
+  },
+  "measured_policy": "frozen incoming collection policy, before this update",
+  "incoming_model_id": "9c2ec45537519d461e1b3aedcbb46d9ac8431983b61b854e86c955a69e2ed1c2",
+  "incoming_policy_id": "step5-neural/edf43f3e60dcc4b15f892d196cee4389c34063f2114eba58fbda3d22592bb24e",
+  "seat_fingerprints": {
+    "learner": {
+      "contract": "policy-style-fingerprint/1.0.0",
+      "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342",
+      "values": [
+        0.08691520243883133,
+        0.3081358075141907,
+        0.29080039262771606,
+        0.012023570016026497,
+        0.05743420496582985,
+        0.1866479068994522,
+        0.05804292857646942,
+        0.0,
+        0.031605906784534454,
+        0.3115089535713196,
+        0.3362521231174469,
+        0.009597077034413815,
+        0.061014045029878616,
+        0.18891365826129913,
+        0.06110825762152672,
+        0.0,
+        0.24781720340251923,
+        0.09986359626054764,
+        0.03969632834196091,
+        0.07064422965049744,
+        0.018495237454771996,
+        0.523483395576477,
+        0.07281482964754105,
+        0.2945132851600647,
+        0.0450034961104393,
+        0.48111027479171753,
+        0.052002985030412674,
+        0.05455513671040535
+      ],
+      "action_positions": [
+        60,
+        64
+      ],
+      "build_mass": [
+        5.21491194749251,
+        2.0227780821733177
+      ],
+      "source": "raw_policy_temperature_1",
+      "industry_order": [
+        "CottonMill",
+        "Manufacturer",
+        "Pottery",
+        "Brewery",
+        "IronWorks",
+        "CoalMine"
+      ],
+      "normalization": "Family groups sum to 1 per observed era; industry groups conditional on build; empty groups are zero"
+    },
+    "rule_bot": {
+      "contract": "policy-style-fingerprint/1.0.0",
+      "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342",
+      "values": [
+        0.36666667461395264,
+        0.28333333134651184,
+        0.03333333507180214,
+        0.13333334028720856,
+        0.18333333730697632,
+        0.0,
+        0.0,
+        0.0,
+        0.296875,
+        0.4375,
+        0.09375,
+        0.109375,
+        0.0625,
+        0.0,
+        0.0,
+        0.0,
+        0.22727273404598236,
+        0.13636364042758942,
+        0.13636364042758942,
+        0.22727273404598236,
+        0.1818181872367859,
+        0.09090909361839294,
+        0.15789473056793213,
+        0.21052631735801697,
+        0.05263157933950424,
+        0.21052631735801697,
+        0.10526315867900848,
+        0.2631579041481018
+      ],
+      "action_positions": [
+        60,
+        64
+      ],
+      "build_mass": [
+        22.0,
+        19.0
+      ],
+      "source": "recorded_v4_choices",
+      "industry_order": [
+        "CottonMill",
+        "Manufacturer",
+        "Pottery",
+        "Brewery",
+        "IronWorks",
+        "CoalMine"
+      ],
+      "normalization": "Family groups sum to 1 per observed era; industry groups conditional on build; empty groups are zero"
+    }
+  },
+  "selfplay_incumbent": null,
+  "selfplay_opponents": null,
+  "games_done": 1,
+  "cumulative_games": 1,
+  "timings": {
+    "collection_seconds": 26.46899999998277,
+    "ppo_seconds": 6.73399999999674,
+    "value_phase_seconds": 0.07800000003771856,
+    "replay_load_seconds": 0.01600000000325963,
+    "search_and_distill_seconds": 0.31299999996554106,
+    "checkpoint_seconds": 0.10899999999674037,
+    "evaluation_seconds": 0.0,
+    "cleanup_seconds": 0.0,
+    "iteration_seconds": 34.21899999998277
+  },
+  "execution": [
+    {
+      "job": 0,
+      "game_id": "67f83ba17f674329a07c23610fcaf366",
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Brass Birmingham\\artifacts\\critic-descriptors-20261018\\native-final\\run\\iteration-0000\\games-1c28710d9634884a-part-0000.jsonl.gz",
+      "sha256": "74ffdf810847662d1d1e8469250bffa93756d86d26c972fc5b4f95ef26e9302a",
+      "cached": false,
+      "features": {
+        "data_sha256": "214fcc28f17bd4d99decce565f9dcdd2400e68843ec2a98f6a7869c38ddf54a6",
+        "manifest_sha256": "d7f5035dd811fb6c1578b0332759879645a3ce051e34d707452f6d3a4d66285d",
+        "replay_sha256": "74ffdf810847662d1d1e8469250bffa93756d86d26c972fc5b4f95ef26e9302a",
+        "validator": "116ebaaf55df6f7e6366b402a6258d020565a2279f94d89c3cf92924ec9b078e"
+      },
+      "metrics": {
+        "cpu.admission.wait": {
+          "seconds": 0.0,
+          "calls": 68,
+          "mean_seconds": 0.0,
+          "p50_seconds": 0.0,
+          "p95_seconds": 0.0,
+          "max_seconds": 0.0,
+          "first_seconds": 0.0,
+          "steady_mean_seconds": 0.0,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 68
+        },
+        "host.apply": {
+          "seconds": 5.2663903995999135,
+          "calls": 312,
+          "mean_seconds": 0.01687945640897408,
+          "p50_seconds": 3.840000135824084e-05,
+          "p95_seconds": 0.05019699997501448,
+          "max_seconds": 0.18563399999402463,
+          "first_seconds": 0.07471710001118481,
+          "steady_mean_seconds": 0.016693483278420348,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 312
+        },
+        "host.decision": {
+          "seconds": 0.08863269968423992,
+          "calls": 145,
+          "mean_seconds": 0.0006112599978223443,
+          "p50_seconds": 7.399998139590025e-06,
+          "p95_seconds": 4.1199964471161366e-05,
+          "max_seconds": 0.08683350001228973,
+          "first_seconds": 0.08683350001228973,
+          "steady_mean_seconds": 1.2494442166320772e-05,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 145
+        },
+        "host.ipc.stdin.flush": {
+          "seconds": 0.00402740016579628,
+          "calls": 149,
+          "mean_seconds": 2.7029531314068993e-05,
+          "p50_seconds": 2.300000051036477e-05,
+          "p95_seconds": 4.959997022524476e-05,
+          "max_seconds": 0.00018350000027567148,
+          "first_seconds": 0.00018350000027567148,
+          "steady_mean_seconds": 2.5972298415679786e-05,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 149
+        },
+        "host.ipc.stdin.write": {
+          "seconds": 0.0018640003399923444,
+          "calls": 149,
+          "mean_seconds": 1.2510069395921774e-05,
+          "p50_seconds": 1.0700023267418146e-05,
+          "p95_seconds": 2.269999822601676e-05,
+          "max_seconds": 7.369997911155224e-05,
+          "first_seconds": 2.7800037059932947e-05,
+          "steady_mean_seconds": 1.2406758803597375e-05,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 149
+        },
+        "host.ipc.stdout.read_wait": {
+          "seconds": 5.373930700006895,
+          "calls": 149,
+          "mean_seconds": 0.036066648993334866,
+          "p50_seconds": 0.030715800006873906,
+          "p95_seconds": 0.0659381000441499,
+          "max_seconds": 0.27683449996402487,
+          "first_seconds": 0.27683449996402487,
+          "steady_mean_seconds": 0.03443983918947885,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 149
+        },
+        "host.native.cpu_seconds": {
+          "seconds": 4.875,
+          "calls": 149,
+          "mean_seconds": 0.03271812080536913,
+          "p50_seconds": 0.03125,
+          "p95_seconds": 0.0625,
+          "max_seconds": 0.21875,
+          "first_seconds": 0.21875,
+          "steady_mean_seconds": 0.03146114864864865,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 149
+        },
+        "host.native.elapsed_seconds": {
+          "seconds": 5.111492599999999,
+          "calls": 149,
+          "mean_seconds": 0.03430531946308724,
+          "p50_seconds": 0.028842,
+          "p95_seconds": 0.0639585,
+          "max_seconds": 0.22687569999999999,
+          "first_seconds": 0.22687569999999999,
+          "steady_mean_seconds": 0.03300416824324324,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 149
+        },
+        "host.native.materialize_serialize_seconds": {
+          "seconds": 0.2236197999999998,
+          "calls": 149,
+          "mean_seconds": 0.0015008040268456363,
+          "p50_seconds": 0.0010647,
+          "p95_seconds": 0.0034684,
+          "max_seconds": 0.0216775,
+          "first_seconds": 0.004113299999999999,
+          "steady_mean_seconds": 0.0014831520270270258,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 149
+        },
+        "host.reset": {
+          "seconds": 0.2776523000211455,
+          "calls": 1,
+          "mean_seconds": 0.2776523000211455,
+          "p50_seconds": 0.2776523000211455,
+          "p95_seconds": 0.2776523000211455,
+          "max_seconds": 0.2776523000211455,
+          "first_seconds": 0.2776523000211455,
+          "steady_mean_seconds": 0.0,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 1
+        },
+        "host.result": {
+          "seconds": 0.0005608999636024237,
+          "calls": 1,
+          "mean_seconds": 0.0005608999636024237,
+          "p50_seconds": 0.0005608999636024237,
+          "p95_seconds": 0.0005608999636024237,
+          "max_seconds": 0.0005608999636024237,
+          "first_seconds": 0.0005608999636024237,
+          "steady_mean_seconds": 0.0,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 1
+        },
+        "host.rpc.capabilities": {
+          "seconds": 0.0008884999551810324,
+          "calls": 1,
+          "mean_seconds": 0.0008884999551810324,
+          "p50_seconds": 0.0008884999551810324,
+          "p95_seconds": 0.0008884999551810324,
+          "max_seconds": 0.0008884999551810324,
+          "first_seconds": 0.0008884999551810324,
+          "steady_mean_seconds": 0.0,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 1
+        },
+        "host.rpc.decision": {
+          "seconds": 0.08678979997057468,
+          "calls": 1,
+          "mean_seconds": 0.08678979997057468,
+          "p50_seconds": 0.08678979997057468,
+          "p95_seconds": 0.08678979997057468,
+          "max_seconds": 0.08678979997057468,
+          "first_seconds": 0.08678979997057468,
+          "steady_mean_seconds": 0.0,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 1
+        },
+        "host.rpc.reset": {
+          "seconds": 0.2774110999889672,
+          "calls": 1,
+          "mean_seconds": 0.2774110999889672,
+          "p50_seconds": 0.2774110999889672,
+          "p95_seconds": 0.2774110999889672,
+          "max_seconds": 0.2774110999889672,
+          "first_seconds": 0.2774110999889672,
+          "steady_mean_seconds": 0.0,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 1
+        },
+        "host.rpc.result": {
+          "seconds": 0.0004836000152863562,
+          "calls": 1,
+          "mean_seconds": 0.0004836000152863562,
+          "p50_seconds": 0.0004836000152863562,
+          "p95_seconds": 0.0004836000152863562,
+          "max_seconds": 0.0004836000152863562,
+          "first_seconds": 0.0004836000152863562,
+          "steady_mean_seconds": 0.0,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 1
+        },
+        "host.rpc.step_decision": {
+          "seconds": 5.251004800375085,
+          "calls": 145,
+          "mean_seconds": 0.036213826209483345,
+          "p50_seconds": 0.032065500039607286,
+          "p95_seconds": 0.06499250000342727,
+          "max_seconds": 0.18534560000989586,
+          "first_seconds": 0.07465900003444403,
+          "steady_mean_seconds": 0.0359468458356989,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 145
+        },
+        "host.startup": {
+          "seconds": 0.9123140000156127,
+          "calls": 1,
+          "mean_seconds": 0.9123140000156127,
+          "p50_seconds": 0.9123140000156127,
+          "p95_seconds": 0.9123140000156127,
+          "max_seconds": 0.9123140000156127,
+          "first_seconds": 0.9123140000156127,
+          "steady_mean_seconds": 0.0,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 1
+        },
+        "inputs.encode": {
+          "seconds": 0.6313462000107393,
+          "calls": 312,
+          "mean_seconds": 0.0020235455128549337,
+          "p50_seconds": 0.0025883999769575894,
+          "p95_seconds": 0.0036216999869793653,
+          "max_seconds": 0.006277900014538318,
+          "first_seconds": 0.0008984999731183052,
+          "steady_mean_seconds": 0.002027163022629006,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 312
+        },
+        "inputs.validate": {
+          "seconds": 1.1463973005884327,
+          "calls": 312,
+          "mean_seconds": 0.0036743503223988228,
+          "p50_seconds": 0.0028315999661572278,
+          "p95_seconds": 0.0051463000127114356,
+          "max_seconds": 0.12632809998467565,
+          "first_seconds": 0.12632809998467565,
+          "steady_mean_seconds": 0.0032799652752532383,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 312
+        },
+        "policy.model": {
+          "seconds": 3.6146051990799606,
+          "calls": 312,
+          "mean_seconds": 0.011585273073974233,
+          "p50_seconds": 5.8299978263676167e-05,
+          "p95_seconds": 0.03195699997013435,
+          "max_seconds": 0.09632379998220131,
+          "first_seconds": 0.07176209997851402,
+          "steady_mean_seconds": 0.0113917784537024,
+          "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+          "percentile_sample_count": 312
+        }
+      },
+      "search": {
+        "encoding_cache": {
+          "warm_hit": 142,
+          "miss": 312,
+          "evictions": 56,
+          "retained": 256,
+          "capacity": 256,
+          "scope": "one game; shared coordinator/private-worker input cache"
+        },
+        "0": {
+          "inference": {
+            "batches": 142,
+            "positions": 142,
+            "max_batch_positions": 1,
+            "max_padded_candidate_cells": 0,
+            "predict_seconds": 2.9899999999906868,
+            "validation_seconds": 0.0470000000204891,
+            "encoding_seconds": 0.7380000000703149
+          }
+        },
+        "1": {
+          "inference": {
+            "batches": 142,
+            "positions": 142,
+            "max_batch_positions": 1,
+            "max_padded_candidate_cells": 0,
+            "predict_seconds": 2.9899999999906868,
+            "validation_seconds": 0.0470000000204891,
+            "encoding_seconds": 0.7380000000703149
+          }
+        },
+        "2": {
+          "inference": {
+            "batches": 142,
+            "positions": 142,
+            "max_batch_positions": 1,
+            "max_padded_candidate_cells": 0,
+            "predict_seconds": 2.9899999999906868,
+            "validation_seconds": 0.0470000000204891,
+            "encoding_seconds": 0.7380000000703149
+          }
+        },
+        "3": {
+          "inference": {
+            "batches": 142,
+            "positions": 142,
+            "max_batch_positions": 1,
+            "max_padded_candidate_cells": 0,
+            "predict_seconds": 2.9899999999906868,
+            "validation_seconds": 0.0470000000204891,
+            "encoding_seconds": 0.7380000000703149
+          }
+        }
+      },
+      "actor_python_cpu_seconds": null,
+      "replay_write_seconds": 1.7969999999622814,
+      "replay_write_scope": "amortized packet"
+    }
+  ],
+  "inference": {
+    "batches": 142,
+    "positions": 142,
+    "model_cache_hits": 141,
+    "valid_candidate_cells": 8118,
+    "padded_candidate_cells": 8118,
+    "max_batch_positions": 1,
+    "max_padded_candidate_cells": 396,
+    "expired_requests": 0,
+    "cancelled_requests": 0,
+    "packed_output_batches": 0,
+    "shared_requests": 142,
+    "shared_replies": 142,
+    "inline_requests": 0,
+    "timings": {
+      "inference.batch": {
+        "seconds": 1.0056458998587914,
+        "calls": 142,
+        "mean_seconds": 0.007082013379287263,
+        "p50_seconds": 0.006387699977494776,
+        "p95_seconds": 0.011240600026212633,
+        "max_seconds": 0.028927499952260405,
+        "first_seconds": 0.028927499952260405,
+        "steady_mean_seconds": 0.006927080850400929,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 142
+      },
+      "inference.forward": {
+        "seconds": 0.9133716997457668,
+        "calls": 142,
+        "mean_seconds": 0.006432195068632161,
+        "p50_seconds": 0.005837199976667762,
+        "p95_seconds": 0.010575600026641041,
+        "max_seconds": 0.013194600003771484,
+        "first_seconds": 0.011178000015206635,
+        "steady_mean_seconds": 0.0063985368775217035,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 142
+      },
+      "inference.queue_wait": {
+        "seconds": 1.7149999997927807,
+        "calls": 142,
+        "mean_seconds": 0.012077464787273104,
+        "p50_seconds": 0.015000000013969839,
+        "p95_seconds": 0.01600000000325963,
+        "max_seconds": 0.03200000000651926,
+        "first_seconds": 0.030999999959021807,
+        "steady_mean_seconds": 0.011943262410168503,
+        "percentile_scope": "first bounded 1024 calls; totals and maximum include all calls",
+        "percentile_sample_count": 142
+      }
+    },
+    "device": "cpu",
+    "learner_device": "cpu",
+    "inference_devices": [
+      "cpu"
+    ],
+    "replica_count": 1,
+    "central_batching": true,
+    "memory": {
+      "host_resident_bytes": null
+    },
+    "cpu_admission": {
+      "capacity": 60,
+      "active": 0,
+      "peak": 1,
+      "queued": 0,
+      "aborted": false
+    },
+    "timing_note": "Host elapsed time; CUDA forward kernel duration is in optional profiler traces",
+    "error": null
+  },
+  "inference_scope": "cumulative for this invocation",
+  "legacy_modes": {},
+  "historical_opponents": {
+    "generation_seats": {},
+    "pool_generations": [
+      0
+    ],
+    "sampling": "Independent seats: 20% IL, 80% quality distribution (80% softmax + 20% uniform)"
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pid": 28168,
+    "cpu_count": 14,
+    "cpu_affinity": null,
+    "torch": "2.8.0+cpu",
+    "cuda": null,
+    "device": "cpu",
+    "gpu": null,
+    "tensor_threads": 2,
+    "omp_threads": null,
+    "mkl_threads": null
+  },
+  "strength": "requires fresh post-update evaluation",
+  "utilization": {
+    "games_per_second": 0.0377800445804772,
+    "mean_inference_batch": 1.0,
+    "inference_batches": 142,
+    "inference_positions": 142,
+    "padding_fraction": 0.0,
+    "actor_phase_seconds": {
+      "cpu.admission.wait": 0.0,
+      "host.apply": 5.2663903995999135,
+      "host.decision": 0.08863269968423992,
+      "host.ipc.stdin.flush": 0.00402740016579628,
+      "host.ipc.stdin.write": 0.0018640003399923444,
+      "host.ipc.stdout.read_wait": 5.373930700006895,
+      "host.native.cpu_seconds": 4.875,
+      "host.native.elapsed_seconds": 5.111492599999999,
+      "host.native.materialize_serialize_seconds": 0.2236197999999998,
+      "host.reset": 0.2776523000211455,
+      "host.result": 0.0005608999636024237,
+      "host.rpc.capabilities": 0.0008884999551810324,
+      "host.rpc.decision": 0.08678979997057468,
+      "host.rpc.reset": 0.2774110999889672,
+      "host.rpc.result": 0.0004836000152863562,
+      "host.rpc.step_decision": 5.251004800375085,
+      "host.startup": 0.9123140000156127,
+      "inputs.encode": 0.6313462000107393,
+      "inputs.validate": 1.1463973005884327,
+      "policy.model": 3.6146051990799606
+    },
+    "inference_phase_deltas": {
+      "inference.batch": {
+        "seconds": 1.0056458998587914,
+        "calls": 142
+      },
+      "inference.forward": {
+        "seconds": 0.9133716997457668,
+        "calls": 142
+      },
+      "inference.queue_wait": {
+        "seconds": 1.7149999997927807,
+        "calls": 142
+      }
+    },
+    "actor_python_cpu_seconds": null,
+    "actor_python_average_cores": null,
+    "actor_cpu_recorded_games": 0,
+    "actor_cpu_scope": "Python actor process CPU during games; includes its threads, excludes Mono children and GPU; unavailable for cached games/multiple host lanes",
+    "ordinary_actors": 2,
+    "cpu_work_slots": 60,
+    "scope": "ordinary collection; actor/inference phase times overlap; actor_python_* measures process CPU, not total machine or GPU utilization",
+    "replay_ingress": {
+      "worker_cpu_seconds": 1.203125,
+      "worker_elapsed_seconds": 1.2361573000089265,
+      "read_validate_seconds": 0.9678548999945633,
+      "diagnostics_seconds": 0.005447899980936199,
+      "prepare_seconds": 0.2619635000010021,
+      "compact_seconds": 0.0008910000324249268,
+      "wall_seconds": 0.0004686000174842775,
+      "shards": 1,
+      "learner_rows": 312,
+      "readers": 1,
+      "worker_average_cores": 0.04575789381911883,
+      "max_shard_seconds": 1.2361573000089265,
+      "scope": "Reader-task CPU excludes process startup and result serialization; worker elapsed phases overlap across readers. Wall is the final join/merge; average cores uses the full streaming interval when enabled.",
+      "streaming": true,
+      "stream_elapsed_seconds": 26.29327749996446,
+      "prepared_before_collection_end": 1
+    }
+  },
+  "post_update_model_id": "d5d81184648f300cf302bcd4dc2bb0a21cd90f71ee5c905b1ee67db0af6967dc",
+  "strength_rating": null
+}

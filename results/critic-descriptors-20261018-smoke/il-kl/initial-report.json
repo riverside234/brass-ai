@@ -1,0 +1,52 @@
+{
+  "generation": 0,
+  "measurement": {
+    "positions": 144,
+    "requested_positions": 2048,
+    "kl_mean": 0.0,
+    "groups": {
+      "canal_action": {
+        "positions": 60,
+        "kl_mean": 0.0
+      },
+      "canal_other": {
+        "positions": 5,
+        "kl_mean": 0.0
+      },
+      "rail_action": {
+        "positions": 64,
+        "kl_mean": 0.0
+      },
+      "rail_other": {
+        "positions": 15,
+        "kl_mean": 0.0
+      }
+    },
+    "unassigned_positions": 0,
+    "behavior": {
+      "ok": true,
+      "sales": {
+        "positions": 0,
+        "failures": 0,
+        "examples": [],
+        "ok": true
+      },
+      "passing": {
+        "positions": 124,
+        "failures": 0,
+        "examples": [],
+        "ok": true
+      }
+    },
+    "elapsed_seconds": 0.1455712000024505,
+    "probability_floor": 1e-06,
+    "scope": "Fixed IL validation positions; raw temperature-1 policies, no exploration; symmetric floor/renormalization for KL, raw behavior checks"
+  },
+  "limit": 0.15,
+  "group_limit": 0.3,
+  "probe": {
+    "path": "artifacts/critic-descriptors-20261018/native-final/run/il-kl/manifest.json",
+    "sha256": "19ca1626fe72976fc170ef00ef99ce6320e1ba9cc9d604569a6ead1f9493d0fc",
+    "probe_hash": "f1f75ce5f034c6bb5cc7231eba2003d67861c1a9a19e5d77dd4fbefa96f4a342"
+  }
+}
