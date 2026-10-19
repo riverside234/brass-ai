@@ -1,0 +1,134 @@
+{
+  "all_learner_health": {
+    "behavior": {
+      "ok": false,
+      "passing": {
+        "examples": [],
+        "failures": 0,
+        "ok": true,
+        "positions": 511
+      },
+      "sales": {
+        "examples": [
+          {
+            "current": 0.22671155631542206,
+            "il": 0.8049624562263489,
+            "ok": false,
+            "row": 1204
+          },
+          {
+            "current": 0.16503258049488068,
+            "il": 0.6293459534645081,
+            "ok": false,
+            "row": 1208
+          },
+          {
+            "current": 0.11667104810476303,
+            "il": 0.28054144978523254,
+            "ok": false,
+            "row": 1848
+          },
+          {
+            "current": 0.011822530999779701,
+            "il": 0.2552098333835602,
+            "ok": false,
+            "row": 544
+          },
+          {
+            "current": 0.06748990714550018,
+            "il": 0.372926265001297,
+            "ok": false,
+            "row": 1820
+          },
+          {
+            "current": 0.1943904608488083,
+            "il": 0.6456536054611206,
+            "ok": false,
+            "row": 1360
+          },
+          {
+            "current": 0.20407338440418243,
+            "il": 0.5315688252449036,
+            "ok": false,
+            "row": 1976
+          },
+          {
+            "current": 0.16699065268039703,
+            "il": 0.3841903507709503,
+            "ok": false,
+            "row": 1184
+          }
+        ],
+        "failures": 10,
+        "ok": false,
+        "positions": 79
+      }
+    },
+    "checks": {
+      "insolvency_fraction": {
+        "ok": true,
+        "threshold": 0.13468750000000002,
+        "value": 0.0240625
+      },
+      "passes_per_seat": {
+        "ok": true,
+        "threshold": 1.5759375,
+        "value": 0.3615625
+      },
+      "sells_per_seat": {
+        "ok": true,
+        "threshold": 2.107875,
+        "value": 3.03125
+      },
+      "vp_per_seat": {
+        "ok": true,
+        "threshold": 74.6612109375,
+        "value": 99.665625
+      },
+      "zero_vp_fraction": {
+        "ok": true,
+        "threshold": 0.05,
+        "value": 0.003125
+      }
+    },
+    "metrics": {
+      "insolvency_fraction": 0.0240625,
+      "passes_per_seat": 0.3615625,
+      "sells_per_seat": 3.03125,
+      "vp_per_seat": 99.665625,
+      "zero_vp_fraction": 0.003125
+    },
+    "ok": false,
+    "reasons": [
+      "behavior_check_failed"
+    ],
+    "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+  },
+  "candidate": "generation-000050",
+  "panels": {
+    "il-panel": {
+      "games": 32,
+      "learner_win_share": 0.78125,
+      "qualified": null,
+      "setups": 8,
+      "vp_per_learner_seat": 111.109375,
+      "win_share_setup_bootstrap_95": [
+        0.65625,
+        0.90625
+      ]
+    },
+    "v4-panel": {
+      "games": 32,
+      "learner_win_share": 0.375,
+      "qualified": null,
+      "setups": 8,
+      "vp_per_learner_seat": 107.40625,
+      "win_share_setup_bootstrap_95": [
+        0.21875,
+        0.53125
+      ]
+    }
+  },
+  "qualified": null,
+  "reason": "Deployment requires human review; no invented panel pass thresholds"
+}

@@ -1,0 +1,98 @@
+{
+  "all_learner_health": {
+    "behavior": {
+      "ok": false,
+      "passing": {
+        "examples": [],
+        "failures": 0,
+        "ok": true,
+        "positions": 511
+      },
+      "sales": {
+        "examples": [
+          {
+            "current": 0.04006059840321541,
+            "il": 0.2552098333835602,
+            "ok": false,
+            "row": 544
+          },
+          {
+            "current": 0.07037832587957382,
+            "il": 0.3854091763496399,
+            "ok": false,
+            "row": 1672
+          }
+        ],
+        "failures": 2,
+        "ok": false,
+        "positions": 79
+      }
+    },
+    "checks": {
+      "insolvency_fraction": {
+        "ok": true,
+        "threshold": 0.13468750000000002,
+        "value": 0.031875
+      },
+      "passes_per_seat": {
+        "ok": true,
+        "threshold": 1.5759375,
+        "value": 0.433125
+      },
+      "sells_per_seat": {
+        "ok": true,
+        "threshold": 2.107875,
+        "value": 3.058125
+      },
+      "vp_per_seat": {
+        "ok": true,
+        "threshold": 74.6612109375,
+        "value": 91.39875
+      },
+      "zero_vp_fraction": {
+        "ok": true,
+        "threshold": 0.05,
+        "value": 0.003125
+      }
+    },
+    "metrics": {
+      "insolvency_fraction": 0.031875,
+      "passes_per_seat": 0.433125,
+      "sells_per_seat": 3.058125,
+      "vp_per_seat": 91.39875,
+      "zero_vp_fraction": 0.003125
+    },
+    "ok": false,
+    "reasons": [
+      "behavior_check_failed"
+    ],
+    "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+  },
+  "candidate": "generation-000020",
+  "panels": {
+    "il-panel": {
+      "games": 32,
+      "learner_win_share": 0.8125,
+      "qualified": null,
+      "setups": 8,
+      "vp_per_learner_seat": 104.234375,
+      "win_share_setup_bootstrap_95": [
+        0.6875,
+        0.9375
+      ]
+    },
+    "v4-panel": {
+      "games": 32,
+      "learner_win_share": 0.21875,
+      "qualified": null,
+      "setups": 8,
+      "vp_per_learner_seat": 98.375,
+      "win_share_setup_bootstrap_95": [
+        0.09375,
+        0.34375
+      ]
+    }
+  },
+  "qualified": null,
+  "reason": "Deployment requires human review; no invented panel pass thresholds"
+}
