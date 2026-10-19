@@ -1,0 +1,77 @@
+{
+  "all_learner_health": {
+    "behavior": {
+      "ok": true,
+      "passing": {
+        "examples": [],
+        "failures": 0,
+        "ok": true,
+        "positions": 511
+      }
+    },
+    "checks": {
+      "insolvency_fraction": {
+        "ok": true,
+        "threshold": 0.13468750000000002,
+        "value": 0.035
+      },
+      "passes_per_seat": {
+        "ok": true,
+        "threshold": 1.5759375,
+        "value": 0.375
+      },
+      "sells_per_seat": {
+        "ok": true,
+        "threshold": 2.107875,
+        "value": 2.79625
+      },
+      "vp_per_seat": {
+        "ok": true,
+        "threshold": 74.6612109375,
+        "value": 103.083125
+      },
+      "zero_vp_fraction": {
+        "ok": true,
+        "threshold": 0.05,
+        "value": 0.001875
+      }
+    },
+    "metrics": {
+      "insolvency_fraction": 0.035,
+      "passes_per_seat": 0.375,
+      "sells_per_seat": 2.79625,
+      "vp_per_seat": 103.083125,
+      "zero_vp_fraction": 0.001875
+    },
+    "ok": true,
+    "reasons": [],
+    "scope": "All-learner self-play economy: seat-weighted five-iteration rates; fixed-IL pass-probability check"
+  },
+  "candidate": "generation-000080",
+  "panels": {
+    "il-panel": {
+      "games": 32,
+      "learner_win_share": 0.875,
+      "qualified": null,
+      "setups": 8,
+      "vp_per_learner_seat": 113.703125,
+      "win_share_setup_bootstrap_95": [
+        0.75,
+        1.0
+      ]
+    },
+    "v4-panel": {
+      "games": 32,
+      "learner_win_share": 0.53125,
+      "qualified": null,
+      "setups": 8,
+      "vp_per_learner_seat": 112.46875,
+      "win_share_setup_bootstrap_95": [
+        0.40625,
+        0.65625
+      ]
+    }
+  },
+  "qualified": null,
+  "reason": "Deployment requires human review; no invented panel pass thresholds"
+}

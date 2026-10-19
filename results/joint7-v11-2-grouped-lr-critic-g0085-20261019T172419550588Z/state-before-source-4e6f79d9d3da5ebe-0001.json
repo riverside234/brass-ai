@@ -1,0 +1,3704 @@
+{
+  "format": "step5-recovery-league/2.2.0",
+  "signature": {
+    "config": {
+      "format": "step5-training/2.2.0",
+      "players": 4,
+      "model_size": "medium",
+      "host": "artifacts/r1-host/guarded",
+      "games_per_iteration": 320,
+      "threads": 4,
+      "learning_rate": 6e-06,
+      "weight_decay": 0.0001,
+      "exploration": 0.08,
+      "seed": 18510000,
+      "execution": {
+        "processes": 24,
+        "hosts_per_process": 2,
+        "heavy_processes": 24,
+        "batch_size": 64,
+        "max_candidate_cells": 131072,
+        "flush_ms": 1.0,
+        "worker_threads": 1,
+        "max_decisions": 2000,
+        "max_models": 72,
+        "shard_games": 8,
+        "shard_bytes": 268435456,
+        "feature_cache": true,
+        "policy_cache": 32,
+        "search_workers_per_turn": 4,
+        "teacher_search_workers_per_turn": 8,
+        "cpu_budget": 64,
+        "cpu_reserve": 4,
+        "shared_slot_bytes": 2097152,
+        "inference_routing": "demand",
+        "replica_backlog": 32
+      },
+      "update": {
+        "effective_batch_size": 2048,
+        "microbatch_size": 512,
+        "max_candidate_cells": 131072,
+        "epochs": 2,
+        "clip": 0.2,
+        "target_kl": 0.01,
+        "entropy_weight": 0.005,
+        "value_weight": 0.5,
+        "grad_clip": 1.0,
+        "normalize_advantages": true,
+        "precision": "fp32",
+        "bucket": true,
+        "actor_nonforced": true,
+        "critic_batch_size": 2048,
+        "kl_probe_rows": 2048
+      },
+      "curriculum": [
+        {
+          "until": null,
+          "selfplay": 50,
+          "historical": 45,
+          "legacy": 5
+        }
+      ],
+      "search_ready_games": 640,
+      "search_every_games": 160,
+      "search_games": 5,
+      "distill_steps": 8,
+      "teacher_value": {
+        "contract": "teacher-outcome-value/1.0.0",
+        "enabled": true,
+        "loss_weight": 0.1,
+        "teacher_fraction": 0.25,
+        "samples_per_game": 24,
+        "max_samples": 128,
+        "max_reuse": 2,
+        "diagnostics": false,
+        "probe_positions": 128
+      },
+      "distillation": {
+        "min_samples": 16,
+        "min_games": 2,
+        "min_samples_per_phase": 2,
+        "batch_size": 16,
+        "max_reuse": 2
+      },
+      "distill_weight": 0.25,
+      "search": {
+        "backend": "masked_ismcts",
+        "seconds": 12.0,
+        "simulations": 100000,
+        "max_choices": 512,
+        "exploration": 1.4,
+        "root_top_k": 16,
+        "interior_top_k": 8,
+        "pending_paths": 2,
+        "batch_size": 2,
+        "flush_ms": 0.5,
+        "prior_mix": 0.1,
+        "turn_interval": 4,
+        "max_searches_per_seat": 4,
+        "contract": "masked-ismcts/1.2.0",
+        "evaluator_kind": "neural",
+        "q_transform": "none",
+        "leaf_policy": "new_root_information_frontier",
+        "candidate_policy": "supported_progressive",
+        "fpu_reduction": 0.02,
+        "minimum_plan_visits": 2,
+        "reopen_support": 4,
+        "tail_admission": 0.05,
+        "virtual_loss": 0.02,
+        "reward": {
+          "version": "brass-combined-return/1.0.0",
+          "win": 1.0,
+          "placement": 0.1,
+          "vp": 0.001,
+          "insolvency": {
+            "event_cost": 0.005,
+            "max_cost": 0.075
+          }
+        },
+        "utility_scale": 1.2
+      },
+      "rehearsal_manifest": "artifacts/il-replay/features4-compact-v8-batch7/manifest.json",
+      "rehearsal_weight": 0.1,
+      "rehearsal_until": 10000,
+      "profile_steps": 0,
+      "retention": {
+        "enabled": true,
+        "resume_checkpoints": 2,
+        "replay_rounds": 2,
+        "quarantine_hours": 0,
+        "evaluation_samples": 1,
+        "profile_traces": 2,
+        "history_reports": 128
+      },
+      "population": {
+        "recent": 2,
+        "anchors": 22
+      },
+      "evaluation_schedule": {
+        "enabled": false,
+        "monitor_every_games": 6400,
+        "broader_every_games": 25600,
+        "monitor_setups": 16,
+        "broader_setups": 16,
+        "seed": 910000
+      },
+      "legacy_budget": {
+        "role": "lab",
+        "seconds": 1.0,
+        "search_workers": 4,
+        "global_workers": 60,
+        "work_multiplier": 1
+      },
+      "audit_workers": 16,
+      "overlap_pools": true,
+      "search_wall_fraction": null,
+      "architecture": "brass-four-seat-mlp-resnet/11.2.0",
+      "parameter_limit": 6500000,
+      "initialization": "random",
+      "imitation": {
+        "manifest": null,
+        "epochs": 10,
+        "patience": 2,
+        "min_epochs": 3,
+        "learning_rate": 6e-05
+      },
+      "legacy_opponents": {
+        "search_free_until_games": 0
+      },
+      "search_collections_per_iteration": 2,
+      "insolvency": {
+        "event_cost": 0.005,
+        "max_cost": 0.075
+      },
+      "reward": {
+        "win": 1.0,
+        "placement": 0.1,
+        "vp": 0.001
+      },
+      "champion": {
+        "enabled": false,
+        "every_games": 6400,
+        "setups": 8,
+        "min_win_share": 0.55,
+        "seed": 1910000,
+        "protocol": "two-stage-champion/1.0.0",
+        "confirmation_setups": 64,
+        "screen_min_win_share": 0.56,
+        "min_ci_lower": 0.49
+      },
+      "teacher_work_budget": {
+        "contract": "teacher-turn-time/1.1.0",
+        "mode": "time",
+        "seconds_per_phase": {
+          "canal_early": 9.0,
+          "canal_late": 12.0,
+          "rail_early": 12.0,
+          "rail_late": 12.0
+        }
+      },
+      "legacy_opponent_work_budget": {
+        "contract": "legacy-opponent-turn-time/1.0.0",
+        "mode": "time",
+        "seconds_per_turn": 1.0
+      },
+      "selfplay_recipe": "latest-model-selfplay/3.0.0",
+      "imitation_checkpoint": {
+        "bc_run": "artifacts/step5/features4-v11-2-batch7-il",
+        "path": "artifacts/step5/features4-v11-2-batch7-il/candidate.pt",
+        "sha256": "657fe1901ab35d144e5d86e16b42e795d281946829c87bcb8e0245927b70a263",
+        "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+        "manifest": "artifacts/il-replay/features4-compact-v8-batch7/manifest.json",
+        "manifest_sha256": "c382a8d184ad128de0298dc8bf0f738bf2b8266baa9d8002a1a84910266596d9",
+        "bc_signature": "1ec1a4cef052a6626e2f41d49eb1e7bcce400dc2322cdcf2bd62d9b5fd5ba285"
+      },
+      "learning_rate_warmup": {
+        "contract": "linear-update-warmup/1.0.0",
+        "imitation_steps": 500,
+        "selfplay_steps": 100,
+        "start_factor": 0.1
+      },
+      "teacher_enabled": false,
+      "ppo_lr_controller": {
+        "contract": "ppo-categorical-kl-lr/1.2.0",
+        "mode": "apply",
+        "target_kl": 0.01,
+        "raise_factor": 1.25,
+        "cut_divisor": 1.5,
+        "low_ratio": 0.45,
+        "high_ratio": 1.5,
+        "window_iterations": 3,
+        "cooldown_iterations": 3,
+        "min_multiplier": 0.5,
+        "max_multiplier": 3.0,
+        "anchor_kl_budget": 0.15,
+        "anchor_group_kl_budget": 0.3,
+        "anchor_group_min_positions": 64,
+        "vp_max_drop": 0.1,
+        "zero_vp_max_fraction": 0.05
+      },
+      "il_kl_limit": {
+        "contract": "auto-il-kl-limit/1.0.0",
+        "probe_positions": 2048,
+        "probe_seed": 710193,
+        "probability_floor": 1e-06,
+        "initial_limit": 0.15,
+        "minimum_limit": 0.05,
+        "maximum_limit": 1.0,
+        "group_factor": 2.0,
+        "growth_factor": 1.25,
+        "recovery_factor": 0.8,
+        "alarm_factor": 2.0,
+        "update_interval": 10,
+        "baseline_iterations": 10,
+        "rolling_iterations": 5,
+        "group_min_positions": 64,
+        "vp_ratio": 0.85,
+        "sells_ratio": 0.7,
+        "pass_factor": 2.0,
+        "pass_allowance": 0.5,
+        "zero_vp_floor": 0.05,
+        "zero_vp_factor": 2.0,
+        "insolvency_allowance": 0.1
+      },
+      "rehearsal_floor": {
+        "contract": "rehearsal-floor/1.0.0",
+        "initial": 0.03,
+        "hold_iterations": 60,
+        "decrement": 0.01,
+        "interval_iterations": 30
+      },
+      "rehearsal_sampling": {
+        "contract": "rotating-train-window/1.0.0",
+        "rows_per_iteration": 16384,
+        "shard_draws": 32,
+        "max_cache_bytes": 4294967296,
+        "delete_after_update": true
+      },
+      "table_plan": {
+        "quotas": {
+          "selfplay": 50,
+          "historical": 45,
+          "legacy": 5
+        },
+        "learner_seats": {
+          "selfplay": 4,
+          "historical": 2,
+          "legacy": 2
+        },
+        "pair_rotation": "six-pairs"
+      },
+      "opponent_pool": {
+        "contract": "quality-score-pool/1.0.0",
+        "max_members": 24,
+        "pinned": [
+          "generation-0"
+        ],
+        "pinned_seat_share": 0.2,
+        "eta": 0.01,
+        "uniform_floor": 0.2,
+        "admit_every_iterations": 5,
+        "admit_health_iterations": 5,
+        "admit_min_kl": 0.02,
+        "evict_min_age_iterations": 20,
+        "protect_newest": 2
+      },
+      "rating": {
+        "contract": "plackett-luce-rating/1.0.0",
+        "enabled": true,
+        "every_iterations": 10,
+        "setups": 32,
+        "seat_rotations": 4,
+        "references": [
+          "generation-0",
+          "v4"
+        ],
+        "nearest_opponents": 8,
+        "theta_prior_sd": 2.0,
+        "seat_prior_sd": 0.5,
+        "bootstrap": 200,
+        "elo_scale": 173.7,
+        "seed": 910517,
+        "panel_setups": 8,
+        "v4_profile": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy"
+      },
+      "v4_search_enabled": false,
+      "advantage": {
+        "contract": "gae-advantage/2.0.0",
+        "lambda": 1.0,
+        "shadow_lambdas": [
+          0.98,
+          0.95,
+          0.9
+        ],
+        "chain": "nonforced",
+        "gate": {
+          "contract": "staged-gae-gate/1.0.0",
+          "mode": "auto",
+          "minimum_value_iterations": 10,
+          "heldout_ev_min": 0.5,
+          "ev_streak": 5,
+          "fallback_value_iterations": 30,
+          "healthy_iterations": 20,
+          "rating_slots": 3,
+          "rating_min_slope": 0.0
+        },
+        "table_gate": {
+          "contract": "table-gae-ev-gate/1.0.0",
+          "mode": "auto",
+          "ev_tolerance": 0.05,
+          "consecutive_iterations": 10
+        }
+      },
+      "value_phase": {
+        "contract": "ppg-value-phase/2.0.0",
+        "enabled": true,
+        "buffer_iterations": 2,
+        "max_epochs": 3,
+        "batch_size": 4096,
+        "clone_rows": 8192,
+        "clone_batch_size": 512,
+        "beta_clone": 1.0,
+        "beta_clone_max": 8.0,
+        "kl_cap": 0.002,
+        "learning_rate": 6e-06,
+        "holdout_fraction": 0.05
+      },
+      "seat_descriptors": {
+        "contract": "seat-descriptors/1.0.0",
+        "roles": [
+          "learner",
+          "snapshot",
+          "il",
+          "rule_bot",
+          "unknown"
+        ],
+        "lag_scale": 256,
+        "fingerprint": {
+          "phase": "action",
+          "families": [
+            "build",
+            "network",
+            "develop",
+            "sell",
+            "loan",
+            "scout",
+            "pass",
+            "other"
+          ],
+          "build_industries": true
+        },
+        "embedding": 32,
+        "dropout_games": 0.25
+      },
+      "critic_data": {
+        "contract": "critic-rows/1.0.0",
+        "learner_rows": true,
+        "snapshot_rows": true,
+        "snapshot_weight": 1.0,
+        "excluded_roles": [
+          "il",
+          "rule_bot"
+        ],
+        "holdout_fraction": 0.05,
+        "rollout": {
+          "mode": "auto",
+          "descriptor_ev_min_gain": 0.0,
+          "snapshot_ev_tolerance": 0.02,
+          "reduced_snapshot_weight": 0.5
+        }
+      }
+    },
+    "compatibility": {
+      "learning_contract": "four-seat-learning/4.0.0",
+      "players": 4,
+      "rules": "steam-brass-patch-1.1.0",
+      "wire_sha256": "fabe2ef3e1de73aa9f3ddd05b67c08f9ef564a25ab4ff42963a03ab6fe3b6e3d",
+      "observation": "public-state/0.2.0",
+      "choices": "phase-choice/0.2.0",
+      "objective": "win-share/1.0.0",
+      "placement": "competition-rank/1.0.0",
+      "seat_order": "stable-0-1-2-3",
+      "vp_scale": 100.0,
+      "features_sha256": "59facdd72a386b6046abbb875daf3e1051b92e580ff55d0ab37250dd0c1dfb6a",
+      "feature_version": "permitted-features/4.0.0",
+      "derived_source_sha256": "47afe02b5e98549081f5ab119a2dca2c90448c74fba8020fc7e04cb6bc16f260",
+      "producer_profile_sha256": "ffae2fa230bcc42c3877d7817a584b608b60961c0b719316884d6c694a1384d7",
+      "encoder_sha256": "7d21b3052bf65c2d272a59859eebc6b3be1117b77e906a677402784b5ab90f06",
+      "architecture_sha256": "05368f9337d8a7a37459508f67d0bfd1c9092c4bc4a1e0d5c01748df1502f0d9",
+      "loss": "win-ce+0.25-rank-huber+0.1-vp-huber/1.0.0",
+      "reference_lock_sha256": "9cf98163e7ed9cbeef0cd9ce9178c4eeea933063d361f5a5e42d2fdddcdd5158",
+      "heads": [
+        "policy_logits",
+        "win_share_4",
+        "placement_4",
+        "vp_4"
+      ]
+    },
+    "implementation": "de2aac3edd606da9c23fad732c6bc4d8dc6118ad2d801af8b9ae6ffb9326f314",
+    "legacy_pool": {
+      "bank-3dc65253a610191d66a5/balanced-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "balanced-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "rail-tempo-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/cotton-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "cotton-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "goods-beer-v3-masked-economy"
+      },
+      "bank-3dc65253a610191d66a5/supplier-v3-masked-economy": {
+        "admission": "user-directed-masked-v4/1.0.0",
+        "manifest_sha256": "20b753113cb8a5dbee15713174299806377f8eb25cdc7aba0c74ee598676b16b",
+        "qualification": "training/opponents/evaluations/user-directed-v4-1.0.0/selection.json",
+        "sha256": "004568f8092f2f604493667bf6cf79dadd47f60ebb046bbbb01d2bd9297ee184",
+        "profile": "supplier-v3-masked-economy"
+      }
+    },
+    "teachers": {
+      "bank-3dc65253a610191d66a5/balanced-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy",
+        "policy_id": "masked-v3-forest/c991cc3fc8a98863bc81a40daeadbe4553abfe36182b2d382ac63c1a70be7da1",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/cotton-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/cotton-v3-masked-economy",
+        "policy_id": "masked-v3-forest/adf2f1c6dcd7602179c6bf883f47c21ad12e4c25755fb61ec41ab91d4c19c93b",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/goods-beer-v3-masked-economy",
+        "policy_id": "masked-v3-forest/ae7f8bda4a82151f6d9811f020225c9e0bf8cfb5d201e88f7a7172ee5ea93ce7",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/rail-tempo-v3-masked-economy",
+        "policy_id": "masked-v3-forest/1f7e87e93f88de04de05cdf29702cf010893c8cc7af671c064e7a74749fe77d5",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      },
+      "bank-3dc65253a610191d66a5/supplier-v3-masked-economy": {
+        "kind": "lab-legacy",
+        "parent": "bank-3dc65253a610191d66a5/supplier-v3-masked-economy",
+        "policy_id": "masked-v3-forest/f02c4fb5292fdd154e099df1c43b44fac4c4e81816ae68cb2e1d34c03b39762d",
+        "budget": {
+          "role": "lab",
+          "seconds": 1.0,
+          "search_workers": 4,
+          "global_workers": 60,
+          "work_multiplier": 1
+        },
+        "purpose": "training",
+        "search_free": false
+      }
+    },
+    "imitation_source": {
+      "bc_run": "artifacts/step5/features4-v11-2-batch7-il",
+      "path": "artifacts/step5/features4-v11-2-batch7-il/candidate.pt",
+      "sha256": "657fe1901ab35d144e5d86e16b42e795d281946829c87bcb8e0245927b70a263",
+      "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+      "manifest": "artifacts/il-replay/features4-compact-v8-batch7/manifest.json",
+      "manifest_sha256": "c382a8d184ad128de0298dc8bf0f738bf2b8266baa9d8002a1a84910266596d9",
+      "bc_signature": "1ec1a4cef052a6626e2f41d49eb1e7bcce400dc2322cdcf2bd62d9b5fd5ba285"
+    }
+  },
+  "iteration": 1,
+  "games_done": 320,
+  "previous_games": 0,
+  "next_seed": 18510409,
+  "history": [
+    {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/initial.pt",
+      "sha256": "49db12a0a5e49baa5b680dbbce94a8d049bcc045909210ff2df452407874792a",
+      "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+      "generation": 0
+    },
+    {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/generation-0001.pt",
+      "sha256": "ca50a9d480333fa44554d6b45a10a5ee481d4d87ee53491537c0a2f3872d7a00",
+      "model_id": "e94473ca3bb61ef91672da21b8e1c17ab1e2f3b87a628978d2210e4e63472187",
+      "generation": 1
+    }
+  ],
+  "origin": {
+    "initialization": "fresh-heuristic-imitation",
+    "seed": 18510000,
+    "parameters": 5910916,
+    "bc_run": "artifacts/step5/features4-v11-2-batch7-il",
+    "path": "artifacts/step5/features4-v11-2-batch7-il/candidate.pt",
+    "sha256": "657fe1901ab35d144e5d86e16b42e795d281946829c87bcb8e0245927b70a263",
+    "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+    "manifest": "artifacts/il-replay/features4-compact-v8-batch7/manifest.json",
+    "manifest_sha256": "c382a8d184ad128de0298dc8bf0f738bf2b8266baa9d8002a1a84910266596d9",
+    "bc_signature": "1ec1a4cef052a6626e2f41d49eb1e7bcce400dc2322cdcf2bd62d9b5fd5ba285"
+  },
+  "next_search_games": 640,
+  "context_counter": 960,
+  "evaluations": [],
+  "search_seconds": 0.0,
+  "ordinary_seconds": 1041.9572270159842,
+  "imitation": {
+    "enabled": true,
+    "source": {
+      "bc_run": "artifacts/step5/features4-v11-2-batch7-il",
+      "path": "artifacts/step5/features4-v11-2-batch7-il/candidate.pt",
+      "sha256": "657fe1901ab35d144e5d86e16b42e795d281946829c87bcb8e0245927b70a263",
+      "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+      "manifest": "artifacts/il-replay/features4-compact-v8-batch7/manifest.json",
+      "manifest_sha256": "c382a8d184ad128de0298dc8bf0f738bf2b8266baa9d8002a1a84910266596d9",
+      "bc_signature": "1ec1a4cef052a6626e2f41d49eb1e7bcce400dc2322cdcf2bd62d9b5fd5ba285"
+    },
+    "optimizer_reset_before_ppo": true,
+    "note": "Completed standalone fresh imitation; no second BC pass"
+  },
+  "il_kl_limit": {
+    "contract": "auto-il-kl-limit/1.0.0",
+    "config": {
+      "contract": "auto-il-kl-limit/1.0.0",
+      "probe_positions": 2048,
+      "probe_seed": 710193,
+      "probability_floor": 1e-06,
+      "initial_limit": 0.15,
+      "minimum_limit": 0.05,
+      "maximum_limit": 1.0,
+      "group_factor": 2.0,
+      "growth_factor": 1.25,
+      "recovery_factor": 0.8,
+      "alarm_factor": 2.0,
+      "update_interval": 10,
+      "baseline_iterations": 10,
+      "rolling_iterations": 5,
+      "group_min_positions": 64,
+      "vp_ratio": 0.85,
+      "sells_ratio": 0.7,
+      "pass_factor": 2.0,
+      "pass_allowance": 0.5,
+      "zero_vp_floor": 0.05,
+      "zero_vp_factor": 2.0,
+      "insolvency_allowance": 0.1
+    },
+    "limit": 0.15,
+    "kl_last_healthy": 0.0,
+    "last_healthy_generation": 0,
+    "last_update": 0,
+    "last_generation": 1,
+    "baseline": null,
+    "baseline_rows": [],
+    "rolling": [
+      {
+        "tables": 160,
+        "all_learner_tables": 160,
+        "seat_games": 640,
+        "vp_sum": 51851.0,
+        "sells": 1793,
+        "passes_with_alternative": 609,
+        "zero_vp_seats": 10,
+        "insolvent_seats": 37,
+        "insolvency_events": 121
+      }
+    ],
+    "healthy_window": [],
+    "blocked": false,
+    "probe": {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/manifest.json",
+      "sha256": "b10eb317cab99617e2df983c21862d83d5adacfaf2f822ea5cb3b71f8b836f2c",
+      "probe_hash": "f3bc4ec205506d2ec255c07ab380e328cb45fedd7d95d3278c5e026e9fa11467"
+    }
+  },
+  "quality_pool": {
+    "contract": "quality-score-pool/1.0.0",
+    "config": {
+      "contract": "quality-score-pool/1.0.0",
+      "max_members": 24,
+      "pinned": [
+        "generation-0"
+      ],
+      "pinned_seat_share": 0.2,
+      "eta": 0.01,
+      "uniform_floor": 0.2,
+      "admit_every_iterations": 5,
+      "admit_health_iterations": 5,
+      "admit_min_kl": 0.02,
+      "evict_min_age_iterations": 20,
+      "protect_newest": 2
+    },
+    "generation": 1,
+    "members": [
+      {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/population/weights-94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b.pt",
+        "sha256": "5485d1f1ae04edd227d79e3f4b9a7f0bd4b3442ad32819726c15cf138ea1082a",
+        "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+        "generation": 0,
+        "admitted_iteration": 0,
+        "q": null,
+        "probe": {
+          "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/probe.npz",
+          "sha256": "0ea80f0b3ee72332b889f6453960a9b78081b996e40c2c3bd644589e68589f6c",
+          "probe_hash": "f3bc4ec205506d2ec255c07ab380e328cb45fedd7d95d3278c5e026e9fa11467"
+        },
+        "admission_health": {
+          "ok": true,
+          "scope": "Pinned completed IL reference"
+        },
+        "recent_rates": [
+          {
+            "outcomes": 272.0,
+            "comparisons": 576
+          }
+        ],
+        "fingerprint": {
+          "contract": "policy-style-fingerprint/1.0.0",
+          "probe_hash": "f3bc4ec205506d2ec255c07ab380e328cb45fedd7d95d3278c5e026e9fa11467",
+          "values": [
+            0.28856512904167175,
+            0.30524107813835144,
+            0.127251535654068,
+            0.1502695232629776,
+            0.12661679089069366,
+            9.940439440470072e-07,
+            0.0020549618639051914,
+            0.0,
+            0.35969847440719604,
+            0.33856138586997986,
+            0.16715176403522491,
+            0.06981977820396423,
+            0.06424266844987869,
+            4.0113519617079874e-07,
+            0.0005255377618595958,
+            0.0,
+            0.1767495572566986,
+            0.29199981689453125,
+            0.06950582563877106,
+            0.16096055507659912,
+            0.1550707072019577,
+            0.14571352303028107,
+            0.08088360726833344,
+            0.13533362746238708,
+            0.12254474312067032,
+            0.07126601785421371,
+            0.14609135687351227,
+            0.4438806474208832
+          ],
+          "action_positions": [
+            256,
+            256
+          ],
+          "build_mass": [
+            73.87267006738307,
+            92.08281268310199
+          ],
+          "source": "raw_policy_temperature_1",
+          "industry_order": [
+            "CottonMill",
+            "Manufacturer",
+            "Pottery",
+            "Brewery",
+            "IronWorks",
+            "CoalMine"
+          ],
+          "normalization": "Family groups sum to 1 per observed era; industry groups conditional on build; empty groups are zero"
+        },
+        "weights_only": true
+      }
+    ],
+    "health_window": [
+      false
+    ],
+    "planning": {
+      "N": 0,
+      "members": []
+    },
+    "events": []
+  },
+  "evaluation_anchor": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/initial.pt",
+    "sha256": "49db12a0a5e49baa5b680dbbce94a8d049bcc045909210ff2df452407874792a",
+    "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+    "generation": 0
+  },
+  "population": [
+    {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/population/weights-94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b.pt",
+      "sha256": "5485d1f1ae04edd227d79e3f4b9a7f0bd4b3442ad32819726c15cf138ea1082a",
+      "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+      "generation": 0,
+      "weights_only": true
+    }
+  ],
+  "resume": [
+    {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/initial.pt",
+      "sha256": "49db12a0a5e49baa5b680dbbce94a8d049bcc045909210ff2df452407874792a",
+      "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+      "generation": 0
+    },
+    {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/generation-0001.pt",
+      "sha256": "ca50a9d480333fa44554d6b45a10a5ee481d4d87ee53491537c0a2f3872d7a00",
+      "model_id": "e94473ca3bb61ef91672da21b8e1c17ab1e2f3b87a628978d2210e4e63472187",
+      "generation": 1
+    }
+  ],
+  "ratings": {
+    "contract": "plackett-luce-rating/1.0.0",
+    "config": {
+      "contract": "plackett-luce-rating/1.0.0",
+      "enabled": true,
+      "every_iterations": 10,
+      "setups": 32,
+      "seat_rotations": 4,
+      "references": [
+        "generation-0",
+        "v4"
+      ],
+      "nearest_opponents": 8,
+      "theta_prior_sd": 2.0,
+      "seat_prior_sd": 0.5,
+      "bootstrap": 200,
+      "elo_scale": 173.7,
+      "seed": 910517,
+      "panel_setups": 8,
+      "v4_profile": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy"
+    },
+    "seeds": [
+      910521,
+      910532,
+      910536,
+      910548,
+      910549,
+      910552,
+      910555,
+      910573,
+      910574,
+      910580,
+      910583,
+      910595,
+      910628,
+      910631,
+      910640,
+      910647,
+      910649,
+      910665,
+      910666,
+      910685,
+      910692,
+      910714,
+      910715,
+      910723,
+      910724,
+      910754,
+      910768,
+      910773,
+      910783,
+      910792,
+      910848,
+      910852
+    ],
+    "slots": [],
+    "agents": {
+      "generation-0": {
+        "kind": "model",
+        "checkpoint": {
+          "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/population/weights-94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b.pt",
+          "sha256": "5485d1f1ae04edd227d79e3f4b9a7f0bd4b3442ad32819726c15cf138ea1082a",
+          "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+          "generation": 0,
+          "weights_only": true
+        }
+      },
+      "v4": {
+        "kind": "v4",
+        "policy": {
+          "kind": "lab-legacy",
+          "parent": "bank-3dc65253a610191d66a5/balanced-v3-masked-economy",
+          "policy_id": "shared-legacy-search/b73f6cd15a3ae7d6e2239b7427a86177cfdd472d5165940b70ab10ec9aca1f26",
+          "budget": {
+            "role": "lab",
+            "seconds": 1.0,
+            "search_workers": 4,
+            "global_workers": 60,
+            "work_multiplier": 1
+          },
+          "purpose": "training",
+          "search_free": true,
+          "work_budget": {
+            "contract": "legacy-opponent-turn-time/1.0.0",
+            "mode": "time",
+            "seconds_per_turn": 1.0
+          },
+          "search_runtime": {
+            "id": "search-76a2f9ad7529c0e5e2117a36",
+            "recipe": {
+              "contract": "shared-heuristic-search/1.0.0",
+              "bank": "bank-3dc65253a610191d66a5",
+              "sources": {
+                "src/BrassHost/Choices.cs": "598beee52e36598b1c5e5215fce4302655cfd12b13b3d2b7add0bb9a3c2c8c6c",
+                "src/BrassHost/Host.cs": "84424276d8ff37a719aca14c6da17dafcd6fdd7b6e55371676313b51c313c911",
+                "src/BrassHost/Model.cs": "5565f8c4c0146138256d270a721042b38830b62c0b7316453b5a9ac5949ac87d",
+                "src/BrassHost/Observation.cs": "7162102e3b12613842d17e4ca1c24ba9837053eba955b4513ba134c3f49841c5",
+                "src/BrassHost/Position.cs": "e587837815c74df3c275858e0df0e36e8b3db35182f3743bc5c53fc31e84f464",
+                "src/BrassLegacyAI/Belief.cs": "f0a66fbe87e9d533f90634146bf7bade0560abe37613bc4ccae53a1fa9d791da",
+                "src/BrassLegacyAI/Coordinator.cs": "d2d97765c9f21f639139f4bf2c238a07251f8ee8d1b124ed7e3ca5a6f56956c8",
+                "src/BrassLegacyAI/Harness.cs": "fffb164761be88f32b20b7d304989c4c7d2e079947aed5b6aeb3793f686785c3",
+                "src/BrassLegacyAI/HostExtensions.cs": "5692a1b0fd1dd834f3f7fb3177df7f2b26b5326e5846678277662eb0b99c9bea",
+                "src/BrassLegacyAI/IntentJournal.cs": "84e093d351e9a4a2829dc592b14b5e6cb620bd3bbb323e1c65921cad67aae347",
+                "src/BrassLegacyAI/LiveHost.cs": "614942261d8345f8e17451e596e6022fe9a61c3d97de22c23e0ccd153e4d5ef0",
+                "src/BrassLegacyAI/Planner.cs": "742096885d71c10f59ffc75b9cb571e68d39be87d807106e1b4e1922a2c866e3",
+                "src/BrassLegacyAI/Program.cs": "d0559ca5fcf36c6aefde6fb7e57902452710abc5ef5108c91bd5608195e37ffd",
+                "src/BrassLocalAI/Policy/Behavior.cs": "4cf4f6e5715701832ad9e860cde95b5cd68caa4c14ba16ecdd7dd7a2b47efd5d",
+                "src/BrassLocalAI/Policy/CashManagement.cs": "74af8f3672314a5698f6146778bdd6d95d213063d9f628a8f657f48f2c0c385c",
+                "src/BrassLocalAI/Policy/Conversion.cs": "927743aaa873d1a712b46140ea6897fb0f382d1a1c90041b213a68925a61b761",
+                "src/BrassLocalAI/Policy/Evaluator.cs": "f8ece487af2c554c09bdf0af78f111295decc5ef69ae9b1736a39668cdea502d",
+                "src/BrassLocalAI/Policy/Tactics.cs": "36d631d66c6956572e8d41ff94f6f87e2b3152cf91d94882aecf82b7b19cb67c",
+                "src/BrassMaskedSearch/CompetitiveEconomy.cs": "57d19eec2090541915104cbb89680da2784fa0a527ce30ca329a7e4065809ded",
+                "src/BrassMaskedSearch/DeadlineAdmission.cs": "d1bb8ac0cba2c237efcca5e18d2fd78bb07d89b85a31d297ba8487edbe155ea6",
+                "src/BrassMaskedSearch/EraEconomy.cs": "99cd1e859f3781a87ffe1e750d7bf45aae109b792cc7f26c1c04bed84fd22085",
+                "src/BrassMaskedSearch/HeuristicBatchQueue.cs": "9cad7781f41c93a3916ea01286294c39a680ad5e32d1ecccbfe202911bc5bc36",
+                "src/BrassMaskedSearch/InvestmentOpportunity.cs": "d46817cd3d933bfefa0f9aadc00380fc2e0bb0e183f41bee46cb9286fb173523",
+                "src/BrassMaskedSearch/MaskedSearch.cs": "228c40af9b11306380eb8fa3ffd8c2c174d454cd9b8ebf43345211611828dafb",
+                "src/BrassMaskedSearch/MaskedSearchExecution.cs": "385f5aaf8d423de896e05782d0418d02086daea20fb7a64df969de659f2ba936",
+                "src/BrassMaskedSearch/NetworkOptions.cs": "805b5828b9054e98f3b0b0617e6fc8c41857b2ee3f17d216ad5017fb5001f0b1",
+                "src/BrassMaskedSearch/RootForest.cs": "16290524a79c580743a6728ff36423704736383d083fce26392c46fa59a25ab9",
+                "src/BrassMaskedSearch/SaleTiming.cs": "ca98967941fe574065675695a71e5492779fee10d0d77f2fade0146b1650876f",
+                "src/BrassMaskedSearch/SearchSettings.cs": "5711a56e5dad1e46d8472e92a606b394a21924a1df6502b8a1d88e454c4e742e",
+                "src/BrassMaskedSearch/StrategicOpenings.cs": "79d8328364ba4f78c74cd3e2cc8aeb12741c14ab51633dc43c2f957cf078d2b4",
+                "src/BrassMaskedSearch/TournamentOpenings.cs": "f84b53753377934f67af03e7316514ee55848d2367be802bf28e05bcdf0e03fd"
+              },
+              "profiles": {
+                "balanced-v3-masked-economy": "6afa9cd47d94e00fa667b3d91e4f98d2d7aead91ebd7fc1ad447a9d874b6cd79",
+                "rail-tempo-v3-masked-economy": "03c1cb4d219d86e2a45d3d5d1168e9f126700eb0eb168f345471a4c1130b2814",
+                "cotton-v3-masked-economy": "a9f68ecd1b1bb46165df251d3e95c1e26ac4c472ab16ae70e62748d59aa3286c",
+                "goods-beer-v3-masked-economy": "8863a89e4304db01633e811d53814f4e12a7c69a21d40bf1c3be273983303831",
+                "supplier-v3-masked-economy": "983ca1fee91eaca7930381ccfab5fe2502b8cda8ef50192607be20981363fa08",
+                "pottery-flex-v3-masked-economy": "ee300bc0f92da7ade073b5c8746aadb230c736a3c4bf9ab1c68cf99cfb8eadf6"
+              },
+              "adapter": "d780c9b94c02dcb1b3783b2d40ae45f51a5e4de050f4f65e7181e2741bb8a0cd"
+            }
+          }
+        }
+      }
+    },
+    "latest_report": null,
+    "scope": "Independent held-out evidence; never a sampling score"
+  },
+  "recent_training": [
+    {
+      "iteration": 0,
+      "games_done": 320,
+      "quality_pool": {
+        "contract": "quality-score-pool/1.0.0",
+        "planning": {
+          "N": 0,
+          "members": []
+        },
+        "members": [
+          {
+            "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+            "generation": 0,
+            "q_before": null,
+            "p": null,
+            "seats_played": 288,
+            "comparisons": 576,
+            "outrank_rate": 0.4722222222222222,
+            "moving_outrank_rate": 0.4722222222222222,
+            "q_after": null
+          }
+        ],
+        "scope": "Conditional scored-pool p frozen at planning; two learner comparisons per opponent seat; IL outcomes are diagnostic only, never scored",
+        "admission": {
+          "generation": 1,
+          "candidate": "e94473ca3bb61ef91672da21b8e1c17ab1e2f3b87a628978d2210e4e63472187",
+          "admitted": false,
+          "evicted": null,
+          "reason": "not_due"
+        },
+        "next_distribution": {
+          "N": 0,
+          "members": []
+        },
+        "size": 1,
+        "max_members": 24,
+        "eta": 0.01,
+        "uniform_floor": 0.2,
+        "pinned_seat_share": 0.2
+      },
+      "il_kl_limit": {
+        "contract": "auto-il-kl-limit/1.0.0",
+        "generation": 1,
+        "measurement": {
+          "positions": 2048,
+          "requested_positions": 2048,
+          "kl_mean": 0.0017398865929205128,
+          "groups": {
+            "canal_action": {
+              "positions": 256,
+              "kl_mean": 0.0027816752302283415
+            },
+            "canal_other": {
+              "positions": 768,
+              "kl_mean": 0.0009513663146053821
+            },
+            "rail_action": {
+              "positions": 256,
+              "kl_mean": 0.005216038693575625
+            },
+            "rail_other": {
+              "positions": 768,
+              "kl_mean": 0.0010224266252479963
+            }
+          },
+          "unassigned_positions": 0,
+          "behavior": {
+            "ok": true,
+            "sales": {
+              "positions": 79,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            },
+            "passing": {
+              "positions": 511,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            }
+          },
+          "elapsed_seconds": 21.449487947043963,
+          "probability_floor": 1e-06,
+          "scope": "Fixed IL validation positions; raw temperature-1 policies, no exploration; symmetric floor/renormalization for KL, raw behavior checks"
+        },
+        "health": {
+          "ok": false,
+          "reasons": [
+            "baseline_unavailable",
+            "rolling_health_unavailable"
+          ],
+          "metrics": null,
+          "checks": {},
+          "behavior": {
+            "ok": true,
+            "sales": {
+              "positions": 79,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            },
+            "passing": {
+              "positions": 511,
+              "failures": 0,
+              "examples": [],
+              "ok": true
+            }
+          },
+          "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+        },
+        "limit_before": 0.15,
+        "limit_after": 0.15,
+        "group_limit_before": 0.3,
+        "group_limit_after": 0.3,
+        "decision": "hold",
+        "reason": "warmup",
+        "baseline": null,
+        "baseline_iterations": 0,
+        "last_update": 0,
+        "last_healthy_generation": 0,
+        "kl_last_healthy": 0.0,
+        "healthy_window_length": 0,
+        "blocked": false,
+        "recovery_limit": 0.12,
+        "alarm": false,
+        "lr_gate": {
+          "ok": false,
+          "reasons": [
+            "baseline_unavailable",
+            "rolling_health_unavailable"
+          ],
+          "anchor_distance": 0.0017398865929205128,
+          "anchor_budget": 0.15,
+          "anchor_group_budget": 0.3,
+          "anchor_group_min_positions": 64,
+          "anchor_groups": {
+            "canal_action": {
+              "positions": 256,
+              "anchor_distance": 0.0027816752302283415,
+              "status": "ok"
+            },
+            "canal_other": {
+              "positions": 768,
+              "anchor_distance": 0.0009513663146053821,
+              "status": "ok"
+            },
+            "rail_action": {
+              "positions": 256,
+              "anchor_distance": 0.005216038693575625,
+              "status": "ok"
+            },
+            "rail_other": {
+              "positions": 768,
+              "anchor_distance": 0.0010224266252479963,
+              "status": "ok"
+            }
+          },
+          "anchor_unassigned_positions": 0,
+          "anchor_group_max": 0.005216038693575625,
+          "health": {
+            "ok": false,
+            "reasons": [
+              "baseline_unavailable",
+              "rolling_health_unavailable"
+            ],
+            "metrics": null,
+            "checks": {},
+            "behavior": {
+              "ok": true,
+              "sales": {
+                "positions": 79,
+                "failures": 0,
+                "examples": [],
+                "ok": true
+              },
+              "passing": {
+                "positions": 511,
+                "failures": 0,
+                "examples": [],
+                "ok": true
+              }
+            },
+            "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+          },
+          "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+        },
+        "probe": {
+          "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/manifest.json",
+          "sha256": "b10eb317cab99617e2df983c21862d83d5adacfaf2f822ea5cb3b71f8b836f2c",
+          "probe_hash": "f3bc4ec205506d2ec255c07ab380e328cb45fedd7d95d3278c5e026e9fa11467"
+        }
+      },
+      "rehearsal_schedule": {
+        "weight": 0.1,
+        "floor": 0.03,
+        "decayed_weight": 0.1,
+        "committed_games": 0,
+        "committed_iterations": 0,
+        "enabled": true,
+        "scope": "Weight for the next collection/update; floor drops after 60, 90 and 120 committed iterations"
+      },
+      "value_phase": {
+        "contract": "ppg-value-phase/2.0.0",
+        "enabled": true,
+        "optimizer_steps": 0,
+        "attempted_steps": 16,
+        "epochs": 0,
+        "attempted_epochs": 1,
+        "early_stop_reason": "policy_kl_cap",
+        "kl_guard_tripped": true,
+        "beta_clone": 1.0,
+        "learning_rate": 6e-06,
+        "train_rows": 82410,
+        "heldout_rows": 2663,
+        "current_train_rows": 82410,
+        "previous_train_rows": 0,
+        "distinct_value_rows_used": 0,
+        "value_presentations": 0,
+        "clone_presentations": 0,
+        "distinct_current_rows_used": 0,
+        "distinct_previous_rows_used": 0,
+        "current_presentations": 0,
+        "previous_presentations": 0,
+        "scope": "Critic: current plus configured previous iteration; validation/cloning/probes: current only; separate Adam/base LR, no PPO counters",
+        "train_before": {
+          "rows": 82410,
+          "loss": 1.2450427594043447,
+          "utility_mse": 0.15123794673804075,
+          "explained_variance": 0.36045562512995943,
+          "learner_utility_mse": 0.14033971253343616,
+          "games": 309,
+          "groups": {
+            "era:CanalEra": {
+              "rows": 36949,
+              "loss": 1.5173280281697687,
+              "utility_mse": 0.19064133801494748,
+              "explained_variance": 0.18637868812756275,
+              "learner_utility_mse": 0.1793654498164965
+            },
+            "era:RailEra": {
+              "rows": 45461,
+              "loss": 1.0237394797665529,
+              "utility_mse": 0.11921234447917212,
+              "explained_variance": 0.504519627734314,
+              "learner_utility_mse": 0.1086210533118661
+            },
+            "period:canal_early": {
+              "rows": 17431,
+              "loss": 1.6171805905074002,
+              "utility_mse": 0.20437314499068715,
+              "explained_variance": 0.1176268229446632,
+              "learner_utility_mse": 0.19362983388304592
+            },
+            "period:canal_late": {
+              "rows": 19518,
+              "loss": 1.4281523946977297,
+              "utility_mse": 0.17837783112929742,
+              "explained_variance": 0.24874643037214728,
+              "learner_utility_mse": 0.1666263126782639
+            },
+            "period:rail_early": {
+              "rows": 33841,
+              "loss": 1.0540551579579678,
+              "utility_mse": 0.12130197932906078,
+              "explained_variance": 0.48567250617138336,
+              "learner_utility_mse": 0.11233950095039846
+            },
+            "period:rail_late": {
+              "rows": 11620,
+              "loss": 0.9354509371094383,
+              "utility_mse": 0.1131266875983561,
+              "explained_variance": 0.560083878296844,
+              "learner_utility_mse": 0.09779179457386503
+            },
+            "phase:CanalEra/action": {
+              "rows": 13950,
+              "loss": 1.5221109794726508,
+              "utility_mse": 0.1921403406800731,
+              "explained_variance": 0.17490947635582654,
+              "learner_utility_mse": 0.17785556753306989
+            },
+            "phase:CanalEra/bonus": {
+              "rows": 90,
+              "loss": 1.533094588874115,
+              "utility_mse": 0.19787054197448822,
+              "explained_variance": 0.035662244462633,
+              "learner_utility_mse": 0.2526236450382929
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 15191,
+              "loss": 1.516237773555782,
+              "utility_mse": 0.1905614759285552,
+              "explained_variance": 0.18889994244740815,
+              "learner_utility_mse": 0.1765018815165537
+            },
+            "phase:CanalEra/debt": {
+              "rows": 29,
+              "loss": 1.3418107937122215,
+              "utility_mse": 0.1775969211975562,
+              "explained_variance": 0.33075282472210554,
+              "learner_utility_mse": 0.10878812219038493
+            },
+            "phase:CanalEra/payment": {
+              "rows": 7689,
+              "loss": 1.5112818448561707,
+              "utility_mse": 0.18804408967410058,
+              "explained_variance": 0.199177384850588,
+              "learner_utility_mse": 0.18717099394829861
+            },
+            "phase:RailEra/action": {
+              "rows": 14880,
+              "loss": 1.0196324231652594,
+              "utility_mse": 0.12033613450433525,
+              "explained_variance": 0.4982067231645516,
+              "learner_utility_mse": 0.10834068887253546
+            },
+            "phase:RailEra/bonus": {
+              "rows": 127,
+              "loss": 1.0504074434815782,
+              "utility_mse": 0.1304093515610425,
+              "explained_variance": 0.4311747898412165,
+              "learner_utility_mse": 0.13472142135300322
+            },
+            "phase:RailEra/continuation": {
+              "rows": 16441,
+              "loss": 1.0232052833052485,
+              "utility_mse": 0.11933198273075508,
+              "explained_variance": 0.5104833800743802,
+              "learner_utility_mse": 0.10686475123677479
+            },
+            "phase:RailEra/debt": {
+              "rows": 60,
+              "loss": 1.0967324702379604,
+              "utility_mse": 0.1289030522670752,
+              "explained_variance": 0.31750213442280983,
+              "learner_utility_mse": 0.03507984838988406
+            },
+            "phase:RailEra/payment": {
+              "rows": 13953,
+              "loss": 1.0281922365520086,
+              "utility_mse": 0.11772933505930724,
+              "explained_variance": 0.5043861752264593,
+              "learner_utility_mse": 0.11106819090434882
+            },
+            "role:learner": {
+              "rows": 82410,
+              "loss": 1.2450427594043447,
+              "utility_mse": 0.15123794673804075,
+              "explained_variance": 0.36045562512995943,
+              "learner_utility_mse": 0.14033971253343616
+            },
+            "table:historical": {
+              "rows": 24284,
+              "loss": 1.2839789253822846,
+              "utility_mse": 0.15297499272124918,
+              "explained_variance": 0.3442606464589716,
+              "learner_utility_mse": 0.1376787736162266
+            },
+            "table:historical/role:learner": {
+              "rows": 24284,
+              "loss": 1.2839789253822846,
+              "utility_mse": 0.15297499272124918,
+              "explained_variance": 0.3442606464589716,
+              "learner_utility_mse": 0.1376787736162266
+            },
+            "table:legacy": {
+              "rows": 2838,
+              "loss": 1.356832723076494,
+              "utility_mse": 0.17217077187366994,
+              "explained_variance": -0.6390483366194162,
+              "learner_utility_mse": 0.08693530283246295
+            },
+            "table:legacy/role:learner": {
+              "rows": 2838,
+              "loss": 1.356832723076494,
+              "utility_mse": 0.17217077187366994,
+              "explained_variance": -0.6390483366194162,
+              "learner_utility_mse": 0.08693530283246295
+            },
+            "table:selfplay": {
+              "rows": 55288,
+              "loss": 1.2222026173932419,
+              "utility_mse": 0.14940048142203818,
+              "explained_variance": 0.3702608150704766,
+              "learner_utility_mse": 0.14424978262815613
+            },
+            "table:selfplay/role:learner": {
+              "rows": 55288,
+              "loss": 1.2222026173932419,
+              "utility_mse": 0.14940048142203818,
+              "explained_variance": 0.3702608150704766,
+              "learner_utility_mse": 0.14424978262815613
+            }
+          },
+          "win_calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "count": 128675,
+              "predicted": 0.027309471122532493,
+              "observed": 0.06369535651836021
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "count": 54469,
+              "predicted": 0.14955470096141066,
+              "observed": 0.19379830729405717
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "count": 47572,
+              "predicted": 0.24737968681215547,
+              "observed": 0.25969057428739595
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "count": 25198,
+              "predicted": 0.345577205854405,
+              "observed": 0.3328438764981348
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "count": 17400,
+              "predicted": 0.447673250397389,
+              "observed": 0.4210344827586207
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "count": 12983,
+              "predicted": 0.5476938635351881,
+              "observed": 0.4839405376261265
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.7,
+              "count": 10528,
+              "predicted": 0.6482328897325101,
+              "observed": 0.5378039513677811
+            },
+            {
+              "lower": 0.7,
+              "upper": 0.8,
+              "count": 9255,
+              "predicted": 0.7495182211755869,
+              "observed": 0.5895191788222582
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.9,
+              "count": 9383,
+              "predicted": 0.8505796981203421,
+              "observed": 0.6741980176915698
+            },
+            {
+              "lower": 0.9,
+              "upper": 1.0,
+              "count": 14177,
+              "predicted": 0.9614909782794447,
+              "observed": 0.8368484164491783
+            }
+          ],
+          "scope": "MC loss over all four stable-seat heads; EV on observing row seat utility, grouped separately by role/table; correlated rows/heads"
+        },
+        "train_after": {
+          "rows": 82410,
+          "loss": 1.2450427594043447,
+          "utility_mse": 0.15123794673804075,
+          "explained_variance": 0.36045562512995943,
+          "learner_utility_mse": 0.14033971253343616,
+          "games": 309,
+          "groups": {
+            "era:CanalEra": {
+              "rows": 36949,
+              "loss": 1.5173280281697687,
+              "utility_mse": 0.19064133801494748,
+              "explained_variance": 0.18637868812756275,
+              "learner_utility_mse": 0.1793654498164965
+            },
+            "era:RailEra": {
+              "rows": 45461,
+              "loss": 1.0237394797665529,
+              "utility_mse": 0.11921234447917212,
+              "explained_variance": 0.504519627734314,
+              "learner_utility_mse": 0.1086210533118661
+            },
+            "period:canal_early": {
+              "rows": 17431,
+              "loss": 1.6171805905074002,
+              "utility_mse": 0.20437314499068715,
+              "explained_variance": 0.1176268229446632,
+              "learner_utility_mse": 0.19362983388304592
+            },
+            "period:canal_late": {
+              "rows": 19518,
+              "loss": 1.4281523946977297,
+              "utility_mse": 0.17837783112929742,
+              "explained_variance": 0.24874643037214728,
+              "learner_utility_mse": 0.1666263126782639
+            },
+            "period:rail_early": {
+              "rows": 33841,
+              "loss": 1.0540551579579678,
+              "utility_mse": 0.12130197932906078,
+              "explained_variance": 0.48567250617138336,
+              "learner_utility_mse": 0.11233950095039846
+            },
+            "period:rail_late": {
+              "rows": 11620,
+              "loss": 0.9354509371094383,
+              "utility_mse": 0.1131266875983561,
+              "explained_variance": 0.560083878296844,
+              "learner_utility_mse": 0.09779179457386503
+            },
+            "phase:CanalEra/action": {
+              "rows": 13950,
+              "loss": 1.5221109794726508,
+              "utility_mse": 0.1921403406800731,
+              "explained_variance": 0.17490947635582654,
+              "learner_utility_mse": 0.17785556753306989
+            },
+            "phase:CanalEra/bonus": {
+              "rows": 90,
+              "loss": 1.533094588874115,
+              "utility_mse": 0.19787054197448822,
+              "explained_variance": 0.035662244462633,
+              "learner_utility_mse": 0.2526236450382929
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 15191,
+              "loss": 1.516237773555782,
+              "utility_mse": 0.1905614759285552,
+              "explained_variance": 0.18889994244740815,
+              "learner_utility_mse": 0.1765018815165537
+            },
+            "phase:CanalEra/debt": {
+              "rows": 29,
+              "loss": 1.3418107937122215,
+              "utility_mse": 0.1775969211975562,
+              "explained_variance": 0.33075282472210554,
+              "learner_utility_mse": 0.10878812219038493
+            },
+            "phase:CanalEra/payment": {
+              "rows": 7689,
+              "loss": 1.5112818448561707,
+              "utility_mse": 0.18804408967410058,
+              "explained_variance": 0.199177384850588,
+              "learner_utility_mse": 0.18717099394829861
+            },
+            "phase:RailEra/action": {
+              "rows": 14880,
+              "loss": 1.0196324231652594,
+              "utility_mse": 0.12033613450433525,
+              "explained_variance": 0.4982067231645516,
+              "learner_utility_mse": 0.10834068887253546
+            },
+            "phase:RailEra/bonus": {
+              "rows": 127,
+              "loss": 1.0504074434815782,
+              "utility_mse": 0.1304093515610425,
+              "explained_variance": 0.4311747898412165,
+              "learner_utility_mse": 0.13472142135300322
+            },
+            "phase:RailEra/continuation": {
+              "rows": 16441,
+              "loss": 1.0232052833052485,
+              "utility_mse": 0.11933198273075508,
+              "explained_variance": 0.5104833800743802,
+              "learner_utility_mse": 0.10686475123677479
+            },
+            "phase:RailEra/debt": {
+              "rows": 60,
+              "loss": 1.0967324702379604,
+              "utility_mse": 0.1289030522670752,
+              "explained_variance": 0.31750213442280983,
+              "learner_utility_mse": 0.03507984838988406
+            },
+            "phase:RailEra/payment": {
+              "rows": 13953,
+              "loss": 1.0281922365520086,
+              "utility_mse": 0.11772933505930724,
+              "explained_variance": 0.5043861752264593,
+              "learner_utility_mse": 0.11106819090434882
+            },
+            "role:learner": {
+              "rows": 82410,
+              "loss": 1.2450427594043447,
+              "utility_mse": 0.15123794673804075,
+              "explained_variance": 0.36045562512995943,
+              "learner_utility_mse": 0.14033971253343616
+            },
+            "table:historical": {
+              "rows": 24284,
+              "loss": 1.2839789253822846,
+              "utility_mse": 0.15297499272124918,
+              "explained_variance": 0.3442606464589716,
+              "learner_utility_mse": 0.1376787736162266
+            },
+            "table:historical/role:learner": {
+              "rows": 24284,
+              "loss": 1.2839789253822846,
+              "utility_mse": 0.15297499272124918,
+              "explained_variance": 0.3442606464589716,
+              "learner_utility_mse": 0.1376787736162266
+            },
+            "table:legacy": {
+              "rows": 2838,
+              "loss": 1.356832723076494,
+              "utility_mse": 0.17217077187366994,
+              "explained_variance": -0.6390483366194162,
+              "learner_utility_mse": 0.08693530283246295
+            },
+            "table:legacy/role:learner": {
+              "rows": 2838,
+              "loss": 1.356832723076494,
+              "utility_mse": 0.17217077187366994,
+              "explained_variance": -0.6390483366194162,
+              "learner_utility_mse": 0.08693530283246295
+            },
+            "table:selfplay": {
+              "rows": 55288,
+              "loss": 1.2222026173932419,
+              "utility_mse": 0.14940048142203818,
+              "explained_variance": 0.3702608150704766,
+              "learner_utility_mse": 0.14424978262815613
+            },
+            "table:selfplay/role:learner": {
+              "rows": 55288,
+              "loss": 1.2222026173932419,
+              "utility_mse": 0.14940048142203818,
+              "explained_variance": 0.3702608150704766,
+              "learner_utility_mse": 0.14424978262815613
+            }
+          },
+          "win_calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "count": 128675,
+              "predicted": 0.027309471122532493,
+              "observed": 0.06369535651836021
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "count": 54469,
+              "predicted": 0.14955470096141066,
+              "observed": 0.19379830729405717
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "count": 47572,
+              "predicted": 0.24737968681215547,
+              "observed": 0.25969057428739595
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "count": 25198,
+              "predicted": 0.345577205854405,
+              "observed": 0.3328438764981348
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "count": 17400,
+              "predicted": 0.447673250397389,
+              "observed": 0.4210344827586207
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "count": 12983,
+              "predicted": 0.5476938635351881,
+              "observed": 0.4839405376261265
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.7,
+              "count": 10528,
+              "predicted": 0.6482328897325101,
+              "observed": 0.5378039513677811
+            },
+            {
+              "lower": 0.7,
+              "upper": 0.8,
+              "count": 9255,
+              "predicted": 0.7495182211755869,
+              "observed": 0.5895191788222582
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.9,
+              "count": 9383,
+              "predicted": 0.8505796981203421,
+              "observed": 0.6741980176915698
+            },
+            {
+              "lower": 0.9,
+              "upper": 1.0,
+              "count": 14177,
+              "predicted": 0.9614909782794447,
+              "observed": 0.8368484164491783
+            }
+          ],
+          "scope": "MC loss over all four stable-seat heads; EV on observing row seat utility, grouped separately by role/table; correlated rows/heads"
+        },
+        "heldout_before": {
+          "rows": 2663,
+          "loss": 1.4855921078785286,
+          "utility_mse": 0.20262494814574453,
+          "explained_variance": 0.16166161574620408,
+          "learner_utility_mse": 0.20104866473215458,
+          "games": 11,
+          "groups": {
+            "era:CanalEra": {
+              "rows": 1192,
+              "loss": 1.6209890184542726,
+              "utility_mse": 0.21768668641626518,
+              "explained_variance": 0.04537192504841525,
+              "learner_utility_mse": 0.22996054244240544
+            },
+            "era:RailEra": {
+              "rows": 1471,
+              "loss": 1.3758755086900263,
+              "utility_mse": 0.19041992298023766,
+              "explained_variance": 0.26405781959340213,
+              "learner_utility_mse": 0.1776204130458059
+            },
+            "period:canal_early": {
+              "rows": 550,
+              "loss": 1.6678226053985683,
+              "utility_mse": 0.2194416390494867,
+              "explained_variance": 0.03426998581860263,
+              "learner_utility_mse": 0.23169650503214692
+            },
+            "period:canal_late": {
+              "rows": 642,
+              "loss": 1.580866786648412,
+              "utility_mse": 0.21618322232238385,
+              "explained_variance": 0.054831683988379565,
+              "learner_utility_mse": 0.22847334707736208
+            },
+            "period:rail_early": {
+              "rows": 1096,
+              "loss": 1.4636911839810982,
+              "utility_mse": 0.20303616163798396,
+              "explained_variance": 0.2234700717911744,
+              "learner_utility_mse": 0.184072719014295
+            },
+            "period:rail_late": {
+              "rows": 375,
+              "loss": 1.1192195617059866,
+              "utility_mse": 0.15354686279653107,
+              "explained_variance": 0.3944898588031496,
+              "learner_utility_mse": 0.15876247346856834
+            },
+            "phase:CanalEra/action": {
+              "rows": 450,
+              "loss": 1.625901122118036,
+              "utility_mse": 0.21899463409325107,
+              "explained_variance": 0.044741061949711836,
+              "learner_utility_mse": 0.22391517312342205
+            },
+            "phase:CanalEra/bonus": {
+              "rows": 5,
+              "loss": 2.7958018302917482,
+              "utility_mse": 0.35168429017066954,
+              "explained_variance": -1.2424182158969184,
+              "learner_utility_mse": 0.651574552508204
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 486,
+              "loss": 1.6232934662527998,
+              "utility_mse": 0.21893786632699255,
+              "explained_variance": 0.03621468260076233,
+              "learner_utility_mse": 0.2290929908442438
+            },
+            "phase:CanalEra/debt": {
+              "rows": 1,
+              "loss": 2.161111354827881,
+              "utility_mse": 0.3279949724674225,
+              "explained_variance": null,
+              "learner_utility_mse": 0.0695665154067028
+            },
+            "phase:CanalEra/payment": {
+              "rows": 250,
+              "loss": 1.582010639756918,
+              "utility_mse": 0.20977890163194388,
+              "explained_variance": 0.07991142183479172,
+              "learner_utility_mse": 0.2347380234302285
+            },
+            "phase:RailEra/action": {
+              "rows": 480,
+              "loss": 1.3951389592354342,
+              "utility_mse": 0.19369899273709354,
+              "explained_variance": 0.2585534066838171,
+              "learner_utility_mse": 0.17476957720509426
+            },
+            "phase:RailEra/bonus": {
+              "rows": 3,
+              "loss": 2.6070814480384192,
+              "utility_mse": 0.3281582457323869,
+              "explained_variance": -2.0351001827936352,
+              "learner_utility_mse": 0.7151366375738636
+            },
+            "phase:RailEra/continuation": {
+              "rows": 530,
+              "loss": 1.3739844197881812,
+              "utility_mse": 0.1895599509407887,
+              "explained_variance": 0.27062065193209095,
+              "learner_utility_mse": 0.17612574099044265
+            },
+            "phase:RailEra/debt": {
+              "rows": 1,
+              "loss": 3.2502846717834473,
+              "utility_mse": 0.5856974124908447,
+              "explained_variance": null,
+              "learner_utility_mse": 0.004470724836382226
+            },
+            "phase:RailEra/payment": {
+              "rows": 457,
+              "loss": 1.3456518629023753,
+              "utility_mse": 0.18620403510244785,
+              "explained_variance": 0.2750556643300518,
+              "learner_utility_mse": 0.17919848395939308
+            },
+            "role:learner": {
+              "rows": 2663,
+              "loss": 1.4855921078785286,
+              "utility_mse": 0.20262494814574453,
+              "explained_variance": 0.16166161574620408,
+              "learner_utility_mse": 0.20104866473215458
+            },
+            "table:historical": {
+              "rows": 1247,
+              "loss": 2.0113066886174518,
+              "utility_mse": 0.25270449202061257,
+              "explained_variance": 0.03119804245209501,
+              "learner_utility_mse": 0.23799947768671292
+            },
+            "table:historical/role:learner": {
+              "rows": 1247,
+              "loss": 2.0113066886174518,
+              "utility_mse": 0.25270449202061257,
+              "explained_variance": 0.03119804245209501,
+              "learner_utility_mse": 0.23799947768671292
+            },
+            "table:selfplay": {
+              "rows": 1416,
+              "loss": 1.0226217108577396,
+              "utility_mse": 0.1585224119791058,
+              "explained_variance": 0.2817112745394389,
+              "learner_utility_mse": 0.16850794174180558
+            },
+            "table:selfplay/role:learner": {
+              "rows": 1416,
+              "loss": 1.0226217108577396,
+              "utility_mse": 0.1585224119791058,
+              "explained_variance": 0.2817112745394389,
+              "learner_utility_mse": 0.16850794174180558
+            }
+          },
+          "win_calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "count": 4393,
+              "predicted": 0.027281183686008337,
+              "observed": 0.09424083769633508
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "count": 1616,
+              "predicted": 0.14873573165571335,
+              "observed": 0.1813118811881188
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "count": 1435,
+              "predicted": 0.2481598089277121,
+              "observed": 0.27526132404181186
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "count": 738,
+              "predicted": 0.3475024981631173,
+              "observed": 0.33739837398373984
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "count": 568,
+              "predicted": 0.448654709724893,
+              "observed": 0.3926056338028169
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "count": 459,
+              "predicted": 0.5455221806476319,
+              "observed": 0.46187363834422657
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.7,
+              "count": 328,
+              "predicted": 0.6486250300232957,
+              "observed": 0.4481707317073171
+            },
+            {
+              "lower": 0.7,
+              "upper": 0.8,
+              "count": 329,
+              "predicted": 0.7473083227238757,
+              "observed": 0.48632218844984804
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.9,
+              "count": 276,
+              "predicted": 0.8474474197280579,
+              "observed": 0.6086956521739131
+            },
+            {
+              "lower": 0.9,
+              "upper": 1.0,
+              "count": 510,
+              "predicted": 0.9656689307268929,
+              "observed": 0.788235294117647
+            }
+          ],
+          "scope": "MC loss over all four stable-seat heads; EV on observing row seat utility, grouped separately by role/table; correlated rows/heads"
+        },
+        "heldout_after": {
+          "rows": 2663,
+          "loss": 1.4855921078785286,
+          "utility_mse": 0.20262494814574453,
+          "explained_variance": 0.16166161574620408,
+          "learner_utility_mse": 0.20104866473215458,
+          "games": 11,
+          "groups": {
+            "era:CanalEra": {
+              "rows": 1192,
+              "loss": 1.6209890184542726,
+              "utility_mse": 0.21768668641626518,
+              "explained_variance": 0.04537192504841525,
+              "learner_utility_mse": 0.22996054244240544
+            },
+            "era:RailEra": {
+              "rows": 1471,
+              "loss": 1.3758755086900263,
+              "utility_mse": 0.19041992298023766,
+              "explained_variance": 0.26405781959340213,
+              "learner_utility_mse": 0.1776204130458059
+            },
+            "period:canal_early": {
+              "rows": 550,
+              "loss": 1.6678226053985683,
+              "utility_mse": 0.2194416390494867,
+              "explained_variance": 0.03426998581860263,
+              "learner_utility_mse": 0.23169650503214692
+            },
+            "period:canal_late": {
+              "rows": 642,
+              "loss": 1.580866786648412,
+              "utility_mse": 0.21618322232238385,
+              "explained_variance": 0.054831683988379565,
+              "learner_utility_mse": 0.22847334707736208
+            },
+            "period:rail_early": {
+              "rows": 1096,
+              "loss": 1.4636911839810982,
+              "utility_mse": 0.20303616163798396,
+              "explained_variance": 0.2234700717911744,
+              "learner_utility_mse": 0.184072719014295
+            },
+            "period:rail_late": {
+              "rows": 375,
+              "loss": 1.1192195617059866,
+              "utility_mse": 0.15354686279653107,
+              "explained_variance": 0.3944898588031496,
+              "learner_utility_mse": 0.15876247346856834
+            },
+            "phase:CanalEra/action": {
+              "rows": 450,
+              "loss": 1.625901122118036,
+              "utility_mse": 0.21899463409325107,
+              "explained_variance": 0.044741061949711836,
+              "learner_utility_mse": 0.22391517312342205
+            },
+            "phase:CanalEra/bonus": {
+              "rows": 5,
+              "loss": 2.7958018302917482,
+              "utility_mse": 0.35168429017066954,
+              "explained_variance": -1.2424182158969184,
+              "learner_utility_mse": 0.651574552508204
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 486,
+              "loss": 1.6232934662527998,
+              "utility_mse": 0.21893786632699255,
+              "explained_variance": 0.03621468260076233,
+              "learner_utility_mse": 0.2290929908442438
+            },
+            "phase:CanalEra/debt": {
+              "rows": 1,
+              "loss": 2.161111354827881,
+              "utility_mse": 0.3279949724674225,
+              "explained_variance": null,
+              "learner_utility_mse": 0.0695665154067028
+            },
+            "phase:CanalEra/payment": {
+              "rows": 250,
+              "loss": 1.582010639756918,
+              "utility_mse": 0.20977890163194388,
+              "explained_variance": 0.07991142183479172,
+              "learner_utility_mse": 0.2347380234302285
+            },
+            "phase:RailEra/action": {
+              "rows": 480,
+              "loss": 1.3951389592354342,
+              "utility_mse": 0.19369899273709354,
+              "explained_variance": 0.2585534066838171,
+              "learner_utility_mse": 0.17476957720509426
+            },
+            "phase:RailEra/bonus": {
+              "rows": 3,
+              "loss": 2.6070814480384192,
+              "utility_mse": 0.3281582457323869,
+              "explained_variance": -2.0351001827936352,
+              "learner_utility_mse": 0.7151366375738636
+            },
+            "phase:RailEra/continuation": {
+              "rows": 530,
+              "loss": 1.3739844197881812,
+              "utility_mse": 0.1895599509407887,
+              "explained_variance": 0.27062065193209095,
+              "learner_utility_mse": 0.17612574099044265
+            },
+            "phase:RailEra/debt": {
+              "rows": 1,
+              "loss": 3.2502846717834473,
+              "utility_mse": 0.5856974124908447,
+              "explained_variance": null,
+              "learner_utility_mse": 0.004470724836382226
+            },
+            "phase:RailEra/payment": {
+              "rows": 457,
+              "loss": 1.3456518629023753,
+              "utility_mse": 0.18620403510244785,
+              "explained_variance": 0.2750556643300518,
+              "learner_utility_mse": 0.17919848395939308
+            },
+            "role:learner": {
+              "rows": 2663,
+              "loss": 1.4855921078785286,
+              "utility_mse": 0.20262494814574453,
+              "explained_variance": 0.16166161574620408,
+              "learner_utility_mse": 0.20104866473215458
+            },
+            "table:historical": {
+              "rows": 1247,
+              "loss": 2.0113066886174518,
+              "utility_mse": 0.25270449202061257,
+              "explained_variance": 0.03119804245209501,
+              "learner_utility_mse": 0.23799947768671292
+            },
+            "table:historical/role:learner": {
+              "rows": 1247,
+              "loss": 2.0113066886174518,
+              "utility_mse": 0.25270449202061257,
+              "explained_variance": 0.03119804245209501,
+              "learner_utility_mse": 0.23799947768671292
+            },
+            "table:selfplay": {
+              "rows": 1416,
+              "loss": 1.0226217108577396,
+              "utility_mse": 0.1585224119791058,
+              "explained_variance": 0.2817112745394389,
+              "learner_utility_mse": 0.16850794174180558
+            },
+            "table:selfplay/role:learner": {
+              "rows": 1416,
+              "loss": 1.0226217108577396,
+              "utility_mse": 0.1585224119791058,
+              "explained_variance": 0.2817112745394389,
+              "learner_utility_mse": 0.16850794174180558
+            }
+          },
+          "win_calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "count": 4393,
+              "predicted": 0.027281183686008337,
+              "observed": 0.09424083769633508
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "count": 1616,
+              "predicted": 0.14873573165571335,
+              "observed": 0.1813118811881188
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "count": 1435,
+              "predicted": 0.2481598089277121,
+              "observed": 0.27526132404181186
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "count": 738,
+              "predicted": 0.3475024981631173,
+              "observed": 0.33739837398373984
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "count": 568,
+              "predicted": 0.448654709724893,
+              "observed": 0.3926056338028169
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "count": 459,
+              "predicted": 0.5455221806476319,
+              "observed": 0.46187363834422657
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.7,
+              "count": 328,
+              "predicted": 0.6486250300232957,
+              "observed": 0.4481707317073171
+            },
+            {
+              "lower": 0.7,
+              "upper": 0.8,
+              "count": 329,
+              "predicted": 0.7473083227238757,
+              "observed": 0.48632218844984804
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.9,
+              "count": 276,
+              "predicted": 0.8474474197280579,
+              "observed": 0.6086956521739131
+            },
+            {
+              "lower": 0.9,
+              "upper": 1.0,
+              "count": 510,
+              "predicted": 0.9656689307268929,
+              "observed": 0.788235294117647
+            }
+          ],
+          "scope": "MC loss over all four stable-seat heads; EV on observing row seat utility, grouped separately by role/table; correlated rows/heads"
+        },
+        "last_attempted_heldout": {
+          "rows": 2663,
+          "loss": 1.4485993037864824,
+          "utility_mse": 0.20209628762571302,
+          "explained_variance": 0.16941391823863816,
+          "learner_utility_mse": 0.1992050197062479,
+          "games": 11,
+          "groups": {
+            "era:CanalEra": {
+              "rows": 1192,
+              "loss": 1.6299801709399178,
+              "utility_mse": 0.22050873346260713,
+              "explained_variance": 0.028390755907688137,
+              "learner_utility_mse": 0.23485106353565469
+            },
+            "era:RailEra": {
+              "rows": 1471,
+              "loss": 1.3016203822046366,
+              "utility_mse": 0.1871760731882026,
+              "explained_variance": 0.2885008327444547,
+              "learner_utility_mse": 0.17031985026732674
+            },
+            "period:canal_early": {
+              "rows": 550,
+              "loss": 1.6609725707769394,
+              "utility_mse": 0.22069457249885255,
+              "explained_variance": 0.024260818853866994,
+              "learner_utility_mse": 0.23445624486351355
+            },
+            "period:canal_late": {
+              "rows": 642,
+              "loss": 1.6034290495842138,
+              "utility_mse": 0.22034952556551216,
+              "explained_variance": 0.03185144577416865,
+              "learner_utility_mse": 0.23518930383110273
+            },
+            "period:rail_early": {
+              "rows": 1096,
+              "loss": 1.3993833661793194,
+              "utility_mse": 0.20145783977703927,
+              "explained_variance": 0.2422230078562041,
+              "learner_utility_mse": 0.17929435458452042
+            },
+            "period:rail_late": {
+              "rows": 375,
+              "loss": 1.0158917677079637,
+              "utility_mse": 0.14543523003789596,
+              "explained_variance": 0.4310135265660626,
+              "learner_utility_mse": 0.14409036564960873
+            },
+            "phase:CanalEra/action": {
+              "rows": 450,
+              "loss": 1.6348007557292779,
+              "utility_mse": 0.22127384193422686,
+              "explained_variance": 0.031408681938023486,
+              "learner_utility_mse": 0.2274427010296076
+            },
+            "phase:CanalEra/bonus": {
+              "rows": 5,
+              "loss": 2.762299585342407,
+              "utility_mse": 0.3453027009963989,
+              "explained_variance": -1.1346840359396535,
+              "learner_utility_mse": 0.6353274587199074
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 486,
+              "loss": 1.6281431003285902,
+              "utility_mse": 0.2211367287773662,
+              "explained_variance": 0.02432000812465851,
+              "learner_utility_mse": 0.23288967218456524
+            },
+            "phase:CanalEra/debt": {
+              "rows": 1,
+              "loss": 2.0237858295440674,
+              "utility_mse": 0.3056243062019348,
+              "explained_variance": null,
+              "learner_utility_mse": 0.08325023511748822
+            },
+            "phase:CanalEra/payment": {
+              "rows": 250,
+              "loss": 1.6006527726650237,
+              "utility_mse": 0.2150743736801669,
+              "explained_variance": 0.04600645746983267,
+              "learner_utility_mse": 0.24459593624304507
+            },
+            "phase:RailEra/action": {
+              "rows": 480,
+              "loss": 1.3280799889277357,
+              "utility_mse": 0.19114693503009525,
+              "explained_variance": 0.2776152195011077,
+              "learner_utility_mse": 0.16914430982013737
+            },
+            "phase:RailEra/bonus": {
+              "rows": 3,
+              "loss": 2.4040653904279075,
+              "utility_mse": 0.31241806348164874,
+              "explained_variance": -1.870951944846742,
+              "learner_utility_mse": 0.6767785225835068
+            },
+            "phase:RailEra/continuation": {
+              "rows": 530,
+              "loss": 1.294101628372973,
+              "utility_mse": 0.1853201534775336,
+              "explained_variance": 0.2992631094674033,
+              "learner_utility_mse": 0.16682347393756908
+            },
+            "phase:RailEra/debt": {
+              "rows": 1,
+              "loss": 3.2286624908447266,
+              "utility_mse": 0.5881961584091187,
+              "explained_variance": null,
+              "learner_utility_mse": 0.004366480028988321
+            },
+            "phase:RailEra/payment": {
+              "rows": 457,
+              "loss": 1.271095111242677,
+              "utility_mse": 0.18345808129858518,
+              "explained_variance": 0.29862703490635034,
+              "learner_utility_mse": 0.17264789451833829
+            },
+            "role:learner": {
+              "rows": 2663,
+              "loss": 1.4485993037864824,
+              "utility_mse": 0.20209628762571302,
+              "explained_variance": 0.16941391823863816,
+              "learner_utility_mse": 0.1992050197062479
+            },
+            "table:historical": {
+              "rows": 1247,
+              "loss": 1.909463675295353,
+              "utility_mse": 0.2478807666388459,
+              "explained_variance": 0.06652373308123183,
+              "learner_utility_mse": 0.2287613322923468
+            },
+            "table:historical/role:learner": {
+              "rows": 1247,
+              "loss": 1.909463675295353,
+              "utility_mse": 0.2478807666388459,
+              "explained_variance": 0.06652373308123183,
+              "learner_utility_mse": 0.2287613322923468
+            },
+            "table:selfplay": {
+              "rows": 1416,
+              "loss": 1.0427392252048708,
+              "utility_mse": 0.16177619911626617,
+              "explained_variance": 0.264497276468588,
+              "learner_utility_mse": 0.17317626137654069
+            },
+            "table:selfplay/role:learner": {
+              "rows": 1416,
+              "loss": 1.0427392252048708,
+              "utility_mse": 0.16177619911626617,
+              "explained_variance": 0.264497276468588,
+              "learner_utility_mse": 0.17317626137654069
+            }
+          },
+          "win_calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "count": 4177,
+              "predicted": 0.029722460664494556,
+              "observed": 0.09169260234618147
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "count": 1701,
+              "predicted": 0.1485973355929197,
+              "observed": 0.17401528512639625
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "count": 1523,
+              "predicted": 0.24747734010532665,
+              "observed": 0.28693368351936965
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "count": 833,
+              "predicted": 0.3468653104957842,
+              "observed": 0.3457382953181273
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "count": 628,
+              "predicted": 0.4476078601115069,
+              "observed": 0.40764331210191085
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "count": 456,
+              "predicted": 0.5465303264689028,
+              "observed": 0.3706140350877193
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.7,
+              "count": 331,
+              "predicted": 0.6500788260802761,
+              "observed": 0.4501510574018127
+            },
+            {
+              "lower": 0.7,
+              "upper": 0.8,
+              "count": 291,
+              "predicted": 0.7475738982154742,
+              "observed": 0.5120274914089347
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.9,
+              "count": 245,
+              "predicted": 0.8496128868083564,
+              "observed": 0.6244897959183674
+            },
+            {
+              "lower": 0.9,
+              "upper": 1.0,
+              "count": 467,
+              "predicted": 0.9615580354053408,
+              "observed": 0.8201284796573876
+            }
+          ],
+          "scope": "MC loss over all four stable-seat heads; EV on observing row seat utility, grouped separately by role/table; correlated rows/heads"
+        },
+        "clone_rows": 8192,
+        "clone_kl": 4.1905620640214636e-10,
+        "probe_rows": 2048,
+        "probe_kl": 2.586519887159966e-09,
+        "maximum_attempted_probe_kl": 0.002147108782082796,
+        "epoch_reports": [
+          {
+            "epoch": 1,
+            "steps": 16,
+            "accepted": false,
+            "heldout_loss_before": 1.4855921078785286,
+            "heldout_loss_attempted": 1.4485993037864824,
+            "probe_kl": 0.002147108782082796
+          }
+        ],
+        "calibration_receipt": null,
+        "seconds": 113.6871270830743,
+        "heldout_unknown": {
+          "rows": 2663,
+          "loss": 1.485602390148736,
+          "utility_mse": 0.2026360876044584,
+          "explained_variance": 0.16111300705540854,
+          "learner_utility_mse": 0.20116206577958778,
+          "games": 11,
+          "groups": {
+            "era:CanalEra": {
+              "rows": 1192,
+              "loss": 1.621000281072553,
+              "utility_mse": 0.21770162979432306,
+              "explained_variance": 0.04505833210923327,
+              "learner_utility_mse": 0.23007883311770552
+            },
+            "era:RailEra": {
+              "rows": 1471,
+              "loss": 1.3758849965517341,
+              "utility_mse": 0.19042797999717173,
+              "explained_variance": 0.26329920090680814,
+              "learner_utility_mse": 0.1777298518658989
+            },
+            "period:canal_early": {
+              "rows": 550,
+              "loss": 1.6678255872834813,
+              "utility_mse": 0.21945856016467918,
+              "explained_variance": 0.03388786727130988,
+              "learner_utility_mse": 0.23183962547525294
+            },
+            "period:canal_late": {
+              "rows": 642,
+              "loss": 1.5808851433529103,
+              "utility_mse": 0.21619647137735132,
+              "explained_variance": 0.0545775004721335,
+              "learner_utility_mse": 0.22857036614472878
+            },
+            "period:rail_early": {
+              "rows": 1096,
+              "loss": 1.4637035332113695,
+              "utility_mse": 0.20305061698545482,
+              "explained_variance": 0.22277074017675813,
+              "learner_utility_mse": 0.1842034187397016
+            },
+            "period:rail_late": {
+              "rows": 375,
+              "loss": 1.1192206867411734,
+              "utility_mse": 0.15353621962608305,
+              "explained_variance": 0.39351346904938656,
+              "learner_utility_mse": 0.15880977374939811
+            },
+            "phase:CanalEra/action": {
+              "rows": 450,
+              "loss": 1.6259008875903156,
+              "utility_mse": 0.21899737127177005,
+              "explained_variance": 0.04442723225750722,
+              "learner_utility_mse": 0.22400987046349238
+            },
+            "phase:CanalEra/bonus": {
+              "rows": 5,
+              "loss": 2.795891809463501,
+              "utility_mse": 0.3517792671918869,
+              "explained_variance": -1.2394181555246861,
+              "learner_utility_mse": 0.6508404084707525
+            },
+            "phase:CanalEra/continuation": {
+              "rows": 486,
+              "loss": 1.6233034893149825,
+              "utility_mse": 0.21895085852650673,
+              "explained_variance": 0.03592407294728539,
+              "learner_utility_mse": 0.22921059746923164
+            },
+            "phase:CanalEra/debt": {
+              "rows": 1,
+              "loss": 2.160702705383301,
+              "utility_mse": 0.32758480310440063,
+              "explained_variance": null,
+              "learner_utility_mse": 0.06848287521963106
+            },
+            "phase:CanalEra/payment": {
+              "rows": 250,
+              "loss": 1.5820451122522354,
+              "utility_mse": 0.20981970903836192,
+              "explained_variance": 0.07946751959721499,
+              "learner_utility_mse": 0.23492196832045384
+            },
+            "phase:RailEra/action": {
+              "rows": 480,
+              "loss": 1.3951416448651193,
+              "utility_mse": 0.1936964375828514,
+              "explained_variance": 0.25785254039779426,
+              "learner_utility_mse": 0.17487092376318217
+            },
+            "phase:RailEra/bonus": {
+              "rows": 3,
+              "loss": 2.60541337231795,
+              "utility_mse": 0.32660715840756893,
+              "explained_variance": -2.01156109104576,
+              "learner_utility_mse": 0.7096644255025906
+            },
+            "phase:RailEra/continuation": {
+              "rows": 530,
+              "loss": 1.3739782548368962,
+              "utility_mse": 0.18955159604306143,
+              "explained_variance": 0.2697605208130033,
+              "learner_utility_mse": 0.17622870632106286
+            },
+            "phase:RailEra/debt": {
+              "rows": 1,
+              "loss": 3.249925136566162,
+              "utility_mse": 0.5853245258331299,
+              "explained_variance": null,
+              "learner_utility_mse": 0.004383652593644014
+            },
+            "phase:RailEra/payment": {
+              "rows": 457,
+              "loss": 1.3456984684360367,
+              "utility_mse": 0.18625334055184364,
+              "explained_variance": 0.27418833826223177,
+              "learner_utility_mse": 0.1793610008952847
+            },
+            "role:learner": {
+              "rows": 2663,
+              "loss": 1.485602390148736,
+              "utility_mse": 0.2026360876044584,
+              "explained_variance": 0.16111300705540854,
+              "learner_utility_mse": 0.20116206577958778
+            },
+            "table:historical": {
+              "rows": 1247,
+              "loss": 2.0112337839342325,
+              "utility_mse": 0.2526309460853216,
+              "explained_variance": 0.03110808956974953,
+              "learner_utility_mse": 0.23811570524980702
+            },
+            "table:historical/role:learner": {
+              "rows": 1247,
+              "loss": 2.0112337839342325,
+              "utility_mse": 0.2526309460853216,
+              "explained_variance": 0.03110808956974953,
+              "learner_utility_mse": 0.23811570524980702
+            },
+            "table:selfplay": {
+              "rows": 1416,
+              "loss": 1.022705251694983,
+              "utility_mse": 0.15860812960612758,
+              "explained_variance": 0.2813305208360821,
+              "learner_utility_mse": 0.16861885361902043
+            },
+            "table:selfplay/role:learner": {
+              "rows": 1416,
+              "loss": 1.022705251694983,
+              "utility_mse": 0.15860812960612758,
+              "explained_variance": 0.2813305208360821,
+              "learner_utility_mse": 0.16861885361902043
+            }
+          },
+          "win_calibration": [
+            {
+              "lower": 0.0,
+              "upper": 0.1,
+              "count": 4393,
+              "predicted": 0.027281140610987645,
+              "observed": 0.09424083769633508
+            },
+            {
+              "lower": 0.1,
+              "upper": 0.2,
+              "count": 1616,
+              "predicted": 0.1487331036432176,
+              "observed": 0.1813118811881188
+            },
+            {
+              "lower": 0.2,
+              "upper": 0.3,
+              "count": 1435,
+              "predicted": 0.24815466307389197,
+              "observed": 0.27526132404181186
+            },
+            {
+              "lower": 0.3,
+              "upper": 0.4,
+              "count": 738,
+              "predicted": 0.34750126754526844,
+              "observed": 0.33739837398373984
+            },
+            {
+              "lower": 0.4,
+              "upper": 0.5,
+              "count": 568,
+              "predicted": 0.4486571917126716,
+              "observed": 0.3926056338028169
+            },
+            {
+              "lower": 0.5,
+              "upper": 0.6,
+              "count": 459,
+              "predicted": 0.5455320564490258,
+              "observed": 0.46187363834422657
+            },
+            {
+              "lower": 0.6,
+              "upper": 0.7,
+              "count": 328,
+              "predicted": 0.6486274848987417,
+              "observed": 0.4481707317073171
+            },
+            {
+              "lower": 0.7,
+              "upper": 0.8,
+              "count": 329,
+              "predicted": 0.7473156229340921,
+              "observed": 0.48632218844984804
+            },
+            {
+              "lower": 0.8,
+              "upper": 0.9,
+              "count": 276,
+              "predicted": 0.8474552154109098,
+              "observed": 0.6086956521739131
+            },
+            {
+              "lower": 0.9,
+              "upper": 1.0,
+              "count": 510,
+              "predicted": 0.9656717327295565,
+              "observed": 0.788235294117647
+            }
+          ],
+          "scope": "MC loss over all four stable-seat heads; EV on observing row seat utility, grouped separately by role/table; correlated rows/heads"
+        },
+        "descriptor_gain": {
+          "learner_ev_gain": 0.0005486086907955379
+        },
+        "role_usage": {
+          "learner": {
+            "distinct_used": 0,
+            "presentations": 0
+          },
+          "snapshot": {
+            "distinct_used": 0,
+            "presentations": 0
+          }
+        },
+        "buffer": {
+          "storage": "disk-backed one-candidate critic rows",
+          "buffer_iterations": 2,
+          "current_generation": 1,
+          "previous_generation": null,
+          "current_rows": 82410,
+          "previous_rows": 0,
+          "current_forced_rows": 46712,
+          "previous_forced_rows": 0,
+          "current_cache_bytes": 1195192678,
+          "previous_cache_bytes": 0,
+          "peak_cache_bytes": 1195192678,
+          "write_seconds": 4.332616896019317,
+          "rebuilt_from_replay": false,
+          "startup_cleanup": {
+            "deleted_files": [],
+            "deleted_bytes": 0,
+            "seconds": 2.7019064873456955e-05
+          },
+          "committed_cleanup": null
+        },
+        "split": {
+          "contract": "ppg-critic-holdout/1.0.0",
+          "fraction": 0.05,
+          "train_rows": 82410,
+          "heldout_rows": 2663,
+          "train_games": 309,
+          "heldout_games": 11,
+          "heldout_games_digest": "04adcd879cbe5c8b10b46650ab682db472524592a897d342328f3a90c029a249",
+          "scope": "Hash of complete game id; every seat and value head excluded from critic fitting; actor still uses these games",
+          "eligible_train_rows": 82410
+        },
+        "beta_clone_next": 1.0,
+        "beta_decision": "hold",
+        "kl_trip_window": [
+          true
+        ],
+        "critic_rollout": {
+          "snapshot_rows_used": false,
+          "snapshot_rows_next": false,
+          "weight_used": 1.0,
+          "weight_next": 1.0,
+          "decision": "hold",
+          "reason": "health_or_descriptor_evidence_not_ready",
+          "learner_heldout_ev": 0.16166161574620408,
+          "phase1_learner_ev": null,
+          "fingerprint_mean_absolute_drift": null,
+          "snapshot_effect_ev_delta": null,
+          "scope": "Sequential heldout diagnostic; iteration distributions differ, not a causal snapshot benefit estimate"
+        }
+      },
+      "health_counts": {
+        "tables": 320,
+        "all_learner_tables": 160,
+        "seat_games": 960,
+        "vp_sum": 77942.0,
+        "sells": 2717,
+        "passes_with_alternative": 873,
+        "zero_vp_seats": 14,
+        "insolvent_seats": 53,
+        "insolvency_events": 166
+      },
+      "health_by_composition": {
+        "selfplay": {
+          "tables": 160,
+          "all_learner_tables": 160,
+          "seat_games": 640,
+          "vp_sum": 51851.0,
+          "sells": 1793,
+          "passes_with_alternative": 609,
+          "zero_vp_seats": 10,
+          "insolvent_seats": 37,
+          "insolvency_events": 121
+        },
+        "historical": {
+          "tables": 144,
+          "all_learner_tables": 0,
+          "seat_games": 288,
+          "vp_sum": 23623.0,
+          "sells": 835,
+          "passes_with_alternative": 216,
+          "zero_vp_seats": 3,
+          "insolvent_seats": 15,
+          "insolvency_events": 40
+        },
+        "legacy": {
+          "tables": 16,
+          "all_learner_tables": 0,
+          "seat_games": 32,
+          "vp_sum": 2468.0,
+          "sells": 89,
+          "passes_with_alternative": 48,
+          "zero_vp_seats": 1,
+          "insolvent_seats": 1,
+          "insolvency_events": 5
+        }
+      },
+      "sampling": {
+        "tables": 320,
+        "learner_trajectories": 960,
+        "learner_decisions": 85073,
+        "actor_eligible_decisions": 36884,
+        "forced_decisions": 48189,
+        "by_composition": {
+          "selfplay": {
+            "tables": 160,
+            "learner_trajectories": 640,
+            "learner_decisions": 56704,
+            "actor_eligible_decisions": 24639,
+            "forced_decisions": 32065,
+            "table_fraction": 0.5,
+            "trajectory_fraction": 0.6666666666666666,
+            "actor_eligible_fraction": 0.6680132306691248
+          },
+          "historical": {
+            "tables": 144,
+            "learner_trajectories": 288,
+            "learner_decisions": 25531,
+            "actor_eligible_decisions": 11016,
+            "forced_decisions": 14515,
+            "table_fraction": 0.45,
+            "trajectory_fraction": 0.3,
+            "actor_eligible_fraction": 0.29866608827675956
+          },
+          "legacy": {
+            "tables": 16,
+            "learner_trajectories": 32,
+            "learner_decisions": 2838,
+            "actor_eligible_decisions": 1229,
+            "forced_decisions": 1609,
+            "table_fraction": 0.05,
+            "trajectory_fraction": 0.03333333333333333,
+            "actor_eligible_fraction": 0.033320681054115606
+          }
+        },
+        "behavior": {
+          "policy_id": "step5-neural/36be29a3a42b5469601a74724668cd6cad93716be5fa4eceadb18ddcfb211899",
+          "exploration": 0.08,
+          "temperature": 1.0,
+          "focus": "mixed"
+        },
+        "scope": "Actual completed tables and learner seats; forced decisions are critic-only. Table fractions do not define PPO sample fractions."
+      },
+      "curriculum": {
+        "start_games": 0,
+        "completed_ordinary_games": 320,
+        "stages": [
+          {
+            "start_games": 0,
+            "until_games": null,
+            "quotas": {
+              "selfplay": 50,
+              "historical": 45,
+              "legacy": 5
+            },
+            "ordinary_games_this_iteration": 320
+          }
+        ],
+        "next_stage": 0,
+        "scope": "Ordinary game tables only; teacher/evaluation games and optimizer steps do not advance this clock"
+      },
+      "learning_rate": 6e-06,
+      "learning_rate_schedule": {
+        "contract": "linear-update-warmup/1.0.0",
+        "kind": "selfplay",
+        "base_lr": 6e-06,
+        "steps": 100,
+        "start_factor": 0.1,
+        "completed_steps": 38,
+        "effective_lr": 2.6181818181818183e-06,
+        "next_lr": 2.6727272727272727e-06
+      },
+      "actor": {
+        "format": "nonforced-actor-ppo/2.1.0",
+        "epochs": [
+          {
+            "epoch": 0,
+            "actor": -4.1083854739554226e-05,
+            "entropy": 1.522127389907837,
+            "clip_fraction": 0.0006778006791137159,
+            "value": 1.138067364692688,
+            "win_loss": 1.1221673488616943,
+            "rank_loss": 0.055238161236047745,
+            "vp_loss": 0.020907657220959663,
+            "post_update_kl": 0.0013876903497943933,
+            "probe_kl": 0.00125888641923666,
+            "probe_categorical_kl": 0.001290533458814025,
+            "gradient_norm": 60.50184631347656,
+            "actor_positions": 36884,
+            "critic_positions": 38912,
+            "positions": 36884,
+            "utility_prediction": {
+              "mse": 0.15477106445714048,
+              "mae": 0.28846758290341024
+            }
+          },
+          {
+            "epoch": 1,
+            "actor": -0.004956314340233803,
+            "entropy": 1.5178990364074707,
+            "clip_fraction": 0.020686475560069084,
+            "value": 1.1137126684188843,
+            "win_loss": 1.0981826782226562,
+            "rank_loss": 0.053810808807611465,
+            "vp_loss": 0.020770525559782982,
+            "post_update_kl": 0.0031447855824568876,
+            "probe_kl": 0.0027355740312486887,
+            "probe_categorical_kl": 0.002813090570271015,
+            "gradient_norm": 36.93513107299805,
+            "actor_positions": 36884,
+            "critic_positions": 38912,
+            "positions": 36884,
+            "utility_prediction": {
+              "mse": 0.15302527578253494,
+              "mae": 0.2883511844434236
+            }
+          }
+        ],
+        "optimizer_steps": 38,
+        "gae": {
+          "contract": "gae-advantage/2.0.0",
+          "lambda": 1.0,
+          "gamma": 1.0,
+          "chain": "nonforced",
+          "lambda_by_table": {
+            "selfplay": 1.0,
+            "historical": 1.0,
+            "legacy": 1.0
+          },
+          "by_table": {
+            "selfplay": {
+              "rows": 24639,
+              "actual_std": 0.3860014821202328,
+              "mc_std": 0.3860014821202328
+            },
+            "historical": {
+              "rows": 11016,
+              "actual_std": 0.38162260631450534,
+              "mc_std": 0.38162260631450534
+            },
+            "legacy": {
+              "rows": 1229,
+              "actual_std": 0.2471911154270997,
+              "mc_std": 0.2471911154270997
+            }
+          },
+          "trajectories": 960,
+          "td_error_std": 0.14351546985106559,
+          "shadows": {
+            "1.0": {
+              "rows": 36884,
+              "std": 0.3816330799073984,
+              "correlation_with_mc": 1.0,
+              "same_sign_fraction": 1.0,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 16961,
+                  "mean": -0.010665033622400219
+                },
+                "era:RailEra": {
+                  "rows": 19923,
+                  "mean": -0.014641504025125374
+                },
+                "period:canal_early": {
+                  "rows": 7863,
+                  "mean": -0.009688454009635172
+                },
+                "period:canal_late": {
+                  "rows": 9098,
+                  "mean": -0.011509048295424132
+                },
+                "period:rail_early": {
+                  "rows": 14652,
+                  "mean": -0.014896896036250001
+                },
+                "period:rail_late": {
+                  "rows": 5271,
+                  "mean": -0.013931581098356627
+                },
+                "phase:CanalEra/action": {
+                  "rows": 14400,
+                  "mean": -0.012142855922445758
+                },
+                "phase:CanalEra/bonus": {
+                  "rows": 95,
+                  "mean": 0.03340165120990653
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 1842,
+                  "mean": -0.007712069227401648
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 29,
+                  "mean": -0.20360231553686076
+                },
+                "phase:CanalEra/payment": {
+                  "rows": 595,
+                  "mean": 0.018326776161664674
+                },
+                "phase:RailEra/action": {
+                  "rows": 15335,
+                  "mean": -0.009582147960659489
+                },
+                "phase:RailEra/bonus": {
+                  "rows": 130,
+                  "mean": 0.05340261843342047
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 3229,
+                  "mean": -0.04120257899935824
+                },
+                "phase:RailEra/debt": {
+                  "rows": 38,
+                  "mean": -0.04090618249028921
+                },
+                "phase:RailEra/payment": {
+                  "rows": 1191,
+                  "mean": -0.014362068504320284
+                }
+              }
+            },
+            "0.98": {
+              "rows": 36884,
+              "std": 0.30013104882233366,
+              "correlation_with_mc": 0.976140073106464,
+              "same_sign_fraction": 0.9476737880923978,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 16961,
+                  "mean": -0.005165373929620072
+                },
+                "era:RailEra": {
+                  "rows": 19923,
+                  "mean": -0.011496536594916012
+                },
+                "period:canal_early": {
+                  "rows": 7863,
+                  "mean": -0.003328614253968921
+                },
+                "period:canal_late": {
+                  "rows": 9098,
+                  "mean": -0.006752804280207563
+                },
+                "period:rail_early": {
+                  "rows": 14652,
+                  "mean": -0.011044121054160982
+                },
+                "period:rail_late": {
+                  "rows": 5271,
+                  "mean": -0.012754133351346045
+                },
+                "phase:CanalEra/action": {
+                  "rows": 14400,
+                  "mean": -0.006459739860507258
+                },
+                "phase:CanalEra/bonus": {
+                  "rows": 95,
+                  "mean": 0.015826941832383295
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 1842,
+                  "mean": -0.0020088796980556774
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 29,
+                  "mean": -0.2100147628505262
+                },
+                "phase:CanalEra/payment": {
+                  "rows": 595,
+                  "mean": 0.02302112911500147
+                },
+                "phase:RailEra/action": {
+                  "rows": 15335,
+                  "mean": -0.006365898094634446
+                },
+                "phase:RailEra/bonus": {
+                  "rows": 130,
+                  "mean": 0.04696563543145854
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 3229,
+                  "mean": -0.037035661832760865
+                },
+                "phase:RailEra/debt": {
+                  "rows": 38,
+                  "mean": -0.04880963644393419
+                },
+                "phase:RailEra/payment": {
+                  "rows": 1191,
+                  "mean": -0.013507191992046844
+                }
+              }
+            },
+            "0.95": {
+              "rows": 36884,
+              "std": 0.2396201300285929,
+              "correlation_with_mc": 0.8895680660328446,
+              "same_sign_fraction": 0.8747695477713914,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 16961,
+                  "mean": -0.0016803808570142818
+                },
+                "era:RailEra": {
+                  "rows": 19923,
+                  "mean": -0.00809192356843368
+                },
+                "period:canal_early": {
+                  "rows": 7863,
+                  "mean": 0.0005542820510618773
+                },
+                "period:canal_late": {
+                  "rows": 9098,
+                  "mean": -0.0036117014160605386
+                },
+                "period:rail_early": {
+                  "rows": 14652,
+                  "mean": -0.0069942730800280845
+                },
+                "period:rail_late": {
+                  "rows": 5271,
+                  "mean": -0.011143104550433075
+                },
+                "phase:CanalEra/action": {
+                  "rows": 14400,
+                  "mean": -0.0027776959040032834
+                },
+                "phase:CanalEra/bonus": {
+                  "rows": 95,
+                  "mean": -0.001933468686004991
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 1842,
+                  "mean": 0.0015894649306499918
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 29,
+                  "mean": -0.21601973448743883
+                },
+                "phase:CanalEra/payment": {
+                  "rows": 595,
+                  "mean": 0.025240905419961285
+                },
+                "phase:RailEra/action": {
+                  "rows": 15335,
+                  "mean": -0.002890272356258748
+                },
+                "phase:RailEra/bonus": {
+                  "rows": 130,
+                  "mean": 0.03854974323995055
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 3229,
+                  "mean": -0.03233840248756019
+                },
+                "phase:RailEra/debt": {
+                  "rows": 38,
+                  "mean": -0.05833651003138569
+                },
+                "phase:RailEra/payment": {
+                  "rows": 1191,
+                  "mean": -0.012818676975940711
+                }
+              }
+            },
+            "0.9": {
+              "rows": 36884,
+              "std": 0.19702340305014662,
+              "correlation_with_mc": 0.7443700922528105,
+              "same_sign_fraction": 0.7919423056067671,
+              "means": {
+                "era:CanalEra": {
+                  "rows": 16961,
+                  "mean": -0.0004352974458388821
+                },
+                "era:RailEra": {
+                  "rows": 19923,
+                  "mean": -0.004646005138433791
+                },
+                "period:canal_early": {
+                  "rows": 7863,
+                  "mean": 0.002293323886525573
+                },
+                "period:canal_late": {
+                  "rows": 9098,
+                  "mean": -0.002793524477755972
+                },
+                "period:rail_early": {
+                  "rows": 14652,
+                  "mean": -0.003140370628457166
+                },
+                "period:rail_late": {
+                  "rows": 5271,
+                  "mean": -0.008831274886143436
+                },
+                "phase:CanalEra/action": {
+                  "rows": 14400,
+                  "mean": -0.0013288978869649224
+                },
+                "phase:CanalEra/bonus": {
+                  "rows": 95,
+                  "mean": -0.01974614606814547
+                },
+                "phase:CanalEra/continuation": {
+                  "rows": 1842,
+                  "mean": 0.00306809258304373
+                },
+                "phase:CanalEra/debt": {
+                  "rows": 29,
+                  "mean": -0.219865122278881
+                },
+                "phase:CanalEra/payment": {
+                  "rows": 595,
+                  "mean": 0.024123689879019194
+                },
+                "phase:RailEra/action": {
+                  "rows": 15335,
+                  "mean": 0.0006182980514567462
+                },
+                "phase:RailEra/bonus": {
+                  "rows": 130,
+                  "mean": 0.027483523301447283
+                },
+                "phase:RailEra/continuation": {
+                  "rows": 3229,
+                  "mean": -0.027215961030216947
+                },
+                "phase:RailEra/debt": {
+                  "rows": 38,
+                  "mean": -0.06969842627685877
+                },
+                "phase:RailEra/payment": {
+                  "rows": 1191,
+                  "mean": -0.012668296100925805
+                }
+              }
+            }
+          },
+          "scope": "Raw pre-normalization nonforced learner decisions; critic targets remain Monte Carlo",
+          "gate": {
+            "contract": "staged-gae-gate/1.0.0",
+            "mode": "auto",
+            "lambda_used": 1.0,
+            "table_gate": {
+              "historical": {
+                "learner_heldout_ev": 0.03119804245209501,
+                "selfplay_learner_ev": 0.2817112745394389,
+                "streak": 0,
+                "enabled": false,
+                "origin": null,
+                "iterations_since_extension": 0,
+                "thirty_iteration_review_due": false,
+                "review": "Inspect common PL rating slope/uncertainty and by-table advantage std; no automatic rollback",
+                "decision": "hold",
+                "lambda_used": 1.0,
+                "lambda_next": 1.0
+              },
+              "legacy": {
+                "learner_heldout_ev": null,
+                "selfplay_learner_ev": 0.2817112745394389,
+                "streak": 0,
+                "enabled": false,
+                "origin": null,
+                "iterations_since_extension": 0,
+                "thirty_iteration_review_due": false,
+                "review": "Inspect common PL rating slope/uncertainty and by-table advantage std; no automatic rollback",
+                "decision": "hold",
+                "lambda_used": 1.0,
+                "lambda_next": 1.0
+              }
+            },
+            "lambda_next": 1.0,
+            "decision": "hold",
+            "reason": "improving_critic",
+            "generation": 1,
+            "value_iterations": 0,
+            "heldout_ev": 0.2817112745394389,
+            "ev_streak": 0,
+            "healthy": false,
+            "healthy_streak": 0,
+            "stage_origin": 0,
+            "rating": {
+              "ok": false,
+              "reason": "rating_unavailable",
+              "slope": null,
+              "points": []
+            },
+            "scope": "Committed iterations only; no forks, extra ratings, or automatic rollback",
+            "anchor_gate": {
+              "ok": false,
+              "reasons": [
+                "baseline_unavailable",
+                "rolling_health_unavailable"
+              ],
+              "anchor_distance": 0.0017398865929205128,
+              "anchor_budget": 0.15,
+              "anchor_group_budget": 0.3,
+              "anchor_group_min_positions": 64,
+              "anchor_groups": {
+                "canal_action": {
+                  "positions": 256,
+                  "anchor_distance": 0.0027816752302283415,
+                  "status": "ok"
+                },
+                "canal_other": {
+                  "positions": 768,
+                  "anchor_distance": 0.0009513663146053821,
+                  "status": "ok"
+                },
+                "rail_action": {
+                  "positions": 256,
+                  "anchor_distance": 0.005216038693575625,
+                  "status": "ok"
+                },
+                "rail_other": {
+                  "positions": 768,
+                  "anchor_distance": 0.0010224266252479963,
+                  "status": "ok"
+                }
+              },
+              "anchor_unassigned_positions": 0,
+              "anchor_group_max": 0.005216038693575625,
+              "health": {
+                "ok": false,
+                "reasons": [
+                  "baseline_unavailable",
+                  "rolling_health_unavailable"
+                ],
+                "metrics": null,
+                "checks": {},
+                "behavior": {
+                  "ok": true,
+                  "sales": {
+                    "positions": 79,
+                    "failures": 0,
+                    "examples": [],
+                    "ok": true
+                  },
+                  "passing": {
+                    "positions": 511,
+                    "failures": 0,
+                    "examples": [],
+                    "ok": true
+                  }
+                },
+                "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+              },
+              "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+            }
+          }
+        },
+        "critic_split": {
+          "contract": "ppg-critic-holdout/1.0.0",
+          "fraction": 0.05,
+          "train_rows": 82410,
+          "heldout_rows": 2663,
+          "train_games": 309,
+          "heldout_games": 11,
+          "heldout_games_digest": "04adcd879cbe5c8b10b46650ab682db472524592a897d342328f3a90c029a249",
+          "scope": "Hash of complete game id; every seat and value head excluded from critic fitting; actor still uses these games",
+          "eligible_train_rows": 82410
+        },
+        "optimizer_steps_planned": 38,
+        "optimizer_steps_fraction": 1.0,
+        "controller_warmup_done": false,
+        "sample_usage": {
+          "learner_decisions": 85073,
+          "actor_eligible_decisions": 36884,
+          "actor_distinct_used": 36884,
+          "actor_unused_eligible": 0,
+          "actor_presentations": 73768,
+          "critic_distinct_used": 59510,
+          "critic_presentations": 77824,
+          "by_composition": {
+            "historical": {
+              "learner_decisions": 25531,
+              "actor_eligible_decisions": 11016,
+              "actor_distinct_used": 11016,
+              "actor_unused_eligible": 0,
+              "actor_presentations": 22032,
+              "critic_distinct_used": 17588,
+              "critic_presentations": 23052,
+              "actor_presentation_fraction": 0.29866608827675956
+            },
+            "legacy": {
+              "learner_decisions": 2838,
+              "actor_eligible_decisions": 1229,
+              "actor_distinct_used": 1229,
+              "actor_unused_eligible": 0,
+              "actor_presentations": 2458,
+              "critic_distinct_used": 2086,
+              "critic_presentations": 2744,
+              "actor_presentation_fraction": 0.033320681054115606
+            },
+            "selfplay": {
+              "learner_decisions": 56704,
+              "actor_eligible_decisions": 24639,
+              "actor_distinct_used": 24639,
+              "actor_unused_eligible": 0,
+              "actor_presentations": 49278,
+              "critic_distinct_used": 39836,
+              "critic_presentations": 52028,
+              "actor_presentation_fraction": 0.6680132306691248
+            }
+          },
+          "scope": "Actual PPO optimizer samples, excluding utility calibration, rehearsal and teacher distillation; presentations include epoch reuse"
+        },
+        "critic_rows": {
+          "available": 85073,
+          "train": 82410,
+          "available_by_role": {
+            "learner": 85073
+          },
+          "train_by_role": {
+            "learner": 82410
+          },
+          "presentations_by_role": {
+            "learner": 77824
+          },
+          "learner_distinct_used": 59510,
+          "snapshot_distinct_used": 0,
+          "snapshot_weight": 1.0
+        },
+        "insolvency": {
+          "enabled": true,
+          "event_cost": 0.005,
+          "max_cost": 0.075,
+          "events": 166,
+          "shortfall": 1014,
+          "by_era": {
+            "CanalEra": 28,
+            "RailEra": 138
+          },
+          "learner_trajectories": 960,
+          "affected_trajectories": 53,
+          "total_cost": 0.8300000000000001,
+          "mean_cost_per_trajectory": 0.0008645833333333334,
+          "decisions_with_future_cost": 3061,
+          "objective": "Combined terminal utility minus future capped insolvency costs"
+        },
+        "reward": {
+          "spec": {
+            "version": "brass-combined-return/1.0.0",
+            "win": 1.0,
+            "placement": 0.1,
+            "vp": 0.001,
+            "insolvency": {
+              "event_cost": 0.005,
+              "max_cost": 0.075
+            }
+          },
+          "undiscounted": true,
+          "components": {
+            "win": 0.234375,
+            "placement": 0.4850694444444444,
+            "vp": 81.18958333333333,
+            "cost": 0.0008645833333333334,
+            "utility": 0.36320694444444446
+          },
+          "weighted": {
+            "win": 0.234375,
+            "placement": 0.04850694444444444,
+            "vp": 0.08118958333333333
+          },
+          "trajectories": 960,
+          "distribution": {
+            "weighted": {
+              "win": {
+                "count": 960,
+                "mean": 0.234375,
+                "std": 0.4236075534914362,
+                "min": 0.0,
+                "p05": 0.0,
+                "median": 0.0,
+                "p95": 1.0,
+                "max": 1.0
+              },
+              "placement": {
+                "count": 960,
+                "mean": 0.04850694444444444,
+                "std": 0.03711334550721148,
+                "min": 0.0,
+                "p05": 0.0,
+                "median": 0.03333333333333333,
+                "p95": 0.1,
+                "max": 0.1
+              },
+              "vp": {
+                "count": 960,
+                "mean": 0.08118958333333334,
+                "std": 0.021140144862947106,
+                "min": 0.0,
+                "p05": 0.047,
+                "median": 0.082,
+                "p95": 0.11204999999999996,
+                "max": 0.137
+              },
+              "cost": {
+                "count": 960,
+                "mean": -0.0008645833333333334,
+                "std": 0.004619072308706106,
+                "min": -0.045,
+                "p05": -0.005,
+                "median": 0.0,
+                "p95": 0.0,
+                "max": -0.0
+              }
+            },
+            "utility": {
+              "count": 960,
+              "mean": 0.36320694444444446,
+              "std": 0.4646348880193325,
+              "min": -0.045,
+              "p05": 0.047,
+              "median": 0.12666666666666665,
+              "p95": 1.21105,
+              "max": 1.237
+            },
+            "covariance": {
+              "win": {
+                "win": 0.179443359375,
+                "placement": 0.012068684895833383,
+                "vp": 0.004434733072916666,
+                "cost": 0.00018180338541666605
+              },
+              "placement": {
+                "win": 0.012068684895833383,
+                "placement": 0.0013774004147376578,
+                "vp": 0.0005155608362268517,
+                "cost": 3.8639684606481464e-05
+              },
+              "vp": {
+                "win": 0.004434733072916666,
+                "placement": 0.0005155608362268517,
+                "vp": 0.000446905724826389,
+                "cost": 5.886703559027778e-05
+              },
+              "cost": {
+                "win": 0.00018180338541666605,
+                "placement": 3.8639684606481464e-05,
+                "vp": 5.886703559027778e-05,
+                "cost": 2.133582899305546e-05
+              }
+            },
+            "capped_trajectories": 0,
+            "scope": "One complete-game observation per learner seat; population moments, not independent decisions"
+          }
+        },
+        "utility_calibration": {
+          "required": true,
+          "receipt": {
+            "version": "four-seat-utility-extension/1.0.0",
+            "reward_id": "dc00147030a636e5b7d057bc81d62d4248d82a1354cf43adb17719b1885f60b7",
+            "ready": true,
+            "decisions": 82410,
+            "games": 309,
+            "steps": 123,
+            "before": {
+              "mse": 0.1749391181074637,
+              "mae": 0.2920570996125597
+            },
+            "after": {
+              "mse": 0.15476973473107175,
+              "mae": 0.28793603609869917
+            },
+            "scope": "Fresh ordinary trajectories, in-sample calibration; not a strength guarantee"
+          }
+        },
+        "learner_decisions": 85073,
+        "meaningful_decisions": 36884,
+        "forced_decisions": 48189,
+        "learner_trajectories": 960,
+        "effective_batch_size": 2048,
+        "microbatch_size": 512,
+        "critic_batch_size": 2048,
+        "advantage": {
+          "mean": -0.012812935747206211,
+          "std": 0.38163307309150696,
+          "scope": "nonforced actor decisions"
+        },
+        "advantage_distribution": {
+          "count": 36884,
+          "mean": -0.012812935689244739,
+          "std": 0.3816330799073984,
+          "min": -1.3073968887329102,
+          "p05": -0.5351546823978424,
+          "median": -0.08233791589736938,
+          "p95": 0.8208995789289474,
+          "max": 1.2841347455978394
+        },
+        "return_distribution": {
+          "count": 36884,
+          "mean": 0.3666684375774599,
+          "std": 0.4658634772109154,
+          "min": -0.04500000178813934,
+          "p05": 0.04899999871850014,
+          "median": 0.12933333218097687,
+          "p95": 1.2120000123977661,
+          "max": 1.2369999885559082
+        },
+        "baseline_explained_variance": 0.3289194211563622,
+        "baseline_scope": "Before PPO, after any head calibration; nonforced learner decisions, in-sample",
+        "legal_actions": {
+          "count": 36884,
+          "mean": 88.07724216462422,
+          "std": 78.82745611782495,
+          "min": 2.0,
+          "p05": 2.0,
+          "median": 82.0,
+          "p95": 236.84999999999854,
+          "max": 420.0
+        },
+        "categorical_probe": {
+          "positions": 2048,
+          "categorical_kl": 0.0028130905120633543,
+          "entropy": 1.4925222285091877,
+          "entropy_over_log_legal": 0.3896178435534239,
+          "scope": "Exact categorical KL(old behavior || new behavior) on the proportional era/phase nonforced probe; PPO per-step early stopping and optional LR feedback"
+        },
+        "gradient_norms": {
+          "count": 38,
+          "mean": 7.235784543187995,
+          "std": 10.157877885073663,
+          "min": 4.046004295349121,
+          "p05": 4.111209273338318,
+          "median": 4.798137426376343,
+          "p95": 10.710477328300431,
+          "max": 60.50184631347656
+        },
+        "kl_estimator": "probe_categorical_kl: exact KL(old behavior || current behavior), per-step guard; post_update_kl/probe_kl: sampled chosen-action ((ratio-1)-log(ratio)); full means all nonforced rows, retained as secondary epoch guard",
+        "kl_guard": {
+          "contract": "ppo-categorical-kl-guard/1.0.0",
+          "target_kl": 0.01,
+          "probe_positions": 2048,
+          "probe_checks": 38,
+          "full_dataset_checks": 2,
+          "max_categorical_kl": 0.002813090570271015,
+          "stop_reason": null,
+          "stop_step": null
+        },
+        "kl_probe_rows": 2048,
+        "kl_probe_sampling": "proportional-era-phase/1.0.0",
+        "learning_rates": [
+          2.6181818181818183e-06
+        ],
+        "learning_rate_schedule": {
+          "contract": "linear-update-warmup/1.0.0",
+          "kind": "selfplay",
+          "base_lr": 6e-06,
+          "steps": 100,
+          "start_factor": 0.1,
+          "completed_steps": 38,
+          "effective_lr": 2.6181818181818183e-06,
+          "next_lr": 2.6727272727272727e-06
+        },
+        "kl_early_stop": false,
+        "gradient_clip_steps": 38,
+        "rehearsal_active": true,
+        "rehearsal_rows": 16384,
+        "rehearsal_steps": 38,
+        "rehearsal_weight": 0.1,
+        "phases": {
+          "action": 29735,
+          "bonus": 225,
+          "continuation": 5071,
+          "debt": 67,
+          "payment": 1786
+        },
+        "rehearsal_sampling": {
+          "contract": "rotating-train-window/1.0.0",
+          "iteration": 0,
+          "source_rows": 9849546,
+          "source_games": 27971,
+          "source_shards": 3498,
+          "selected_shards": 31,
+          "selected_rows": 16384,
+          "distinct_rows_selected": 14900,
+          "used_presentations": 32382,
+          "distinct_rows_used": 6128,
+          "selection_sha256": "19b3167a2a09751b9617ac78d32bed5e5f41d1d011412a68145d33c237b0e159",
+          "manifest_sha256": "c382a8d184ad128de0298dc8bf0f738bf2b8266baa9d8002a1a84910266596d9",
+          "max_cache_bytes": 4294967296,
+          "peak_cache_bytes": 1091127900,
+          "cache_deleted": true,
+          "scope": "Train only; count-weighted shard draws, uniform rows with replacement; renewed each committed iteration",
+          "preparation_seconds": 614.5007496629842,
+          "nonforced_rows_selected": 6797
+        },
+        "lr_controller": {
+          "contract": "ppo-categorical-kl-lr/1.2.0",
+          "mode": "apply",
+          "kl": 0.0028130905120633543,
+          "median_kl": null,
+          "window_size": 0,
+          "early_stop": false,
+          "steps_done": 38,
+          "steps_planned": 38,
+          "steps_fraction": 1.0,
+          "warmup_done": false,
+          "multiplier_before": 1.0,
+          "multiplier_after": 1.0,
+          "decision": "hold",
+          "reason": "warmup",
+          "at_min": false,
+          "at_max": false,
+          "cooldown": 0,
+          "window": [],
+          "window_reset": false,
+          "health": {
+            "ok": false,
+            "reasons": [
+              "baseline_unavailable",
+              "rolling_health_unavailable"
+            ],
+            "anchor_distance": 0.0017398865929205128,
+            "anchor_budget": 0.15,
+            "anchor_group_budget": 0.3,
+            "anchor_group_min_positions": 64,
+            "anchor_groups": {
+              "canal_action": {
+                "positions": 256,
+                "anchor_distance": 0.0027816752302283415,
+                "status": "ok"
+              },
+              "canal_other": {
+                "positions": 768,
+                "anchor_distance": 0.0009513663146053821,
+                "status": "ok"
+              },
+              "rail_action": {
+                "positions": 256,
+                "anchor_distance": 0.005216038693575625,
+                "status": "ok"
+              },
+              "rail_other": {
+                "positions": 768,
+                "anchor_distance": 0.0010224266252479963,
+                "status": "ok"
+              }
+            },
+            "anchor_unassigned_positions": 0,
+            "anchor_group_max": 0.005216038693575625,
+            "health": {
+              "ok": false,
+              "reasons": [
+                "baseline_unavailable",
+                "rolling_health_unavailable"
+              ],
+              "metrics": null,
+              "checks": {},
+              "behavior": {
+                "ok": true,
+                "sales": {
+                  "positions": 79,
+                  "failures": 0,
+                  "examples": [],
+                  "ok": true
+                },
+                "passing": {
+                  "positions": 511,
+                  "failures": 0,
+                  "examples": [],
+                  "ok": true
+                }
+              },
+              "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+            },
+            "scope": "Fixed raw IL validation probe and calibrated all-learner health"
+          },
+          "anchor_distance": 0.0017398865929205128,
+          "anchor_identity": {
+            "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/initial.pt",
+            "sha256": "49db12a0a5e49baa5b680dbbce94a8d049bcc045909210ff2df452407874792a",
+            "model_id": "94bebe397ac8ab1f8fe3cfb46d7d293cdb8bc10116dcd5efaf2d2afdd813270b",
+            "generation": 0
+          },
+          "scope": "Exact post-PPO/pre-teaching KL; decision affects subsequent PPO steps only",
+          "early_stop_reason": null,
+          "effective_lr": 2.6181818181818183e-06,
+          "next_ppo_lr": 2.6727272727272727e-06,
+          "applied_multiplier": 1.0
+        },
+        "final_categorical_probe": {
+          "positions": 2048,
+          "categorical_kl": 0.0028130905120633543,
+          "entropy": 1.4925222285091877,
+          "entropy_over_log_legal": 0.3896178435534239,
+          "scope": "Final checkpoint weights after PPO, value phase and any teaching; reference is collection behavior"
+        }
+      },
+      "search": {
+        "enabled": false,
+        "updated": false,
+        "reason": "Teacher search and distillation disabled by configuration",
+        "collection_count": 0,
+        "optimizer_steps": 0,
+        "teacher_rows": 0,
+        "teacher_value": {
+          "enabled": false,
+          "reason": "No teacher collection while teacher_enabled=false"
+        }
+      }
+    }
+  ]
+}

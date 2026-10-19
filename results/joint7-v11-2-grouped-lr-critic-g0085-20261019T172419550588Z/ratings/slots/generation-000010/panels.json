@@ -1,0 +1,67 @@
+{
+  "all_learner_health": {
+    "behavior": {
+      "ok": false,
+      "passing": {
+        "examples": [],
+        "failures": 0,
+        "ok": true,
+        "positions": 511
+      },
+      "sales": {
+        "examples": [
+          {
+            "current": 0.06946183741092682,
+            "il": 0.2552098333835602,
+            "ok": false,
+            "row": 544
+          }
+        ],
+        "failures": 1,
+        "ok": false,
+        "positions": 79
+      }
+    },
+    "checks": {},
+    "metrics": {
+      "insolvency_fraction": 0.0353125,
+      "passes_per_seat": 0.539375,
+      "sells_per_seat": 3.020625,
+      "vp_per_seat": 87.6834375,
+      "zero_vp_fraction": 0.004375
+    },
+    "ok": false,
+    "reasons": [
+      "baseline_unavailable",
+      "behavior_check_failed"
+    ],
+    "scope": "All-learner self-play tables only; seat-weighted five-iteration rates"
+  },
+  "candidate": "generation-000010",
+  "panels": {
+    "il-panel": {
+      "games": 32,
+      "learner_win_share": 0.5625,
+      "qualified": null,
+      "setups": 8,
+      "vp_per_learner_seat": 98.078125,
+      "win_share_setup_bootstrap_95": [
+        0.4375,
+        0.65625
+      ]
+    },
+    "v4-panel": {
+      "games": 32,
+      "learner_win_share": 0.1875,
+      "qualified": null,
+      "setups": 8,
+      "vp_per_learner_seat": 96.53125,
+      "win_share_setup_bootstrap_95": [
+        0.0625,
+        0.3125
+      ]
+    }
+  },
+  "qualified": null,
+  "reason": "Deployment requires human review; no invented panel pass thresholds"
+}
