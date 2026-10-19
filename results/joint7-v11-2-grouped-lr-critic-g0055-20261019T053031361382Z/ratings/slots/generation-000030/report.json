@@ -1,0 +1,240 @@
+{
+  "alerts": {
+    "best": "generation-000030",
+    "candidate": "generation-000030",
+    "deployment_choice": null,
+    "deployment_status": "Pending separate panel review; no automatic publication",
+    "highest_lower_bound": "generation-000030",
+    "regression": false,
+    "regression_threshold_points": 50,
+    "v4_recent_win_shares": [
+      0.1875,
+      0.21875,
+      0.3125
+    ],
+    "v4_watch": false,
+    "v4_watch_action": "Review three-slot decline; training mixture stays 50/45/5"
+  },
+  "bootstrap_refits": 200,
+  "candidate": "generation-000030",
+  "contract": "plackett-luce-rating/1.0.0",
+  "differences": [
+    {
+      "a": "generation-0",
+      "a_stronger": false,
+      "b": "generation-000010",
+      "b_stronger": true,
+      "points_delta": 75.85005889916314,
+      "points_delta_ci95": [
+        50.282506976072,
+        104.60098562149344
+      ]
+    },
+    {
+      "a": "generation-0",
+      "a_stronger": false,
+      "b": "generation-000020",
+      "b_stronger": true,
+      "points_delta": 134.43466858489293,
+      "points_delta_ci95": [
+        97.63296821458245,
+        173.91943038565685
+      ]
+    },
+    {
+      "a": "generation-0",
+      "a_stronger": false,
+      "b": "generation-000030",
+      "b_stronger": true,
+      "points_delta": 200.55589567323725,
+      "points_delta_ci95": [
+        151.10008252184144,
+        257.6185996311271
+      ]
+    },
+    {
+      "a": "generation-0",
+      "a_stronger": false,
+      "b": "v4",
+      "b_stronger": true,
+      "points_delta": 200.11383544809695,
+      "points_delta_ci95": [
+        164.50218608867775,
+        253.4280048384241
+      ]
+    },
+    {
+      "a": "generation-000010",
+      "a_stronger": false,
+      "b": "generation-000020",
+      "b_stronger": true,
+      "points_delta": 58.58460968572979,
+      "points_delta_ci95": [
+        24.78467392487037,
+        98.43291060839061
+      ]
+    },
+    {
+      "a": "generation-000010",
+      "a_stronger": false,
+      "b": "generation-000030",
+      "b_stronger": true,
+      "points_delta": 124.7058367740741,
+      "points_delta_ci95": [
+        82.43507684107419,
+        175.4952232589369
+      ]
+    },
+    {
+      "a": "generation-000010",
+      "a_stronger": false,
+      "b": "v4",
+      "b_stronger": true,
+      "points_delta": 124.26377654893382,
+      "points_delta_ci95": [
+        92.0683658448592,
+        161.4827555475029
+      ]
+    },
+    {
+      "a": "generation-000020",
+      "a_stronger": false,
+      "b": "generation-000030",
+      "b_stronger": true,
+      "points_delta": 66.12122708834431,
+      "points_delta_ci95": [
+        15.81798693486336,
+        110.4027246986749
+      ]
+    },
+    {
+      "a": "generation-000020",
+      "a_stronger": false,
+      "b": "v4",
+      "b_stronger": true,
+      "points_delta": 65.67916686320403,
+      "points_delta_ci95": [
+        28.911886351644046,
+        107.30591390071767
+      ]
+    },
+    {
+      "a": "generation-000030",
+      "a_stronger": false,
+      "b": "v4",
+      "b_stronger": false,
+      "points_delta": -0.4420602251402867,
+      "points_delta_ci95": [
+        -50.921449427922305,
+        44.61867255080342
+      ]
+    }
+  ],
+  "fit": {
+    "converged": true,
+    "gradient_max": 0.00010177277767436932,
+    "iterations": 15,
+    "objective": 1150.395524430921
+  },
+  "games": 384,
+  "generation": 30,
+  "panels": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000030/panels.json",
+    "sha256": "953bb3d116908fa54cf69c8d3da6ef9f73c881f62106777a8343f4d6c93ddf28"
+  },
+  "protocol": {
+    "exploration": 0.0,
+    "focus": "neutral",
+    "main_games": 128,
+    "panel_games": 64,
+    "search": false
+  },
+  "ratings": {
+    "generation-0": {
+      "points": 0.0,
+      "points_ci95": [
+        0.0,
+        0.0
+      ],
+      "probability_above_IL": 0.5,
+      "probability_above_v4": 0.2401119522638421,
+      "theta": 0.0,
+      "theta_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "generation-000010": {
+      "points": 75.85005889916314,
+      "points_ci95": [
+        50.282506976072,
+        104.60098562149344
+      ],
+      "probability_above_IL": 0.6074659317812842,
+      "probability_above_v4": 0.32840826550415514,
+      "theta": 0.43667276280462375,
+      "theta_ci95": [
+        0.2894790269203915,
+        0.6021933541824608
+      ]
+    },
+    "generation-000020": {
+      "points": 134.43466858489293,
+      "points_ci95": [
+        97.63296821458245,
+        173.91943038565685
+      ],
+      "probability_above_IL": 0.6843741828470176,
+      "probability_above_v4": 0.40658079505775985,
+      "theta": 0.7739474299648413,
+      "theta_ci95": [
+        0.5620781129221788,
+        1.0012632722260038
+      ]
+    },
+    "generation-000030": {
+      "points": 200.55589567323725,
+      "points_ci95": [
+        151.10008252184144,
+        257.6185996311271
+      ],
+      "probability_above_IL": 0.7603520900999174,
+      "probability_above_v4": 0.5006362406254236,
+      "theta": 1.1546107983490919,
+      "theta_ci95": [
+        0.8698910910871702,
+        1.4831237745027468
+      ]
+    },
+    "v4": {
+      "points": 200.11383544809695,
+      "points_ci95": [
+        164.50218608867775,
+        253.4280048384241
+      ],
+      "probability_above_IL": 0.7598880477361579,
+      "probability_above_v4": 0.5,
+      "theta": 1.152065834473788,
+      "theta_ci95": [
+        0.9470477034466193,
+        1.4589983007393443
+      ]
+    }
+  },
+  "records": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000030/games.jsonl",
+    "sha256": "af98b952440f86d21c53b30be6de3f24c3db0ffcb12feb4db9474a486ca33b81"
+  },
+  "scope": "Held-out mixed-table PL model with Gaussian priors; IL theta fixed at zero; setup-cluster percentile intervals; seat-neutral outrank probabilities",
+  "seat_offsets": [
+    -0.05538051059598649,
+    0.12875117464093383,
+    0.032258590492273524,
+    -0.10562925453722086
+  ],
+  "setups": 32,
+  "spec": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000030/spec.json",
+    "sha256": "7ee158295a0706078d027ea88b74dc0a343faba88d30e428d3f36b1a970808d4"
+  }
+}

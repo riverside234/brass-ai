@@ -1,0 +1,181 @@
+{
+  "alerts": {
+    "best": "generation-000020",
+    "candidate": "generation-000020",
+    "deployment_choice": null,
+    "deployment_status": "Pending separate panel review; no automatic publication",
+    "highest_lower_bound": "generation-000020",
+    "regression": false,
+    "regression_threshold_points": 50,
+    "v4_recent_win_shares": [
+      0.1875,
+      0.21875
+    ],
+    "v4_watch": false,
+    "v4_watch_action": "Review three-slot decline; training mixture stays 50/45/5"
+  },
+  "bootstrap_refits": 200,
+  "candidate": "generation-000020",
+  "contract": "plackett-luce-rating/1.0.0",
+  "differences": [
+    {
+      "a": "generation-0",
+      "a_stronger": false,
+      "b": "generation-000010",
+      "b_stronger": true,
+      "points_delta": 71.94010131403718,
+      "points_delta_ci95": [
+        43.09756239660108,
+        104.1250112157092
+      ]
+    },
+    {
+      "a": "generation-0",
+      "a_stronger": false,
+      "b": "generation-000020",
+      "b_stronger": true,
+      "points_delta": 119.98797024165125,
+      "points_delta_ci95": [
+        67.35154457314839,
+        174.98562180472354
+      ]
+    },
+    {
+      "a": "generation-0",
+      "a_stronger": false,
+      "b": "v4",
+      "b_stronger": true,
+      "points_delta": 204.62731811594762,
+      "points_delta_ci95": [
+        165.2208110501787,
+        257.7679394387624
+      ]
+    },
+    {
+      "a": "generation-000010",
+      "a_stronger": false,
+      "b": "generation-000020",
+      "b_stronger": true,
+      "points_delta": 48.04786892761406,
+      "points_delta_ci95": [
+        2.2044206104285666,
+        90.79993101188424
+      ]
+    },
+    {
+      "a": "generation-000010",
+      "a_stronger": false,
+      "b": "v4",
+      "b_stronger": true,
+      "points_delta": 132.68721680191044,
+      "points_delta_ci95": [
+        91.57149332226707,
+        171.0226697593155
+      ]
+    },
+    {
+      "a": "generation-000020",
+      "a_stronger": false,
+      "b": "v4",
+      "b_stronger": true,
+      "points_delta": 84.63934787429636,
+      "points_delta_ci95": [
+        26.248315820902587,
+        139.5491000643916
+      ]
+    }
+  ],
+  "fit": {
+    "converged": true,
+    "gradient_max": 1.8207524720328938e-05,
+    "iterations": 12,
+    "objective": 760.9367023854716
+  },
+  "games": 256,
+  "generation": 20,
+  "panels": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000020/panels.json",
+    "sha256": "06c61633fe0f39278a2d5fd0ff4a1f1949bcab5ba0c83859f3627d250bb3581b"
+  },
+  "protocol": {
+    "exploration": 0.0,
+    "focus": "neutral",
+    "main_games": 128,
+    "panel_games": 64,
+    "search": false
+  },
+  "ratings": {
+    "generation-0": {
+      "points": 0.0,
+      "points_ci95": [
+        0.0,
+        0.0
+      ],
+      "probability_above_IL": 0.5,
+      "probability_above_v4": 0.23540295823803042,
+      "theta": 0.0,
+      "theta_ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "generation-000010": {
+      "points": 71.94010131403718,
+      "points_ci95": [
+        43.09756239660108,
+        104.1250112157092
+      ],
+      "probability_above_IL": 0.6020856505586619,
+      "probability_above_v4": 0.3178028959290848,
+      "theta": 0.41416293214759464,
+      "theta_ci95": [
+        0.24811492456304596,
+        0.5994531445924537
+      ]
+    },
+    "generation-000020": {
+      "points": 119.98797024165125,
+      "points_ci95": [
+        67.35154457314839,
+        174.98562180472354
+      ],
+      "probability_above_IL": 0.6661397588142884,
+      "probability_above_v4": 0.3805361515554267,
+      "theta": 0.6907770307521661,
+      "theta_ci95": [
+        0.3877463705995877,
+        1.0074013920824614
+      ]
+    },
+    "v4": {
+      "points": 204.62731811594762,
+      "points_ci95": [
+        165.2208110501787,
+        257.7679394387624
+      ],
+      "probability_above_IL": 0.7645970417619696,
+      "probability_above_v4": 0.5,
+      "theta": 1.1780501906502454,
+      "theta_ci95": [
+        0.9511848649981502,
+        1.4839835315990928
+      ]
+    }
+  },
+  "records": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000020/games.jsonl",
+    "sha256": "76d730a8ed24f4514adace30c778dbd1b4ca1019a2dee8c21bd90af8b1cfc10d"
+  },
+  "scope": "Held-out mixed-table PL model with Gaussian priors; IL theta fixed at zero; setup-cluster percentile intervals; seat-neutral outrank probabilities",
+  "seat_offsets": [
+    -0.04756718193741486,
+    0.2022269208678132,
+    0.028431672963740086,
+    -0.1830914118941384
+  ],
+  "setups": 32,
+  "spec": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000020/spec.json",
+    "sha256": "037bdfb00c407f18b2378dd9aa4dd512e62fc4b0b4c7db90444183230cdec19f"
+  }
+}
