@@ -1,0 +1,83 @@
+{
+  "alternative": {
+    "points": 626.0079454258122,
+    "points_ci95": [
+      559.7238065936598,
+      696.7040874143
+    ],
+    "probability_above_IL": 0.9735053511153704,
+    "probability_above_v4": 0.9154300897744216,
+    "theta": 3.6039605378572954,
+    "theta_ci95": [
+      3.22235927802913,
+      4.010961930997698
+    ]
+  },
+  "contract": "deployment-temperature-comparison/1.0.0",
+  "deployment_qualified": null,
+  "difference_points": -19.73952174108922,
+  "difference_points_ci95": [
+    -78.15131358335816,
+    39.42715522325783
+  ],
+  "evidence_favors": null,
+  "generation": 250,
+  "panels": {
+    "all_learner_health": null,
+    "candidate": "generation-000250-temperature-0.7",
+    "panels": {
+      "il-panel": {
+        "games": 32,
+        "learner_win_share": 1.0,
+        "qualified": null,
+        "setups": 8,
+        "vp_per_learner_seat": 137.34375,
+        "win_share_setup_bootstrap_95": [
+          1.0,
+          1.0
+        ]
+      },
+      "v4-panel": {
+        "games": 32,
+        "learner_win_share": 0.9375,
+        "qualified": null,
+        "setups": 8,
+        "vp_per_learner_seat": 138.3125,
+        "win_share_setup_bootstrap_95": [
+          0.84375,
+          1.0
+        ]
+      }
+    },
+    "qualified": null,
+    "reason": "Deployment requires human review; no invented panel pass thresholds"
+  },
+  "reason": "Temperature evidence only; deployment still requires panel review",
+  "records": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000250/games.jsonl",
+    "sha256": "26cec08c7bf931470801c1b37588a13928263d564e6794e071c2e8519ff0d25d"
+  },
+  "reference": {
+    "points": 645.7474671669014,
+    "points_ci95": [
+      587.1699520748317,
+      719.2144407772771
+    ],
+    "probability_above_IL": 0.9762839628804536,
+    "probability_above_v4": 0.9238227193383082,
+    "theta": 3.717601998658039,
+    "theta_ci95": [
+      3.380368175445203,
+      4.140555214607238
+    ]
+  },
+  "scope": "Same checkpoint, setups, seat rotations and opponents; epsilon zero, no openings or branches. Separate fit; main rating history and GAE slope unchanged.",
+  "spec": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000250/spec.json",
+    "sha256": "45b0a0bdf04a765ef71efb980952bbbd45552c0a630b5f6fde504288161874dd"
+  },
+  "temperatures": [
+    1.0,
+    0.7
+  ]
+}

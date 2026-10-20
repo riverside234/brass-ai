@@ -1,0 +1,267 @@
+{
+  "format": "selfplay-report-export/1.1.0",
+  "created_utc": "2026-10-20T23:33:04.972908+00:00",
+  "run": "artifacts/step5/joint7-v11-2-grouped-lr-critic",
+  "committed_generation": 270,
+  "games_done": 86400,
+  "implementation": "efc26563d6d0daa236d81a4d428a38b36624d7e72391c67bb84236a2515676b2",
+  "latest_iterations": [
+    268,
+    269
+  ],
+  "uncompacted_iterations": [],
+  "incremental": true,
+  "reused_files": [
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-ilkl-g110-x1.5.json",
+      "path": "state-before-ilkl-g110-x1.5.json",
+      "bytes": 467168,
+      "sha256": "fc42ea7204c50ed9a642cfa8f94934cae3531fba4431e48896a79b85be46046f",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-ilkl-g110-x1.5.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-0b1be092f9cd5ed4-0185.json",
+      "path": "state-before-source-0b1be092f9cd5ed4-0185.json",
+      "bytes": 660122,
+      "sha256": "dbc58978cdb4bcf5846d0ffe55d9a8951c83ff5e25df24989fadee3f687297ae",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0210-20261020T145156876449Z",
+      "previous_path": "state-before-source-0b1be092f9cd5ed4-0185.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-4e6f79d9d3da5ebe-0001.json",
+      "path": "state-before-source-4e6f79d9d3da5ebe-0001.json",
+      "bytes": 133676,
+      "sha256": "8fdfdd2e43449170ab9688bc0296dd107ad143c8c90a52dcaf9c31e76c31471e",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-source-4e6f79d9d3da5ebe-0001.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-59f4549046d97b7d-0055.json",
+      "path": "state-before-source-59f4549046d97b7d-0055.json",
+      "bytes": 315381,
+      "sha256": "74f4e49a35e52b3249b64523bd0aa4f40fe4223c50c02e491236482e119eccc6",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-source-59f4549046d97b7d-0055.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-b7ed8203fa8ca181-0210.json",
+      "path": "state-before-source-b7ed8203fa8ca181-0210.json",
+      "bytes": 831547,
+      "sha256": "ccebeec19f1a031514d6b0d3ca0bbc86130cfd21d8401887e76a45646fe7826c",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0213-20261020T173708767483Z",
+      "previous_path": "state-before-source-b7ed8203fa8ca181-0210.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-d2f55c7ebc6ce7b2-0085.json",
+      "path": "state-before-source-d2f55c7ebc6ce7b2-0085.json",
+      "bytes": 401905,
+      "sha256": "a8c079a2cff689932903a3d94366683f8167f5014278e07a46b148a704c85179",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-source-d2f55c7ebc6ce7b2-0085.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-f953f4de6cdd43e4-0110.json",
+      "path": "state-before-source-f953f4de6cdd43e4-0110.json",
+      "bytes": 468125,
+      "sha256": "e9b8080217ad419614a8e075fb556731064a0388183eb22c6dc0e17ca2effa93",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-source-f953f4de6cdd43e4-0110.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/initial-report.json",
+      "path": "il-kl/initial-report.json",
+      "bytes": 1309,
+      "sha256": "21345ea13afd59b7f3c041518b4bfff2901438b05136eb94fa9ddb596115e428",
+      "reason": "Fixed IL-KL probe manifest or initial measurement",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "il-kl/initial-report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/manifest.json",
+      "path": "il-kl/manifest.json",
+      "bytes": 6643450,
+      "sha256": "b10eb317cab99617e2df983c21862d83d5adacfaf2f822ea5cb3b71f8b836f2c",
+      "reason": "Fixed IL-KL probe manifest or initial measurement",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "il-kl/manifest.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000200/report.json",
+      "path": "ratings/temperature/generation-000200/report.json",
+      "bytes": 2405,
+      "sha256": "0252b9f6c9a2a35b7f273549fbdcadb7b73438e2f6ee2545503a78a72e92a60a",
+      "reason": "Plackett-Luce strength report or specification",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0210-20261020T145156876449Z",
+      "previous_path": "ratings/temperature/generation-000200/report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000200/spec.json",
+      "path": "ratings/temperature/generation-000200/spec.json",
+      "bytes": 54364,
+      "sha256": "bb5e0b057f68e4d80912b426d19e6795d4a72e514b09e70e780998427997de9c",
+      "reason": "Plackett-Luce strength report or specification",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0210-20261020T145156876449Z",
+      "previous_path": "ratings/temperature/generation-000200/spec.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000200/games.jsonl",
+      "path": "ratings/temperature/generation-000200/games.jsonl",
+      "bytes": 97048,
+      "sha256": "bcfa8d3b6a89990f5da44e9abf5bb3fcdf54f547ab5889a1e09ae21d11cc6b82",
+      "reason": "Paired temperature rating evidence",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0210-20261020T145156876449Z",
+      "previous_path": "ratings/temperature/generation-000200/games.jsonl"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-2-batch7-il/upgrade.json",
+      "path": "lineage/artifacts/step5/features4-v11-2-batch7-il/upgrade.json",
+      "bytes": 3629,
+      "sha256": "21d50ddf1a3562fc62679bd4c0028998615d50e55390b75e043baf4934b8d800",
+      "reason": "Completed IL critic upgrade receipt",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "lineage/artifacts/step5/features4-v11-2-batch7-il/upgrade.json"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-1-batch7-il/state.json",
+      "path": "lineage/artifacts/step5/features4-v11-1-batch7-il/state.json",
+      "bytes": 1428300,
+      "sha256": "8ccb500585baa0dfe80d3767ab19b863683d594868b60ce71967b8d2ba25efbd",
+      "reason": "Imitation lineage report",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "lineage/artifacts/step5/features4-v11-1-batch7-il/state.json"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-1-batch7-il/report.json",
+      "path": "lineage/artifacts/step5/features4-v11-1-batch7-il/report.json",
+      "bytes": 1429860,
+      "sha256": "934546ada6832f9854a4e67f4cf1eb91f6a12b402b01a2f537c553e096e06a7a",
+      "reason": "Imitation lineage report",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "lineage/artifacts/step5/features4-v11-1-batch7-il/report.json"
+    }
+  ],
+  "rating_slot_generation": 270,
+  "run_lock_present": false,
+  "files": [
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state.json",
+      "path": "state.json",
+      "bytes": 884586,
+      "sha256": "0ecad4513d981f8e20a28ce9067f2de24bf9daf169e8e28eda0d085b72773cb3",
+      "reason": "Committed configuration, lineage and progress"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/retention-history.json",
+      "path": "retention-history.json",
+      "bytes": 30826986,
+      "sha256": "cdcd7fa40e2401a17844fee8406f11e7a757ab5482126f91fbf411245004f040",
+      "reason": "Retained iteration trends"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-snapshot-r2-0213.json",
+      "path": "state-before-snapshot-r2-0213.json",
+      "bytes": 773347,
+      "sha256": "aa32d6c3013be2026dcca2e52067b40089127a5580ba4676230d3d6f1a4021c1",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-fb4a32ee3c32fda9-0213.json",
+      "path": "state-before-source-fb4a32ee3c32fda9-0213.json",
+      "bytes": 787176,
+      "sha256": "e24f7ffb06cf71a365b172501c817557617306d007677a0e90fa88dbdea75c59",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/iteration-0268/report.json",
+      "path": "iteration-0268/report.json",
+      "bytes": 5050036,
+      "sha256": "c566139000358888cca2b9f61c9c9e3111d7cc380d5645f0dbae4460e6adacae",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/iteration-0269/report.json",
+      "path": "iteration-0269/report.json",
+      "bytes": 5179626,
+      "sha256": "198b0404a2462d0a41609e758f74cc9319b1934df84dde644300dc9c3fcdfe52",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000250/report.json",
+      "path": "ratings/temperature/generation-000250/report.json",
+      "bytes": 2394,
+      "sha256": "75fa71537b73d6b65de9d3a4f1106db73ef0e9a3d8d2660241865b2d1707e42c",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000250/spec.json",
+      "path": "ratings/temperature/generation-000250/spec.json",
+      "bytes": 54363,
+      "sha256": "45b0a0bdf04a765ef71efb980952bbbd45552c0a630b5f6fde504288161874dd",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/history-72de3076eda79d44d99b046d26a2fd35c061f2ef091bbc15dab7fb698c336bb5.json",
+      "path": "ratings/history-72de3076eda79d44d99b046d26a2fd35c061f2ef091bbc15dab7fb698c336bb5.json",
+      "bytes": 2557446,
+      "sha256": "5cc0aa236904b72c8036b7477fe33d2bbd14fbd72cc0e8a7e376731c32841aa0",
+      "reason": "Compact cumulative rating outcomes and diagnostic-panel history"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/report.json",
+      "path": "ratings/slots/generation-000270/report.json",
+      "bytes": 118670,
+      "sha256": "8a7dc1cebb2b88445188c87045a95d8950c9e2d7eaaddcf297e490c6d8c71555",
+      "reason": "Latest committed rating slot report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/spec.json",
+      "path": "ratings/slots/generation-000270/spec.json",
+      "bytes": 50625,
+      "sha256": "3e2d61b38f3a4e0437c6c0b718c5d8690e19a9d4d564b9da3497c39dedd2d69c",
+      "reason": "Latest committed rating slot report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/games.jsonl",
+      "path": "ratings/slots/generation-000270/games.jsonl",
+      "bytes": 93454,
+      "sha256": "8ab525d296f67a5ba55efa347b97b4c2526827f9bd079da33ed0e03849b4c53a",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/panels.json",
+      "path": "ratings/slots/generation-000270/panels.json",
+      "bytes": 1579,
+      "sha256": "d6b7011661ef10e08cd789a0c655eba917a95506416ee5c55c5a349a3e8ec708",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/progress.svg",
+      "path": "ratings/slots/generation-000270/progress.svg",
+      "bytes": 49818,
+      "sha256": "d72afd77b845e7a6b8bfe4f59cf1b6048995dfbc2e78bbfd7d5b4f46ac3c625a",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000250/games.jsonl",
+      "path": "ratings/temperature/generation-000250/games.jsonl",
+      "bytes": 97049,
+      "sha256": "26cec08c7bf931470801c1b37588a13928263d564e6794e071c2e8519ff0d25d",
+      "reason": "Paired temperature rating evidence"
+    }
+  ],
+  "missing": [],
+  "warnings": [],
+  "generated": [
+    "recorded-config.json",
+    "export-manifest.json"
+  ],
+  "scope": "Analysis reports only; not a resumable checkpoint backup. Missing/pruned evidence is not reconstructed. Incremental exports require the previous bundles named in reused_files; references point to original physical files."
+}
