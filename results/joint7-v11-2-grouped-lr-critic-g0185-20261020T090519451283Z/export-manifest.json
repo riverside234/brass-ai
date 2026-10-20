@@ -1,0 +1,478 @@
+{
+  "format": "selfplay-report-export/1.0.0",
+  "created_utc": "2026-10-20T09:05:19.691025+00:00",
+  "run": "artifacts/step5/joint7-v11-2-grouped-lr-critic",
+  "committed_generation": 185,
+  "games_done": 59200,
+  "implementation": "211ae80c9ab17cd302a19ed66d0fdfa339b887457708d14a7d6a30ff712805d5",
+  "latest_iterations": [
+    183,
+    184
+  ],
+  "uncompacted_iterations": [],
+  "run_lock_present": false,
+  "files": [
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state.json",
+      "path": "state.json",
+      "bytes": 660122,
+      "sha256": "dbc58978cdb4bcf5846d0ffe55d9a8951c83ff5e25df24989fadee3f687297ae",
+      "reason": "Committed configuration, lineage and progress"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/retention-history.json",
+      "path": "retention-history.json",
+      "bytes": 24304493,
+      "sha256": "21af46a575262ec00e46158439a034358def791abfb1c6844586249e32d25f89",
+      "reason": "Retained iteration trends"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-ilkl-g110-x1.5.json",
+      "path": "state-before-ilkl-g110-x1.5.json",
+      "bytes": 467168,
+      "sha256": "fc42ea7204c50ed9a642cfa8f94934cae3531fba4431e48896a79b85be46046f",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-4e6f79d9d3da5ebe-0001.json",
+      "path": "state-before-source-4e6f79d9d3da5ebe-0001.json",
+      "bytes": 133676,
+      "sha256": "8fdfdd2e43449170ab9688bc0296dd107ad143c8c90a52dcaf9c31e76c31471e",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-59f4549046d97b7d-0055.json",
+      "path": "state-before-source-59f4549046d97b7d-0055.json",
+      "bytes": 315381,
+      "sha256": "74f4e49a35e52b3249b64523bd0aa4f40fe4223c50c02e491236482e119eccc6",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-d2f55c7ebc6ce7b2-0085.json",
+      "path": "state-before-source-d2f55c7ebc6ce7b2-0085.json",
+      "bytes": 401905,
+      "sha256": "a8c079a2cff689932903a3d94366683f8167f5014278e07a46b148a704c85179",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-f953f4de6cdd43e4-0110.json",
+      "path": "state-before-source-f953f4de6cdd43e4-0110.json",
+      "bytes": 468125,
+      "sha256": "e9b8080217ad419614a8e075fb556731064a0388183eb22c6dc0e17ca2effa93",
+      "reason": "Run metadata"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/iteration-0183/report.json",
+      "path": "iteration-0183/report.json",
+      "bytes": 4153731,
+      "sha256": "5f89254cac47da090a5b3c3d8c2d73ba20987773b3335aa136954747c1e2b5af",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/iteration-0184/report.json",
+      "path": "iteration-0184/report.json",
+      "bytes": 4155486,
+      "sha256": "8b34ddc80b343cde1283dc977c88190f9db939c3153a2c58c28a147b6fd31471",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/initial-report.json",
+      "path": "il-kl/initial-report.json",
+      "bytes": 1309,
+      "sha256": "21345ea13afd59b7f3c041518b4bfff2901438b05136eb94fa9ddb596115e428",
+      "reason": "Fixed IL-KL probe manifest or initial measurement"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/manifest.json",
+      "path": "il-kl/manifest.json",
+      "bytes": 6643450,
+      "sha256": "b10eb317cab99617e2df983c21862d83d5adacfaf2f822ea5cb3b71f8b836f2c",
+      "reason": "Fixed IL-KL probe manifest or initial measurement"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000090/report.json",
+      "path": "ratings/slots/generation-000090/report.json",
+      "bytes": 20139,
+      "sha256": "ef3f897d80171966bccadc0da9dd29506215436f6a031facc2c007a37e31ff57",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000090/spec.json",
+      "path": "ratings/slots/generation-000090/spec.json",
+      "bytes": 50616,
+      "sha256": "5efe25d0d2028edc636732a768d1de174895532c5381823111b4138c25d072a6",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000100/report.json",
+      "path": "ratings/slots/generation-000100/report.json",
+      "bytes": 23377,
+      "sha256": "bfe50f30bf2bc70e1b56eec6e8af114c61d6e76b70ae0c1df95fcff7b224316a",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000100/spec.json",
+      "path": "ratings/slots/generation-000100/spec.json",
+      "bytes": 50618,
+      "sha256": "8725433752a3d52f6d5d51511b5f94d42dd3bbfeadec445e5c2fc2fb16937e79",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000110/report.json",
+      "path": "ratings/slots/generation-000110/report.json",
+      "bytes": 26895,
+      "sha256": "196c16669986d1088424c30078496e3dcaf75c4a711e1169e2f8a8c508e9740b",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000110/spec.json",
+      "path": "ratings/slots/generation-000110/spec.json",
+      "bytes": 50619,
+      "sha256": "a6a0c94cb5cacb42a6b5916ff32bf46b44873dd325e2485deca358fff89cf4f2",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000120/report.json",
+      "path": "ratings/slots/generation-000120/report.json",
+      "bytes": 30679,
+      "sha256": "48e8e1fefd313b87ee4b7d62bd3dec6aeef0ceb1e46bf42d24b7c63bbcaf6964",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000120/spec.json",
+      "path": "ratings/slots/generation-000120/spec.json",
+      "bytes": 50619,
+      "sha256": "53e45ecd59a808dba8a1eb0e939e82ea8823efc73c422f1701b5f8b6478a9380",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000130/report.json",
+      "path": "ratings/slots/generation-000130/report.json",
+      "bytes": 34671,
+      "sha256": "4bd486e19a7685f643e631961f66e984c25a807c33ff4b866325670564149a97",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000130/spec.json",
+      "path": "ratings/slots/generation-000130/spec.json",
+      "bytes": 50621,
+      "sha256": "85a9dc7c19bb7838ba8c664ecdcdf029736f569e15c11ff07287bb6ea5005ddf",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000140/report.json",
+      "path": "ratings/slots/generation-000140/report.json",
+      "bytes": 38973,
+      "sha256": "71194bd898c2d7ff6050e2e2e864ec7c60cfdf28a081ec37a0d8599bb8720ff5",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000140/spec.json",
+      "path": "ratings/slots/generation-000140/spec.json",
+      "bytes": 50622,
+      "sha256": "1627182ecf61303fb504fbfa42f597da18182cac0cdfd858e1645c251c2b7b7e",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000150/report.json",
+      "path": "ratings/slots/generation-000150/report.json",
+      "bytes": 43549,
+      "sha256": "8134a1078f350086a4a7c528e2ae9a74170948adb92575f52f8855b64d83e35a",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000150/spec.json",
+      "path": "ratings/slots/generation-000150/spec.json",
+      "bytes": 50623,
+      "sha256": "bd984fd4b68ff2e4e703f16a165322842974568347c10cf905a08da9d36e84af",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000160/report.json",
+      "path": "ratings/slots/generation-000160/report.json",
+      "bytes": 48357,
+      "sha256": "6a7e4a61090d149ecf5ca1f8fcf91ac16f22b7fb5a4375236c5b4c47216c5f78",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000160/spec.json",
+      "path": "ratings/slots/generation-000160/spec.json",
+      "bytes": 50624,
+      "sha256": "9a188c8fe37141c0768c9411bdad9297faa91359307ba5140dc9b51b2d8073bc",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000170/report.json",
+      "path": "ratings/slots/generation-000170/report.json",
+      "bytes": 53457,
+      "sha256": "79001e7a9e6091c19126fea08c939d470c3491a5f4c4f698e3034461ee760ef6",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000170/spec.json",
+      "path": "ratings/slots/generation-000170/spec.json",
+      "bytes": 50625,
+      "sha256": "9c8f862097ca9d0a32961e7dbe1688e11c0a105e153425e2e4d139c3bfb88eff",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000180/report.json",
+      "path": "ratings/slots/generation-000180/report.json",
+      "bytes": 58792,
+      "sha256": "da12ab2d13b95587dc47903f6e9439e174dfde51156bd205dc9a5a78342ea2fc",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000180/spec.json",
+      "path": "ratings/slots/generation-000180/spec.json",
+      "bytes": 50625,
+      "sha256": "d92c221730dc56546fd3aea1fa47849c02d736e60926044da00d2295692f56a7",
+      "reason": "Plackett-Luce strength report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/history-700a6e00d77e415232f390a507c033180c64d75522eb44b2decb4af80ddd8ae3.json",
+      "path": "ratings/history-700a6e00d77e415232f390a507c033180c64d75522eb44b2decb4af80ddd8ae3.json",
+      "bytes": 1203074,
+      "sha256": "2a824baf7aa1d14fb4595437b0478bfae3dbfdd768bfe2b11b685b899a34e87e",
+      "reason": "Compact cumulative rating outcomes and diagnostic-panel history"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000090/games.jsonl",
+      "path": "ratings/slots/generation-000090/games.jsonl",
+      "bytes": 93164,
+      "sha256": "67a8632de85b0a45c8bca95b65c67c29dd1fc3e53514786cafd88e4c5f5d9cea",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000090/panels.json",
+      "path": "ratings/slots/generation-000090/panels.json",
+      "bytes": 1794,
+      "sha256": "a93958c0250d162c1352d495397d34afe52e23d5494e465f3e78f739e69cb05e",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000090/progress.svg",
+      "path": "ratings/slots/generation-000090/progress.svg",
+      "bytes": 44802,
+      "sha256": "41bb9272e056a83f189e629b234e5d7201ba2dd3755484539a8443d8437fe540",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000100/games.jsonl",
+      "path": "ratings/slots/generation-000100/games.jsonl",
+      "bytes": 93378,
+      "sha256": "dd375c40fe166df7ddf3b62003338e133d327b790e9ddc5b8a01c8ee5de2d5c2",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000100/panels.json",
+      "path": "ratings/slots/generation-000100/panels.json",
+      "bytes": 1794,
+      "sha256": "bf2c6b1a23574c513efceff946a1d14be93e705e86474b5d9daa86aaeb7fb179",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000100/progress.svg",
+      "path": "ratings/slots/generation-000100/progress.svg",
+      "bytes": 42446,
+      "sha256": "edd301738f96cb7ff55fea728545664a84788d8035b701888fc7328a08a5289b",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000110/games.jsonl",
+      "path": "ratings/slots/generation-000110/games.jsonl",
+      "bytes": 93383,
+      "sha256": "995cdf7736692ad30fc457f862711c5769d19949a1a8c2fab89426f5d0082a1f",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000110/panels.json",
+      "path": "ratings/slots/generation-000110/panels.json",
+      "bytes": 1792,
+      "sha256": "7de14aa7834aeda8eaa68afe3a4f2c309d69d92ec806ea214f438ab3aa376c80",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000110/progress.svg",
+      "path": "ratings/slots/generation-000110/progress.svg",
+      "bytes": 42719,
+      "sha256": "56da9891b13906b1f01385388afa18f9f47429a52d9d8267cf2b19ea7a71fe00",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000120/games.jsonl",
+      "path": "ratings/slots/generation-000120/games.jsonl",
+      "bytes": 93425,
+      "sha256": "ffdada9ea216d4284b01397d303edcc61d28af9c623dedb3646afd7b26b3ec6a",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000120/panels.json",
+      "path": "ratings/slots/generation-000120/panels.json",
+      "bytes": 1797,
+      "sha256": "6f65fea5887259305eb99573dee5165c797a701daf11f0d9ad7b5f75d1620e34",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000120/progress.svg",
+      "path": "ratings/slots/generation-000120/progress.svg",
+      "bytes": 43756,
+      "sha256": "de20bcb4ad8bb90f243d655a99daeeaa1a41a7388f2eb6c2eeb0a05f0f1018e8",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000130/games.jsonl",
+      "path": "ratings/slots/generation-000130/games.jsonl",
+      "bytes": 93406,
+      "sha256": "54883927f02527702c46bad3b00e9da1f817ef9a8bce37a9734e1e2bf0da8c2b",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000130/panels.json",
+      "path": "ratings/slots/generation-000130/panels.json",
+      "bytes": 1784,
+      "sha256": "8665c4c5f3ffec9a61af5f29a607dc0b5245d025a31ca2a6fb1453e2639f6f9e",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000130/progress.svg",
+      "path": "ratings/slots/generation-000130/progress.svg",
+      "bytes": 44844,
+      "sha256": "553f1df02be33e226b2fe01587d985e2183bea3e37a4ff67edb3066b3ee8eaab",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000140/games.jsonl",
+      "path": "ratings/slots/generation-000140/games.jsonl",
+      "bytes": 93409,
+      "sha256": "9ad62a746206a11ee673720ddee39e310a5feb5edfa6fc07556d0ccd8aa9a8ce",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000140/panels.json",
+      "path": "ratings/slots/generation-000140/panels.json",
+      "bytes": 1765,
+      "sha256": "a4f254b773b935897551ca1282a5ae594d409447b4be9a52a90f0afeb7a44dd7",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000140/progress.svg",
+      "path": "ratings/slots/generation-000140/progress.svg",
+      "bytes": 46640,
+      "sha256": "b605f1a35c522bfac687cda06c2bd50ae1542804044a7c9e8703269bfbb9a870",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000150/games.jsonl",
+      "path": "ratings/slots/generation-000150/games.jsonl",
+      "bytes": 93431,
+      "sha256": "8e9634ce22ca49c290de07d47618aaef64cc4771e69d08cd2cb4b9d4f3b194af",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000150/panels.json",
+      "path": "ratings/slots/generation-000150/panels.json",
+      "bytes": 1782,
+      "sha256": "e2543556962bb98e586c9044e5564cfc2c5c8c005b30eec8947707fb3348ad89",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000150/progress.svg",
+      "path": "ratings/slots/generation-000150/progress.svg",
+      "bytes": 46901,
+      "sha256": "a96fff8122754fa0c9b6fd82d4e3e3e3597f4879aec31637874f1a038813284d",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000160/games.jsonl",
+      "path": "ratings/slots/generation-000160/games.jsonl",
+      "bytes": 93441,
+      "sha256": "78b102f8ec9e0134c785837118fe7294b5ab195d481e58ed2decb2ad9b7cd1c8",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000160/panels.json",
+      "path": "ratings/slots/generation-000160/panels.json",
+      "bytes": 1792,
+      "sha256": "f52b9efb563bc97d97880f73b09b1225acc2bcddd69984779d30f9c73bd6815c",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000160/progress.svg",
+      "path": "ratings/slots/generation-000160/progress.svg",
+      "bytes": 48031,
+      "sha256": "9cb3e7546d978e3b57314449cc0aef0744e7557b99fbf81280777051dd3bbcba",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000170/games.jsonl",
+      "path": "ratings/slots/generation-000170/games.jsonl",
+      "bytes": 93441,
+      "sha256": "bfcfebabd3ffd34fa24d31788c02ae4ddb8376ec86f2e7e988ad069694870ed3",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000170/panels.json",
+      "path": "ratings/slots/generation-000170/panels.json",
+      "bytes": 1778,
+      "sha256": "7f33d5a943e63ef9a57fa9ad439f9e295904c0ee8405606550069be2ba41f3be",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000170/progress.svg",
+      "path": "ratings/slots/generation-000170/progress.svg",
+      "bytes": 47530,
+      "sha256": "f13704796ac0f7459b622295dc4683b08c31ac126d0dafbcef48e990cb35f934",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000180/games.jsonl",
+      "path": "ratings/slots/generation-000180/games.jsonl",
+      "bytes": 93459,
+      "sha256": "8603c8f2a4809561670fdd1e8f9a51450890073eed713c3fbe7933699a2f4145",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000180/panels.json",
+      "path": "ratings/slots/generation-000180/panels.json",
+      "bytes": 1770,
+      "sha256": "031fe1d3fbd98b77f8771f39c47c6fdd4b7454b412904f6a2b108004c728ddb6",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000180/progress.svg",
+      "path": "ratings/slots/generation-000180/progress.svg",
+      "bytes": 45671,
+      "sha256": "ee710737c68ba539658ad2cdfae953b4b8e2376ed87058010b975f96b9308fae",
+      "reason": "Strength progress curve"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-2-batch7-il/upgrade.json",
+      "path": "lineage/artifacts/step5/features4-v11-2-batch7-il/upgrade.json",
+      "bytes": 3629,
+      "sha256": "21d50ddf1a3562fc62679bd4c0028998615d50e55390b75e043baf4934b8d800",
+      "reason": "Completed IL critic upgrade receipt"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-1-batch7-il/state.json",
+      "path": "lineage/artifacts/step5/features4-v11-1-batch7-il/state.json",
+      "bytes": 1428300,
+      "sha256": "8ccb500585baa0dfe80d3767ab19b863683d594868b60ce71967b8d2ba25efbd",
+      "reason": "Imitation lineage report"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-1-batch7-il/report.json",
+      "path": "lineage/artifacts/step5/features4-v11-1-batch7-il/report.json",
+      "bytes": 1429860,
+      "sha256": "934546ada6832f9854a4e67f4cf1eb91f6a12b402b01a2f537c553e096e06a7a",
+      "reason": "Imitation lineage report"
+    }
+  ],
+  "missing": [],
+  "warnings": [],
+  "generated": [
+    "recorded-config.json",
+    "export-manifest.json"
+  ],
+  "scope": "Analysis reports only; not a resumable checkpoint backup. Missing/pruned evidence is not reconstructed."
+}
