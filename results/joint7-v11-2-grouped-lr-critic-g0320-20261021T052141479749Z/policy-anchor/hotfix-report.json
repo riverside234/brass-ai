@@ -1,0 +1,265 @@
+{
+  "applied": true,
+  "generation": 270,
+  "games_done": 86400,
+  "config": "configs/step5/joint7-v11-2-grouped-lr-critic-qualified-anchor.json",
+  "epsilon": 0.02,
+  "proposed_reference": {
+    "agent": "generation-000260",
+    "checkpoint": {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/population/weights-1a36bb295d908c36411717db99d168792c4d71f07d9c62b6b6aeb13dc4b277cf.pt",
+      "sha256": "1b3567e49082afce6f305061822f147ffa48adcd886662b1d19555f7a9db5dbd",
+      "model_id": "1a36bb295d908c36411717db99d168792c4d71f07d9c62b6b6aeb13dc4b277cf",
+      "generation": 260,
+      "weights_only": true
+    },
+    "fit": {
+      "generation": 270,
+      "report": {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/report.json",
+        "sha256": "8a7dc1cebb2b88445188c87045a95d8950c9e2d7eaaddcf297e490c6d8c71555"
+      },
+      "bootstrap": {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/bootstrap.npz",
+        "sha256": "d1c20130d24c2a019929a60d8a034079e6e82e7e36837d9bbba7211ba4017c82"
+      },
+      "spec": {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/spec.json",
+        "sha256": "3e2d61b38f3a4e0437c6c0b718c5d8690e19a9d4d564b9da3497c39dedd2d69c"
+      }
+    },
+    "evidence": {
+      "candidate": "generation-000260",
+      "reference": "generation-0",
+      "points_delta": 622.3409276161594,
+      "points_delta_ci95": [
+        570.8701905715042,
+        689.9951326868711
+      ],
+      "method": "same-fit paired setup-bootstrap percentile 95%",
+      "bootstrap_refits": 200
+    }
+  },
+  "selection_reason": "qualified_improvement",
+  "coverage": {
+    "contract": "competitive-rating-coverage/1.0.0",
+    "activated": {
+      "generation": 270,
+      "panels": {
+        "v4-panel": {
+          "generation": 270,
+          "candidate": "generation-000270",
+          "games": 32,
+          "setups": 8,
+          "win_share": 1.0,
+          "panels": {
+            "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/panels.json",
+            "sha256": "d6b7011661ef10e08cd789a0c655eba917a95506416ee5c55c5a349a3e8ec708"
+          },
+          "spec": {
+            "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/spec.json",
+            "sha256": "3e2d61b38f3a4e0437c6c0b718c5d8690e19a9d4d564b9da3497c39dedd2d69c"
+          },
+          "reference": "4064a6d52441fbdd030b6c2228a0793cc52b7c1681c6ae8f25640faf147b49c5",
+          "threshold": 0.9
+        },
+        "il-panel": {
+          "generation": 270,
+          "candidate": "generation-000270",
+          "games": 32,
+          "setups": 8,
+          "win_share": 1.0,
+          "panels": {
+            "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/panels.json",
+            "sha256": "d6b7011661ef10e08cd789a0c655eba917a95506416ee5c55c5a349a3e8ec708"
+          },
+          "spec": {
+            "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/spec.json",
+            "sha256": "3e2d61b38f3a4e0437c6c0b718c5d8690e19a9d4d564b9da3497c39dedd2d69c"
+          },
+          "reference": "d2a84625a2d745118327c619a8cf9dcf0df1ab5bf23c87bfb32fde871b2d8545",
+          "threshold": 0.9
+        }
+      }
+    }
+  },
+  "transition": {
+    "decision": "promote",
+    "reason": "qualified_improvement",
+    "generation": 270,
+    "reference_generation": 260,
+    "evidence": {
+      "candidate": "generation-000260",
+      "reference": "generation-0",
+      "points_delta": 622.3409276161594,
+      "points_delta_ci95": [
+        570.8701905715042,
+        689.9951326868711
+      ],
+      "method": "same-fit paired setup-bootstrap percentile 95%",
+      "bootstrap_refits": 200
+    },
+    "calibration": {
+      "generation": 270,
+      "measurement": {
+        "positions": 2048,
+        "requested_positions": 2048,
+        "kl_mean": 0.028067656851908793,
+        "groups": {
+          "canal_action": {
+            "positions": 256,
+            "kl_mean": 0.06916900622588085,
+            "raw_entropy": 0.8523598732750821,
+            "normalized_entropy": 0.19633151852252576
+          },
+          "canal_other": {
+            "positions": 768,
+            "kl_mean": 0.024076122834793972,
+            "raw_entropy": 0.3685796454488575,
+            "normalized_entropy": 0.23229175346647826
+          },
+          "rail_action": {
+            "positions": 256,
+            "kl_mean": 0.04365959222873017,
+            "raw_entropy": 1.1945860471417689,
+            "normalized_entropy": 0.26589338687001174
+          },
+          "rail_other": {
+            "positions": 768,
+            "kl_mean": 0.013161429285425803,
+            "raw_entropy": 0.45606163559905405,
+            "normalized_entropy": 0.2777045922888272
+          }
+        },
+        "unassigned_positions": 0,
+        "elapsed_seconds": 0.6686095159966499,
+        "probability_floor": 1e-06,
+        "scope": "Fixed IL validation positions; raw temperature-1 policies, no exploration; symmetric floor/renormalization for KL",
+        "original_il": {
+          "positions": 2048,
+          "kl_mean": 1.0807236365334327,
+          "groups": {
+            "canal_action": {
+              "positions": 256,
+              "kl_mean": 2.4213403977303045
+            },
+            "canal_other": {
+              "positions": 768,
+              "kl_mean": 1.138869939740058
+            },
+            "rail_action": {
+              "positions": 256,
+              "kl_mean": 1.3178917356566433
+            },
+            "rail_other": {
+              "positions": 768,
+              "kl_mean": 0.49664904655344677
+            }
+          }
+        },
+        "reference_kind": "qualified_checkpoint"
+      },
+      "health": {
+        "contract": "selfplay-economic-health/3.0.0",
+        "ok": true,
+        "reasons": [],
+        "metrics": {
+          "vp_per_seat": 112.3778125,
+          "passes_per_seat": 0.2696875,
+          "zero_vp_fraction": 0.005625,
+          "insolvency_fraction": 0.028125
+        },
+        "checks": {
+          "vp_per_seat": {
+            "value": 112.3778125,
+            "threshold": 74.6612109375,
+            "ok": true
+          },
+          "passes_per_seat": {
+            "value": 0.2696875,
+            "threshold": 1.5759375,
+            "ok": true
+          },
+          "zero_vp_fraction": {
+            "value": 0.005625,
+            "threshold": 0.05,
+            "ok": true
+          },
+          "insolvency_fraction": {
+            "value": 0.028125,
+            "threshold": 0.13468750000000002,
+            "ok": true
+          }
+        },
+        "scope": "All-learner self-play: seat-weighted five-iteration VP, ordinary passes, zero-VP and insolvency rates. No IL action-probability checks; sales are reporting only."
+      },
+      "limit_before": 1.0,
+      "limit_after": 0.15,
+      "group_limit_before": 2.0,
+      "group_limit_after": 0.3,
+      "blocked": false,
+      "lr_anchor_health_permits": true,
+      "reason": "new_reference_recalibration",
+      "scope": "Reference KL only; economic baseline/rolling evidence and all optimizer state preserved"
+    }
+  },
+  "active_reference": {
+    "agent": "generation-000260",
+    "checkpoint": {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/population/weights-1a36bb295d908c36411717db99d168792c4d71f07d9c62b6b6aeb13dc4b277cf.pt",
+      "sha256": "1b3567e49082afce6f305061822f147ffa48adcd886662b1d19555f7a9db5dbd",
+      "model_id": "1a36bb295d908c36411717db99d168792c4d71f07d9c62b6b6aeb13dc4b277cf",
+      "generation": 260,
+      "weights_only": true
+    },
+    "fit": {
+      "generation": 270,
+      "report": {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/report.json",
+        "sha256": "8a7dc1cebb2b88445188c87045a95d8950c9e2d7eaaddcf297e490c6d8c71555"
+      },
+      "bootstrap": {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/bootstrap.npz",
+        "sha256": "d1c20130d24c2a019929a60d8a034079e6e82e7e36837d9bbba7211ba4017c82"
+      },
+      "spec": {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/spec.json",
+        "sha256": "3e2d61b38f3a4e0437c6c0b718c5d8690e19a9d4d564b9da3497c39dedd2d69c"
+      }
+    },
+    "evidence": {
+      "candidate": "generation-000260",
+      "reference": "generation-0",
+      "points_delta": 622.3409276161594,
+      "points_delta_ci95": [
+        570.8701905715042,
+        689.9951326868711
+      ],
+      "method": "same-fit paired setup-bootstrap percentile 95%",
+      "bootstrap_refits": 200
+    },
+    "selected_generation": 270,
+    "qualification": {
+      "generation": 270,
+      "candidate": "generation-000270",
+      "games": 32,
+      "setups": 8,
+      "win_share": 1.0,
+      "panels": {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/panels.json",
+        "sha256": "d6b7011661ef10e08cd789a0c655eba917a95506416ee5c55c5a349a3e8ec708"
+      },
+      "spec": {
+        "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/spec.json",
+        "sha256": "3e2d61b38f3a4e0437c6c0b718c5d8690e19a9d4d564b9da3497c39dedd2d69c"
+      },
+      "reference": "d2a84625a2d745118327c619a8cf9dcf0df1ab5bf23c87bfb32fde871b2d8545",
+      "threshold": 0.9
+    },
+    "cache": {
+      "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/policy-anchor/probabilities/8e92442f947f0b7e4eddd34166eb8b388dcd9ee6e6eff1becfe176b8cca824a2.json",
+      "sha256": "bbdf7b7c0c3440bfadf82c7bda3d04518b9521fa57fd2080c6cc8cce22565ca2"
+    }
+  },
+  "preserved": "Original IL/probe, checkpoint bytes, both Adams/RNG, warmup/LR multiplier, economic baseline/rolling data, GAE/R2, population and progress"
+}
