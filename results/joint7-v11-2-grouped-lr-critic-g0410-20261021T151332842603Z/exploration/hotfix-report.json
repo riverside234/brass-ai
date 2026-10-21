@@ -1,0 +1,37 @@
+{
+  "applied": true,
+  "generation": 320,
+  "games_done": 102400,
+  "config": "configs/step5/joint7-v11-2-grouped-lr-critic-entropy95.json",
+  "baseline": {
+    "canal_action": 0.978153762348556,
+    "canal_other": 0.37862535847684414,
+    "rail_action": 1.3641296675490167,
+    "rail_other": 0.4904388703717831
+  },
+  "floor_before": {
+    "canal_action": 0.7784033403798042,
+    "canal_other": 0.3013056383724816,
+    "rail_action": 1.0855584579891115,
+    "rail_other": 0.3902855252868284
+  },
+  "floor_after": {
+    "canal_action": 0.9292460742311281,
+    "canal_other": 0.35969409055300194,
+    "rail_action": 1.2959231841715657,
+    "rail_other": 0.4659169268531939
+  },
+  "fixed_floor_ratio": 0.95,
+  "temperature": 2.0,
+  "action_decisions_per_seat": 2,
+  "branch_rate_per_eligible_decision": 0.015,
+  "branch_openings": "First two action decisions per seat after the excluded fork move",
+  "checkpoint": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/generation-0320.pt",
+    "sha256": "696b2206dba872272b30afa80b0f756a8bfbeac6fa94f3d715c5e61f88d9e837",
+    "model_id": "0c99cab77f1502e2c0333aafc528647eae89005d745e8e7510a296641cdd9860",
+    "generation": 320
+  },
+  "exploration_state_digest": "78268281f4917465795b4ed752b3a53532c9f809da6db6a1693343798088a6bb",
+  "preserved": "Checkpoint bytes, weights, both Adams/RNG, progress, baseline/alphas/windows, rollout age, KL-reference overlay, economic/GAE/R2 evidence and pool"
+}
