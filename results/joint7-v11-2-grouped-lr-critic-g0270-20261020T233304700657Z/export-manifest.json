@@ -245,8 +245,8 @@
     {
       "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/progress.svg",
       "path": "ratings/slots/generation-000270/progress.svg",
-      "bytes": 49818,
-      "sha256": "d72afd77b845e7a6b8bfe4f59cf1b6048995dfbc2e78bbfd7d5b4f46ac3c625a",
+      "bytes": 31207,
+      "sha256": "526d54255c212c659e19d44a5136ffd4290d5719207e0005f6911a9a208c3fa4",
       "reason": "Strength progress curve"
     },
     {
