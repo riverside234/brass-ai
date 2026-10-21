@@ -1,0 +1,45 @@
+{
+  "applied": true,
+  "generation": 410,
+  "games_done": 131200,
+  "config": "configs/step5/joint7-v11-2-grouped-lr-critic-entropy-groups.json",
+  "baseline": {
+    "canal_action": 0.978153762348556,
+    "canal_other": 0.37862535847684414,
+    "rail_action": 1.3641296675490167,
+    "rail_other": 0.4904388703717831
+  },
+  "floor_before": {
+    "canal_action": 0.9292460742311281,
+    "canal_other": 0.35969409055300194,
+    "rail_action": 1.2959231841715657,
+    "rail_other": 0.4659169268531939
+  },
+  "floor_after": {
+    "canal_action": 0.9292460742311281,
+    "canal_other": 0.34076282262915975,
+    "rail_action": 1.2959231841715657,
+    "rail_other": 0.44139498333460475
+  },
+  "fixed_floor_ratio_by_group": {
+    "canal_action": 0.95,
+    "canal_other": 0.9,
+    "rail_action": 0.95,
+    "rail_other": 0.9
+  },
+  "floor_decay_per_iteration": 1.0,
+  "temperature": 2.0,
+  "action_decisions_per_seat": 2,
+  "branch_rate_before": 0.015,
+  "branch_rate_per_eligible_decision": 0.005,
+  "branch_openings": "First two action decisions per seat after the excluded fork move",
+  "checkpoint": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/generation-0410.pt",
+    "sha256": "1d0c63a05dbe972431e3413032c8aac6fb74f6379ba8443b48a65823e4685681",
+    "model_id": "f91f47022058bd09b42764ac59f4325c5f1b0cf520d0f2a5c71ffdc794ea11eb",
+    "generation": 410
+  },
+  "exploration_state_digest": "475eabbd2d6441696fad2b78acd1331ab1a331fc6381872958dcdd6031e58bf2",
+  "preserved": "Checkpoint bytes, weights, both Adams/RNG, progress, baseline/alphas/windows, rollout age, KL reference and calibration, economic/GAE/R2 evidence and pool",
+  "subsequent_evidence": "Existing LR/snapshot controllers recognize the changed collection regime on the next update; the frozen R2 reference and attained weight are retained"
+}
