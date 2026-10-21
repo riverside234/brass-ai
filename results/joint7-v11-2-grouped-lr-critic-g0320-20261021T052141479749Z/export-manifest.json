@@ -326,9 +326,22 @@
     {
       "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000320/progress.svg",
       "path": "ratings/slots/generation-000320/progress.svg",
-      "bytes": 30720,
-      "sha256": "4960236e785bbd62c0d74165b6ebf4d9e49d1e57caaa5177eb087bf496a0732f",
-      "reason": "Strength progress curve"
+      "bytes": 25309,
+      "sha256": "c3e6e93492a3361edbe9266721e9b177a74ef2341e94a9626b291d7f70057730",
+      "reason": "Strength progress curve",
+      "local_rendering": {
+        "renderer": "src/brass_ai/recovery/rating_plot.py",
+        "implementation": "d36155785f06938df1719bfcd0db3e0d5f401081b176c434a9161ca18ac545f6",
+        "report_sha256": "2e732334d6ed0ed6562a91f8820048d048266e40e9e0e6a3323ae9f9243bf807",
+        "max_points": 30,
+        "displayed_points": 30,
+        "rated_checkpoints": 32,
+        "method": "Adjacent checkpoint means for display; first/latest exact; raw pointwise intervals and original marker sizes retained.",
+        "original_export": {
+          "bytes": 30720,
+          "sha256": "4960236e785bbd62c0d74165b6ebf4d9e49d1e57caaa5177eb087bf496a0732f"
+        }
+      }
     }
   ],
   "missing": [],
