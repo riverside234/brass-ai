@@ -1,0 +1,93 @@
+{
+  "all_learner_health": {
+    "checks": {
+      "insolvency_fraction": {
+        "ok": true,
+        "threshold": 0.13468750000000002,
+        "value": 0.016875
+      },
+      "passes_per_seat": {
+        "ok": true,
+        "threshold": 1.5759375,
+        "value": 0.275
+      },
+      "vp_per_seat": {
+        "ok": true,
+        "threshold": 74.6612109375,
+        "value": 123.58875
+      },
+      "zero_vp_fraction": {
+        "ok": true,
+        "threshold": 0.05,
+        "value": 0.0015625
+      }
+    },
+    "contract": "selfplay-economic-health/3.0.0",
+    "metrics": {
+      "insolvency_fraction": 0.016875,
+      "passes_per_seat": 0.275,
+      "vp_per_seat": 123.58875,
+      "zero_vp_fraction": 0.0015625
+    },
+    "ok": true,
+    "reasons": [],
+    "scope": "All-learner self-play: seat-weighted five-iteration VP, ordinary passes, zero-VP and insolvency rates. No IL action-probability checks; sales are reporting only."
+  },
+  "candidate": "generation-000540",
+  "panels": {
+    "il-panel": {
+      "games": 0,
+      "learner_win_share": null,
+      "qualified": null,
+      "setups": 0,
+      "status": "retired",
+      "trigger": {
+        "candidate": "generation-000270",
+        "games": 32,
+        "generation": 270,
+        "panels": {
+          "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/panels.json",
+          "sha256": "d6b7011661ef10e08cd789a0c655eba917a95506416ee5c55c5a349a3e8ec708"
+        },
+        "reference": "d2a84625a2d745118327c619a8cf9dcf0df1ab5bf23c87bfb32fde871b2d8545",
+        "setups": 8,
+        "spec": {
+          "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/spec.json",
+          "sha256": "3e2d61b38f3a4e0437c6c0b718c5d8690e19a9d4d564b9da3497c39dedd2d69c"
+        },
+        "threshold": 0.9,
+        "win_share": 1.0
+      },
+      "vp_per_learner_seat": null,
+      "win_share_setup_bootstrap_95": null
+    },
+    "v4-panel": {
+      "games": 0,
+      "learner_win_share": null,
+      "qualified": null,
+      "setups": 0,
+      "status": "retired",
+      "trigger": {
+        "candidate": "generation-000270",
+        "games": 32,
+        "generation": 270,
+        "panels": {
+          "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/panels.json",
+          "sha256": "d6b7011661ef10e08cd789a0c655eba917a95506416ee5c55c5a349a3e8ec708"
+        },
+        "reference": "4064a6d52441fbdd030b6c2228a0793cc52b7c1681c6ae8f25640faf147b49c5",
+        "setups": 8,
+        "spec": {
+          "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-000270/spec.json",
+          "sha256": "3e2d61b38f3a4e0437c6c0b718c5d8690e19a9d4d564b9da3497c39dedd2d69c"
+        },
+        "threshold": 0.9,
+        "win_share": 1.0
+      },
+      "vp_per_learner_seat": null,
+      "win_share_setup_bootstrap_95": null
+    }
+  },
+  "qualified": null,
+  "reason": "Deployment requires human review; no invented panel pass thresholds"
+}
