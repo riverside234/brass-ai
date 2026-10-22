@@ -1,0 +1,36 @@
+{
+  "deleted_files": [
+    ".ppg-eight-cache/generation-000453.critic.npy",
+    ".ppg-eight-cache/generation-000453.actions.npy",
+    ".ppg-eight-cache/generation-000453.json",
+    ".ppg-eight-cache/generation-000454.critic.npy",
+    ".ppg-eight-cache/generation-000454.actions.npy",
+    ".ppg-eight-cache/generation-000454.json",
+    ".ppg-eight-cache/generation-000455.critic.npy",
+    ".ppg-eight-cache/generation-000455.actions.npy",
+    ".ppg-eight-cache/generation-000455.json",
+    ".ppg-eight-cache/generation-000456.critic.npy",
+    ".ppg-eight-cache/generation-000456.actions.npy",
+    ".ppg-eight-cache/generation-000456.json",
+    ".ppg-eight-cache/generation-000457.actions.npy",
+    ".ppg-eight-cache/generation-000459.actions.npy",
+    ".ppg-eight-cache/generation-000460.actions.npy",
+    ".ppg-eight-cache/generation-000460.json",
+    ".ppg-eight-cache/generation-000457.critic.npy",
+    ".ppg-eight-cache/generation-000458.critic.npy",
+    ".ppg-eight-cache/generation-000458.actions.npy",
+    ".ppg-eight-cache/generation-000458.json",
+    ".ppg-eight-cache/generation-000459.critic.npy",
+    ".ppg-eight-cache/generation-000459.json",
+    ".ppg-eight-cache/generation-000460.critic.npy",
+    ".ppg-eight-cache/generation-000457.json"
+  ],
+  "deleted_bytes": 19519496026,
+  "directories": [
+    ".ppg-value-cache",
+    ".ppg-eight-cache"
+  ],
+  "generation": 460,
+  "phase": "startup",
+  "scope": "Owned auxiliary caches only; PPO checkpoints, replays and fixed probes preserved"
+}
