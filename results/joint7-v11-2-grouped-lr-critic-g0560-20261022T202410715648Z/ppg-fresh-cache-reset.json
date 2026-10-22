@@ -1,0 +1,36 @@
+{
+  "deleted_files": [
+    ".ppg-eight-cache/generation-000536.json",
+    ".ppg-eight-cache/generation-000537.critic.npy",
+    ".ppg-eight-cache/generation-000537.actions.npy",
+    ".ppg-eight-cache/generation-000537.json",
+    ".ppg-eight-cache/generation-000538.critic.npy",
+    ".ppg-eight-cache/generation-000538.actions.npy",
+    ".ppg-eight-cache/generation-000538.json",
+    ".ppg-eight-cache/generation-000539.critic.npy",
+    ".ppg-eight-cache/generation-000539.actions.npy",
+    ".ppg-eight-cache/generation-000539.json",
+    ".ppg-eight-cache/generation-000540.critic.npy",
+    ".ppg-eight-cache/generation-000540.actions.npy",
+    ".ppg-eight-cache/generation-000540.json",
+    ".ppg-eight-cache/generation-000533.json",
+    ".ppg-eight-cache/generation-000535.actions.npy",
+    ".ppg-eight-cache/generation-000536.actions.npy",
+    ".ppg-eight-cache/generation-000533.critic.npy",
+    ".ppg-eight-cache/generation-000533.actions.npy",
+    ".ppg-eight-cache/generation-000534.critic.npy",
+    ".ppg-eight-cache/generation-000534.actions.npy",
+    ".ppg-eight-cache/generation-000534.json",
+    ".ppg-eight-cache/generation-000535.critic.npy",
+    ".ppg-eight-cache/generation-000535.json",
+    ".ppg-eight-cache/generation-000536.critic.npy"
+  ],
+  "deleted_bytes": 21433210937,
+  "directories": [
+    ".ppg-value-cache",
+    ".ppg-eight-cache"
+  ],
+  "generation": 540,
+  "phase": "startup",
+  "next_phase": 548
+}
