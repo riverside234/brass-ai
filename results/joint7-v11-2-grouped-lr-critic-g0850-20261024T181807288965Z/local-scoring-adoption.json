@@ -1,0 +1,67 @@
+{
+  "contract": "local-scoring-adoption/1.0.0",
+  "origin": {
+    "generation": 560,
+    "checkpoint_sha256": "ff10e995a94b1a27ee605505bea2427bc05348f45a7bd9fc4b88cab66cb3c83d",
+    "model_id": "521a49306214f652932320069a8d0fff1f013bfa019a21859325145c9e548be9",
+    "fresh_ppg_buffer": true
+  },
+  "config_sha256": "ff3e95c8602bc9ee5ff82f1f998cf85e947c83748dd588aac64342928e736d0d",
+  "checkpoint": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/generation-0560.pt",
+    "sha256": "ff10e995a94b1a27ee605505bea2427bc05348f45a7bd9fc4b88cab66cb3c83d",
+    "model_id": "521a49306214f652932320069a8d0fff1f013bfa019a21859325145c9e548be9",
+    "generation": 560
+  },
+  "old_schedule": {
+    "contract": "ppg-eight-iteration-replay/1.0.0",
+    "origin": 540,
+    "generation": 560,
+    "last_phase": 556,
+    "phases": 2
+  },
+  "old_epoch_control": {
+    "contract": "ppg-epoch-cap/2.0.0",
+    "cap": 2,
+    "window": [
+      {
+        "generation": 548,
+        "cap": 2,
+        "steps_per_epoch": 283,
+        "planned_steps": 566,
+        "best_budget_step": 0,
+        "late_best": false,
+        "early_best": true,
+        "kl_limited": false
+      },
+      {
+        "generation": 556,
+        "cap": 2,
+        "steps_per_epoch": 283,
+        "planned_steps": 566,
+        "best_budget_step": 112,
+        "late_best": false,
+        "early_best": true,
+        "kl_limited": false
+      }
+    ],
+    "window_origin": 0,
+    "phases": 2,
+    "last_phase": 556
+  },
+  "old_cache_receipts_sha256": "67624e802b019ac78945efe4d530fc7e91c20905d17131f9a0033598d4ca4da5",
+  "new_origin": 560,
+  "next_phase": 568,
+  "cleanup_complete": true,
+  "cleanup": {
+    "deleted_files": 24,
+    "deleted_bytes": 21400181557,
+    "files_removed_this_start": 24,
+    "bytes_removed_this_start": 21400181557
+  },
+  "old_cache_metadata": {
+    "path": "local-scoring/adoption-g000560.json",
+    "sha256": "a7c3b2e2d772c22d06dd62b97f825800db1843f3971e060849d6f440f1f8a28f",
+    "bytes": 11295682
+  }
+}
