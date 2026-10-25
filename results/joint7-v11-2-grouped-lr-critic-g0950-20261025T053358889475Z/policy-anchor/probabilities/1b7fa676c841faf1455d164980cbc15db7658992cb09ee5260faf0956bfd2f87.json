@@ -1,0 +1,11 @@
+{
+  "binding": {
+    "contract": "qualified-policy-anchor/1.0.0",
+    "model_id": "1145fecba3289511df1c518bb71fbfb5b2f6df351777151a5eb999b89cba0761",
+    "probe_hash": "f3bc4ec205506d2ec255c07ab380e328cb45fedd7d95d3278c5e026e9fa11467"
+  },
+  "probabilities": {
+    "path": "artifacts/step5/joint7-v11-2-grouped-lr-critic/policy-anchor/probabilities/1b7fa676c841faf1455d164980cbc15db7658992cb09ee5260faf0956bfd2f87.npz",
+    "sha256": "d0dd5928a6de0681cf260d491f45925093d49f958f1bcbbebd3dc29705b421a8"
+  }
+}
