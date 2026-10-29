@@ -1,0 +1,20 @@
+{
+  "deleted_files": [
+    ".ppg-eight-cache/generation-001321.critic.npy",
+    ".ppg-eight-cache/generation-001321.actions.npy",
+    ".ppg-eight-cache/generation-001321.local-scoring.json",
+    ".ppg-eight-cache/generation-001321.json",
+    ".ppg-eight-cache/generation-001322.critic.npy",
+    ".ppg-eight-cache/generation-001322.actions.npy",
+    ".ppg-eight-cache/generation-001322.local-scoring.json",
+    ".ppg-eight-cache/generation-001322.json"
+  ],
+  "deleted_bytes": 4215946689,
+  "directories": [
+    ".ppg-value-cache",
+    ".ppg-eight-cache"
+  ],
+  "generation": 1322,
+  "phase": "startup",
+  "next_phase": 1323
+}
