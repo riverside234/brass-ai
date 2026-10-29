@@ -1,0 +1,31 @@
+{
+  "contract": "brass-lab-b04/1.0.0",
+  "milestone": "B04",
+  "passed": true,
+  "method": "search_v1",
+  "v205_enabled": false,
+  "lab_qualification": "Pending",
+  "production_deployed": false,
+  "transfer": {
+    "manifest_sha256": "6f9fea21f005359e7a07addfba18d85696c964a46f8ea94da4ce1e5194c1ab28",
+    "implementation": "1b682936cf03a6b52a1a129413f0bf1f90c115f43fbe10e72bfd95ad7ace0ce9",
+    "files": 45,
+    "milestone": "b04"
+  },
+  "fixtures": {
+    "argv": [
+      "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Brass Birmingham\\artifacts\\p6e\\Scripts\\python.exe",
+      "-m",
+      "unittest",
+      "test_b04",
+      "-v"
+    ],
+    "seconds": 15.125,
+    "log": {
+      "path": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Brass Birmingham\\artifacts\\rust-backend\\20261029T213516941779Z-g1326-b04-1d210a45\\b04\\fixtures.log",
+      "bytes": 2663,
+      "sha256": "b6330094564148663ae776d9a0ec0f69492baf14544d9af584795ac4490e6710"
+    }
+  },
+  "scope": "CPU fixtures only; native/Linux/CUDA gates remain Pending"
+}

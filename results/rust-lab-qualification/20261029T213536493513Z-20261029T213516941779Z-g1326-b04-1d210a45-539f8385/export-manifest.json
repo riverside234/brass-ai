@@ -1,0 +1,46 @@
+{
+  "contract": "brass-lab-results/1.0.0",
+  "created_utc": "2026-10-29T21:35:36.556155+00:00",
+  "source": "artifacts/rust-backend/20261029T213516941779Z-g1326-b04-1d210a45",
+  "source_absolute": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Brass Birmingham\\artifacts\\rust-backend\\20261029T213516941779Z-g1326-b04-1d210a45",
+  "review_only": true,
+  "files": [
+    {
+      "source": "b04-console.log",
+      "path": "evidence/b04-console.log",
+      "source_bytes": 207,
+      "source_sha256": "670db25224ef9739b37a1d80e53459e4bb0f8cc7ffc5b1393dfb62b631819d69",
+      "bytes": 207,
+      "sha256": "670db25224ef9739b37a1d80e53459e4bb0f8cc7ffc5b1393dfb62b631819d69",
+      "gzip": false
+    },
+    {
+      "source": "runner.json",
+      "path": "evidence/runner.json",
+      "source_bytes": 2089,
+      "source_sha256": "53a9b4db1b2ad356378c88fd0170227d768c70b9f22aebe3359fc00da1c13d8b",
+      "bytes": 2089,
+      "sha256": "53a9b4db1b2ad356378c88fd0170227d768c70b9f22aebe3359fc00da1c13d8b",
+      "gzip": false
+    },
+    {
+      "source": "b04/fixtures.log",
+      "path": "evidence/b04/fixtures.log",
+      "source_bytes": 2663,
+      "source_sha256": "b6330094564148663ae776d9a0ec0f69492baf14544d9af584795ac4490e6710",
+      "bytes": 2663,
+      "sha256": "b6330094564148663ae776d9a0ec0f69492baf14544d9af584795ac4490e6710",
+      "gzip": false
+    },
+    {
+      "source": "b04/qualification.json",
+      "path": "evidence/b04/qualification.json",
+      "source_bytes": 1074,
+      "source_sha256": "169d84ca0abd6578cc497aee786327ef173e95789d629b359b2d5612a5e9f8e1",
+      "bytes": 1074,
+      "sha256": "169d84ca0abd6578cc497aee786327ef173e95789d629b359b2d5612a5e9f8e1",
+      "gzip": false
+    }
+  ],
+  "omitted": []
+}

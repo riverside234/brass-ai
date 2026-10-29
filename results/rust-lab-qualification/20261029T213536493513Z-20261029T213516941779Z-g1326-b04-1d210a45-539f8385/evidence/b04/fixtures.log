@@ -1,0 +1,22 @@
+test_cancel_between_native_actions_discards_unpublished_labels (test_b04.B04.test_cancel_between_native_actions_discards_unpublished_labels) ... ok
+test_continuation_reports_original_search_k_without_inventing_a_tournament (test_b04.B04.test_continuation_reports_original_search_k_without_inventing_a_tournament) ... ok
+test_exact_job_profile_and_dedicated_schedule (test_b04.B04.test_exact_job_profile_and_dedicated_schedule) ... ok
+test_finished_frame_racing_cancellation_cannot_publish (test_b04.B04.test_finished_frame_racing_cancellation_cannot_publish) ... ok
+test_gpu_wait_cancellation_drains_slot_and_does_not_expose_logits (test_b04.B04.test_gpu_wait_cancellation_drains_slot_and_does_not_expose_logits) ... ok
+test_initial_write_failure_retires_native_worker (test_b04.B04.test_initial_write_failure_retires_native_worker) ... ok
+test_latest_committed_readiness_stops_at_false_reward_boundary_or_gap (test_b04.B04.test_latest_committed_readiness_stops_at_false_reward_boundary_or_gap) ... ok
+test_native_count_probe_targets_and_actual_model_logits (test_b04.B04.test_native_count_probe_targets_and_actual_model_logits) ... skipped 'Native count probe requires the built export-overlay binary'
+test_off_and_unready_never_dispatch_and_keep_ordinary_cursor (test_b04.B04.test_off_and_unready_never_dispatch_and_keep_ordinary_cursor) ... ok
+test_overlay_only_accepts_exact_detached_core_and_changes_fingerprint (test_b04.B04.test_overlay_only_accepts_exact_detached_core_and_changes_fingerprint) ... ok
+test_raw_logits_match_policy_and_preserve_normal_outputs_including_chunking (test_b04.B04.test_raw_logits_match_policy_and_preserve_normal_outputs_including_chunking) ... ok
+test_readiness_null_retains_latest_but_false_or_reward_change_defers (test_b04.B04.test_readiness_null_retains_latest_but_false_or_reward_change_defers) ... ok
+test_shadow_and_on_same_frozen_jobs_no_legacy_work_fields (test_b04.B04.test_shadow_and_on_same_frozen_jobs_no_legacy_work_fields) ... ok
+test_shared_service_roundtrip_and_replayed_epoch_rejection (test_b04.B04.test_shared_service_roundtrip_and_replayed_epoch_rejection) ... ok
+test_stuck_gpu_watchdog_retires_owner_without_replenishing_deadline (test_b04.B04.test_stuck_gpu_watchdog_retires_owner_without_replenishing_deadline) ... ok
+test_wire_rejects_truncation_mapping_critic_context_and_nonfinite (test_b04.B04.test_wire_rejects_truncation_mapping_critic_context_and_nonfinite) ... ok
+test_wrong_model_reply_retires_owner (test_b04.B04.test_wrong_model_reply_retires_owner) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 11.430s
+
+OK (skipped=1)
