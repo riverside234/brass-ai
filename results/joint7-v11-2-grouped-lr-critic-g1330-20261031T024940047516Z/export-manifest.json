@@ -1,0 +1,607 @@
+{
+  "format": "selfplay-report-export/1.3.0",
+  "created_utc": "2026-10-31T02:49:44.755617+00:00",
+  "run": "artifacts/step5/joint7-v11-2-grouped-lr-critic",
+  "committed_generation": 1330,
+  "games_done": 425600,
+  "implementation": "299f58b01ffcc5551207c16cf74f0f7c8e8aa7f87c4e957ee37ab8d2880e5f42",
+  "latest_iterations": [
+    1328,
+    1329
+  ],
+  "uncompacted_iterations": [],
+  "incremental": true,
+  "reused_files": [
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/domino-adoption-g001326.json",
+      "path": "domino-adoption.json",
+      "bytes": 1346933,
+      "sha256": "dbdcea24e473a082dd8a59d7456c19eef061afff7df66b11ec1168120e2abe16",
+      "reason": "DOMiNO transition and archived PPG receipts; no cache arrays",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1327-20261031T020511541347Z",
+      "previous_path": "domino-adoption.json"
+    },
+    {
+      "source": "training/runtime/local-scoring/ordinary/runtime.json",
+      "path": "contracts/local-scoring-runtime.json",
+      "bytes": 18569,
+      "sha256": "b240d9963716bc256bcf9385fbc571d06fd2ea66a444204078103f7af66f3c6e",
+      "reason": "Separately admitted scoring recorder",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0580-20261023T004923397197Z",
+      "previous_path": "contracts/local-scoring-runtime.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/domino-adoption-g001326.json",
+      "path": "domino-adoption-g001326.json",
+      "bytes": 1346933,
+      "sha256": "dbdcea24e473a082dd8a59d7456c19eef061afff7df66b11ec1168120e2abe16",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1327-20261031T020511541347Z",
+      "previous_path": "domino-adoption-g001326.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ppg-disabled-cache-cleanup.json",
+      "path": "ppg-disabled-cache-cleanup.json",
+      "bytes": 1501,
+      "sha256": "f59b4f089e7ed4b064e65542c9d44d9b8959aea315032919b3509f2a0267035a",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0470-20261022T011816523228Z",
+      "previous_path": "ppg-disabled-cache-cleanup.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ppg-fresh-cache-reset.json",
+      "path": "ppg-fresh-cache-reset.json",
+      "bytes": 626,
+      "sha256": "bd9fcdc4327cf3d20c54d24bc0699d739c338c9008ea37319e37e7bd191af3eb",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1326-20261029T212054859818Z",
+      "previous_path": "ppg-fresh-cache-reset.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-ilkl-g110-x1.5.json",
+      "path": "state-before-ilkl-g110-x1.5.json",
+      "bytes": 467168,
+      "sha256": "fc42ea7204c50ed9a642cfa8f94934cae3531fba4431e48896a79b85be46046f",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-ilkl-g110-x1.5.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-snapshot-r2-0213.json",
+      "path": "state-before-snapshot-r2-0213.json",
+      "bytes": 773347,
+      "sha256": "aa32d6c3013be2026dcca2e52067b40089127a5580ba4676230d3d6f1a4021c1",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0270-20261020T233304700657Z",
+      "previous_path": "state-before-snapshot-r2-0213.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-0b1be092f9cd5ed4-0185.json",
+      "path": "state-before-source-0b1be092f9cd5ed4-0185.json",
+      "bytes": 660122,
+      "sha256": "dbc58978cdb4bcf5846d0ffe55d9a8951c83ff5e25df24989fadee3f687297ae",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0210-20261020T145156876449Z",
+      "previous_path": "state-before-source-0b1be092f9cd5ed4-0185.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-0f0aa6512f3632c0-0950.json",
+      "path": "state-before-source-0f0aa6512f3632c0-0950.json",
+      "bytes": 2421435,
+      "sha256": "56c015398063c03446f7dbbc2483e670bce70408ae3acb5112c9fe6abebe6196",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1050-20261025T163535686370Z",
+      "previous_path": "state-before-source-0f0aa6512f3632c0-0950.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-141b94f185bc9823-0600.json",
+      "path": "state-before-source-141b94f185bc9823-0600.json",
+      "bytes": 1780286,
+      "sha256": "d1e833e26722d8ae085dc33fff200585a27cb9b5bff76ce0983ec6c859342fd6",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0620-20261023T133150568578Z",
+      "previous_path": "state-before-source-141b94f185bc9823-0600.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-1a5da37296765dda-1050.json",
+      "path": "state-before-source-1a5da37296765dda-1050.json",
+      "bytes": 2535315,
+      "sha256": "d8fc5f940ccf337fe81bd64c64bce1742864f3b3d06d53f3916064aa80e354fa",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1120-20261026T012745632742Z",
+      "previous_path": "state-before-source-1a5da37296765dda-1050.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-2259acb7ed8d7934-1322.json",
+      "path": "state-before-source-2259acb7ed8d7934-1322.json",
+      "bytes": 2852386,
+      "sha256": "8c69680c0ffd9413d6169191955058c86897a6034a9ac3677c8a02c7576bd24a",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1326-20261029T212054859818Z",
+      "previous_path": "state-before-source-2259acb7ed8d7934-1322.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-381f9afdeb2a8877-0560.json",
+      "path": "state-before-source-381f9afdeb2a8877-0560.json",
+      "bytes": 1526220,
+      "sha256": "885d8ee22215c051fc7b2afd6951b102d6f041d27b24e00d4ec5883998ded069",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0580-20261023T004923397197Z",
+      "previous_path": "state-before-source-381f9afdeb2a8877-0560.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-41b783f73f20bab2-0660.json",
+      "path": "state-before-source-41b783f73f20bab2-0660.json",
+      "bytes": 1904386,
+      "sha256": "1a4d25487696165ecc95de6544c6dd511fd88e882fd5955af2f3135c7eb210b7",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0692-20261024T032755012391Z",
+      "previous_path": "state-before-source-41b783f73f20bab2-0660.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-4e6f79d9d3da5ebe-0001.json",
+      "path": "state-before-source-4e6f79d9d3da5ebe-0001.json",
+      "bytes": 133676,
+      "sha256": "8fdfdd2e43449170ab9688bc0296dd107ad143c8c90a52dcaf9c31e76c31471e",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-source-4e6f79d9d3da5ebe-0001.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-524206cc611309f3-0460.json",
+      "path": "state-before-source-524206cc611309f3-0460.json",
+      "bytes": 1299310,
+      "sha256": "0eaeac865cd637169727ccde0f1e1822f62caac685fc18075e1d2475ff3e0476",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0470-20261022T011816523228Z",
+      "previous_path": "state-before-source-524206cc611309f3-0460.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-548793874f28d271-0320.json",
+      "path": "state-before-source-548793874f28d271-0320.json",
+      "bytes": 1013078,
+      "sha256": "bb886b2df044d0cc570da2f19854717f6f62555d1cd6b14160a6ee70d427006f",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0410-20261021T151332842603Z",
+      "previous_path": "state-before-source-548793874f28d271-0320.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-59bb9472695f4739-0410.json",
+      "path": "state-before-source-59bb9472695f4739-0410.json",
+      "bytes": 1197795,
+      "sha256": "324dc368ff82828f42238c5f6a8c6346508c778e184d04bdfed8fa93cbf8cd2c",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0412-20261021T173550049006Z",
+      "previous_path": "state-before-source-59bb9472695f4739-0410.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-59f4549046d97b7d-0055.json",
+      "path": "state-before-source-59f4549046d97b7d-0055.json",
+      "bytes": 315381,
+      "sha256": "74f4e49a35e52b3249b64523bd0aa4f40fe4223c50c02e491236482e119eccc6",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-source-59f4549046d97b7d-0055.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-5d95319e1550a3a5-0620.json",
+      "path": "state-before-source-5d95319e1550a3a5-0620.json",
+      "bytes": 2299899,
+      "sha256": "59b140c4a679782c0fb831c6e393f536e7c72ae0fbffaeb1534a5e78e85ed1b6",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0650-20261023T202940235880Z",
+      "previous_path": "state-before-source-5d95319e1550a3a5-0620.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-742e6db022d4785a-0470.json",
+      "path": "state-before-source-742e6db022d4785a-0470.json",
+      "bytes": 1337610,
+      "sha256": "adb619b20b44dc9db78e3b579df2f9641296ebfc0e3f0f5a97ab78d7a0931e4d",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0503-20261022T051624803527Z",
+      "previous_path": "state-before-source-742e6db022d4785a-0470.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-858f89bbe87abf1e-0503.json",
+      "path": "state-before-source-858f89bbe87abf1e-0503.json",
+      "bytes": 1382913,
+      "sha256": "00275e698ba6e5949db3ecb688d2ffaef67970631ac7b0575c99a3fe3b03caaa",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0540-20261022T144917069131Z",
+      "previous_path": "state-before-source-858f89bbe87abf1e-0503.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-ad8d0b670a705616-0590.json",
+      "path": "state-before-source-ad8d0b670a705616-0590.json",
+      "bytes": 1679804,
+      "sha256": "859d794aa4a0c64d630c634649f700ec91fb5544c22342e1038e9db5e2e3ecd2",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0600-20261023T061313188381Z",
+      "previous_path": "state-before-source-ad8d0b670a705616-0590.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-ae0fde5ace3e2d4a-1320.json",
+      "path": "state-before-source-ae0fde5ace3e2d4a-1320.json",
+      "bytes": 2838021,
+      "sha256": "67a16923ea7a3566267bd27f2c6d0d5e1b35b62bd953a4559aaae93d8b380b96",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1326-20261029T212054859818Z",
+      "previous_path": "state-before-source-ae0fde5ace3e2d4a-1320.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-b7ed8203fa8ca181-0210.json",
+      "path": "state-before-source-b7ed8203fa8ca181-0210.json",
+      "bytes": 831547,
+      "sha256": "ccebeec19f1a031514d6b0d3ca0bbc86130cfd21d8401887e76a45646fe7826c",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0213-20261020T173708767483Z",
+      "previous_path": "state-before-source-b7ed8203fa8ca181-0210.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-c075f347771aa68d-0540.json",
+      "path": "state-before-source-c075f347771aa68d-0540.json",
+      "bytes": 1476152,
+      "sha256": "98156962335200b2a1ca2a2876a869f2941b29ca03b22d587cb3e15ab2ace1bf",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0560-20261022T202410715648Z",
+      "previous_path": "state-before-source-c075f347771aa68d-0540.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-cb5d01fe9ea617a0-1326.json",
+      "path": "state-before-source-cb5d01fe9ea617a0-1326.json",
+      "bytes": 2941734,
+      "sha256": "b2d423f1fde0de3465a74d06857b39f86cf82c40cd2b4423e409a15614c8cb9d",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1327-20261031T020511541347Z",
+      "previous_path": "state-before-source-cb5d01fe9ea617a0-1326.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-cf1947e8089d8c38-1120.json",
+      "path": "state-before-source-cf1947e8089d8c38-1120.json",
+      "bytes": 2633274,
+      "sha256": "961764f38abbcb2040128725e30d9662d1f3b3cbc5bcb6799e89e62107fc9a88",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1320-20261027T074209515491Z",
+      "previous_path": "state-before-source-cf1947e8089d8c38-1120.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-d2f55c7ebc6ce7b2-0085.json",
+      "path": "state-before-source-d2f55c7ebc6ce7b2-0085.json",
+      "bytes": 401905,
+      "sha256": "a8c079a2cff689932903a3d94366683f8167f5014278e07a46b148a704c85179",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-source-d2f55c7ebc6ce7b2-0085.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-d6af815e0fb87aed-0580.json",
+      "path": "state-before-source-d6af815e0fb87aed-0580.json",
+      "bytes": 1634113,
+      "sha256": "f9ae3750c83d5108869a8e9f3eaa2be5dba32457f1a811a928b483fef9f29551",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0590-20261023T035130866327Z",
+      "previous_path": "state-before-source-d6af815e0fb87aed-0580.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-daf256ab17e168e6-0650.json",
+      "path": "state-before-source-daf256ab17e168e6-0650.json",
+      "bytes": 1883409,
+      "sha256": "53e39a9f8bbb4b6058a30ccc9a97e4906c819ea15082c49da2fef1b0f16cd497",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0660-20261023T225307387849Z",
+      "previous_path": "state-before-source-daf256ab17e168e6-0650.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-db75c54d81e141d7-0418.json",
+      "path": "state-before-source-db75c54d81e141d7-0418.json",
+      "bytes": 1216549,
+      "sha256": "5d827549f195f2d1d9ed2dd7864dce9454155401623a6b7cd0b5f968bbfce641",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0460-20261021T234253728877Z",
+      "previous_path": "state-before-source-db75c54d81e141d7-0418.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-e6ea9cff8dd849c0-1324.json",
+      "path": "state-before-source-e6ea9cff8dd849c0-1324.json",
+      "bytes": 2895460,
+      "sha256": "63d76acda54e8ce2b505ea8c85a4e5c3e7238b044c7905b6319bae44b81f200c",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1326-20261029T212054859818Z",
+      "previous_path": "state-before-source-e6ea9cff8dd849c0-1324.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-e94496aab75cf06c-0850.json",
+      "path": "state-before-source-e94496aab75cf06c-0850.json",
+      "bytes": 2186322,
+      "sha256": "d66b167b3ae4cfe6abea524f7f5eff77b9f008a563a722a480a82c512bebf81d",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0950-20261025T053358889475Z",
+      "previous_path": "state-before-source-e94496aab75cf06c-0850.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-eb3beec4cfbe8cb3-0560.json",
+      "path": "state-before-source-eb3beec4cfbe8cb3-0560.json",
+      "bytes": 1567031,
+      "sha256": "79829c6280bc464d074362d685bf7a2c9875f77b9ceedc44ea18335ca2a4b618",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0580-20261023T004923397197Z",
+      "previous_path": "state-before-source-eb3beec4cfbe8cb3-0560.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-f12618df0b4e342f-0270.json",
+      "path": "state-before-source-f12618df0b4e342f-0270.json",
+      "bytes": 884586,
+      "sha256": "0ecad4513d981f8e20a28ce9067f2de24bf9daf169e8e28eda0d085b72773cb3",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0320-20261021T052141479749Z",
+      "previous_path": "state-before-source-f12618df0b4e342f-0270.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-f1d2febe1018fecf-0412.json",
+      "path": "state-before-source-f1d2febe1018fecf-0412.json",
+      "bytes": 1180817,
+      "sha256": "be34126b7a57c1c26cb11b15ecb4622ae582aa3e0a3a361bc13fb90be4423633",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0418-20261021T181921767029Z",
+      "previous_path": "state-before-source-f1d2febe1018fecf-0412.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-f953f4de6cdd43e4-0110.json",
+      "path": "state-before-source-f953f4de6cdd43e4-0110.json",
+      "bytes": 468125,
+      "sha256": "e9b8080217ad419614a8e075fb556731064a0388183eb22c6dc0e17ca2effa93",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "state-before-source-f953f4de6cdd43e4-0110.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state-before-source-fb4a32ee3c32fda9-0213.json",
+      "path": "state-before-source-fb4a32ee3c32fda9-0213.json",
+      "bytes": 787176,
+      "sha256": "e24f7ffb06cf71a365b172501c817557617306d007677a0e90fa88dbdea75c59",
+      "reason": "Run metadata",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0270-20261020T233304700657Z",
+      "previous_path": "state-before-source-fb4a32ee3c32fda9-0213.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/initial-report.json",
+      "path": "il-kl/initial-report.json",
+      "bytes": 1309,
+      "sha256": "21345ea13afd59b7f3c041518b4bfff2901438b05136eb94fa9ddb596115e428",
+      "reason": "Fixed IL-KL probe manifest or initial measurement",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "il-kl/initial-report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/il-kl/manifest.json",
+      "path": "il-kl/manifest.json",
+      "bytes": 6643450,
+      "sha256": "b10eb317cab99617e2df983c21862d83d5adacfaf2f822ea5cb3b71f8b836f2c",
+      "reason": "Fixed IL-KL probe manifest or initial measurement",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "il-kl/manifest.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/policy-anchor/hotfix-report.json",
+      "path": "policy-anchor/hotfix-report.json",
+      "bytes": 9956,
+      "sha256": "1421a485346250740b981edef9172c2ff18a059e42b29e5c94bcd41c8e970a7e",
+      "reason": "Qualified KL reference transition report",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0320-20261021T052141479749Z",
+      "previous_path": "policy-anchor/hotfix-report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/exploration/group-floors-hotfix-report.json",
+      "path": "exploration/group-floors-hotfix-report.json",
+      "bytes": 1820,
+      "sha256": "9879444099df0916e26c51745766d369e654a50c87e260a2533301d7bd93242e",
+      "reason": "Exploration configuration transition report",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0412-20261021T173550049006Z",
+      "previous_path": "exploration/group-floors-hotfix-report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/exploration/hotfix-report.json",
+      "path": "exploration/hotfix-report.json",
+      "bytes": 1453,
+      "sha256": "ebf0e0cace9e1cbf27a511b20a30777e489e3efb47fe3a3324eff982a3c6a0a6",
+      "reason": "Exploration configuration transition report",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0410-20261021T151332842603Z",
+      "previous_path": "exploration/hotfix-report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/policy-anchor/probabilities/d9ea4ae32848550d846533176de967950e65dd5760e6bdf78e1d0bcde7133992.json",
+      "path": "policy-anchor/probabilities/d9ea4ae32848550d846533176de967950e65dd5760e6bdf78e1d0bcde7133992.json",
+      "bytes": 507,
+      "sha256": "6bb2e7f25dad3575e331b8ed8600e419a7e2798e24c06af6ba9163e5d0c5dfd2",
+      "reason": "Active KL reference evidence or probability-cache manifest",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1320-20261027T074209515491Z",
+      "previous_path": "policy-anchor/probabilities/d9ea4ae32848550d846533176de967950e65dd5760e6bdf78e1d0bcde7133992.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-001290/report.json",
+      "path": "ratings/slots/generation-001290/report.json",
+      "bytes": 2288281,
+      "sha256": "774fabf255bf0891a8691dba29cad37649bec3a89d6d7e20c8d699a0bd97e6b6",
+      "reason": "Active KL reference evidence or probability-cache manifest",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1320-20261027T074209515491Z",
+      "previous_path": "ratings/slots/generation-001290/report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-001290/spec.json",
+      "path": "ratings/slots/generation-001290/spec.json",
+      "bytes": 40889,
+      "sha256": "9a7a639ad024dc472f7d3515e720a67ced6a1aafd1f194e002143a7c208c5e25",
+      "reason": "Active KL reference evidence or probability-cache manifest",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g1320-20261027T074209515491Z",
+      "previous_path": "ratings/slots/generation-001290/spec.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000200/report.json",
+      "path": "ratings/temperature/generation-000200/report.json",
+      "bytes": 2405,
+      "sha256": "0252b9f6c9a2a35b7f273549fbdcadb7b73438e2f6ee2545503a78a72e92a60a",
+      "reason": "Plackett-Luce strength report or specification",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0210-20261020T145156876449Z",
+      "previous_path": "ratings/temperature/generation-000200/report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000200/spec.json",
+      "path": "ratings/temperature/generation-000200/spec.json",
+      "bytes": 54364,
+      "sha256": "bb5e0b057f68e4d80912b426d19e6795d4a72e514b09e70e780998427997de9c",
+      "reason": "Plackett-Luce strength report or specification",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0210-20261020T145156876449Z",
+      "previous_path": "ratings/temperature/generation-000200/spec.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000250/report.json",
+      "path": "ratings/temperature/generation-000250/report.json",
+      "bytes": 2394,
+      "sha256": "75fa71537b73d6b65de9d3a4f1106db73ef0e9a3d8d2660241865b2d1707e42c",
+      "reason": "Plackett-Luce strength report or specification",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0270-20261020T233304700657Z",
+      "previous_path": "ratings/temperature/generation-000250/report.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000250/spec.json",
+      "path": "ratings/temperature/generation-000250/spec.json",
+      "bytes": 54363,
+      "sha256": "45b0a0bdf04a765ef71efb980952bbbd45552c0a630b5f6fde504288161874dd",
+      "reason": "Plackett-Luce strength report or specification",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0270-20261020T233304700657Z",
+      "previous_path": "ratings/temperature/generation-000250/spec.json"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000200/games.jsonl",
+      "path": "ratings/temperature/generation-000200/games.jsonl",
+      "bytes": 97048,
+      "sha256": "bcfa8d3b6a89990f5da44e9abf5bb3fcdf54f547ab5889a1e09ae21d11cc6b82",
+      "reason": "Paired temperature rating evidence",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0210-20261020T145156876449Z",
+      "previous_path": "ratings/temperature/generation-000200/games.jsonl"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/temperature/generation-000250/games.jsonl",
+      "path": "ratings/temperature/generation-000250/games.jsonl",
+      "bytes": 97049,
+      "sha256": "26cec08c7bf931470801c1b37588a13928263d564e6794e071c2e8519ff0d25d",
+      "reason": "Paired temperature rating evidence",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0270-20261020T233304700657Z",
+      "previous_path": "ratings/temperature/generation-000250/games.jsonl"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-2-batch7-il/upgrade.json",
+      "path": "lineage/artifacts/step5/features4-v11-2-batch7-il/upgrade.json",
+      "bytes": 3629,
+      "sha256": "21d50ddf1a3562fc62679bd4c0028998615d50e55390b75e043baf4934b8d800",
+      "reason": "Completed IL critic upgrade receipt",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "lineage/artifacts/step5/features4-v11-2-batch7-il/upgrade.json"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-1-batch7-il/state.json",
+      "path": "lineage/artifacts/step5/features4-v11-1-batch7-il/state.json",
+      "bytes": 1428300,
+      "sha256": "8ccb500585baa0dfe80d3767ab19b863683d594868b60ce71967b8d2ba25efbd",
+      "reason": "Imitation lineage report",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "lineage/artifacts/step5/features4-v11-1-batch7-il/state.json"
+    },
+    {
+      "source": "artifacts/step5/features4-v11-1-batch7-il/report.json",
+      "path": "lineage/artifacts/step5/features4-v11-1-batch7-il/report.json",
+      "bytes": 1429860,
+      "sha256": "934546ada6832f9854a4e67f4cf1eb91f6a12b402b01a2f537c553e096e06a7a",
+      "reason": "Imitation lineage report",
+      "previous_export": "results/joint7-v11-2-grouped-lr-critic-g0185-20261020T090519451283Z",
+      "previous_path": "lineage/artifacts/step5/features4-v11-1-batch7-il/report.json"
+    }
+  ],
+  "rating_slot_generation": 1330,
+  "run_lock_present": false,
+  "files": [
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/state.json",
+      "path": "state.json",
+      "bytes": 4575590,
+      "sha256": "c5cecfb2f42eb9d494a1b7817d4dfc3b2fde3a62b6b9b5edf38250e690e45c49",
+      "reason": "Committed configuration, lineage and progress"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/retention-history.json",
+      "path": "retention-history.json.gz",
+      "bytes": 15249237,
+      "sha256": "211481fa675afe14cc46718429c6a561a8a7e741d6633558a322844e3c4c09f1",
+      "reason": "Retained iteration trends",
+      "transform": "gzip-json-whitespace-only/1.0.0",
+      "source_bytes": 94792802,
+      "source_sha256": "6c4ac926f6b1cb5c229012ad553b608e35dd01aa1c61537a723b416496153071",
+      "uncompressed_bytes": 57864735,
+      "uncompressed_sha256": "ed05586981ec8e7facacfecb3faf4ac70bd8de12b3f068b0f5013791f03148dd"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/iteration-1328/report.json",
+      "path": "iteration-1328/report.json",
+      "bytes": 6632710,
+      "sha256": "67ee4c094a146bd27927a90e75c5537f117cf15f1fb9d4e9dc39199df6626cfc",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/iteration-1329/report.json",
+      "path": "iteration-1329/report.json",
+      "bytes": 9178002,
+      "sha256": "95bbcd2e20fe0c87947e9014789c13bef9e8f567ed1bdb3879d9fdc2f87293ac",
+      "reason": "Latest completed iteration"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/history-e2e36a197adca49ee741c9c2086fca02e6ff4806442b6c8ba852a73e746b365e.json",
+      "path": "ratings/history-e2e36a197adca49ee741c9c2086fca02e6ff4806442b6c8ba852a73e746b365e.json",
+      "bytes": 14085238,
+      "sha256": "3a5207a638c8b1b078c7fcc90e17db9f9eed800d0119b83bf1259da7ab834072",
+      "reason": "Compact cumulative rating outcomes and diagnostic-panel history"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-001330/report.json",
+      "path": "ratings/slots/generation-001330/report.json",
+      "bytes": 2429012,
+      "sha256": "46c07b2f0c0cbb73f8614b35edb80e8b0c27784f303725b5b327b38103a2d162",
+      "reason": "Latest committed rating slot report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-001330/spec.json",
+      "path": "ratings/slots/generation-001330/spec.json",
+      "bytes": 40891,
+      "sha256": "9246a458dc4b2e79adbedc05f31ac0a04bfa3140549c725681d905fe98c7fa47",
+      "reason": "Latest committed rating slot report or specification"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-001330/games.jsonl",
+      "path": "ratings/slots/generation-001330/games.jsonl",
+      "bytes": 64167,
+      "sha256": "adf8d68a9d70be63c5479427ad3880004979191ed7d0a39877b257482e7c6164",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-001330/panels.json",
+      "path": "ratings/slots/generation-001330/panels.json",
+      "bytes": 3036,
+      "sha256": "3e63f33fda787bf286ab3e726818bd0e4fca078a30a239960122f294aed3b3f2",
+      "reason": "Append-only held-out rating outcomes or separate panel results"
+    },
+    {
+      "source": "artifacts/step5/joint7-v11-2-grouped-lr-critic/ratings/slots/generation-001330/progress.svg",
+      "path": "ratings/slots/generation-001330/progress.svg",
+      "bytes": 47979,
+      "sha256": "5c613a4a9fc765b4e4de8feb83b59a2d56427385bcc9286f0632781cfc8a3bf2",
+      "reason": "Strength progress curve"
+    }
+  ],
+  "missing": [],
+  "warnings": [],
+  "generated": [
+    "recorded-config.json",
+    "export-manifest.json",
+    "local-scoring-adoption.json"
+  ],
+  "scope": "Analysis reports only; not a resumable checkpoint backup. Missing/pruned evidence is not reconstructed. Retention history is gzip-compressed whitespace-minified JSON (.json.gz); load_json accepts both formats. Its source_bytes/source_sha256 describe the original and bytes/sha256 describe the exported file. Other reports preserve original bytes. Incremental exports require the previous bundles named in reused_files; references point to original physical files."
+}
